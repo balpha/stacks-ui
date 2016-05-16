@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UIkit | Files structure</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
+    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
+
+    <script src="/ui-kit/assets/js/less.js"></script>
+    <script src="/ui-kit/assets/js/jquery.js"></script>
+    <script src="/ui-kit/assets/js/main.js"></script>
+
+    <link rel="import" href="../nav.html">
+</head>
+
+<body>
+    <section id="uikit-sidebar">
+        <div class="uikit-logo">
+            <a href="../index.html">UIkit</a>
+        </div><!-- / logo -->
+
+        <div id="nav-wrapper"></div>
+        <script>
+            var link = document.querySelector('link[rel="import"]');
+            var content = link.import;
+
+            var el = content.querySelector('.uikit-nav');
+
+
+            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
+        </script>
+    </section><!-- / sidebar -->
+
+    <main id="uikit-content">
+        <header>
+            <h1>File structure</h1>
+        </header>
+
+        <div class="uikit-intro">
+            <p>The following file structure applies to all Q/A sites, including Stack Overflow.</p>
+        </div><!-- / intro -->
+
+        <!--<h2 id="regular">.less files</h2>
+        <p>
+            Each component gets its own .less file within the UI folder and is imported into “_base.less”. The file should be structured with global styling first and more specific local styling next.
+        </p>
+        <p>
+            Only make components for elements that are important reusable parts of the UI. Anything that’s reusable should be discussed and agreed upon by the design team.
+        </p>
+
+        <h2 id="partials">_partial.less files</h2>
+        <p>
+            The underscore prefix before a .less file name indicates that it is a partial and prevents the file from being compiled individually.
+        </p>
+        <p>
+            Page-specific .less files go in their own folder within the UI folder. They have their own page specific css plus component overrides. [discussion point: and need to be imported separately into the html file.]
+        </p>
+
+        <b>Example</b>
+        <ul>
+            <li>components: 		_less / components /  _buttons.less</li>
+            <li>views: 			_less / jobs / _jobs.less</li>
+            <li>global variables:	_less _vars.less</li>
+        </ul>
+
+        <h2 id="create">Creating a new file</h2>
+        <p>
+            <i style="color:red;">[ More info to come: Create a blank template .less file within each folder that has guidelines for writing the LESS file.]</i>
+        </p>
+
+        <h2 id="overall">Overall structure</h2>-->
+
+        <ul class="tree-structure">
+            <li class="uikit-root">
+                <div class="uikit-name">
+                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                    <strong class="uikit-folder">less</strong>
+                </div>
+                <div class="uikit-definition message gray centered-block">
+                    <header>Definition</header>
+                    <p>This is the root folder, nothing should be here unless it is a global style</p>
+                </div><!-- / uikit-definition message gray centered-block -->
+                <ul>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>_base.less</strong>
+                        </div>
+                        <small>Non-reusable, basic structure</small>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>_basemeta.less</strong>
+                        </div>
+                        <small>Basic structure for meta</small>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>_footer.less</strong>
+                        </div>
+                        <small>Everything in the footer</small>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>_topbar.less</strong>
+                        </div>
+                        <small>The black top bar on all the Q/A sites</small>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>_vars.less</strong>
+                        </div>
+                        <small>Global variables</small>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>_vars-colors.less</strong>
+                        </div>
+                        <small>Global color variables</small>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                            <strong class="uikit-folder">Components</strong>
+                        </div>
+                        <div class="uikit-definition message gray centered-block">
+                            <header>Definition</header>
+                            <p>Reusable components like buttons, tables, etc.</p>
+                            <p style="color: red;">This is still missing part...</p>
+                        </div>
+                    </li> <!--/ Components -->
+
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                            <strong class="uikit-folder">Helpers</strong>
+                        </div>
+                        <div class="uikit-definition message gray centered-block">
+                            <header>Definition</header>
+                            <p>Helpers help you build components and views, they are not meant to be used on their own (except <code>_utilities.less</code> classes).</p>
+                            <p>If you're working on a specific .less file which need to use helpers, just import <code>_less/helpers/_helpers.less</code>, it contains all the helpers.</p>
+                        </div>
+                        <div class="uikit-definition message gray centered-block">
+                            <header>Example</header>
+                            <p>Build a tooltip in /components/_tooltips.less using:</p>
+                            <ul>
+                                <li>.triangle() to create the arrows</li>
+                                <li>.ellipsis() to prevent text overflow</li>
+                                <li>.animate-in() for a little fade in animation</li>
+                                <li>visibility classes to hide the tooltip on mobile</li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                                    <strong>_animations.less</strong>
+                                </div>
+                                <small>Basic animations used throughout SO</small>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                                    <strong>_grids.less</strong>
+                                </div>
+                                <small>A small regular fluid grid system that we (should) use on all the pages.</small>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                                    <strong>_helpers.less</strong>
+                                </div>
+                                <small>Loads all the helpers files, needed when you work on a file that does not import base.less.</small>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                                    <strong>_mixins.less</strong>
+                                </div>
+                                <small>.triangle(), .ellipsis(), .transition(), .clearfix()... built to avoid repetition.</small>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                                    <strong>_reset.less</strong>
+                                </div>
+                                <small>Reset base css, must be imported at the beginning of base.less</small>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                                    <strong>_utilities.less</strong>
+                                </div>
+                                <small>Floats, visibility, alignment, responsive, helper classes... These are the only classes that you can use directly in the html.</small>
+                            </li>
+                        </ul>
+                    </li> <!-- /helpers -->
+
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                            <strong class="uikit-folder">Views</strong>
+                        </div>
+                        <div class="uikit-definition message gray centered-block">
+                            <header>Definition</header>
+                            <p>Views are page specific less plus component overrides. The structure inside this folder should follow SO navigation. These files need to be loaded into base.less.</p>
+                        </div>
+                        <div class="uikit-definition message gray centered-block">
+                            <header>Example</header>
+                            <p>Put Job matching preferences page specific style in: <code>_less/views/settings/job-matching-preferences.less.</code></p>
+                            <p>Start this file with a parent class name and override specific component in it.</p>
+                            <pre class="prettyprint lang-css">
+                                // You’ll need this class name on the .container
+                                .job-matching-preferences {
+                                    input { background: red; }
+                                }
+                            </pre>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                                    <strong class="uikit-folder">documentation</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                                    <strong class="uikit-folder">jobs</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                                    <strong class="uikit-folder">profile</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                                    <strong class="uikit-folder">settings</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                                    <strong class="uikit-folder">signup</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="uikit-name">
+                                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                                    <strong class="folder-name">teams</strong>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </li> <!--/ Views -->
+                </ul>
+            </li>
+
+            <li class="uikit-root">
+                <div class="uikit-name">
+                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                    <strong class="uikit-folder">img</strong>
+                </div>
+
+                <div class="uikit-definition message gray centered-block">
+                    <header>Definition</header>
+                    <p>Paths within the img folder should be parallel to the structure of /views/</p>
+                </div>
+            </li>
+
+            <li class="uikit-root">
+                <div class="uikit-name">
+                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                    <strong class="uikit-folder">q-a-site</strong>
+                </div>
+                <ul>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>all.less</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                            <strong class="uikit-folder">img</strong>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="uikit-root">
+                <div class="uikit-name">
+                    <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                    <strong class="uikit-folder">stackoverflow</strong>
+                </div>
+                <ul>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>all.less</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>jobs.less</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>so-base.less</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../assets/img/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>teams.less</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                            <strong class="uikit-folder">img</strong>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-folder"><use xlink:href="../assets/img/symbol-defs.svg#icon-folder"></use></svg>
+                            <strong class="uikit-folder">company</strong>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul> <!-- /file structure -->
+
+    </main><!-- / content -->
+
+    <script>
+        String.prototype.escapeHTML = function () {
+            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
+        };
+
+        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
+        key;
+        for( key in codeEl ) {
+            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UIkit | Dropdowns</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
+    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
+
+    <script src="/ui-kit/assets/js/less.js"></script>
+    <script src="/ui-kit/assets/js/jquery.js"></script>
+    <script src="/ui-kit/assets/js/main.js"></script>
+
+    <link rel="import" href="../nav.html">
+
+    <script>
+        alert('On this page you can test how does <select> work in left sidebar... Unfortunately, it doesn\' work for Table Of Content (so it\'s not diplayed on this page). Yet...');
+    </script>
+</head>
+
+<body>
+    <section id="uikit-sidebar">
+        <div class="uikit-logo">
+            <a href="../index.html">UIkit</a>
+        </div><!-- / logo -->
+
+        <div id="nav-wrapper"></div>
+        <script>
+            var link = document.querySelector('link[rel="import"]');
+            var content = link.import;
+
+            var el = content.querySelector('.uikit-nav');
+
+
+            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
+        </script>
+    </section><!-- / sidebar -->
+
+    <main id="uikit-content">
+        <header>
+            <h1>Dropdown</h1>
+        </header>
+        <div class="uikit-intro">
+            <p>Intro</p>
+        </div><!-- / intro -->
+
+        <section class="uikit-section" data-core>
+            <h2 id="toc-simple-dropdown-for-core">Simple dropdown for core</h2>
+
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums">
+                    <ul class="dropdown">
+                        <li><a href="#" class="">all tags</a></li>
+                        <li><a href="#" class="">favorite tags</a></li>
+                        <li><a href="#" class="selected">custom tags</a></li>
+                    </ul>
+                </pre>
+
+                <div class="uikit-preview" data-minheight="160">
+                    <ul class="dropdown">
+                        <li><a href="#" class="">all tags</a></li>
+                        <li><a href="#" class="">favorite tags</a></li>
+                        <li><a href="#" class="selected">custom tags</a></li>
+                    </ul>
+                </div><!-- / preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+
+        <section class="uikit-section" data-careers>
+            <h2 id="toc-simple-dropdown-for-careers">Simple dropdown for Careers</h2>
+
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums">
+                    <ul class="dropdown">
+                        <li><a href="#" class="">all tags</a></li>
+                        <li><a href="#" class="">favorite tags</a></li>
+                        <li><a href="#" class="selected">custom tags</a></li>
+                    </ul>
+                </pre>
+
+                <div class="uikit-preview" data-minheight="160">
+                    <ul class="dropdown">
+                        <li><a href="#" class="">all tags</a></li>
+                        <li><a href="#" class="">favorite tags</a></li>
+                        <li><a href="#" class="selected">custom tags</a></li>
+                    </ul>
+                </div><!-- / preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+
+        <section class="uikit-section">
+            <h2 id="toc-simple-dropdown-for-everyone">Simple dropdown for everyone</h2>
+
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums">
+                    <ul class="dropdown">
+                        <li><a href="#" class="">all tags</a></li>
+                        <li><a href="#" class="">favorite tags</a></li>
+                        <li><a href="#" class="selected">custom tags</a></li>
+                    </ul>
+                </pre>
+
+                <div class="uikit-preview" data-minheight="160">
+                    <ul class="dropdown">
+                        <li><a href="#" class="">all tags</a></li>
+                        <li><a href="#" class="">favorite tags</a></li>
+                        <li><a href="#" class="selected">custom tags</a></li>
+                    </ul>
+                </div><!-- / preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+
+    </main><!-- / content -->
+
+    <script>
+        String.prototype.escapeHTML = function () {
+            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
+        };
+
+        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
+        key;
+        for( key in codeEl ) {
+            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
+        }
+    </script>
+</body>
+
+</html>

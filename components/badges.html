@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UIkit | Badges</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
+    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
+
+    <script src="/ui-kit/assets/js/less.js"></script>
+    <script src="/ui-kit/assets/js/jquery.js"></script>
+    <script src="/ui-kit/assets/js/main.js"></script>
+
+    <link rel="import" href="../nav.html">
+</head>
+
+<body>
+    <section id="uikit-sidebar">
+        <div class="uikit-logo">
+            <a href="../index.html">UIkit</a>
+        </div><!-- / logo -->
+
+        <div id="nav-wrapper"></div>
+        <script>
+            var link = document.querySelector('link[rel="import"]');
+            var content = link.import;
+
+            var el = content.querySelector('.uikit-nav');
+
+
+            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
+        </script>
+    </section><!-- / sidebar -->
+
+    <section id="uikit-sidebar-right">
+        <nav id="uikit-toc">
+            <ol>
+                <li><a href="#toc-classic-badges">Classic badges</a></li>
+                <li><a href="#toc-badges-tag">Badges-Tag</a></li>
+                <li><a href="#toc-alternative-badges">Alternative Badges</a></li>
+            </ol>
+        </nav><!-- / uikit-toc -->
+    </section><!-- / uikit-sidebar-right -->
+
+    <main id="uikit-content">
+        <header>
+            <h1>Badges</h1>
+        </header>
+        <div class="uikit-intro">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reiciendis dolore reprehenderit fugiat natus, magni quos dicta? Eaque amet nostrum assumenda architecto fugiat dicta ut in voluptate, voluptatem corrupti ducimus!</p>
+        </div><!-- / intro -->
+
+        <section class="uikit-section">
+            <h2 id="toc-classic-badges">Classic badges</h2>
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums">
+                    <a href="#" class="badge"><span class="badge1"></span>Great Question</a>
+                    <a href="#" class="badge"><span class="badge2"></span>Favorite Question</a>
+                    <a href="#" class="badge"><span class="badge3"></span>Altruist</a>
+                </pre>
+                <div class="uikit-preview">
+                    <a href="#" class="badge"><span class="badge1"></span>Great Question</a>
+                    <a href="#" class="badge"><span class="badge2"></span>Favorite Question</a>
+                    <a href="#" class="badge"><span class="badge3"></span>Altruist</a>
+                </div><!-- / preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section><!-- / uikit-section -->
+
+        <section class="uikit-section">
+            <h2 id="toc-badges-tag">Badges-Tag</h2>
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums">
+                    <a href="#" class="badge-tag"><span class="badge1"></span>Gold Badge</a>
+                    <a href="#" class="badge-tag"><span class="badge2"></span>Silver Badge</a>
+                    <a href="#" class="badge-tag"><span class="badge3"></span>Bronze Badge</a>
+                </pre>
+                <div class="uikit-preview">
+                    <a href="#" class="badge-tag"><span class="badge1"></span>Gold Badge</a>
+                    <a href="#" class="badge-tag"><span class="badge2"></span>Silver Badge</a>
+                    <a href="#" class="badge-tag"><span class="badge3"></span>Bronze Badge</a>
+                </div><!-- / preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+
+        <section class="uikit-section">
+            <h2 id="toc-alternative-badges">Alternative badges</h2>
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums">
+                    <span class="badge1-alternate"><span class="badge1"></span><span class="badgecount">99</span></span>
+                    <span class="badge2-alternate"><span class="badge2"></span><span class="badgecount">99</span></span>
+                    <span class="badge3-alternate"><span class="badge3"></span><span class="badgecount">99</span></span>
+                </pre>
+                <div class="uikit-preview">
+                    <span class="badge1-alternate"><span class="badge1"></span><span class="badgecount">99</span></span>
+                    <span class="badge2-alternate"><span class="badge2"></span><span class="badgecount">99</span></span>
+                    <span class="badge3-alternate"><span class="badge3"></span><span class="badgecount">99</span></span>
+                </div><!-- / preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+
+    </main><!-- / content -->
+
+    <script>
+        String.prototype.escapeHTML = function () {
+            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
+        };
+
+        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
+            key;
+        for( key in codeEl ) {
+            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
+        }
+    </script>
+</body>
+
+</html>

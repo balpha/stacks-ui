@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UIkit | Notifications</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
+    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
+
+    <script src="/ui-kit/assets/js/less.js"></script>
+    <script src="/ui-kit/assets/js/jquery.js"></script>
+    <script src="/ui-kit/assets/js/main.js"></script>
+
+    <link rel="import" href="../nav.html">
+</head>
+
+<body>
+    <section id="uikit-sidebar">
+        <div class="uikit-logo">
+            <a href="../index.html">UIkit</a>
+        </div><!-- / logo -->
+
+        <div id="nav-wrapper"></div>
+        <script>
+            var link = document.querySelector('link[rel="import"]');
+            var content = link.import;
+
+            var el = content.querySelector('.uikit-nav');
+
+
+            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
+        </script>
+    </section><!-- / sidebar -->
+
+    <section id="uikit-sidebar-right">
+        <nav id="uikit-toc">
+            <ol>
+                <li>
+                    <a href="#toc-notifications-style-1">Notifications style 1</a>
+                    <ol>
+                        <li><a href="#toc-inline">Inline</a></li>
+                        <li><a href="#toc-full-width">Full width</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#toc-notifications-style-2">Notifications style 2</a>
+                    <ol>
+                        <li><a href="#toc-info">Info</a></li>
+                        <li><a href="#toc-success">Success</a></li>
+                        <li><a href="#toc-error">Error</a></li>
+                    </ol>
+                </li>
+                <li><a href="#toc-system-alert">System alert</a></li>
+            </ol>
+        </nav><!-- / uikit-toc -->
+    </section><!-- / uikit-sidebar-right -->
+
+    <main id="uikit-content">
+        <header>
+            <h1>Notifications</h1>
+        </header>
+        <div class="uikit-intro">
+            <p>Notices are UI elements which call out important information to users. They should be terse, informative, and actionable. Whenever possible, they should also be dismissible.</p>
+        </div><!-- / intro -->
+
+        <section class="uikit-section">
+            <h2 id="toc-notifications-style-1">Notifications style 1</h2>
+
+            <section class="uikit-section">
+                <h3 id="toc-inline">Inline</h3>
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <div class="message regular">.message.regular</div>
+                        <div class="message error">.message.error</div>
+                        <div class="message success">.message.success</div>
+                        <div class="message incomplete">.message.incomplete</div>
+                        <div class="message gray">.message.gray</div>
+                    </pre>
+
+                    <div class="uikit-preview">
+                        <div class="message regular">.message.regular</div>
+                        <div class="message error">.message.error</div>
+                        <div class="message success">.message.success</div>
+                        <div class="message incomplete">.message.incomplete</div>
+                        <div class="message gray">.message.gray</div>
+                    </div><!-- / preview -->
+                </div><!-- / uikit-code uikit-has-preview -->
+            </section>
+
+            <section class="uikit-section">
+                <h3 id="toc-full-width">Full width</h2>
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <div class="message centered-block regular">.message.centered-block.regular</div>
+                        <div class="message centered-block text-centered regular">.message.text-centered.regular</div>
+                    </pre>
+
+                    <div class="uikit-preview">
+                        <div class="message centered-block regular">.message.centered-block.regular</div>
+                        <div class="message centered-block text-centered regular">.message.text-centered.regular</div>
+                    </div><!-- / preview -->
+                </div><!-- / uikit-code uikit-has-preview -->
+            </section>
+        </section>
+
+        <section class="uikit-section">
+            <h2 id="toc-notifications-style-2">Notifications style 2</h2>
+
+            <section class="uikit-section">
+                <h3 id="toc-info">Info</h3>
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <div class="val-message val-info">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="val-message val-info">
+                            <p class="val-textemphasis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </pre>
+
+                    <div class="uikit-preview">
+                        <div class="val-message val-info">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+
+                        <div class="val-message val-info">
+                            <p class="val-textemphasis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div><!-- / uikit-preview -->
+                </div><!-- / uikit-preview -->
+            </section>
+
+            <section class="uikit-section">
+                <h3 id="toc-success">Success</h3>
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <div class="val-message val-success">
+                            <span class="vote-accepted-on" title="success"></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </pre>
+
+                    <div class="uikit-preview">
+                        <div class="val-message val-success">
+                            <span class="vote-accepted-on" title="success"></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div><!-- / uikit-preview -->
+                </div><!-- / uikit-preview -->
+            </section>
+
+            <section class="uikit-section">
+                <h3 id="toc-error">Error</h3>
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <div class="val-message val-error">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </pre>
+
+                    <div class="uikit-preview">
+                        <div class="val-message val-error">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div><!-- / uikit-preview -->
+                </div><!-- / uikit-preview -->
+            </section>
+        </section>
+
+        <section class="uikit-section">
+            <h2 id="toc-system-alert">System alert</h2>
+
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums">
+                    <div class="module system-alert">
+                       <p>You are not <a href="#">logged in</a>. Your edit will be placed in a queue until it is <a href="#">peer reviewed</a>.</p>
+                       <p>We welcome all constructive edits, but please make them substantial. Avoid trivial edits unless absolutely necessary.</p>
+                   </div>
+                </pre>
+
+                <div class="uikit-preview">
+                    <div class="module system-alert">
+                        <p>You are not <a href="#">logged in</a>. Your edit will be placed in a queue until it is <a href="#">peer reviewed</a>.</p>
+                        <p>We welcome all constructive edits, but please make them substantial. Avoid trivial edits unless absolutely necessary.</p>
+                   </div>
+                </div><!-- / uikit-preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+   </main><!-- / content -->
+
+   <script>
+       String.prototype.escapeHTML = function () {
+           return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
+       };
+
+       var codeEl = document.getElementsByClassName('uikit-prettyprint'),
+       key;
+       for( key in codeEl ) {
+           if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
+       }
+   </script>
+</body>
+
+</html>

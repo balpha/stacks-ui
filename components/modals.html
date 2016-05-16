@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UIkit | Modals</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
+    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
+
+    <script src="/ui-kit/assets/js/less.js"></script>
+    <script src="/ui-kit/assets/js/jquery.js"></script>
+    <script src="/ui-kit/assets/js/main.js"></script>
+
+    <link rel="import" href="../nav.html">
+</head>
+
+<body>
+    <section id="uikit-sidebar">
+        <div class="uikit-logo">
+            <a href="../index.html">UIkit</a>
+        </div><!-- / logo -->
+
+        <div id="nav-wrapper"></div>
+        <script>
+            var link = document.querySelector('link[rel="import"]');
+            var content = link.import;
+
+            var el = content.querySelector('.uikit-nav');
+
+
+            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
+        </script>
+    </section><!-- / sidebar -->
+
+    <main id="uikit-content">
+        <header>
+            <h1>Modals</h1>
+        </header>
+        <div class="uikit-intro">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sit ab autem nesciunt excepturi blanditiis in, eligendi voluptates voluptate, dignissimos consequatur aspernatur illo error. Beatae deleniti corporis aperiam consequuntur.</p>
+        </div><!-- / intro -->
+
+        <section class="uikit-section">
+            <h2 id="toc-default">Default</h2>
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums">
+                    <div class="modal-overlay"></div>
+                    <div class="modal auto-center">
+                        <div class="modal-close">&times;</div>
+                        <div class="modal-content">
+                            <div class="modal-header">Header</div>
+                            <p>content</p>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="modal-ctas">
+                                <a href="#" class="btn-clear white">Cancel</a>
+                                <a href="#" class="btn">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                </pre>
+
+                <div class="uikit-preview" style="height: 300px;">
+                    <div class="modal-overlay" style="position: absolute;"></div>
+                    <div class="modal auto-center" style="position: absolute !important;">
+                        <div class="modal-close">&times;</div>
+                        <div class="modal-content">
+                            <div class="modal-header">Header</div>
+                            <p>content</p>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="modal-ctas">
+                                <a href="#" class="btn-clear white">Cancel</a>
+                                <a href="#" class="btn">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- / preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+    </main><!-- / content -->
+
+    <script>
+        String.prototype.escapeHTML = function () {
+            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
+        };
+
+        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
+        key;
+        for( key in codeEl ) {
+            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
+        }
+    </script>
+</body>
+</html>

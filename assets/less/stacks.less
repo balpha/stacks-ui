@@ -1,142 +1,111 @@
-// --------------------------------------------------------------
-//	NOTES
-// --------------------------------------------------------------
-//	We could eventually split this files into smaller files to
-//	keep thins cleaner
-// --------------------------------------------------------------
-//	Here's another note...
-// --------------------------------------------------------------
+//
+//  STACKS
+//  Styles specifically for Stack Overflow UI Kit
+//
+//  TABLE OF CONTENTS
+//  • IMPORTS
+//  • BASE STYLES
+//
+//  ============================================================================
+//  $ IMPORTS
+//  ----------------------------------------------------------------------------
+// Import base styles
+@import "http://cdn.sstatic.net/Sites/stackoverflow/all.css";
+
+// Now we need to restate these imports again (temporarily)
+@import "vars";
+@import "mixins";
+@import "utilities";
+
+//  -- Documentation Files
+@import "code";                 // Code Syntax highlighting
+@import "syntaxhighlighter";    // Custom syntaxhighlighter theme
 
 
-
-// --------------------------------------------------------------
-// 	IMPORT
-// --------------------------------------------------------------
-//	As you can see, some of the class names have prefix "uikit-"
-//	to avoid some styling conflicts with stackoverflow/all.less
-//	file which is included below.
-// --------------------------------------------------------------
-
-@import "../../../stackoverflow/StackOverflow/Content/less/_vars.less";
-@import "../../../stackoverflow/StackOverflow/Content/less/helpers/_helpers.less";
+//  ============================================================================
+//  $ BASE STYLES
+//  ----------------------------------------------------------------------------
+body {
+	*, *:before, *:after { box-sizing: border-box; }
+}
 
 
-
-
-// --------------------------------------------------------------
-//	BASIC STYLING
-// --------------------------------------------------------------
-//	Overwriting some basic styles from SO to make UIkit
-//	prettier. :)
-//---------------------------------------------------------------
-
-.less-error-message {
+//  ============================================================================
+//  $ LAYOUT
+//  ----------------------------------------------------------------------------
+#stacks-nav,
+#stacks-nav_right {
 	position: fixed;
 	top: 0;
-	left: 0;
-	right: 0;
-
-	z-index: 999;
-}
-
-.row * {
-	box-sizing: border-box;
-}
-
-// --------------------------------------------------------------
-//	SIDEBARS
-// --------------------------------------------------------------
-
-
-#uikit-sidebar {
-	position: fixed; left: 0; top: 0; bottom: 0;
+	bottom: 0;
 	width: 240px;
-	height: 100%; overflow-y: auto;
-	background: @black;
-	color: @white;
+	overflow-y: auto;
 	font-size: 13px;
 }
 
-.uikit-logo {
-	padding: 20px;
-	a {
-		text-indent: -9999em;
-		width: 26px; height: 30px;
-		display: block;
-		background: url(../img/logo-uikit.svg);
-	}
+#stacks-nav {
+	background-color: @black-800;
+	color: @black-050;
 }
 
-#uikit-sidebar-right {
-	position: fixed;
-	right: 0; top: 0; bottom: 0;
-	// background: @black-075;
-	background: @black-050;
-	width: 240px;
-	box-sizing: border-box;
+#stacks-nav_right {
+	background-color: @black-050;
 	border-left: 1px solid @black-100;
-	overflow-y: auto;
+}
+
+.stacks-logo {
+	display: block;
+	padding: 20px;
+	width: 30px;
+	height: 30px;
+	text-indent: -9999em;
+	background-image: url(../img/logo-uikit.svg), none;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 
 
+//  ============================================================================
+//  $ NAVIGATION
+//  ----------------------------------------------------------------------------
+#stacks-nav .-nav {
+	&, .-item {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
 
-// --------------------------------------------------------------
-//	NAVIGATION
-// --------------------------------------------------------------
-
-#uikit-nav ul {
-	margin-left: 0;
-	list-style: none;
-
-	> li {
-		a, a:visited, .root {
+	.-item {
+		> a {
 			display: block;
-			padding: 10px 20px;
-			line-height: 16px;
-		}
+			padding: 0.5em 1em 0.5em 2em;
+			color: @black-500;
 
-		.root {
-			color: #7E8082;
-			text-transform: uppercase;
-			font-size: 11px;
-		}
-
-		a {
-			color: #A2A5A7;
 			&:hover {
 				color: #fff;
 				background: fadeout(@black-800, 70%);
 			}
 		}
 
-		.uikit-select {
-			padding: 0 20px 0 40px;
-
-			select {
-				width: 100%;
-			}
+		&._selected > a {
+			color: @black-025;
+			font-weight: 700;
 		}
+	}
 
-	   li {
-		   a {
-			   padding-left: 40px;
-		   }
+	&._selected > a {
+		color: #7E8082;
+		text-transform: uppercase;
+		font-size: 11px;
+		background: @black-800;
+	   	color: @white;
+	   	font-weight: bold;
+	}
 
-		   &.current {
-			   a {
-				   background: @black-800;
-				   color: @white;
-				   font-weight: bold;
-			   }
-		   }
-	   }
+	.uikit-select {
+		padding: 0 20px 0 40px;
 
-	   &.current {
-		   > a {
-			   color: @white;
-			   font-weight: bold;
-		   }
-	   }
+		select { width: 100%; }
 	}
 }
 
@@ -167,8 +136,6 @@
 	}
 }
 
-
-
 // ---------------------------------------------------------------
 //	CONTENT
 // ---------------------------------------------------------------
@@ -178,7 +145,7 @@
 // ---------------------------------------------------------------
 
 //	Main Container
-#uikit-content {
+#stacks-content {
 	padding: 30px 40px 40px 240px+40px;
 
 	> header {
@@ -279,110 +246,6 @@
 	color: @black-600;
 	margin-bottom: 30px;
 }
-
-
-
-// ---------------------------------------------------------------
-//	CODE & PREVIEW
-// ---------------------------------------------------------------
-
-//	Preview Box
-.uikit-preview {
-	border-radius: 2px;
-	border: 1px solid @black-200;
-	box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-	padding: 30px;
-	margin-bottom: 20px;
-	background: @white;
-	box-sizing: border-box;
-	position: relative;
-	.clearfix();
-
-	&:before {
-		position: absolute; top: 0; right: 0;
-		display: inline-block;
-		padding: 6px 15px;
-		background: rgba(0,0,0,0.05);
-		border-radius: 0 2px 0 2px;
-		text-transform: uppercase;
-		content: "Preview";
-		font-size: 11px;
-		font-weight: bold;
-		color: rgba(0,0,0,0.2);
-	}
-
-	&:hover {
-		&:before {
-			display: none;
-		}
-	}
-
-	&.uikit-contrast {
-		background: @black-600;
-	}
-
-	hr {
-		margin: 20px 0;
-	}
-}
-
-//	Code highlighting
-pre.uikit-prettyprint {
-	font-family: @code-font-family;
-	padding: 0 !important;
-	border: 1px solid @black-200;
-	border-radius: 2px;
-	margin-bottom: 20px;
-
-	.linenums {
-		list-style-type: decimal;
-		margin-bottom: 0;
-		margin-left: 0;
-		padding-left: 46px;
-		background: rgba(212,214,217,0.4);
-		overflow-x: auto;
-		max-width: 100%;
-		white-space: pre-wrap !important;
-
-		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
-			list-style-type: decimal !important;
-			background: #FBFBFB;
-			font-size: 11px;
-			line-height: 12px;
-			padding: 2px 0 2px 10px;
-			color: @black-300;
-
-
-			span {
-				font-size: 13px;
-			}
-		}
-		li {
-			&:first-child { padding-top: 10px; }
-			&:last-child {
-				height: 0; overflow: hidden; // prevents empty line at the end of code
-				padding-bottom: 10px;
-			}
-		}
-	}
-}
-
-//	Code highlighting with preview box
-.uikit-code {
-	box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-
-	pre.uikit-prettyprint {
-		margin-bottom: 0;
-		border-radius: 2px 2px 0 0;
-	}
-
-	.uikit-preview {
-		border-radius: 0 0 2px 2px;
-		box-shadow: none;
-		border-top: 0;
-	}
-}
-
 
 
 // ---------------------------------------------------------------
@@ -673,118 +536,6 @@ pre.uikit-prettyprint {
 	.contrast, .contrast *, .contrast span {
 		color: rgba(255,255,255,0.7);
 	}
-
-	//
-	// Commenting colors because it makes everything break
-
-	// .code-black { background: @code-black; }
-	// .code-silver { background: @code-silver; }
-	// .code-navy { background: @code-navy; }
-	// .code-blue { background: @code-blue; }
-	// .code-powder { background: @code-powder; }
-	// .code-maroon { background: @code-maroon; }
-	// .code-red { background: @code-red; }
-	//
-	// .orange-900 { background: @orange-900; }
-	// .orange-800 { background: @orange-800; }
-	// .orange-700 { background: @orange-700; }
-	// .orange-600 { background: @orange-600; }
-	// .orange-500 { background: @orange-500; }
-	// .orange-400 { background: @orange-400; }
-	// .orange-300 { background: @orange-300; }
-	// .orange-200 { background: @orange-200; }
-	// .orange-100 { background: @orange-100; }
-	// .orange-050 { background: @orange-050; }
-	// .orange { background: @orange; }
-	//
-	// .black-900 { background: @black-900; }
-	// .black-800 { background: @black-800; }
-	// .black-700 { background: @black-700; }
-	// .black-600 { background: @black-600; }
-	// .black-500 { background: @black-500; }
-	// //.black-450 { background: @black-450; }
-	// .black-400 { background: @black-400; }
-	// //.black-350 { background: @black-350; }
-	// .black-300 { background: @black-300; }
-	// .black-200 { background: @black-200; }
-	// //.black-150 { background: @black-150; }
-	// .black-100 { background: @black-100; }
-	// //.black-075 { background: @black-075; }
-	// .black-050 { background: @black-050; }
-	// //.black-025 { background: @black-025; }
-	// .black { background: @black; }
-	//
-	// .blue-900 { background: @blue-900; }
-	// .blue-800 { background: @blue-800; }
-	// .blue-700 { background: @blue-700; }
-	// .blue-600 { background: @blue-600; }
-	// .blue-500 { background: @blue-500; }
-	// .blue-400 { background: @blue-400; }
-	// .blue-300 { background: @blue-300; }
-	// .blue-200 { background: @blue-200; }
-	// .blue-100 { background: @blue-100; }
-	// .blue-050 { background: @blue-050; }
-	// .blue { background: @blue; }
-	//
-	// .powder-900 { background: @powder-900; }
-	// .powder-800 { background: @powder-800; }
-	// .powder-700 { background: @powder-700; }
-	// .powder-600 { background: @powder-600; }
-	// .powder-500 { background: @powder-500; }
-	// .powder-400 { background: @powder-400; }
-	// .powder-300 { background: @powder-300; }
-	// .powder-200 { background: @powder-200; }
-	// .powder-100 { background: @powder-100; }
-	// .powder-050 { background: @powder-050; }
-	// .powder { background: @powder; }
-	//
-	// .green-900 { background: @green-900; }
-	// .green-800 { background: @green-800; }
-	// .green-700 { background: @green-700; }
-	// .green-600 { background: @green-600; }
-	// .green-500 { background: @green-500; }
-	// .green-400 { background: @green-400; }
-	// .green-300 { background: @green-300; }
-	// .green-200 { background: @green-200; }
-	// .green-100 { background: @green-100; }
-	// .green-050 { background: @green-050; }
-	// .green { background: @green; }
-	//
-	// .forest-900 { background: @forest-900; }
-	// .forest-800 { background: @forest-800; }
-	// .forest-700 { background: @forest-700; }
-	// .forest-600 { background: @forest-600; }
-	// .forest-500 { background: @forest-500; }
-	// .forest-400 { background: @forest-400; }
-	// .forest-300 { background: @forest-300; }
-	// .forest-200 { background: @forest-200; }
-	// .forest-100 { background: @forest-100; }
-	// .forest-050 { background: @forest-050; }
-	// .forest { background: @forest; }
-	//
-	// .yellow-900 { background: @yellow-900; }
-	// .yellow-800 { background: @yellow-800; }
-	// .yellow-700 { background: @yellow-700; }
-	// .yellow-600 { background: @yellow-600; }
-	// .yellow-500 { background: @yellow-500; }
-	// .yellow-400 { background: @yellow-400; }
-	// .yellow-300 { background: @yellow-300; }
-	// .yellow-200 { background: @yellow-200; }
-	// .yellow-100 { background: @yellow-100; }
-	// .yellow-050 { background: @yellow-050; }
-	// .yellow { background: @yellow; }
-	//
-	// .red-900 { background: @red-900; }
-	// .red-800 { background: @red-800; }
-	// .red-700 { background: @red-700; }
-	// .red-600 { background: @red-600; }
-	// .red-500 { background: @red-500; }
-	// .red-400 { background: @red-400; }
-	// .red-300 { background: @red-300; }
-	// .red-200 { background: @red-200; }
-	// .red-100 { background: @red-100; }
-	// .red-050 { background: @red-050; }
-	// .red { background: @red; }
 }
 
 body.composer-on {

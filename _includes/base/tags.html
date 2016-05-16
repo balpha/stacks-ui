@@ -1,0 +1,62 @@
+<section id="section-tags">
+    <header>
+        <h1 class="_section">Tags</h1>
+    </header>
+    <article id="tags-base">
+        <h2 class="_subSection">Base Style</h2>
+        <p class="_large">Tags are a core feature on <strong>Stack Overflow</strong>. These tags help users quickly identify question subject matter. The use of tags on <strong>Stack Overflow Careers</strong> however is somewhat similar. Tags on Careers are used to help users quickly identify the <em>type</em> of job. They are also used (currently) to help companies list their tech stack.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>.postTag</code>, <code>.post-tag</code></dt>
+                <dd class="_example">
+                    <span class="postTag">javascript</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<span class="postTag">javascript</span>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="tags-styles">
+        <h2 class="_subSection">Tag Styles</h2>
+        <p class="_large">While the variations are minimal, there are a few style changes from the base tag style. These tags are used to describe items like Industries and targetable tags.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>._dark</code></dt>
+                <dd class="_example">
+                    <span class="postTag _dark">ecommerce</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<span class="postTag _dark">ecommerce</span>
+{% endhighlight %}
+        </div>
+
+        <h2 class="_subSection">Lists of Tags</h2>
+        <p class="_large">Using <code>.postTag</code> on individual tags can be cumbersome if you have a list of tags. You can also apply <code>.postTags</code> to an unordered list to make all the list items styled as tags on the same line.</p>
+         <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>ul.postTags</code></dt>
+                <dd class="_example">
+                    <ul class="postTags">
+                        <li>javascript</li>
+                        <li>html</li>
+                        <li>css</li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<ul class="postTags">
+    <li>javascript</li>
+    <li>html</li>
+    <li>css</li>
+</ul>
+{% endhighlight %}
+    </article>
+</section>

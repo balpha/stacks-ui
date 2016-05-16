@@ -1,0 +1,430 @@
+<section id="section-tables">
+    <header>
+        <h1 class="_section">Tables</h1>
+    </header>
+
+    <article id="tables-intro">
+        <h2 class="_subSection">Introduction</h2>
+    </article>
+    <article id="tables-base">
+        <h2 class="_subSection">Base Style</h2>
+        <p class="_large">The base style has minimal styling applied to it. It establishes preferred padding, font-size, and font-weight treatments. To enhance the look of the table, apply any additional classes listed below within the <a href="#tables-variants">Variants section.</a></p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label">Default, <code>.table</code></dt>
+                <dd class="_example">
+                    <table cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Views</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ad Server Technology Developer</td>
+                                <td>Paused</td>
+                                <td>5,833</td>
+                            </tr>
+                            <tr>
+                                <td>Data Science Engineer</td>
+                                <td>Active</td>
+                                <td>12,497</td>
+                            </tr>
+                            <tr>
+                                <td>Full-Stack Web Developer</td>
+                                <td>Active</td>
+                                <td>101,955</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>120,285</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<table cellspacing="0">
+    <thead>
+        <tr>
+            <th> ... </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> ... </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td> ... </td>
+        </tr>
+    </tfoot>
+</table>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="tables-variants">
+        <h2 class="_subSection">Variant Styles</h2>
+        <h4>Condensed Table</h4>
+        <p>The condensed table does pretty much what it sounds like it would do: condenses the padding and line-height so that the table has a tighter feeling to it. <em>This is suggested for data tables such as found within reports that have multiple records.</em></p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>.table._condensed</code></dt>
+                <dd class="_example">
+                    <table cellspacing="0" class="_condensed">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Views</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ad Server Technology Developer</td>
+                                <td>Paused</td>
+                                <td>5,833</td>
+                            </tr>
+                            <tr>
+                                <td>Data Science Engineer</td>
+                                <td>Active</td>
+                                <td>12,497</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<table cellspacing="0" class="_condensed"></table>
+{% endhighlight %}
+        </div>
+        <h4>Bordered Table</h4>
+        <p>When tables have multiple columns, it is suggested to add row borders to help the user more easily track the table data. <em>This is suggested for data tables such as found within reports.</em></p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>.table._borders</code></dt>
+                <dd class="_example">
+                    <table cellspacing="0" class="_borders _condensed">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Views</th>
+                                <th>Apps</th>
+                                <th>Expires</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ad Server Technology Developer</td>
+                                <td>Paused</td>
+                                <td>5,833</td>
+                                <td>151</td>
+                                <td>In 10 days</td>
+                            </tr>
+                            <tr>
+                                <td>Data Science Engineer</td>
+                                <td>Active</td>
+                                <td>12,497</td>
+                                <td>309</td>
+                                <td>In 9 days</td>
+                            </tr>
+                            <tr>
+                                <td>Full-Stack Web Developer</td>
+                                <td>Active</td>
+                                <td>101,955</td>
+                                <td>2,371</td>
+                                <td>In 248 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<table cellspacing="0" class="_borders _condensed"></table>
+{% endhighlight %}
+        </div>
+        <h4>Row Hover Table</h4>
+        <p>When tables have multiple columns, add in a row hover can further help isolate the data for users. <em>This is suggested for data tables such as found within reports.</em></p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>.table._hover</code></dt>
+                <dd class="_example">
+                    <table cellspacing="0" class="_borders _condensed _hover">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Views</th>
+                                <th>Apps</th>
+                                <th>Expires</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ad Server Technology Developer</td>
+                                <td>Paused</td>
+                                <td>5,833</td>
+                                <td>151</td>
+                                <td>In 10 days</td>
+                            </tr>
+                            <tr>
+                                <td>Data Science Engineer</td>
+                                <td>Active</td>
+                                <td>12,497</td>
+                                <td>309</td>
+                                <td>In 9 days</td>
+                            </tr>
+                            <tr>
+                                <td>Full-Stack Web Developer</td>
+                                <td>Active</td>
+                                <td>101,955</td>
+                                <td>2,371</td>
+                                <td>In 248 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<table cellspacing="0" class="_borders _condensed _hover"></table>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="tables-sizing">
+        <h2 class="_subSection">Table Sizing</h2>
+        <p class="_large">While the browser will prescribe column sizes based on content, sometimes we may want table columns to adhere to a specific width. To do this, we leverage the same class names used within <a href="docs-base.html#section-grid">the grid.</a></p>
+        <p>When applying a column size, it is only necessary to apply it within the first table cell within a column as the rest of the column will abide by the width its smallest cell.</p>
+        <p class="callout _info"><strong>NOTE:</strong> Remember the overall column total <em>per row</em> cannot exceed 12 columns. Otherwise this will cause your table row to wrap.</p>
+        <div class="exampleBlock">
+            <table cellspacing="0" class="_borders _condensed">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th class="-col1 _textRight">Status</th>
+                        <th class="-col1 _textRight">Views</th>
+                        <th class="-col1 _textRight">Apps</th>
+                        <th class="-col2 _textRight">Expires</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ad Server Technology Developer</td>
+                        <td class="_textRight">Paused</td>
+                        <td class="_textRight">5,833</td>
+                        <td class="_textRight">151</td>
+                        <td class="_textRight">In 10 days</td>
+                    </tr>
+                    <tr>
+                        <td>Data Science Engineer</td>
+                        <td class="_textRight">Active</td>
+                        <td class="_textRight">12,497</td>
+                        <td class="_textRight">309</td>
+                        <td class="_textRight">In 9 days</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<table cellspacing="0" class="_borders _condensed">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th class="-col1 _textRight">Status</th>
+            <th class="-col1 _textRight">Views</th>
+            <th class="-col1 _textRight">Apps</th>
+            <th class="-col2 _textRight">Expires</th>
+        </tr>
+    </thead>
+</table>
+{% endhighlight %}
+        </div>
+        <h4>Miscellaneous Sizes</h4>
+        <p>Using the column sizes above should cover 99% of your table sizing needs. In some cases though we want table cell sizes smaller than <code>.-col1</code>.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>th.checkbox</code>, <code>td.checkbox</code></dt>
+                <dd class="_example">
+                    <table cellspacing="0" class="_borders _condensed">
+                        <thead>
+                            <tr>
+                                <th class="-checkbox"></th>
+                                <th>Title</th>
+                                <th class="-col1 _textRight">Status</th>
+                                <th class="-col1 _textRight">Views</th>
+                                <th class="-col1 _textRight">Apps</th>
+                                <th class="-col2 _textRight">Expires</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" name="" id="" value=""></td>
+                                <td>Ad Server Technology Developer</td>
+                                <td class="_textRight">Paused</td>
+                                <td class="_textRight">5,833</td>
+                                <td class="_textRight">151</td>
+                                <td class="_textRight">In 10 days</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="" id="" value=""></td>
+                                <td>Data Science Engineer</td>
+                                <td class="_textRight">Active</td>
+                                <td class="_textRight">12,497</td>
+                                <td class="_textRight">309</td>
+                                <td class="_textRight">In 9 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<table cellspacing="0" class="_borders _condensed">
+    <tbody>
+        <tr>
+            <td class="-checkbox"><input type="checkbox" name="" id="" value=""></td>
+        </tr>
+    </tbody>
+</table>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="tables-styles">
+        <h2 class="_subSection">Table Cell Styles</h2>
+        <p class="_large">In addition to overall table styles, there are cell styles which can be applied to table cells to achieve different layouts.</p>
+        <h4>Totals Row</h4>
+        <p>Used to call out the final row within a table that totals the data above it. Typically this is used to total number values.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>tfoot.-totals</code></dt>
+                <dd class="_example">
+                    <table cellspacing="0" class="_borders _condensed">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Views</th>
+                                <th>Apps</th>
+                                <th>Expires</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ad Server Technology Developer</td>
+                                <td>Paused</td>
+                                <td>5,833</td>
+                                <td>151</td>
+                                <td>In 10 days</td>
+                            </tr>
+                            <tr>
+                                <td>Data Science Engineer</td>
+                                <td>Active</td>
+                                <td>12,497</td>
+                                <td>309</td>
+                                <td>In 9 days</td>
+                            </tr>
+                            <tr>
+                                <td>Full-Stack Web Developer</td>
+                                <td>Active</td>
+                                <td>101,955</td>
+                                <td>2,371</td>
+                                <td>In 248 days</td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="-totals">
+                            <tr>
+                                <td colspan="2"></td>
+                                <td>120,285</td>
+                                <td>2,831</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<table cellspacing="0" class="_borders _condensed">
+    <tfoot class="-totals">
+        <tr>
+            <td> ... </td>
+        </tr>
+    </tfoot>
+</table>
+{% endhighlight %}
+        </div>
+        <h4>Text Alignment</h4>
+        <p>By default all text aligns left within a table. Sometimes though data should be aligned right or centered. In those cases, apply the appropriate text alignment class.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>._textLeft</code>, <code>._textCenter</code>, <code>._textRight</code></dt>
+                <dd class="_example">
+                    <table cellspacing="0" class="_borders _condensed">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th class="_textCenter">Status</th>
+                                <th class="_textRight">Views</th>
+                                <th class="_textRight">Apps</th>
+                                <th class="_textRight">Expires</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ad Server Technology Developer</td>
+                                <td class="_textCenter">Paused</td>
+                                <td class="_textRight">5,833</td>
+                                <td class="_textRight">151</td>
+                                <td class="_textRight">In 10 days</td>
+                            </tr>
+                            <tr>
+                                <td>Data Science Engineer</td>
+                                <td class="_textCenter">Active</td>
+                                <td class="_textRight">12,497</td>
+                                <td class="_textRight">309</td>
+                                <td class="_textRight">In 9 days</td>
+                            </tr>
+                            <tr>
+                                <td>Full-Stack Web Developer</td>
+                                <td class="_textCenter">Active</td>
+                                <td class="_textRight">101,955</td>
+                                <td class="_textRight">2,371</td>
+                                <td class="_textRight">In 248 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<table cellspacing="0" class="_borders _condensed">
+    <tbody>
+        <tr>
+            <td class="_textLeft"> ... </td>
+            <td class="_textCenter"> ... </td>
+            <td class="_textRight"> ... </td>
+        </tr>
+    </tbody>
+</table>
+{% endhighlight %}
+        </div>
+    </article>
+</section>

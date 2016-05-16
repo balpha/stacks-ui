@@ -1,0 +1,11 @@
+<div class="affix _bottom copyright">
+    <p class="_xsmall">Designed and built by 
+    	{% for member in site.data.members %}
+    		{% if forloop.rindex != 1 %}
+    			<a href="https://github.com/{{ member.github }}">{{ member.name }}</a>, 
+    		{% else forloop.last %}
+    			and <a href="https://github.com/{{ member.github }}">{{ member.name }}</a>.
+    		{% endif %}
+    	{% endfor %} Maintained by the <strong><a href="http://stackoverflow.com/">Stack Overflow Design team</a></strong>. Currently v0.1. To learn more, <a href="https://github.com/StackExchange/stacks-ui">visit Github.</a>
+    </p>
+</div>

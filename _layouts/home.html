@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+	{% include head.html %}
+
+	<body data-spy="scroll" data-target=".navSidebar" class="patternGuide">
+		<div class="container" id="{{ page.id }}-top">
+            <div class="-row">
+            	<div class="-col2 navSidebar">
+            		{% include navigation.html %}
+            		{% include copyright.html %}
+            	</div>
+            	<div class="-col10">
+            		<main id="content">
+						{{ content }}
+					</main>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

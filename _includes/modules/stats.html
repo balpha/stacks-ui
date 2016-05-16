@@ -1,0 +1,158 @@
+<section id="section-stats">
+    <header>
+        <h1 class="_section">Stats</h1>
+    </header>
+    <article id="stats-intro">
+        <p class="_large">This module is a reworking of the <code>leaderboard</code> module to allow for broader use of statistics. Chrome around statistics should be an intentional decision versus a default position.</p>
+    </article>
+    <article id="stats-base">
+        <h2 class="_subSection">Default Layout</h2>
+        <p>The default layout is about focusing on one number with, at most, one secondary number given to help give context.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>.stats</code></dt>
+                <dd class="_example">
+                    <div class="stats">
+                        <div class="-row">
+                            <div class="-item _primary">
+                                <h2 class="-number">3808</h2>
+                                <h3 class="-label" title="The total number of pageviews for all items with the last 30 days.">Views</h3>
+                            </div>
+                            <div class="-item">
+                                <h2 class="-number">127</h2>
+                                <h3 class="-label" title="The average number of pageviews for all items, determined by taking the overall pageviews and divising it by the specified timeframe. In this case: the last 30 days.">Per Day</h3>
+                            </div>
+                        </div>
+                        <div class="-row">
+                            <div class="-item _primary">
+                                <h2 class="-number">399</h2>
+                                <h3 class="-label" title="The number of times users clicked the 'Apply Now' button on a job listing and were taken to a third-party application website. We cannot guarantee application. We can only note the number of times the button was clicked.">Outclicks</h3>
+                            </div>
+                            <div class="-item">
+                                <h2 class="-number">4.73%</h2>
+                                <h3 class="-label" title="The percentage of users who applied to a job listing as a percentage of the overall pageview total."><abbr title="Click-Through Rate">CTR</abbr></h3>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<div class="stats">
+    <div class="-row">
+        <div class="-item _primary">
+            <h2 class="-number">...</h2>
+            <h3 class="-label">...</h3>
+        </div>
+        <div class="-item">
+            <h2 class="-number">...</h2>
+            <h3 class="-label">...</h3>
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="stats-leaderboard">
+        <h2 class="_subSection">Default Layout (4-Column)</h2>
+        <p>The purpose is to present data (typically statistics) within a quick rollup area. This is mainly used within statistic reporting views. The 4-column layout is the default layout.</p>
+        <p class="callout _warning"><strong>Note:</strong> This module is being considered for deletion.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>.leaderboard ._col4</code></dt>
+                <dd class="_example">
+                    <div class="leaderboard _col4">
+                        <div class="-item">
+                            <h2 class="-stat">18,285</h2>
+                            <h3 class="-label">Views</h3>
+                        </div>
+                        <div class="-item">
+                            <h2 class="-stat">771</h2>
+                            <h3 class="-label">Views /Day</h3>
+                        </div>
+                        <div class="-item">
+                            <h2 class="-stat">506</h2>
+                            <h3 class="-label">Applications + Outclicks</h3>
+                        </div>
+                        <div class="-item">
+                            <h2 class="-stat">2.77%</h2>
+                            <h3 class="-label">Applications + Outclicks CTR</h3>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<div class="leaderboard -col4">
+    <div class="-item">
+        <h2 class="-stat">18,285</h2>
+        <h3 class="-label">Views</h3>
+    </div>
+    ...
+    <div class="-item">
+        <h2 class="-stat">2.77%</h2>
+        <h3 class="-label">Applications + Outclicks CTR</h3>
+    </div>
+</div>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="stats-leaderboardLayout">
+        <h2 class="_subSection">Layout Variations</h2>
+        <p>While all current instances of this module use the 4-column layout, other layout variations are available as well. The class name structure is similar to the grid, but different in its implementation. Instead of adding an extra class (<code>.-col[n]</code>) onto every <code>div.-item</code> element, state the desired element column width size within the leaderboard wrapper.</p>
+        <p class="callout _warning"><strong>Note:</strong> This module is being considered for deletion.</p>
+        <div class="exampleBlock -grid">
+            <div class="-row leaderboard _col2">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col3">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col4">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col5">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col6">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col7">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col8">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+        </div>
+    </article>
+</section>

@@ -1,0 +1,107 @@
+<section id="section-leaderboard">
+    <header>
+        <h1 class="_section">Leaderboard</h1>
+    </header>
+    <article id="leaderboard-intro">
+        <p class="_large">The purpose of this module is to present data (typically statistics) within a quick rollup area. This is mainly used within statistic reporting views.</p>
+    </article>
+    <article id="leaderboard-base">
+        <h2 class="_subSection">Default Layout (4-Column)</h2>
+        <p>The 4-column layout is the default layout.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>.leaderboard ._col4</code></dt>
+                <dd class="_example">
+                    <div class="leaderboard _col4">
+                        <div class="-item">
+                            <h2 class="-stat">18,285</h2>
+                            <h3 class="-label">Views</h3>
+                        </div>
+                        <div class="-item">
+                            <h2 class="-stat">771</h2>
+                            <h3 class="-label">Views /Day</h3>
+                        </div>
+                        <div class="-item">
+                            <h2 class="-stat">506</h2>
+                            <h3 class="-label">Applications + Outclicks</h3>
+                        </div>
+                        <div class="-item">
+                            <h2 class="-stat">2.77%</h2>
+                            <h3 class="-label">Applications + Outclicks CTR</h3>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<div class="leaderboard -col4">
+    <div class="-item">
+        <h2 class="-stat">18,285</h2>
+        <h3 class="-label">Views</h3>
+    </div>
+    ...
+    <div class="-item">
+        <h2 class="-stat">2.77%</h2>
+        <h3 class="-label">Applications + Outclicks CTR</h3>
+    </div>
+</div>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="leaderboard-expanded">
+        <h2 class="_subSection">Layout Variations</h2>
+        <p>While all current instances of this module use the 4-column layout, other layout variations are available as well. The class name structure is similar to the grid, but different in its implementation. Instead of adding an extra class (<code>.-col[n]</code>) onto every <code>div.-item</code> element, state the desired element column width size within the leaderboard wrapper.</p>
+        <div class="exampleBlock -grid">
+            <div class="-row leaderboard _col2">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col3">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col4">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col5">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col6">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col7">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+            <div class="-row leaderboard _col8">
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+                <div class="-item"><p><code>.-item</code></p></div>
+            </div>
+        </div>
+    </article>
+</section>

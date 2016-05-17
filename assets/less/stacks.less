@@ -77,29 +77,36 @@ body {
 
 	.-item {
 		> a {
+			position: relative;
 			display: block;
 			padding: 0.5em 1em 0.5em 2em;
 			color: @black-500;
+			transition: all 0.05s ease-out;
 
 			&:hover {
-				color: #fff;
-				background: fadeout(@black-800, 70%);
+				color: @white;
+				background: darken(@black-800,2.5%);
 			}
 		}
 
-		&._selected > a {
-			color: @black-025;
-			font-weight: 700;
+		&._open a {
+			color: darken(@black-300,5%);
+			&:hover { color: @white; }
 		}
-	}
-
-	&._selected > a {
-		color: #7E8082;
-		text-transform: uppercase;
-		font-size: 11px;
-		background: @black-800;
-	   	color: @white;
-	   	font-weight: bold;
+		&._selected {
+			> a {
+				color: @black-025;
+				background-color: darken(@black-800,5%);
+			}
+			&:after {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: -3px;
+				width: 3px;
+				background-color: @orange;
+			}
+		}
 	}
 
 	.uikit-select {
@@ -111,8 +118,9 @@ body {
 	// Nested navigation
 	.-nav {
 		margin-top: 5px;
-		margin-left: 20px;
 		margin-bottom: 10px;
+
+		.-item > a { padding-left: 3em; }
 	}
 }
 

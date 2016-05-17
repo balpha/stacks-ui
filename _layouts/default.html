@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+	{% include head-pages.html %}
+
+	<body data-spy="scroll" data-target="#stacks-nav" class="stacks-ui">
+		<div class="container" id="{{ page.id }}-top">
+            <div class="row">
+            	<div id="stacks-nav">
+            		{% include navigation.html %}
+            		{% include copyright.html %}
+            	</div>
+            	<div id="stacks-content">
+					{{ content }}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

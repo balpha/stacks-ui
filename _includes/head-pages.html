@@ -1,0 +1,20 @@
+<head>
+	<meta charset="utf-8" />
+    <title>{% if page.title %}{{page.title}} | {% endif %}{{ site.name }}</title>
+    <link rel="stylesheet/less" type="text/css" href="../../{{ site.css }}/{{ page.css }}.less">
+
+    <script type="text/javascript" src="../../{{ site.js }}/jquery.js"></script>
+    <script type="text/javascript" src="../../{{ site.js }}/main.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    
+    <!-- LESS: Start LESS watch -->
+    <script type="text/javascript" src="../../{{ site.js }}/less.js"></script>
+    <script>less.watch();</script>
+
+    <!-- Page Specific JS -->
+    {{ page.js }}
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../../{{ site.img }}/favicon.ico" />
+    <link rel="apple-touch-icon image_src" href="../../{{ site.img }}/apple-touch-icon.png" />
+</head>

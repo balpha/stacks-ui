@@ -1,0 +1,214 @@
+<section id="section-buttons">
+    <header>
+        <h1 class="_section">Buttons</h1>
+    </header>
+    <article id="buttons-base">
+        <h2 class="_subSection">Base Styles</h2>
+        <h4>Primary</h4>
+        <p>Primary buttons are used to provide a clear calls-to-action to a primary task. These buttons help guide the user to suggested next steps.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Primary, <code>._primary</code></dt>
+                <dd class="_example">
+                    <button class="_primary">Search</button>
+                    <button class="_primary" disabled>Search</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_primary">Search</button>
+<button class="_primary" disabled>Search</button>
+{% endhighlight %}
+        </div>
+        <h4>Secondary</h4>
+        <p>Secondary buttons are used to provide alternate, less-important actions to the users. These buttons are purposefully muted in tone and color in order to not grab the user's attention.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Secondary, <code>._secondary</code></dt>
+                <dd class="_example">
+                    <button class="_secondary">Log In</button>
+                    <button class="_secondary" disabled>Log In</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_secondary">Log In</button>
+<button class="_secondary" disabled>Log In</button>
+{% endhighlight %}
+        </div>
+        <h4>Confirmation</h4>
+        <p>Confirmation buttons are used for the specific use cases of completing a purchase, publishing a new product, or updating an existing product.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Confirmation, <code>._confirm</code></dt>
+                <dd class="_example">
+                    <button class="_confirm">Place Order</button>
+                    <button class="_confirm" disabled>Place Order</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_confirm">Place Order</button>
+<button class="_confirm" disabled>Place Order</button>
+{% endhighlight %}
+        </div>
+        <h4>Danger</h4>
+        <p>Danger buttons are used for the specific use cases of warning a user that a potential action they are about to take is irreversible, such as deleting a job listing, removing a team member, or deleting their account.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Danger, <code>._danger</code></dt>
+                <dd class="_example">
+                    <button class="_danger">Delete Team Member</button>
+                    <button class="_danger" disabled>Delete Team Member</button>
+                </dd>
+                <dt class="_label">Danger (Outlined), <code>._danger._outlined</code></dt>
+                <dd class="_example">
+                    <button class="_danger _outlined">Suspend Internet Traffic</button>
+                    <button class="_danger _outlined" disabled>Suspend Internet Traffic</button>
+                </dd>
+                <dt class="_label">Danger (Clear), <code>._danger._clear</code></dt>
+                <dd class="_example">
+                    <button class="_danger _clear">Empty Worldwide Internet Cache</button>
+                    <button class="_danger _clear" disabled>Empty Worldwide Internet Cache</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_danger">Delete Team Member</button>
+<button class="_danger" disabled>Delete Team Member</button>
+
+<button class="_danger _outlined">Suspend Internet Traffic</button>
+<button class="_danger _outlined" disabled>Suspend Internet Traffic</button>
+
+<button class="_danger _clear">Empty WWW Cache</button>
+<button class="_danger _clear" disabled>Empty WWW Cache</button>
+{% endhighlight %}
+        </div>
+        <h4>Outlined</h4>
+        <p>Outlined buttons are a stylistic variant of the <code>._secondary</code> button class. In some instances, we may want to use a even simpler button style to draw attention to the primary call-to-action. This style is mainly used within small UI actions that tertiary in importance and on marketing pages.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Outlined, <code>._outlined</code></dt>
+                <dd class="_example">
+                    <button class="_outlined">Take a look at our pricing!</button>
+                    <button class="_outlined" disabled>Take a look at our pricing!</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_outlined">Take a look at our pricing!</button>
+<button class="_outlined" disabled>Take a look at our pricing!</button>
+{% endhighlight %}
+        </div>
+        <h4>Clear</h4>
+        <p>Clear buttons are used when we don't want to visually style an action or link as a button, yet we want to provide ample click area and visual white-space around the link to separate it from surrounding content. This is mainly used within small UI actions.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Clear, <code>._clear</code></dt>
+                <dd class="_example">
+                    <button class="_clear">Print Report</button>
+                    <button class="_clear" disabled>Print Report</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_clear">Print Report</button>
+<button class="_clear" disabled>Print Report</button>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="buttons-layout">
+        <h2 class="_subSection">Layout Options</h2>
+        <h4>Large</h4>
+        <p>Large buttons are used primarily on singular-focused pages.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Large, <code>._large</code></dt>
+                <dd class="_example">
+                    <button class="_primary _large">Create A Job Listing</button>
+                    <button class="_primary _large" disabled>Create A Job Listing</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_primary _large">Create A Job Listing</button>
+<button class="_primary _large" disabled>Create A Job Listing</button>
+{% endhighlight %}
+        </div>
+        <h4>Medium</h4>
+        <p>Medium buttons are when you want some increased attention to a button on a page without it being too large.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Medium, <code>._medium</code></dt>
+                <dd class="_example">
+                    <button class="_primary _medium">Create A Job Listing</button>
+                    <button class="_primary _medium" disabled>Create A Job Listing</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_primary _medium">Create A Job Listing</button>
+<button class="_primary _medium" disabled>Create A Job Listing</button>
+{% endhighlight %}
+        </div>
+        <h4>Small</h4>
+        <p>Small buttons are used when you want to reduce the importance and size of a button.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Small, <code>._small</code></dt>
+                <dd class="_example">
+                    <button class="_primary _small">Contact Sales</button>
+                    <button class="_primary _small" disabled>Contact Sales</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_primary _small">Contact Sales</button>
+<button class="_primary _small" disabled>Contact Sales</button>
+{% endhighlight %}
+        </div>
+        <h4>Full Width Button</h4>
+        <p>When you want full-width buttons within a container.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Full Width, <code>._block</code></dt>
+                <dd class="_example">
+                    <button class="_primary _block">Full Width Button Block</button>
+                    <button class="_primary _block" disabled>Full Width Button Block</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_primary _block">Full Width Button Block</button>
+<button class="_primary _block" disabled>Full Width Button Block</button>
+{% endhighlight %}
+        </div>
+        <h4>Position: Right</h4>
+        <p>Make a button float to the right of a container.</p>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Right, <code>._right</code></dt>
+                <dd class="_example">
+                    <button class="_primary _right">Float Me Over!</button>
+                    <button class="_primary _right" disabled>Float Me Over!</button>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html linenos %}
+<button class="_primary _right">Float Me Over!</button>
+<button class="_primary _right" disabled>Float Me Over!</button>
+{% endhighlight %}
+        </div>
+    </article>
+</section>

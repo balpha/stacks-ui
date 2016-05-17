@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UIkit | Tags</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
+    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
+
+    <script src="/ui-kit/assets/js/less.js"></script>
+    <script src="/ui-kit/assets/js/jquery.js"></script>
+    <script src="/ui-kit/assets/js/main.js"></script>
+
+    <link rel="import" href="../nav.html">
+</head>
+
+<body>
+    <section id="uikit-sidebar">
+        <div class="uikit-logo">
+            <a href="../index.html">UIkit</a>
+        </div><!-- / logo -->
+
+        <div id="nav-wrapper"></div>
+        <script>
+            var link = document.querySelector('link[rel="import"]');
+            var content = link.import;
+
+            var el = content.querySelector('.uikit-nav');
+
+
+            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
+        </script>
+    </section><!-- / sidebar -->
+
+    <section id="uikit-sidebar-right">
+        <nav id="uikit-toc">
+            <ol>
+                <li>
+                    <a href="#toc-styles-types">Styles / Types</a>
+                    <ol>
+                        <li><a href="#toc-regular">Regular</a></li>
+                        <li><a href="#toc-disliked">Disliked</a></li>
+                        <li><a href="#toc-favorite">Favorite</a></li>
+                        <li><a href="#toc-moderator">Moderator</a></li>
+                        <li><a href="#toc-required">Required</a></li>
+                        <li><a href="#toc-company">Company</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#toc-usage-in-other-components">Usage in other components</a>
+                    <ol>
+                        <li><a href="#toc-chosen-plugin">Chosen plugin</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav><!-- / uikit-toc -->
+    </section><!-- / uikit-sidebar-right -->
+
+    <main id="uikit-content">
+        <header>
+            <h1>Tags</h1>
+        </header>
+
+        <div class="uikit-intro">
+            <p>Tags are a core feature on Stack Overflow. These tags help users quickly identify question subject matter. They are also used to define users's interests but also type of job offers.</p>
+        </div><!-- / intro -->
+
+        <section class="uikit-section">
+            <h2 id="toc-styles-types">Styles / Types</h2>
+
+            <section class="uikit-section">
+                <h3 id="toc-regular">Regular</h3>
+                <p>This is regular and the most common post-tag. It is also base for other types of post tags.</p>
+
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <a href="#" class="post-tag">Regular tag example</a>
+                        <a href="#" class="post-tag"><img src="//i.stack.imgur.com/EdUwb.png" height="16" width="18" alt="" class="sponsor-tag-img">google-chrome</a>
+                    </pre>
+                    <div class="uikit-preview">
+                        <a href="#" class="post-tag">Regular tag example</a>
+                        <a href="#" class="post-tag"><img src="//i.stack.imgur.com/EdUwb.png" height="16" width="18" alt="" class="sponsor-tag-img">google-chrome</a>
+                    </div><!-- / preview -->
+                </div><!-- / uikit-code uikit-has-preview -->
+            </section>
+
+            <section class="uikit-section">
+                <h3 id="toc-disliked">Disliked</h3>
+                <p>Purpose of disliked tags is exactly what you think it is. As an example, you can take a look at user's developer story, where are defined tags that user doesn't like (well, obviously...)</p>
+
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <a href="#" class="post-tag disliked-tag">Disliked tag example</a>
+                    </pre>
+                    <div class="uikit-preview">
+                        <a href="#" class="post-tag disliked-tag">Disliked tag example</a>
+                    </div><!-- / preview -->
+                </div><!-- / uikit-code uikit-has-preview -->
+            </section>
+
+            <section class="uikit-section">
+                <h3 id="toc-favorite">Favorite</h3>
+                <p>User may subscribe to tag which means that posts with particular tag will be highlighted on the list.</p>
+
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <a href="#" class="post-tag favorite-tag">Favorite tag example</a>
+                    </pre>
+                    <div class="uikit-preview">
+                        <a href="#" class="post-tag favorite-tag">Favorite tag example</a>
+                    </div><!-- / preview -->
+                </div><!-- / uikit-code uikit-has-preview -->
+            </section>
+
+            <section class="uikit-section">
+                <h3 id="toc-moderator">Moderator</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tempora explicabo ex mollitia natus, id, odio dolores, aspernatur consequuntur.</p>
+
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <a href="#" class="post-tag moderator-tag">Moderator tag example</a>
+                    </pre>
+                    <div class="uikit-preview">
+                        <a href="#" class="post-tag moderator-tag">Moderator tag example</a>
+                    </div><!-- / preview -->
+                </div><!-- / uikit-code uikit-has-preview -->
+            </section>
+
+            <section class="uikit-section">
+                <h3 id="toc-required">Required</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tempora explicabo ex mollitia natus, id, odio dolores, aspernatur consequuntur.</p>
+
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <a href="#" class="post-tag required-tag">Required tag example</a>
+                    </pre>
+                    <div class="uikit-preview">
+                        <a href="#" class="post-tag required-tag">Required tag example</a>
+                    </div><!-- / preview -->
+                </div><!-- / uikit-code uikit-has-preview -->
+            </section>
+
+            <section class="uikit-section">
+                <h3 id="toc-company">Company</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tempora explicabo ex mollitia natus, id, odio dolores, aspernatur consequuntur.</p>
+
+                <div class="uikit-code uikit-has-preview">
+                    <pre class="uikit-prettyprint linenums">
+                        <a href="#" class="post-tag company-tag">Company tag example</a>
+                    </pre>
+                    <div class="uikit-preview">
+                        <a href="#" class="post-tag company-tag">Company tag example</a>
+                    </div><!-- / preview -->
+                </div><!-- / uikit-code uikit-has-preview -->
+            </section>
+        </section>
+
+        <section class="uikit-section">
+            <h2 id="toc-usage-in-other-components">Usage in other components</h2>
+
+            <section class="uikit-section" data-inprogress>
+                <h3 id="toc-chosen-plugin"><em>Chosen</em> Plugin</h3>
+                <p>This is something undocumented yet but probably should especially we have special classes for this.</p>
+            </section>
+        </section>
+    </main><!-- / content -->
+
+    <script>
+        String.prototype.escapeHTML = function () {
+            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
+        };
+
+        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
+            key;
+        for( key in codeEl ) {
+            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
+        }
+    </script>
+</body>
+
+</html>

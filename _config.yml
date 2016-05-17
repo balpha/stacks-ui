@@ -1,0 +1,34 @@
+# Name of your blog (this will show up at the top of your page and in the RSS feed)
+name: Stacks | Stack Overflow
+
+# Short description (goes below the title; it will also be used in the RSS feed)
+description: The UI pattern library for the Stack Overflow, Stack Overflow Carers, and the Stack Exchange Network.
+
+# The URL of your actual domain. This will be used to make absolute links in the RSS feed.
+url: http://stackexchange.github.io/stacks/
+
+#### Under the Hood Stuff #####
+
+# Markdown
+markdown: 		kramdown
+markdown_ext: 	markdown,mkdown,mkdn,mkd,md
+textile_ext:  	textile
+
+# Website Serving
+detach:  		false
+port:    		4000
+host:    		localhost
+
+# Output & Backward Compatibility
+relative_permalinks:	false
+permalink: 				pretty
+timezone: 				America/New_York
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, docs-*.html]
+
+lib:      assets
+img:      assets/img
+css:		  assets/less
+js:		    assets/js
+include: 	[base.html, modules.html, grid.html]

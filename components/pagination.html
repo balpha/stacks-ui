@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UIkit | Pagination</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
+    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
+
+    <script src="/ui-kit/assets/js/less.js"></script>
+    <script src="/ui-kit/assets/js/jquery.js"></script>
+    <script src="/ui-kit/assets/js/main.js"></script>
+
+    <link rel="import" href="../nav.html">
+</head>
+
+<body>
+    <section id="uikit-sidebar">
+        <div class="uikit-logo">
+            <a href="../index.html">UIkit</a>
+        </div><!-- / logo -->
+
+        <div id="nav-wrapper"></div>
+        <script>
+            var link = document.querySelector('link[rel="import"]');
+            var content = link.import;
+
+            var el = content.querySelector('.uikit-nav');
+
+
+            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
+        </script>
+    </section><!-- / sidebar -->
+
+    <section id="uikit-sidebar-right">
+        <nav id="uikit-toc">
+            <ol>
+                <li><a href="#toc-pagination">Pagination</a></li>
+                <li><a href="#toc-results-per-page">Results per page</a></li>
+                <li><a href="#toc-combined">Combined</a></li>
+            </ol>
+        </nav>
+    </section><!-- / uikit-sidebar-right -->
+
+    <main id="uikit-content">
+        <header>
+            <h1>Pagination</h1>
+        </header>
+        <div class="uikit-intro">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quis ullam molestias doloremque maiores saepe odit nulla quo qui libero officiis, dicta, atque incidunt facilis. Provident ipsa est aliquid unde.</p>
+        </div><!-- / intro -->
+
+        <section class="uikit-section">
+            <h2 id="toc-pagination">Pagination</h2>
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums"><div class="pager">
+                    <span class="page-numbers current">1</span>
+                    <a href="#"><span class="page-numbers">2</span></a>
+                    <a href="#"><span class="page-numbers">3</span></a>
+                    <a href="#"><span class="page-numbers">4</span></a>
+                    <a href="#"><span class="page-numbers next"> next</span></a>
+                </div></pre>
+
+                <div class="uikit-preview">
+                    <div class="pager">
+                        <span class="page-numbers current">1</span>
+                        <a href="#"><span class="page-numbers">2</span></a>
+                        <a href="#"><span class="page-numbers">3</span></a>
+                        <a href="#"><span class="page-numbers">4</span></a>
+                        <a href="#"><span class="page-numbers next"> next</span></a>
+                    </div>
+                </div><!-- / preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+
+        <section class="uikit-section">
+            <h2 id="toc-results-per-page">Results per page</h2>
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums"><div class="page-sizer">
+                    <a href="#" title="show 15 items per page" class="page-numbers current">15</a>
+                    <a href="#" title="show 30 items per page" class="page-numbers ">30</a>
+                    <a href="#" title="show 50 items per page" class="page-numbers ">50</a>
+                    <span class="page-numbers desc">per page</span>
+                </div></pre>
+
+                <div class="uikit-preview">
+                    <div class="page-sizer">
+                        <a href="#" title="show 15 items per page" class="page-numbers current">15</a>
+                        <a href="#" title="show 30 items per page" class="page-numbers ">30</a>
+                        <a href="#" title="show 50 items per page" class="page-numbers ">50</a>
+                        <span class="page-numbers desc">per page</span>
+                    </div>
+                </div><!-- / uikit-preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+
+        <section class="uikit-section">
+            <h2 id="toc-combined">Combined</h2>
+            <div class="uikit-code uikit-has-preview">
+                <pre class="uikit-prettyprint linenums"><div class="pager fl">
+                    <span class="page-numbers current">1</span>
+                    <a href="#"><span class="page-numbers">2</span></a>
+                    <a href="#"><span class="page-numbers">3</span></a>
+                    <a href="#"><span class="page-numbers">4</span></a>
+                    <a href="#"><span class="page-numbers next"> next</span></a>
+                </div>
+
+                <div class="page-sizer fr">
+                    <a href="#" title="show 15 items per page" class="page-numbers current">15</a>
+                    <a href="#" title="show 30 items per page" class="page-numbers ">30</a>
+                    <a href="#" title="show 50 items per page" class="page-numbers ">50</a>
+                    <span class="page-numbers desc">per page</span>
+                </div></pre>
+
+                <div class="uikit-preview">
+                    <div class="pager fl">
+                        <span class="page-numbers current">1</span>
+                        <a href="#"><span class="page-numbers">2</span></a>
+                        <a href="#"><span class="page-numbers">3</span></a>
+                        <a href="#"><span class="page-numbers">4</span></a>
+                        <a href="#"><span class="page-numbers next"> next</span></a>
+                    </div>
+                    <div class="page-sizer fr">
+                        <a href="#" title="show 15 items per page" class="page-numbers current">15</a>
+                        <a href="#" title="show 30 items per page" class="page-numbers ">30</a>
+                        <a href="#" title="show 50 items per page" class="page-numbers ">50</a>
+                        <span class="page-numbers desc">per page</span>
+                    </div>
+                </div><!-- / uikit-preview -->
+            </div><!-- / uikit-code uikit-has-preview -->
+        </section>
+    </main><!-- / content -->
+
+    <script>
+        String.prototype.escapeHTML = function () {
+            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
+        };
+
+        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
+            key;
+        for( key in codeEl ) {
+            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
+        }
+    </script>
+</body>
+
+</html>

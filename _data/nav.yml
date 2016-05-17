@@ -5,11 +5,11 @@
   url: guidelines/
   sublinks:
     - title: File Structure
-      url: guidelines/file-structure/
+      url: file-structure/
     - title: Writing LESS
-      url: guidelines/writing-less/
+      url: writing-less/
     - title: Colors
-      url: guidelines/colors/
+      url: colors/
 
 - title: Base Elements
   url: base/
@@ -33,23 +33,23 @@
   url: components/
   sublinks:
     - title: Dropdowns
-      url: components/dropdowns/
+      url: dropdowns/
     - title: Modals
-      url: components/modals/
+      url: modals/
     - title: Navigation
-      url: components/navigation/
+      url: navigation/
     - title: Notifications
-      url: components/notifications/
+      url: notifications/
     - title: Pagination
-      url: components/pagination/
+      url: pagination/
     - title: Popovers
-      url: components/popovers/
+      url: popovers/
     - title: Progress Bars
-      url: components/progress-bars/
+      url: progress-bars/
     - title: Tabs
-      url: components/tabs/
+      url: tabs/
     - title: Tooltips
-      url: components/Tooltips/
+      url: Tooltips/
 
 - title: Views
   url: views/

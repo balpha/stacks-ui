@@ -1,648 +1,463 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>UIkit | Forms</title>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
-    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
-
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-
-    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
-    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
-
-    <script src="/ui-kit/assets/js/less.js"></script>
-    <script src="/ui-kit/assets/js/jquery.js"></script>
-    <script src="/ui-kit/assets/js/main.js"></script>
-
-    <link rel="import" href="../nav.html">
-</head>
-
-<body class="uikit-form">
-    <section id="uikit-sidebar">
-        <div class="uikit-logo">
-            <a href="../index.html">UIkit</a>
-        </div><!-- / logo -->
-
-        <div id="nav-wrapper"></div>
-        <script>
-            var link = document.querySelector('link[rel="import"]');
-            var content = link.import;
-
-            var el = content.querySelector('.uikit-nav');
-
-
-            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
-        </script>
-    </section><!-- / sidebar -->
-
-    <section id="uikit-sidebar-right">
-        <nav id="uikit-toc">
-            <ol>
-                <li><a href="#toc-css-only-tooltip">...</a></li>
-            </ol>
-        </nav><!-- / uikit-toc -->
-    </section><!-- / uikit-sidebar-right -->
-
-    <main id="uikit-content">
-        <header>
-            <h1>Forms</h1>
-        </header>
-        <div class="uikit-intro">
-            <p>Intro</p>
-        </div><!-- / intro -->
-
-        <!-- section -->
-        <section class="uikit-section" data-core>
-            <h2 class="toc-basic-styles">Basic styles</h2>
-
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
-
-                <div class="uikit-preview">
-                    <form>
-                        <label for="">Input label required</label>
-                        <input type="text" name="" id="" required placeholder="Required field">
-
-                        <label for="">Input label</label>
-                        <input type="text" name="" id="" placeholder="Optional field">
-
-                        <label for="">Textarea label</label>
-                        <textarea name="" id="" cols="30" rows="5"></textarea>
-
-                        <div class="input-list radio">
-                            <label for="r1" class="has-radio">
-                                <input type="radio" name="r" id="r1"> Choice 1
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="r2" class="has-radio">
-                                <input type="radio" name="r" id="r2"> Choice 2
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="r3" class="has-radio">
-                                <input type="radio" name="r" id="r3"> Choice 3
-                                <span class="check"></span>
-                            </label>
-                        </div>
-
-                        <label for="checkbox-basic" class="has-checkbox">
-                            <input type="checkbox" name="" id="checkbox-basic">
-                            Yes I do accept things I don't understand
-                            <span class="check"></span>
-                        </label>
-
-                        <input type="submit" value="Submit">
-                    </form>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-
-        </section>
-        <!-- / section -->
-
-        <!-- section -->
-        <section class="uikit-section" data-core>
-            <h2 class="toc-basic-styles">Required form</h2>
-
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
-
-                <div class="uikit-preview">
-                    <form>
-                        <label for="">Input label required</label>
-                        <input type="text" name="" id="" required placeholder="Required field">
-
-                        <label for="">Textarea required</label>
-                        <textarea name="" id="" cols="30" rows="5" required></textarea>
-
-                        <label for="">Choose something<span class="is-required"></span></label>
-                        <div class="input-list radio">
-                            <label for="rr1" class="has-radio">
-                                <input type="radio" name="r" id="rr1"> Choice 1
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="rr2" class="has-radio">
-                                <input type="radio" name="r" id="rr2"> Choice 2
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="rr3" class="has-radio">
-                                <input type="radio" name="r" id="rr3"> Choice 3
-                                <span class="check"></span>
-                            </label>
-                        </div>
-
-                        <label for="">Dates<span class="is-required"></span></label>
-                        <div class="dates-range">
-                            <select name="" id=""><option>start date</option></select>
-                            <span class="to">to</span>
-                            <select name="" id=""><option>end date</option></select>
-                        </div>
-
-                        <label for="checkbox-basicc" class="has-checkbox">
-                            <input type="checkbox" name="" id="checkbox-basicc">
-                            Yes I do accept things I don't understand
-                            <span class="check"></span>
-                             <span class="is-required"></span>
-                        </label>
-
-                        <input type="submit" value="Submit">
-                    </form>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-
-        </section>
-        <!-- / section -->
-
-        <!-- section -->
-        <section class="uikit-section" data-core>
-            <h2 class="toc-specific-styles">Field states</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
-
-                <div class="uikit-preview">
-                    <form>
-                        <label for="">Focus state</label>
-                        <input type="text" name="" id="" class="focus">
-
-                        <div class="row">
-                            <div class="col-6 with-padding">
-                                <label for="">Success state</label>
-                                <input type="text" name="" id="" class="success">
-                            </div>
-
-                            <div class="col-6 with-padding">
-                                <label for="">Success state</label>
-                                <input type="text" name="" id="" class="success">
-                                <p class="success-text">
-                                    Success message
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 with-padding">
-                                <label for="">Error state</label>
-                                <input type="text" name="" id="" class="error">
-                                <p class="error-text">
-                                    Error message
-                                </p>
-                            </div>
-
-                            <div class="col-6 with-padding">
-                                <label for="">Warning state</label>
-                                <input type="text" name="" id="" class="warning">
-                                <p class="warning-text">
-                                    Warning message
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 with-padding">
-                                <label for="">Input with help text</label>
-                                <input type="text" name="" id="">
-                                <p class="help-text">
-                                    Help text goes below the field.
-                                </p>
-                            </div>
-
-                            <div class="col-6 with-padding">
-                                <label for="">Disabled / read-only state</label>
-                                <input type="text" name="" id="" disabled>
-                            </div>
-                        </div>
-
-
-                    </form>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-
-        </section>
-        <!-- / section -->
-
-        <!-- section -->
-        <section class="uikit-section" data-core>
-            <h2 class="toc-specific-styles">Specific styles</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
-
-                <div class="uikit-preview">
-                    <form>
-
-                        <div class="row">
-
-                            <div class="col-4 with-padding">
-                                <label for="">Input with icon</label>
-                                <div class="input-with-value">
-                                    <span class="prepend">
-                                        <i class="icon-github"></i>
-                                    </span>
-                                    <input type="text" name="" id="">
-                                </div>
-                            </div>
-
-
-                            <div class="col-4 with-padding">
-                                <label for="">Value prepended</label>
-                                <div class="input-with-value">
-                                    <span class="prepend">http://</span>
-                                    <input type="text" name="" id="" placeholder="www.your-site.com">
-                                </div>
-                            </div>
-
-                            <div class="col-4 with-padding">
-                                <label for="">Value appended</label>
-                                <div class="input-with-value">
-                                    <span class="append">$/month</span>
-                                    <input type="text" name="" id="" placeholder="Monthly salary">
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <hr>
-
-                        <label for="">Switcher</label>
-                        <div class="switcher-container">
-                            <div class="switcher">
-                                <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking">
-                                <label for="active">Actively looking right now</label>
-
-                                <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
-                                <label for="passive">Open, but not actively looking</label>
-
-                                <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
-                                <label for="not-looking">Not interested in jobs</label>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <label for="">Dates range</label>
-
-                        <div class="dates-range">
-                            <select name="" id=""><option>start date</option></select>
-                            <span class="to">to</span>
-                            <select name="" id=""><option>end date</option></select>
-                        </div>
-
-
-                        <hr>
-
-                        <label for="">Checkboxes list</label>
-                        <div class="input-list checkbox">
-                            <label for="choice-checkbox-1" class="has-checkbox">
-                                <input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="choice-checkbox-2" class="has-checkbox">
-                                <input type="checkbox" name="" id="choice-checkbox-2"> Choice 2
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="choice-checkbox-3" class="has-checkbox">
-                                <input type="checkbox" name="" id="choice-checkbox-3"> Choice 3
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="choice-checkbox-4" class="has-checkbox">
-                                <input type="checkbox" name="" id="choice-checkbox-4"> Choice 4
-                                <span class="check"></span>
-                            </label>
-                        </div>
-
-                        <label for="">Radios list</label>
-                        <div class="input-list radio">
-                            <label for="choice-radio-1" class="has-radio">
-                                <input type="radio" name="choices" id="choice-radio-1" checked> Choice 1
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="choice-radio-2" class="has-radio">
-                                <input type="radio" name="choices" id="choice-radio-2"> Choice 2
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="choice-radio-3" class="has-radio">
-                                <input type="radio" name="choices" id="choice-radio-3"> Choice 3
-                                <span class="check"></span>
-                            </label>
-
-                            <label for="choice-radio-4" class="has-radio">
-                                <input type="radio" name="choices" id="choice-radio-4"> Choice 4
-                                <span class="check"></span>
-                            </label>
-                        </div>
-
-                        <label for="cs1" class="has-checkbox has-message">
-                            <input type="checkbox" name="" id="cs1" checked> Checkbox with subtext
-                            <span class="check"></span>
-
-                            <span class="help-text">
-                                Lorem ipsum dolor sir amet.
+---
+layout: default
+title: Forms
+permalink: base/forms/
+id: forms
+css: stacks
+---
+<header>
+    <h1>Forms</h1>
+</header>
+<div class="uikit-intro">
+    <p>Intro</p>
+</div>
+
+<section class="stacks-section">
+    <h2 id="toc-forms">Default Styles</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+TBD
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <label for="">Input label required</label>
+                <input type="text" name="" id="" required placeholder="Required field">
+
+                <label for="">Input label</label>
+                <input type="text" name="" id="" placeholder="Optional field">
+
+                <label for="">Textarea label</label>
+                <textarea name="" id="" cols="30" rows="5"></textarea>
+
+                <div class="input-list radio">
+                    <label for="r1" class="has-radio">
+                        <input type="radio" name="r" id="r1"> Choice 1
+                        <span class="check"></span>
+                    </label>
+
+                    <label for="r2" class="has-radio">
+                        <input type="radio" name="r" id="r2"> Choice 2
+                        <span class="check"></span>
+                    </label>
+
+                    <label for="r3" class="has-radio">
+                        <input type="radio" name="r" id="r3"> Choice 3
+                        <span class="check"></span>
+                    </label>
+                </div>
+
+                <label for="checkbox-basic" class="has-checkbox">
+                    <input type="checkbox" name="" id="checkbox-basic">
+                    Yes I do accept things I don't understand
+                    <span class="check"></span>
+                </label>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-required">Required Elements</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <label for="">Input label required</label>
+                <input type="text" name="" id="" required placeholder="Required field">
+
+                <label for="">Textarea required</label>
+                <textarea name="" id="" cols="30" rows="5" required></textarea>
+
+                <label for="">Choose something<span class="is-required"></span></label>
+                <div class="input-list radio">
+                    <label for="rr1" class="has-radio">
+                        <input type="radio" name="r" id="rr1"> Choice 1
+                        <span class="check"></span>
+                    </label>
+
+                    <label for="rr2" class="has-radio">
+                        <input type="radio" name="r" id="rr2"> Choice 2
+                        <span class="check"></span>
+                    </label>
+
+                    <label for="rr3" class="has-radio">
+                        <input type="radio" name="r" id="rr3"> Choice 3
+                        <span class="check"></span>
+                    </label>
+                </div>
+
+                <label for="">Dates<span class="is-required"></span></label>
+                <div class="dates-range">
+                    <select name="" id=""><option>start date</option></select>
+                    <span class="to">to</span>
+                    <select name="" id=""><option>end date</option></select>
+                </div>
+
+                <label for="checkbox-basicc" class="has-checkbox">
+                    <input type="checkbox" name="" id="checkbox-basicc">
+                    Yes I do accept things I don't understand
+                    <span class="check"></span>
+                     <span class="is-required"></span>
+                </label>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-states">States</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <label for="">Focus state</label>
+                <input type="text" name="" id="" class="focus">
+                <div class="row">
+                    <div class="col-6 with-padding">
+                        <label for="">Success state</label>
+                        <input type="text" name="" id="" class="success">
+                    </div>
+                    <div class="col-6 with-padding">
+                        <label for="">Success state</label>
+                        <input type="text" name="" id="" class="success">
+                        <p class="success-text">
+                            Success message
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 with-padding">
+                        <label for="">Error state</label>
+                        <input type="text" name="" id="" class="error">
+                        <p class="error-text">
+                            Error message
+                        </p>
+                    </div>
+
+                    <div class="col-6 with-padding">
+                        <label for="">Warning state</label>
+                        <input type="text" name="" id="" class="warning">
+                        <p class="warning-text">
+                            Warning message
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 with-padding">
+                        <label for="">Input with help text</label>
+                        <input type="text" name="" id="">
+                        <p class="help-text">
+                            Help text goes below the field.
+                        </p>
+                    </div>
+
+                    <div class="col-6 with-padding">
+                        <label for="">Disabled / read-only state</label>
+                        <input type="text" name="" id="" disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-unique">Unique Styles</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <div class="row">
+                    <div class="col-4 with-padding">
+                        <label for="">Input with icon</label>
+                        <div class="input-with-value">
+                            <span class="prepend">
+                                <i class="icon-github"></i>
                             </span>
-                        </label>
-
-                        <label for="rs1" class="has-radio has-message">
-                            <input type="radio" name="" id="rs1" checked> Checkbox with subtext
-                            <span class="check"></span>
-
-                            <span class="help-text">
-                                Lorem ipsum dolor sir amet.
-                            </span>
-                        </label>
-
-                        <hr>
-
-                        <label for="">Double input</label>
-
-                        <div class="double-input">
-                            <input type="text" name="" id="" placeholder="Job title">
-                            <span class="separator">at</span>
-                            <input type="text" name="" id="" placeholder="Company">
-                        </div>
-
-                    </form>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-        </section>
-        <!-- / section -->
-
-        <section class="uikit-section" data-core>
-            <h2 class="toc-tag-editor">Form actions</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
-
-                <div class="uikit-preview">
-                    <form action="">
-                        <div class="ctas-container">
-                            <a href="/users/jobsearch/4264587" title="Cancel" class="">Cancel</a>
-                            <input class="btn float-right" type="submit" value="Save">
-                        </div>
-                    </form>
-                </div>
-            </div> <!-- /preview -->
-        </section>
-        <!-- / section -->
-
-        <section class="uikit-section" data-core>
-            <h2 class="toc-tag-editor">Inline forms</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
-
-                <div class="uikit-preview">
-
-                    <form action="" class="inline-form">
-
-                        <div class="inline-field">
-                            <label for="">Short label</label>
                             <input type="text" name="" id="">
                         </div>
-
-                        <div class="inline-field">
-                            <label for="">Very long label with many words</label>
-                            <input type="text" name="" id="">
+                    </div>
+                    <div class="col-4 with-padding">
+                        <label for="">Value prepended</label>
+                        <div class="input-with-value">
+                            <span class="prepend">http://</span>
+                            <input type="text" name="" id="" placeholder="www.your-site.com">
                         </div>
-
-                        <div class="inline-field">
-                            <label for="">Label</label>
-                            <input type="text" name="" id="">
-                            <a href="" class="btn btn-secondary">Action</a>
+                    </div>
+                    <div class="col-4 with-padding">
+                        <label for="">Value appended</label>
+                        <div class="input-with-value">
+                            <span class="append">$/month</span>
+                            <input type="text" name="" id="" placeholder="Monthly salary">
                         </div>
-
-                        <div class="inline-field">
-                            <label for="">Label</label>
-                            <input type="submit" value="Save">
-                        </div>
-
-                        <div class="ctas-container">
-                            <a href="" class="btn-clear">Cancel</a>
-                            <a href="" class="btn">Save</a>
-                        </div>
-
-                    </form>
-                </div>
-            </div> <!-- /preview -->
-        </section>
-        <!-- / section -->
-
-        <section class="uikit-section" data-core>
-            <h2 class="toc-tag-editor">Image upload</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
-
-                <div class="uikit-preview">
-                    <div class="img-upload js-img-edit full">
-
-                        <a href="#" class="remove js-img-remove" alt="remove">×</a>
-
-                        <img src="" class="js-img-preview dno">
-
-                        <div class="text-wrapper js-img-empty">
-                            <div class="icon icon-image-upload"></div>
-
-                            <div class="img-text">
-                                Click to add an image
-                                    <span class="img-size-hint">Recommended size: 350x150px</span>
-                            </div>
-                        </div>
-
-                        <input type="hidden" name="ImageUrl">
-
                     </div>
                 </div>
-            </div> <!-- /preview -->
-        </section>
-        <!-- / section -->
+                <hr>
+                <label for="">Switcher</label>
+                <div class="switcher-container">
+                    <div class="switcher">
+                        <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking">
+                        <label for="active">Actively looking right now</label>
 
-        <section class="uikit-section" data-core>
-            <h2 class="toc-tag-editor">Auto complete</h2>
+                        <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
+                        <label for="passive">Open, but not actively looking</label>
 
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
-
-                <div class="uikit-preview">
-<!--
-                    <div class="autocomplete-wrapper">
-                        <input type="text" id="interestingTag" name="interestingTag" autocomplete="on" class="ac_input">
-
-                        <div class="ac_results" style="position: absolute; width: 190px; top: 34px; left: 0;"><ul style="max-height: 300px; overflow: auto;"><li class="ac_even"><strong>j</strong> (220)</li><li class="ac_odd"><strong>j</strong>avascript (1110040)</li><li class="ac_even"><strong>j</strong>ava (1061686)</li><li class="ac_odd"><strong>j</strong>query (730673)</li><li class="ac_even">ob<strong>j</strong>ective-c (257470)</li><li class="ac_odd">angular<strong>j</strong>s (168742)</li></ul>
-                        </div>
-                    </div>
-
-                    <div class="autocomplete-wrapper">
-                        <div class="autocomplete">
-                            <label for="item-add-Company" class="block">Company or team</label>
-
-                            <div class="coverable-input input-loader loading">
-                                <input type="text" class="autocomplete-input" placeholder="Company name, team name..." autocomplete="off" id="item-add-Company" name="Company"><div class="autocomplete-suggestions-list">
-                                            <div class="autocomplete-category">
-                                    <div class="autocomplete-category-name">Your teams</div>
-                            <a href="#" class="autocomplete-suggestion" data-team-id="1">
-                                <div class="autocomplete-suggestion-image">
-                                    <img src="http://i.stack.imgur.com/uW3nz.png">
-                                </div>
-                                <span class="autocomplete-suggestion-item">
-                                    <span class="auto-complete-suggestion-name">
-                                        <span class="autocomplete-suggestion-match">Stack Overflow</span>
-                                    </span>
-                                    <span class="autocomplete-suggestion-url">http://stackoverflow.com</span>
-                                </span>
-                            </a>
-                                </div>
-
-                                            <div class="autocomplete-category">
-                                    <div class="autocomplete-category-name">Teams / Companies</div>
-                            <a href="#" class="autocomplete-suggestion" data-team-id="276">
-                                <div class="autocomplete-suggestion-image">
-                                    <img src="http://stackoverflow.com/content/img/teams/team-placeholder.png">
-                                </div>
-                                <span class="autocomplete-suggestion-item">
-                                    <span class="auto-complete-suggestion-name">
-                                        <span class="autocomplete-suggestion-match">Distributed Fans of StackOverflow</span>
-                                    </span>
-                                    <span class="autocomplete-suggestion-url"></span>
-                                </span>
-                            </a>
-                            <a href="#" class="autocomplete-suggestion" data-team-id="241">
-                                <div class="autocomplete-suggestion-image">
-                                    <img src="http://i.stack.imgur.com/mNEeP.png">
-                                </div>
-                                <span class="autocomplete-suggestion-item">
-                                    <span class="auto-complete-suggestion-name">
-                                        <span class="autocomplete-suggestion-match">Instamojo</span>
-                                    </span>
-                                    <span class="autocomplete-suggestion-url">https://www.instamojo.com/</span>
-                                </span>
-                            </a>
-
-                                </div>
-
-                                    <a href="#" class="autocomplete-default">
-                                        Use "sta"
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
--->
-                </div>
-            </div> <!-- /preview -->
-        </section>
-        <!-- / section -->
-
-        <section id="tag-editor" class="uikit-section" data-core>
-            <h2 class="toc-tag-editor">Tag editor</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
-
-                <div class="uikit-preview">
-                    <label for="">Tag editor</label>
-                    <div class="tag-editor"><span><span class="post-tag rendered-element">html<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">sass<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">less<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">javascript<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder=""><span></span>
-                    </div>
-
-                    <form action="">
-                        <div class="form-item">
-                            <label>Tags</label>
-
-                            <input id="tagnames" name="tagnames" type="text" size="60" value="" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="display: none;"><div class="tag-editor" style="width: 636px;height: 35px;"><span></span><input type="text" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="width: 628px;"><span></span></div>
-                        </div>
-                    </form>
-
-                    <label for="">Tag editor multi lines</label>
-                    <div class="tag-editor multi-line" style="width: 332px; height: 98px;"><span><span class="post-tag rendered-element" title="">sql-server<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">asp.net<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">redis<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">elasticsearch<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">linux<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">haproxy<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">windows<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">c#<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder="" style="width: 19px;"><span></span>
+                        <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
+                        <label for="not-looking">Not interested in jobs</label>
                     </div>
                 </div>
-            </div> <!-- /preview -->
-        </section>
-        <!-- / section -->
+                <hr>
+                <label for="">Dates range</label>
+                <div class="dates-range">
+                    <select name="" id=""><option>start date</option></select>
+                    <span class="to">to</span>
+                    <select name="" id=""><option>end date</option></select>
+                </div>
+                <hr>
+                <label for="">Checkboxes list</label>
+                <div class="input-list checkbox">
+                    <label for="choice-checkbox-1" class="has-checkbox">
+                        <input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
+                        <span class="check"></span>
+                    </label>
 
-        <section class="uikit-section" data-core>
-            <h2 class="toc-tag-editor">Composer</h2>
+                    <label for="choice-checkbox-2" class="has-checkbox">
+                        <input type="checkbox" name="" id="choice-checkbox-2"> Choice 2
+                        <span class="check"></span>
+                    </label>
 
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    ...
-                </pre>
+                    <label for="choice-checkbox-3" class="has-checkbox">
+                        <input type="checkbox" name="" id="choice-checkbox-3"> Choice 3
+                        <span class="check"></span>
+                    </label>
 
-                <div class="uikit-preview">
-                    <div id="post-editor" class="post-editor js-post-editor">
+                    <label for="choice-checkbox-4" class="has-checkbox">
+                        <input type="checkbox" name="" id="choice-checkbox-4"> Choice 4
+                        <span class="check"></span>
+                    </label>
+                </div>
 
-                        <div style="position: relative;">
-                            <div class="wmd-container">
-                                <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li class="wmd-button" id="wmd-bold-button" title="Strong <strong> Ctrl+B" style="left: 0px;"><span style="background-position: 0px 0px;"></span></li><li class="wmd-button" id="wmd-italic-button" title="Emphasis <em> Ctrl+I" style="left: 25px;"><span style="background-position: -20px 0px;"></span></li><li class="wmd-spacer wmd-spacer1" id="wmd-spacer1"></li><li class="wmd-button" id="wmd-link-button" title="Hyperlink <a> Ctrl+L" style="left: 75px;"><span style="background-position: -40px 0px;"></span></li><li class="wmd-button" id="wmd-quote-button" title="Blockquote <blockquote> Ctrl+Q" style="left: 100px;"><span style="background-position: -60px 0px;"></span></li><li class="wmd-button" id="wmd-code-button" title="Code Sample <pre><code> Ctrl+K" style="left: 125px;"><span style="background-position: -80px 0px;"></span></li><li class="wmd-button" id="wmd-image-button" title="Image <img> Ctrl+G" style="left: 150px;"><span style="background-position: -100px 0px;"></span></li><li class="wmd-button wmd-snippet-button" style="left:175px" id="wmd-snippet-button" title="JavaScript/HTML/CSS snippet Ctrl-M"><span style="background-image: url(&quot;/content/Shared/balsamiq/wmd-mockup-button.png&quot;);"></span></li><li class="wmd-spacer wmd-spacer2" id="wmd-spacer2" style="left: 220px;"></li><li class="wmd-button" id="wmd-olist-button" title="Numbered List <ol> Ctrl+O" style="left: 225px;"><span style="background-position: -120px 0px;"></span></li><li class="wmd-button" id="wmd-ulist-button" title="Bulleted List <ul> Ctrl+U" style="left: 250px;"><span style="background-position: -140px 0px;"></span></li><li class="wmd-button" id="wmd-heading-button" title="Heading <h1>/<h2> Ctrl+H" style="left: 275px;"><span style="background-position: -160px 0px;"></span></li><li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule <hr> Ctrl+R" style="left: 300px;"><span style="background-position: -180px 0px;"></span></li><li class="wmd-spacer wmd-spacer3" id="wmd-spacer3" style="left: 346px;"></li><li class="wmd-button" id="wmd-undo-button" title="Undo - Ctrl+Z" style="left: 350px;"><span style="background-position: -200px -20px;"></span></li><li class="wmd-button" id="wmd-redo-button" title="Redo - Ctrl+Shift+Z" style="left: 375px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-button wmd-help-button" id="wmd-help-button" title="Markdown Editing Help" style="right: 0px;"><span style="background-position: -240px 0px;"></span></li></ul></div>
-                                <textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
-                            <div class="grippie" style="margin-right: 0px;"></div></div>
-                        </div>
+                <label for="">Radios list</label>
+                <div class="input-list radio">
+                    <label for="choice-radio-1" class="has-radio">
+                        <input type="radio" name="choices" id="choice-radio-1" checked> Choice 1
+                        <span class="check"></span>
+                    </label>
 
-                        <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
-                        <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+                    <label for="choice-radio-2" class="has-radio">
+                        <input type="radio" name="choices" id="choice-radio-2"> Choice 2
+                        <span class="check"></span>
+                    </label>
 
-                        <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+                    <label for="choice-radio-3" class="has-radio">
+                        <input type="radio" name="choices" id="choice-radio-3"> Choice 3
+                        <span class="check"></span>
+                    </label>
 
+                    <label for="choice-radio-4" class="has-radio">
+                        <input type="radio" name="choices" id="choice-radio-4"> Choice 4
+                        <span class="check"></span>
+                    </label>
+                </div>
 
+                <label for="cs1" class="has-checkbox has-message">
+                    <input type="checkbox" name="" id="cs1" checked> Checkbox with subtext
+                    <span class="check"></span>
 
-                        <div id="wmd-preview" class="wmd-preview"></div>
-                        <div></div>
-                        <div class="edit-block">
-                            <input id="fkey" name="fkey" type="hidden" value="85cc0e94900ba1c514f3b8935129eda1">
-                            <input id="author" name="author" type="text">
-                        </div>
+                    <span class="help-text">
+                        Lorem ipsum dolor sir amet.
+                    </span>
+                </label>
 
+                <label for="rs1" class="has-radio has-message">
+                    <input type="radio" name="" id="rs1" checked> Checkbox with subtext
+                    <span class="check"></span>
 
+                    <span class="help-text">
+                        Lorem ipsum dolor sir amet.
+                    </span>
+                </label>
+                <hr>
+                <label for="">Double input</label>
+                <div class="double-input">
+                    <input type="text" name="" id="" placeholder="Job title">
+                    <span class="separator">at</span>
+                    <input type="text" name="" id="" placeholder="Company">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
+<section class="stacks-section">
+    <h2 id="toc-actions">Actions</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form action="">
+                <div class="ctas-container">
+                    <input type="submit" value="Save">
+                    <a href="/users/jobsearch/4264587" title="Cancel" class="btn-clear">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-badges">Inline Forms</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form action="" class="inline-form">
+                <div class="inline-field">
+                    <label for="">Short label</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="inline-field">
+                    <label for="">Very long label with many words</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="inline-field">
+                    <label for="">Label</label>
+                    <input type="text" name="" id="">
+                    <a href="" class="btn btn-secondary">Action</a>
+                </div>
+                <div class="inline-field">
+                    <label for="">Label</label>
+                    <input type="submit" value="Save">
+                </div>
+                <div class="ctas-container">
+                    <a href="" class="btn-clear">Cancel</a>
+                    <a href="" class="btn">Save</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-images">Image Upload</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <div class="img-upload js-img-edit full">
+                <a href="#" class="remove js-img-remove" alt="remove">×</a>
+                <img src="" class="js-img-preview dno">
+                <div class="text-wrapper js-img-empty">
+                    <div class="icon icon-image-upload"></div>
+                    <div class="img-text">
+                        Click to add an image
+                            <span class="img-size-hint">Recommended size: 350x150px</span>
                     </div>
                 </div>
-            </div> <!-- /preview -->
-        </section>
-        <!-- / section -->
+                <input type="hidden" name="ImageUrl">
+            </div>
+        </div>
+    </div>
+</section>
 
-    </main><!-- / content -->
+<section class="stacks-section">
+    <h2 id="toc-auto">Auto-complete</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">Coming Soon</div>
+    </div>
+</section>
 
-    <script>
-        String.prototype.escapeHTML = function () {
-            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
-        };
+<section class="stacks-section">
+    <h2 id="toc-tageditor">Tag Editor</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <label for="">Tag editor</label>
+            <div class="tag-editor"><span><span class="post-tag rendered-element">html<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">sass<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">less<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">javascript<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder=""><span></span>
+            </div>
 
-        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
-            key;
-        for( key in codeEl ) {
-            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
-        }
-    </script>
+            <form action="">
+                <div class="form-item">
+                    <label>Tags</label>
 
-</body>
+                    <input id="tagnames" name="tagnames" type="text" size="60" value="" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="display: none;"><div class="tag-editor" style="width: 636px;height: 35px;"><span></span><input type="text" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="width: 628px;"><span></span></div>
+                </div>
+            </form>
 
-</html>
+            <label for="">Tag editor multi lines</label>
+            <div class="tag-editor multi-line" style="width: 332px; height: 98px;"><span><span class="post-tag rendered-element" title="">sql-server<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">asp.net<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">redis<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">elasticsearch<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">linux<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">haproxy<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">windows<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">c#<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder="" style="width: 19px;"><span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-composer">Composer</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <div id="post-editor" class="post-editor js-post-editor">
+                <div style="position: relative;">
+                    <div class="wmd-container">
+                        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li class="wmd-button" id="wmd-bold-button" title="Strong <strong> Ctrl+B" style="left: 0px;"><span style="background-position: 0px 0px;"></span></li><li class="wmd-button" id="wmd-italic-button" title="Emphasis <em> Ctrl+I" style="left: 25px;"><span style="background-position: -20px 0px;"></span></li><li class="wmd-spacer wmd-spacer1" id="wmd-spacer1"></li><li class="wmd-button" id="wmd-link-button" title="Hyperlink <a> Ctrl+L" style="left: 75px;"><span style="background-position: -40px 0px;"></span></li><li class="wmd-button" id="wmd-quote-button" title="Blockquote <blockquote> Ctrl+Q" style="left: 100px;"><span style="background-position: -60px 0px;"></span></li><li class="wmd-button" id="wmd-code-button" title="Code Sample <pre><code> Ctrl+K" style="left: 125px;"><span style="background-position: -80px 0px;"></span></li><li class="wmd-button" id="wmd-image-button" title="Image <img> Ctrl+G" style="left: 150px;"><span style="background-position: -100px 0px;"></span></li><li class="wmd-button wmd-snippet-button" style="left:175px" id="wmd-snippet-button" title="JavaScript/HTML/CSS snippet Ctrl-M"><span style="background-image: url(&quot;/content/Shared/balsamiq/wmd-mockup-button.png&quot;);"></span></li><li class="wmd-spacer wmd-spacer2" id="wmd-spacer2" style="left: 220px;"></li><li class="wmd-button" id="wmd-olist-button" title="Numbered List <ol> Ctrl+O" style="left: 225px;"><span style="background-position: -120px 0px;"></span></li><li class="wmd-button" id="wmd-ulist-button" title="Bulleted List <ul> Ctrl+U" style="left: 250px;"><span style="background-position: -140px 0px;"></span></li><li class="wmd-button" id="wmd-heading-button" title="Heading <h1>/<h2> Ctrl+H" style="left: 275px;"><span style="background-position: -160px 0px;"></span></li><li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule <hr> Ctrl+R" style="left: 300px;"><span style="background-position: -180px 0px;"></span></li><li class="wmd-spacer wmd-spacer3" id="wmd-spacer3" style="left: 346px;"></li><li class="wmd-button" id="wmd-undo-button" title="Undo - Ctrl+Z" style="left: 350px;"><span style="background-position: -200px -20px;"></span></li><li class="wmd-button" id="wmd-redo-button" title="Redo - Ctrl+Shift+Z" style="left: 375px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-button wmd-help-button" id="wmd-help-button" title="Markdown Editing Help" style="right: 0px;"><span style="background-position: -240px 0px;"></span></li></ul></div>
+                        <textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+                    <div class="grippie" style="margin-right: 0px;"></div></div>
+                </div>
+
+                <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+                <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+                <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+                <div id="wmd-preview" class="wmd-preview"></div>
+                <div></div>
+                <div class="edit-block">
+                    <input id="fkey" name="fkey" type="hidden" value="85cc0e94900ba1c514f3b8935129eda1">
+                    <input id="author" name="author" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

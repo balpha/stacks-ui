@@ -1,203 +1,145 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>UIkit | Grid</title>
+---
+layout: default
+title: Grid
+permalink: base/grid/
+id: grid
+css: stacks
+---
+<!--<section id="stacks-nav_right">
+    <nav id="stacks-toc">
+        <ol>
+            <li><a href="#toc-default">Grid (Default)</a></li>
+            <li><a href="#toc-with-padding">Grid, With Gutters</a></li>
+        </ol>
+    </nav>
+</section>-->
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
-    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+<main>
+    <header>
+        <h1>Grid</h1>
+        <div class="stacks-intro">
+            <p>TBD</p>
+        </div>
+    </header>
+    <section class="stacks-section">
+        <h2 id="toc-default">Default</h2>
+        <p>The grid comes with 12 columns. Grid's container needs <code>box-sizing: border-box;</code></p>
+        <div class="stacks-example">
+            <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+</div>
+<div class="row">
+    <div class="col-8"></div>
+    <div class="col-4"></div>
+</div>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+</div>
+{% endhighlight %}
+            </div>
+            <div class="-previewBlock">
+                <div class="row">
+                    <div class="col-1">abc</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">col-8</div>
+                    <div class="col-4">col-4</div>
+                </div>
+                <div class="row">
+                    <div class="col-4">col-4</div>
+                    <div class="col-4">col-4</div>
+                    <div class="col-4">col-4</div>
+                </div>
+                <br>
+                <small>(additional styling has been added to visually present grid in example above)</small>
+            </div>
+        </div>
+    </section>
 
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-
-    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
-    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
-
-    <script src="/ui-kit/assets/js/less.js"></script>
-    <script src="/ui-kit/assets/js/jquery.js"></script>
-    <script src="/ui-kit/assets/js/main.js"></script>
-
-    <link rel="import" href="../nav.html">
-</head>
-
-<body>
-    <section id="uikit-sidebar">
-        <div class="uikit-logo">
-            <a href="../index.html">UIkit</a>
-        </div><!-- / logo -->
-
-        <div id="nav-wrapper"></div>
-        <script>
-            var link = document.querySelector('link[rel="import"]');
-            var content = link.import;
-
-            var el = content.querySelector('.uikit-nav');
-
-
-            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
-        </script>
-    </section><!-- / sidebar -->
-
-
-    <section id="uikit-sidebar-right">
-        <nav id="uikit-toc">
-            <ol>
-                <li><a href="#toc-without-padding">Grid without padding</a></li>
-                <li><a href="#toc-with-padding">Grid with padding</a></li>
-            </ol>
-        </nav><!-- / uikit-toc -->
-    </section><!-- / uikit-sidebar-right -->
-
-    <main id="uikit-content">
-        <header>
-            <h1>Grid</h1>
-        </header>
-        <div class="uikit-intro">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi distinctio sunt temporibus, accusantium magnam nobis id praesentium. Laborum adipisci delectus doloremque, mollitia cupiditate quibusdam laboriosam, possimus aperiam dolorem rem quasi?</p>
-        </div><!-- / intro -->
-
-        <section class="uikit-section">
-            <h2 id="toc-without">Without padding</h2>
-            <p>The grid comes with 12 columns. Grid's container needs <code>box-sizing: border-box;</code></p>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                        <div class="col-1"></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-8"></div>
-                        <div class="col-4"></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-4"></div>
-                        <div class="col-4"></div>
-                        <div class="col-4"></div>
-                    </div>
-                </pre>
-
-                <div class="uikit-preview grid-preview">
-                    <div class="row">
-                        <div class="col-1">abc</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                        <div class="col-1">col-1</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-8">col-8</div>
-                        <div class="col-4">col-4</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-4">col-4</div>
-                        <div class="col-4">col-4</div>
-                        <div class="col-4">col-4</div>
-                    </div>
-                    <br>
-                    <small>(additional styling has been added to visually present grid in example above)</small>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-        </section>
-
-        <section class="uikit-section">
-            <h2 id="toc-with-padding">With padding</h2>
-            <p>The grid comes with 12 columns. Grid's container needs <code>box-sizing: border-box;</code>.</p>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    <div class="row">
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                        <div class="col-1 with-padding"></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-8 with-padding"></div>
-                        <div class="col-4 with-padding"></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-4 with-padding"></div>
-                        <div class="col-4 with-padding"></div>
-                        <div class="col-4 with-padding"></div>
-                    </div>
-                </pre>
-
-                <div class="uikit-preview grid-preview">
-                    <div class="row">
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                        <div class="col-1 with-padding">col-1</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-8 with-padding">col-8</div>
-                        <div class="col-4 with-padding">col-4</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-4 with-padding">col-4</div>
-                        <div class="col-4 with-padding">col-4</div>
-                        <div class="col-4 with-padding">col-4</div>
-                    </div>
-
-                    <br>
-                    <small>(additional styling has been added to visually present grid in example above)</small>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-        </section>
-    </main><!-- / content -->
-
-    <script>
-        String.prototype.escapeHTML = function () {
-            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
-        };
-
-        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
-        key;
-        for( key in codeEl ) {
-            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
-        }
-    </script>
-</body>
-
-</html>
+    <section class="stacks-section">
+        <h2 id="toc-with-padding">With Gutters</h2>
+        <p>The grid comes with 12 columns. Grid's container needs <code>box-sizing: border-box;</code>.</p>
+        <div class="stacks-example">
+            <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="row">
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+</div>
+<div class="row">
+    <div class="col-8 with-padding"></div>
+    <div class="col-4 with-padding"></div>
+</div>
+<div class="row">
+    <div class="col-4 with-padding"></div>
+    <div class="col-4 with-padding"></div>
+    <div class="col-4 with-padding"></div>
+</div>
+{% endhighlight %}
+            </div>
+            <div class="-previewBlock">
+                <div class="row">
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                </div>
+                <div class="row">
+                    <div class="col-8 with-padding">col-8</div>
+                    <div class="col-4 with-padding">col-4</div>
+                </div>
+                <div class="row">
+                    <div class="col-4 with-padding">col-4</div>
+                    <div class="col-4 with-padding">col-4</div>
+                    <div class="col-4 with-padding">col-4</div>
+                </div>
+                <br>
+                <small>(additional styling has been added to visually present grid in example above)</small>
+            </div>
+        </div>
+    </section>
+</main>

@@ -7,7 +7,7 @@
     [2] Build out the menu accordingly.
 -->
 {% for nav in site.data.nav %}
-    {% assign fullurl = page.url|remove:"index.html" %}
+{% capture fullurl %}{{ site.url }}{{ nav.url }}{% endcapture %}
     {% if fullurl == page.url %}
         {% assign current_page = fullurl %}
         {% break %}
@@ -22,25 +22,22 @@
     {% for nav in site.data.nav %}
         {% if nav.url == current_page %}
             {% assign current = '_selected' %}
-        {% elsif sublink.url == current_page %}
-            {% assign subcurrent = '_selected' %}
         {% else %}
             {% assign current = null %}
-            {% assign subcurrent = null %}
         {% endif %}
         {% assign sublinks = nav.sublinks %}
         {% if sublinks %}
         <li class="-item {{ current }}">
-            <a href="{{ nav.url }}">{{ nav.title }}</a>
+            <a href="{{ site.url }}{{ nav.url }}">{{ nav.title }}</a>
             <ul>
                 {% for sublink in sublinks %}
-                <li class="-item {{ subcurrent }}"><a href="{{ sublink.url }}">{{ sublink.title }}</a></li>
+                <li class="-item {{ current }}"><a href="{{ site.url }}{{ sublink.url }}">{{ sublink.title }}</a></li>
                 {% endfor %}
             </ul>
         </li>
         {% else %}
         <li class="-item {{ current }}">
-            <a href="{{ nav.url }}">{{ nav.title }}</a>
+            <a href="{{ site.url }}{{ nav.url }}">{{ nav.title }}</a>
         </li>
         {% endif %}
     {% endfor %}

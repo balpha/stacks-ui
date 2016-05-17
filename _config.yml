@@ -5,7 +5,7 @@ name: Stacks | Stack Overflow
 description: The UI pattern library for the Stack Overflow, Stack Overflow Carers, and the Stack Exchange Network.
 
 # The URL of your actual domain. This will be used to make absolute links in the RSS feed.
-url: http://stackexchange.github.io/stacks/
+url: http://stackexchange.github.io/stacks-ui/
 
 #### Under the Hood Stuff #####
 

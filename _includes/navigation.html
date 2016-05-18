@@ -6,7 +6,7 @@
         {% assign current = ' _selected' %}
     {% endif %}
     <li class="-item{{ current }}">
-        <a href="/{{ nav.url }}">{{ nav.title }}</a>
+        <a href="{{ site.url }}{{ nav.url }}">{{ nav.title }}</a>
         {% if nav.sublinks and current_page contains nav.url %}
             {% include navigation.html nav=nav.sublinks%}
         {% endif %}

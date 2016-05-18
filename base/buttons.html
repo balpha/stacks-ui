@@ -5,7 +5,7 @@ permalink: base/buttons/
 id: buttons
 css: stacks
 ---
-<section id="stacks-sidebar_right">
+<section id="stacks-nav_right">
     <nav id="stacks-toc">
         <ol>
             <li><a href="#toc-regular-buttons">Regular buttons</a></li>
@@ -50,12 +50,12 @@ css: stacks
 <main>
     <header>
         <h1>Buttons</h1>
+        <div class="stacks-intro">
+            <p>Buttons are interactive elements that allow users to accomplish tasks. They can be created using an <code>a</code>, <code>button</code>, or an <code>input</code> tag. Ideally buttons use <code>button</code> or <code>input</code> tags, but they can be applied to <code>a</code> tags when needed. If a button is disabled, use the disabled attribute on <code>button</code> or <code>input</code> element. For <code>a</code> elements, apply a <code>._disabled</code> class.</p>
+        </div>
     </header>
-    <div class="uikit-intro">
-        <p>Buttons are interactive elements that allow users to accomplish tasks. They can be created using an <code>a</code>, <code>button</code>, or an <code>input</code> tag. Ideally buttons use <code>button</code> or <code>input</code> tags, but they can be applied to <code>a</code> tags when needed. If a button is disabled, use the disabled attribute on <code>button</code> or <code>input</code> element. For <code>a</code> elements, apply a <code>._disabled</code> class.</p>
-    </div>
 
-    <section class="uikit-section">
+    <section class="stacks-section">
         <h2 id="toc-regular-buttons">Buttons (Default)</h2>
         <div class="stacks-example">
             <div class="-codeBlock">
@@ -74,12 +74,12 @@ css: stacks
             </div>
         </div>
         <p>By default <code>button</code> and <code>input</code> elements are styled to look like <code>.btn-primary</code>. When possible, use <code>button</code> or <code>input</code> elements for buttons. If you use a link, please note that you can't assign <code>role="button"</code> to the element for it to act like a button. From <strong>Mozilla</strong>'s documentation:</p>
-        <blockquote class="uikit-callout">Warning: Be careful when marking up links with the button role. Buttons are expected to be triggered using the Space key, while links are expected to be triggered using the Enter key. In other words, when links are used to behave like buttons, adding role="button" alone is not sufficient. It will also be necessary to add a key event handler that listens for the Space key in order to be consistent with native buttons.</blockquote>
+        <blockquote class="stacks-callout">Warning: Be careful when marking up links with the button role. Buttons are expected to be triggered using the Space key, while links are expected to be triggered using the Enter key. In other words, when links are used to behave like buttons, adding role="button" alone is not sufficient. It will also be necessary to add a key event handler that listens for the Space key in order to be consistent with native buttons.</blockquote>
     </section>
 
-    <section class="uikit-section">
+    <section class="stacks-section">
         <h2 id="toc-types">Types</h2>
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-primary">Primary</h3>
             <p>This style is the most visually heavy of the other button styles and should be used to denote the primary action on a page and within a set of buttons (if applicable).</p>
             <div class="stacks-example">
@@ -95,7 +95,7 @@ css: stacks
                 </div>
             </div>
         </section>
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-secondary">Secondary</h3>
             <p>This indicates a positive, alternate action that could be engaged by the user within a workflow, page, or within a set of buttons.</p>
             <div class="stacks-example">
@@ -111,7 +111,7 @@ css: stacks
                 </div>
             </div>
         </section>
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-confirmation">Confirmation</h3>
             <p>This button should be used to confirm a major action, typically within dedicated workflows such as completing a purchase (checkout), publishing an item, or updating an existing item.</p>
             <div class="stacks-example">
@@ -127,7 +127,7 @@ css: stacks
                 </div>
             </div>
         </section>
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-warning">Warning</h3>
             <p>This should be used when the user needs warned a potential negative action such as removing a post, removing a team member, or deleting their account will be engaged if they click this button.</p>
             <div class="stacks-example">
@@ -145,7 +145,7 @@ css: stacks
         </section>
     </section>
 
-    <section class="uikit-section">
+    <section class="stacks-section">
         <h2 id="toc-loaders-icons">Loaders / Icons</h2>
         <p>This is used to add icons into another button type or style.</p>
         <div class="stacks-example">
@@ -170,11 +170,11 @@ css: stacks
         </div>
     </section>
 
-    <section class="uikit-section">
+    <section class="stacks-section">
         <h2 id="toc-styles">Styles</h2>
-        <p class="uikit-intro">By default all button options have filled backgrounds with borders and an inner-shadow. Sometimes buttons need to be downplayed within a design to either help focus attention to a specific action, no action should be primary, or to not draw attention away from other content areas. In these instances, we have two button styles that can be applied to the options above.</p>
+        <p class="stacks-intro">By default all button options have filled backgrounds with borders and an inner-shadow. Sometimes buttons need to be downplayed within a design to either help focus attention to a specific action, no action should be primary, or to not draw attention away from other content areas. In these instances, we have two button styles that can be applied to the options above.</p>
 
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-outlined">Outlined</h3>
             <p>Like a secondary button in purpose, this stylistic variation is to be used when you desire an even simpler button style—especially when used in concert with the primary button style. This style works well within small UI actions areas that are tertiary in importance or when a larger button size would draw too much attention to the button.</p>
             <div class="stacks-example">
@@ -192,7 +192,7 @@ css: stacks
                 </div>
             </div>
         </section>
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-clear">Clear</h3>
             <p>Sometimes called “link” buttons, this button style mimics the link style but with the ample click area buttons provide. This style is typically used within a set of actions and you want to downplay the importance of the action. Such as with a “Cancel” or “Discard” action. We don’t want to hide these actions, but we also don’t want to draw undue importance to them.</p>
             <div class="stacks-example">
@@ -210,7 +210,7 @@ css: stacks
                 </div>
             </div>
         </section>
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-reversed">Reversed</h3>
             <p>Most buttons appear on a light background within our product, yet there are instances where buttons may appear on a dark background. In these instances, you can invert the button colors.</p>
             <div class="stacks-example">
@@ -230,9 +230,9 @@ css: stacks
         </section>
     </section>
 
-    <section class="uikit-section">
+    <section class="stacks-section">
         <h2>Sizes</h2>
-        <p class="uikit-intro">To maintain button consistency throughout the product, it is highly recommended that you use <em>only</em> the button sizes below. If you encounter a scenario where a different size is required, please consult the team. More size variations means more items to maintain.</p>
+        <p class="stacks-intro">To maintain button consistency throughout the product, it is highly recommended that you use <em>only</em> the button sizes below. If you encounter a scenario where a different size is required, please consult the team. More size variations means more items to maintain.</p>
         <div class="stacks-example">
             <div class="-codeBlock">
 {% highlight html linenos %}
@@ -253,10 +253,10 @@ css: stacks
         </div>
     </section>
 
-    <section class="uikit-section">
+    <section class="stacks-section">
         <h2 id="toc-layout-attributes">Layout &amp; Attributes</h2>
 
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-block">Block</h3>
             <p>This causes the button to go full-width within its container.</p>
             <div class="stacks-example">
@@ -272,7 +272,7 @@ css: stacks
                 </div>
             </div>
         </section>
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-floats">Floats</h3>
             <p>Make a button float left or right.</p>
             <div class="stacks-example">
@@ -288,7 +288,7 @@ css: stacks
                 </div>
             </div>
         </section>
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-display">Display</h3>
             <p>Make a button appear or disappear.</p>
             <div class="stacks-example">
@@ -306,11 +306,11 @@ css: stacks
         </section>
     </section>
 
-    <section class="uikit-section">
+    <section class="stacks-section">
         <h2 id="toc-ordering">Ordering</h2>
-        <p class="uikit-intro">To help maintain consistency throughout the product, buttons should maintain the following order arrangement:</p>
+        <p class="stacks-intro">To help maintain consistency throughout the product, buttons should maintain the following order arrangement:</p>
 
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-default">Default</h3>
             <p>Most button groups should be ordered from the most important action to least important action, left to right.</p>
             <div class="stacks-example">
@@ -344,7 +344,7 @@ css: stacks
             </div>
         </section>
 
-        <section class="uikit-section">
+        <section class="stacks-section">
             <h3 id="toc-row">Row</h3>
             <p>If a series of actions need to be placed in the same area as a title, the buttons here can be pulled to the right. Within this instance, the button order should be reversed, right to left.</p>
             <div class="stacks-example">

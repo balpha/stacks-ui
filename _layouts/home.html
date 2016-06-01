@@ -6,14 +6,15 @@
 	<body data-spy="scroll" data-target=".navSidebar" class="patternGuide">
 		<div class="container" id="{{ page.id }}-top">
             <div class="-row">
-            	<div class="-col2 navSidebar">
-            		{% include navigation.html %}
+            	<div id="stacks-nav">
+            		<nav id="stacks-nav" role="navigation">
+    					<a href="index.html" class="stacks-logo">Stacks</a>
+            			{% include navigation.html nav=site.data.nav%}
+            		</nav>
             		{% include copyright.html %}
             	</div>
-            	<div class="-col10">
-            		<main id="content">
-						{{ content }}
-					</main>
+            	<div id="stacks-content">
+					{{ content }}
 				</div>
 			</div>
 		</div>

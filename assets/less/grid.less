@@ -33,7 +33,7 @@
 //  ---------------------------------------------------------------------------
 *,
 *:before,
-*:after { .box-sizing(border-box); }
+*:after { box-sizing: border-box; }
 
 .container {
     margin-left: auto;
@@ -44,17 +44,10 @@
     // @media (min-width: @mediaQuery-large)   { max-width: @mediaQuery-large - 30; }
 
     &,
-    .-row {
-        &:before, &:after {
-            display: table;
-            content: " ";
-        }
+    .row { .clearfix(); }
 
-        &:after { clear: both; }
-    }
-
-    .-row,
-    .-row > [class*="-col"] > .-row {
+    .row,
+    .row .row {
         > [class*="-col"] {
             position: relative;
             min-height: 1px;

@@ -16,6 +16,7 @@
 @import "vars";
 @import "mixins";
 @import "utilities";
+@import "grid";
 
 //  -- Documentation Files
 @import "code";                 // Code Syntax highlighting
@@ -267,7 +268,6 @@ body {
 // ---------------------------------------------------------------
 //	PAGE: Files Structure
 // ---------------------------------------------------------------
-
 .tree-structure {
 	margin-left: 0;
 	margin-bottom: 0;
@@ -391,12 +391,9 @@ body {
 }
 
 
-
-
 // ---------------------------------------------------------------
 //	PAGE: Writing LESS
 // ---------------------------------------------------------------
-
 .dos-dont {
 	border-radius: 3px;
 	box-shadow: 0 1px 4px rgba(0,0,0,0.1);
@@ -434,11 +431,9 @@ body {
 }
 
 
-
 // ---------------------------------------------------------------
 //	PAGE: Tooltips
 // ---------------------------------------------------------------
-
 .tooltips-preview {
 
 	display: flex;
@@ -460,13 +455,9 @@ body {
 	}
 }
 
-
-
-
 // ---------------------------------------------------------------
 //	PAGE: Grid
 // ---------------------------------------------------------------
-
 .grid-preview {
 	* { box-sizing: border-box; }
 
@@ -482,76 +473,311 @@ body {
 }
 
 
-
-
 // ---------------------------------------------------------------
 //	PAGE: Colors
 // ---------------------------------------------------------------
+.swatches { margin-bottom: @margin-double; }
+.swatches > div {
+	border-radius: 2px;
+	margin-bottom: @margin-double;
 
-.palette {
-	display: flex;
-	flex-wrap: wrap;
-	margin-right: -20px;
-
-	.color {
-		width: ~'calc(100% / 3)';
-		padding: 0 20px 20px 0;
-		box-sizing: border-box;
-
-		header {
-			display: block;
-			height: 100px;
-			box-sizing: border-box;
-			padding: 20px;
-			color: rgba(0,0,0,0.7);
-			border-radius: 4px 4px 0 0;
-		}
-
-		.colors {
-			margin: 0; padding: 0;
-			list-style: none;
-			overflow: hidden;
-			> li {
-				padding: 15px 10px;
-				display: table;
-				box-sizing: border-box;
-				width: 100%;
-				color: rgba(0,0,0,0.7);
-
-				&:last-child {
-					border-radius: 0 0 4px 4px;
-				}
-
-				span {
-					display: table-cell;
-					box-sizing: border-box;
-					white-space: nowrap;
-
-					&.name {
-						font-weight: bold;
-						width: 50px;
-					}
-					&.less {
-						font-family: @code-font-family;
-						width: 140px;
-					}
-					&.value {
-						display: none;
-						font-family: @code-font-family;
-						font-size: 12px;
-
-						&.hex {
-							display: table-cell;
-						}
-					}
-				}
-			}
-		}
+	> header {
+		padding: @padding-base;
+        border-radius: @borderRadius-base @borderRadius-base 0 0;
 	}
 
-	.contrast, .contrast *, .contrast span {
-		color: rgba(255,255,255,0.7);
-	}
+	&.-col4:nth-of-type(3n + 1),
+	&.-col3:nth-of-type(4n + 1) { clear: left; }
+
+	&.-col4:last-of-type,
+	&.-col3:last-of-type { padding-right: 1em !important; }
+
+	&.-col3:nth-of-type(4n + 1) { padding-left: 0 !important; }
+
+    .-title {
+    	margin-bottom: 0.5em;
+    	font-size: 24px;
+    	font-weight: 400;
+    }
+
+    &[class*="badge-"],
+    &[class*="code-"] { .-title { font-size: 18px; } }
+
+    .-hex,
+    .-variable {
+    	float: left;
+    	font-family: @code-font-family;
+    }
+    .-weight {
+    	float: left;
+    	font-size: 18px;
+    	text-align: right;
+    }
+    .-variable { width: 45%; }
+    .-hex { width: 25%; }
+    .-weight { width: 30%; }
+
+    dt, dd {
+    	margin: 0 0 5px;
+    	padding: 0;
+    	display: inline-block;
+    	vertical-align: top;
+    }
+    dt {
+    	width: 30%;
+    	font-weight: 700; 
+    }
+    dd {
+    	width: 60%;
+    	font-family: @code-font-family;
+    }
+
+    .-stops,
+    .-stops > li {
+    	width: 100%;
+    	margin: 0;
+    	padding: 0;
+    	list-style-type: none;
+    }
+    .-stops > li {
+    	.clearfix();
+    	display: block;
+    	padding: @padding-base;
+
+    	&.-stop900 { border-radius: 0 0 @borderRadius-base @borderRadius-base; }
+    }
+}
+
+// 	-- 	COLORS
+.swatches > div {
+	&._orange {
+		color: @orange-900;
+
+		> header {
+	        color: @orange-800;
+	        background-color: @orange-400;
+	    }
+
+        .-stop {
+            &050 { background-color: @orange-050; }
+            &100 { background-color: @orange-100; }
+            &200 { background-color: @orange-200; }
+            &300 { background-color: @orange-300; }
+            &400 { background-color: @orange-400; }
+            &500 { background-color: @orange-500; }
+            &600 { background-color: @orange-600; }
+            &700 { background-color: @orange-700; }
+            &800 { background-color: @orange-800; }
+            &900 { background-color: @orange-900; }
+
+            &700, &800, &900 { 
+                .-weight { color: @orange-100; }
+                .-hex,
+        		.-variable { color: @orange-200; }
+            }
+        }
+    }
+    &._black {
+    	color: @black-900;
+
+    	> header {
+	        color: @black-100;
+	        background-color: @black-800;
+	    }
+
+        .-stop {
+            &025 { background-color: @black-025; }
+            &050 { background-color: @black-050; }
+            &075 { background-color: @black-075; }
+            &100 { background-color: @black-100; }
+            &150 { background-color: @black-150; }
+            &200 { background-color: @black-200; }
+            &300 { background-color: @black-300; }
+            &350 { background-color: @black-350; }
+            &400 { background-color: @black-400; }
+            &500 { background-color: @black-500; }
+            &600 { background-color: @black-600; }
+            &700 { background-color: @black-700; }
+            &750 { background-color: @black-750; }
+            &800 { background-color: @black-800; }
+            &900 { background-color: @black-900; }
+
+            &700, &750, &800, &900 {
+            	.-weight { color: @black-100; }
+                .-hex,
+        		.-variable { color: @black-200; }
+            }
+        }
+    }
+    &._white {
+        color: @black-800;
+
+        > header {
+            border: 1px solid @black-100;
+            border-radius: @borderRadius-base;
+        }
+    }
+    &._blue {
+        color: @blue-900;
+        
+        > header {
+	        color: @blue-900;
+	        background-color: @blue-600;
+	    }
+
+        .-stop {
+            &050 { background-color: @blue-050; }
+            &100 { background-color: @blue-100; }
+            &200 { background-color: @blue-200; }
+            &300 { background-color: @blue-300; }
+            &400 { background-color: @blue-400; }
+            &500 { background-color: @blue-500; }
+            &600 { background-color: @blue-600; }
+            &700 { background-color: @blue-700; }
+            &800 { background-color: @blue-800; }
+            &900 { background-color: @blue-900; }
+
+            &700, &800, &900 { 
+                .-weight { color: @blue-100; }
+                .-hex,
+        		.-variable { color: @blue-200; }
+            }
+        }
+    }
+    &._powder {
+        color: @powder-900;
+
+		> header {
+	        color: @powder-800;
+	        background-color: @powder-400;
+	    }
+
+        .-stop {
+            &025 { background-color: @powder-025; }
+            &050 { background-color: @powder-050; }
+            &100 { background-color: @powder-100; }
+            &200 { background-color: @powder-200; }
+            &300 { background-color: @powder-300; }
+            &400 { background-color: @powder-400; }
+            &500 { background-color: @powder-500; }
+            &600 { background-color: @powder-600; }
+            &700 { background-color: @powder-700; }
+            &800 { background-color: @powder-800; }
+            &900 { background-color: @powder-900; }
+
+            &700, &800, &900 { 
+                .-weight { color: @powder-100; }
+                .-hex,
+        		.-variable { color: @powder-200; }
+            }
+        }
+    }
+    &._green {
+        color: @green-900;
+
+		> header {
+	        color: @green-800;
+	        background-color: @green-400;
+	    }
+
+        .-stop {
+            &025 { background-color: @green-025; }
+            &050 { background-color: @green-050; }
+            &100 { background-color: @green-100; }
+            &200 { background-color: @green-200; }
+            &300 { background-color: @green-300; }
+            &400 { background-color: @green-400; }
+            &500 { background-color: @green-500; }
+            &600 { background-color: @green-600; }
+            &700 { background-color: @green-700; }
+            &800 { background-color: @green-800; }
+            &900 { background-color: @green-900; }
+
+            &700, &800, &900 { 
+                .-weight { color: @green-100; }
+                .-hex,
+        		.-variable { color: @green-200; }
+            }
+        }
+    }
+    &._yellow {
+        color: @yellow-900;
+
+		> header {
+	        color: @yellow-800;
+	        background-color: @yellow-400;
+	    }
+
+        .-stop {
+            &050 { background-color: @yellow-050; }
+            &100 { background-color: @yellow-100; }
+            &200 { background-color: @yellow-200; }
+            &300 { background-color: @yellow-300; }
+            &400 { background-color: @yellow-400; }
+            &500 { background-color: @yellow-500; }
+            &600 { background-color: @yellow-600; }
+            &700 { background-color: @yellow-700; }
+            &800 { background-color: @yellow-800; }
+            &900 { background-color: @yellow-900; }
+
+            &700, &800, &900 { 
+                .-weight { color: @yellow-050; }
+                .-hex,
+        		.-variable { color: @yellow-100; }
+            }
+        }
+    }
+    &._red {
+        color: @red-900;
+
+		> header {
+	        color: @red-800;
+	        background-color: @red-400;
+	    }
+
+        .-stop {
+            &050 { background-color: @red-050; }
+            &100 { background-color: @red-100; }
+            &200 { background-color: @red-200; }
+            &300 { background-color: @red-300; }
+            &400 { background-color: @red-400; }
+            &500 { background-color: @red-500; }
+            &600 { background-color: @red-600; }
+            &700 { background-color: @red-700; }
+            &800 { background-color: @red-800; }
+            &900 { background-color: @red-900; }
+
+            &700, &800, &900 { 
+                .-weight { color: @red-100; }
+                .-hex,
+        		.-variable { color: @red-200; }
+            }
+        }
+    }
+
+    &[class*="badge-"] > header {
+    	color: @black-900;
+    	border-radius: @borderRadius-base;
+    }
+    &.badge-gold > header { background-color: @badge-gold; }
+    &.badge-silver > header { background-color: @badge-silver; }
+    &.badge-bronze > header { background-color: @badge-bronze; }
+
+    &[class*="code-"] > header {
+    	color: @white;
+    	border-radius: @borderRadius-base;
+    }
+    &.code-black > header { background-color: @code-black; }
+    &.code-gray > header { background-color: @code-gray; }
+    &.code-teal > header { background-color: @code-teal; }
+    &.code-blue > header { background-color: @code-blue; }
+    &.code-maroon > header { background-color: @code-maroon; }
+    &.code-purple > header { background-color: @code-purple; }
+    &.code-red > header {
+    	background-color: @code-red;
+        color: @black-900;
+    }
+
 }
 
 body.composer-on {

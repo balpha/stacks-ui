@@ -33,23 +33,23 @@
   url: components/
   sublinks:
     - title: Dropdowns
-      url: dropdowns/
+      url: components/dropdowns/
     - title: Modals
-      url: modals/
+      url: components/modals/
     - title: Navigation
-      url: navigation/
+      url: components/navigation/
     - title: Notifications
-      url: notifications/
+      url: components/notifications/
     - title: Pagination
-      url: pagination/
+      url: components/pagination/
     - title: Popovers
-      url: popovers/
+      url: components/popovers/
     - title: Progress Bars
-      url: progress-bars/
+      url: components/progress-bars/
     - title: Tabs
-      url: tabs/
+      url: components/tabs/
     - title: Tooltips
-      url: Tooltips/
+      url: components/Tooltips/
 
 - title: Views
   url: views/
@@ -58,6 +58,6 @@
   url: resources/
   sublinks:
     - title: Logos
-      url: logos/
+      url: resources/logos/
     - title: Colors
-      url: colors/
+      url: resources/colors/

@@ -1,3 +1,188 @@
+//  --  BODY VALUES
+@body-bg:                           @white;
+@body-font-color:                   @black-800;
+@body-font-size:                    13px;
+@body-line-height:                  1.3em;
+
+//  --  LAYOUT
+@site-width:                        1060px;
+@site-padding:                      15px;
+@content-container-width:           @site-width;
+@content-container-padding:         @site-padding;
+@header-width:                      @site-width;
+@header-height:                     120px;
+@header-padding:                    0 15px;
+@mainbar-width:                     728px;
+@sidebar-width:                     300px;
+@user-panel-width:                  ~'calc((100% - 30px) / 2)';
+
+//  --  LOGO
+@logo-width:                        250px;
+@logo-height:                       60px;
+
+//  --  TYPE, LINKS
+//  The @fontFamily-sans was created because sometimes we need to quickly reset @type-face
+@fontFamily-sans:                   Arial, "Helvetica Neue", Helvetica, sans-serif;
+@code-font-family:                  Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+@type-face:                         @fontFamily-sans;
+
+@selected-color:                    @black-500;
+@tagged-interesting-color:          #FFEFC6;
+@section-title-color:               @black-700;
+@copy_muted-color:                  @black-400;
+
+@link-color:                        #4E82C2;
+@link-color-hover:                  #4CA3D7;
+@link-color-visited:                #36649D;
+@question-title-color:              @link-color;
+@question-title-color-hover:        @link-color-hover;
+@question-title-color-visited:      @link-color-visited;
+
+//  --  MINICOUNT, ANSWERED/ACCEPTED ANSWER STATUS
+@answered-color:                    #4C9067;
+@answered-bg-color:                 transparent;
+@answered-accepted-color:           @answered-color;
+@answered-accepted-bg-color:        #E4F9D3;
+
+//  --  INFOBOX
+@infobox-color:                     #fff7e5;
+@infobox-border:                    1px solid fade(@black-600,10%);
+
+//  --  USER INFO CARD VARIABLES
+//  This should be paired down.
+@userInfo-color:                    @black-400;
+@userInfo-color_muted:              @black-300;
+@userInfo-width:                    200px;
+@userInfo-tag-color:                @userInfo-color_muted;
+@userInfo-tag_hover-color:          @userInfo-color;
+@userInfo_hover-background:         transparent;
+
+//  --  PAGINATION
+@pager-selected-color:              @white;
+@pager-bg-selected-color:           #F35D5F;
+
+//  --  BACKGROUNDS (Commonly used)
+@system-message-bg-color:           #FFF7E3;
+@autocomplete-background-color:     darken(@powder-050, 2%);
+@interesting-tag-background-color:  rgba(255, 245, 222, 0.7);
+@selectedActionBackgroundColor:     @black-075;
+@deleted-content-background-color:  #f4eaea; // most sites will use this color
+@code-background-color:             @black-050;
+@user-about-me-bgcolor:             @black-025;
+@top-notify-box-bgcolor:            #f90;
+@owner-background-color:            @powder-100;
+
+//  --  BORDERS (Commonly used)
+@divider-line-color:                @black-075;
+@comment-border:                    @black-050;
+
+//  --  BUTTONS
+@btn-font-weight:                   400;
+@btn-transition-duration:           0.1s;
+@btn-border-radius:                 2px;
+@btn-border-width:                  1px;
+@btn-primary:                       @blue-500;
+@btn-secondary:                     @powder-100;
+@btn-outlined:                      darken(@btn-primary,10%);
+@btn-clear:                         @link-color;
+@btn-confirm:                       @green-400;
+@btn-warning:                       @red-500;
+
+//  --  BADGES
+@gold-dot:                          @badge-gold;
+@gold-bg:                           lighten(@gold-dot,45%);
+@gold-border:                       desaturate(lighten(@gold-dot,35%),50%);
+@silver-dot:                        @badge-silver;
+@silver-bg:                         lighten(@silver-dot,20%);
+@silver-border:                     spin(desaturate(lighten(@silver-dot,15%),1%),10);
+@bronze-dot:                        @badge-bronze;
+@bronze-bg:                         saturate(lighten(@bronze-dot,25%),20%);
+@bronze-border:                     spin(saturate(lighten(@bronze-dot,20%),10%),5);
+
+//  --  TAGS
+@tag-color:                         #566E76;
+@tag-background:                    #F7FDFF;
+@tag-border:                        #C0D4DB;
+@tag-border-radius:                 2em;
+@tag_moderator-color:               @red-500;
+@tag_moderator-background:          @red-050;
+@tag_moderator-border:              @red-100;
+@tag_required-color:                @black-600;
+@tag_required-background:           @black-075;
+@tag_required-border:               @black-200;
+@tag_disliked-color:                @black-700;
+@tag_disliked-background:           @black-100;
+@tag_disliked-border:               transparent;
+
+//  --  TABS
+@tab-color:                         @black-400;
+@tab-color_selected:                @black-800;
+
+//  --  TRANSITIONS
+@default-transition-duration:       0.15s;
+@transition-time:                   @default-transition-duration;
+
+//  --  SPRITE FILES
+//      Base images
+@sprites-png:                       url("img/sprites.png");
+@sprites-svg:                       url("img/sprites.svg");
+@wmdButtons-png:                    url("img/wmd-buttons.png");
+@wmdButtons-svg:                    url("img/wmd-buttons.svg");
+
+//      Login
+@universal-login-sprite:            url('../../img/openid/universal-login-sprite.svg');
+@new-login-sprite:                  url('../../img/openid/new-login-sprite.png');
+@openid-logos:                      url('../../Img/openid/openid-logos.png');
+
+//      Profile
+@user-profile-sprite-location:      url('../../Img/user-profile-sprite.png');
+@user-profile-spriteSVG-location:   url('../../Img/user-profile-sprite.svg');
+
+
+// ===========================================================================
+//  $   HELPERS
+//      The following variables are helper variables to quickly set z-index,
+//      border-radius, margin, and padding values. These SHOULD NOT be reset.
+// ---------------------------------------------------------------------------
+//  --  Z-INDEX
+@zindex-navbar:                     1000;
+@zindex-navbar_fixed:               1030;
+@zindex-dropdown:                   1000;
+@zindex-popover:                    1010;
+@zindex-tooltip:                    1020;
+@zindex-modal:                      1050;
+@zindex-modalBackdrop:              1040;
+
+//  --  BORDER-RADIUS
+@borderRadius-large:                @borderRadius-base * 2;
+@borderRadius-base:                 4px;
+@borderRadius-small:                @borderRadius-base / 2;
+
+//  --  PADDING & MARGIN
+@padding-half:                      ceil(@padding-base / 2);
+@padding-base:                      @body-font-size * 1px;
+@padding-double:                    @padding-base * 2;
+@margin-half:                       ceil(@margin-base / 2);
+@margin-base:                       @body-font-size * 1px;
+@margin-double:                     @margin-base * 2;
+
+
+//  ============================================================================
+//  $  OLD VARS (That were in tools.less)
+//  ----------------------------------------------------------------------------
+@about-me-width: 445px;
+@about-me-height: 225px;
+@user-left-panel-margin: 30px;
+@user-counnt-cell-width: 30px;
+@tag-suggestions-bg-color: @white;
+@tag-suggestions-highlight-mix: 25%;
+@meterBackgroundColor: @black-050;
+@meterBorderColor: @black-050;
+@meterColor: @green-300;
+@deleted-content-info-color: #B65454;
+@special-status-background-color: @black-050;
+
+
 //  ============================================================================
 //  VARIABLES
 //  ============================================================================

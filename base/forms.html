@@ -17,98 +17,82 @@ css: stacks
     <div class="stacks-example">
         <div class="-codeBlock">
 {% highlight html linenos %}
-TBD
+<div class="input-group">
+    <label for="exampleEmail">Email Address <span class="optional">Optional</span></label>
+    <input id="exampleEmail" name="example" type="email" placeholder="e.g. an example, an idea, etc.">
+</div>
+<div class="input-group">
+    <label for="examplePassword">Password <span class="required">Required</span></label>
+    <input id="examplePassword" name="example" type="password" placeholder="Password" required>
+</div>
+<div class="input-group">
+    <label for="exampleTextArea">Your Answer <span class="required">Required</span></label>
+    <textarea id="exampleTextArea" name="example" rows="5" placeholder="Try to make your answer at least 140 characters" required></textarea>
+</div>
+<div class="input-group">
+    <label for="exampleFile">Select File</label>
+    <input id="exampleFile" type="file">
+    <p class="-help">A description of help text would go here.</p>
+</div>
+<div class="input-group">
+    <label class="checkbox"><input type="checkbox" /> Please sign me up</label>
+    <label class="checkbox">
+        <input type="checkbox" /> How about a free vacation too?
+        <p class="-help">Not responsible for any vacation costs</p>
+    </label>
+</div>
+<div class="input-group">
+    <label class="radio"><input type="radio" name="radio-list" id="item1" checked/> Once</label>
+    <label class="radio">
+        <input type="radio" name="radio-list" id="item2" checked/> Twice
+        <p class="-help">Which is better than only once</p>
+    </label>
+    <label class="radio"><input type="radio" name="radio-list" id="item3" checked/> Thrice</label>
+</div>
+<div class="button-group">
+    <button type="submit">Submit</button>
+    <a href="#" class="btn-clear">Cancel</a>
+</div>
 {% endhighlight %}
         </div>
         <div class="-previewBlock">
             <form>
-                <label for="">Input label required</label>
-                <input type="text" name="" id="" required placeholder="Required field">
-
-                <label for="">Input label</label>
-                <input type="text" name="" id="" placeholder="Optional field">
-
-                <label for="">Textarea label</label>
-                <textarea name="" id="" cols="30" rows="5"></textarea>
-
-                <div class="input-list radio">
-                    <label for="r1" class="has-radio">
-                        <input type="radio" name="r" id="r1"> Choice 1
-                        <span class="check"></span>
-                    </label>
-
-                    <label for="r2" class="has-radio">
-                        <input type="radio" name="r" id="r2"> Choice 2
-                        <span class="check"></span>
-                    </label>
-
-                    <label for="r3" class="has-radio">
-                        <input type="radio" name="r" id="r3"> Choice 3
-                        <span class="check"></span>
+                <div class="input-group">
+                    <label for="exampleEmail">Email Address <span class="optional">Optional</span></label>
+                    <input id="exampleEmail" name="example" type="email" placeholder="e.g. an example, an idea, etc.">
+                </div>
+                <div class="input-group">
+                    <label for="examplePassword">Password <span class="required">Required</span></label>
+                    <input id="examplePassword" name="example" type="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="exampleTextArea">Your Answer <span class="required">Required</span></label>
+                    <textarea id="exampleTextArea" name="example" rows="5" placeholder="Try to make your answer at least 140 characters" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="exampleFile">Select File</label>
+                    <input id="exampleFile" type="file">
+                    <p class="-help">A description of help text would go here.</p>
+                </div>
+                <div class="input-group">
+                    <label class="checkbox"><input type="checkbox" /> Please sign me up</label>
+                    <label class="checkbox">
+                        <input type="checkbox" /> How about a free vacation too?
+                        <p class="-help">Not responsible for any vacation costs</p>
                     </label>
                 </div>
-
-                <label for="checkbox-basic" class="has-checkbox">
-                    <input type="checkbox" name="" id="checkbox-basic">
-                    Yes I do accept things I don't understand
-                    <span class="check"></span>
-                </label>
-
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
-</section>
-
-<section class="stacks-section">
-    <h2 id="toc-required">Required Elements</h2>
-    <div class="stacks-example">
-        <div class="-codeBlock">
-{% highlight html linenos %}
-    ...
-{% endhighlight %}
-        </div>
-        <div class="-previewBlock">
-            <form>
-                <label for="">Input label required</label>
-                <input type="text" name="" id="" required placeholder="Required field">
-
-                <label for="">Textarea required</label>
-                <textarea name="" id="" cols="30" rows="5" required></textarea>
-
-                <label for="">Choose something<span class="is-required"></span></label>
-                <div class="input-list radio">
-                    <label for="rr1" class="has-radio">
-                        <input type="radio" name="r" id="rr1"> Choice 1
-                        <span class="check"></span>
+                <div class="input-group">
+                    <label class="radio"><input type="radio" name="radio-list" id="item1" checked/> Once</label>
+                    <label class="radio">
+                        <input type="radio" name="radio-list" id="item2" checked/> Twice
+                        <p class="-help">Which is better than only once</p>
                     </label>
-
-                    <label for="rr2" class="has-radio">
-                        <input type="radio" name="r" id="rr2"> Choice 2
-                        <span class="check"></span>
-                    </label>
-
-                    <label for="rr3" class="has-radio">
-                        <input type="radio" name="r" id="rr3"> Choice 3
-                        <span class="check"></span>
-                    </label>
+                    <label class="radio"><input type="radio" name="radio-list" id="item3" checked/> Thrice</label>
                 </div>
-
-                <label for="">Dates<span class="is-required"></span></label>
-                <div class="dates-range">
-                    <select name="" id=""><option>start date</option></select>
-                    <span class="to">to</span>
-                    <select name="" id=""><option>end date</option></select>
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                    <a href="#" class="btn-clear">Cancel</a>
                 </div>
-
-                <label for="checkbox-basicc" class="has-checkbox">
-                    <input type="checkbox" name="" id="checkbox-basicc">
-                    Yes I do accept things I don't understand
-                    <span class="check"></span>
-                     <span class="is-required"></span>
-                </label>
-
-                <input type="submit" value="Submit">
             </form>
         </div>
     </div>
@@ -119,56 +103,55 @@ TBD
     <div class="stacks-example">
         <div class="-codeBlock">
 {% highlight html linenos %}
-    ...
+<div class="input-group">
+    <label for="focusDefault">Default</label>
+    <input type="text" name="focusExample" id="focusDefault">
+</div>
+<div class="input-group">
+    <label for="focusWarning">Warning State</label>
+    <input type="text" name="focusExample" id="focusWarning" class="_warning"/>
+    <p class="-message">Oh no! Your answer wasn't formatted correctly.</p>
+</div>
+<div class="input-group">
+    <label for="focusError">Error State</label>
+    <input type="text" name="focusExample" id="focusError" class="_error"/>
+    <p class="-message">Oof. Yeah, that's nowhere close to being correct.</p>
+</div>
+<div class="input-group">
+    <label for="focusSuccess">Success State</label>
+    <input type="text" name="focusExample" id="focusSuccess" class="_success"/>
+    <p class="-message">Huzzah! We understand this answer!</p>
+</div>
+<div class="input-group">
+    <label for="focusDisabled">Disabled State</label>
+    <input type="text" name="focusExample" id="focusDisabled" placeholder="I'm a disabled field. :(" disabled />
+</div>
 {% endhighlight %}
         </div>
         <div class="-previewBlock">
             <form>
-                <label for="">Focus state</label>
-                <input type="text" name="" id="" class="focus">
-                <div class="row">
-                    <div class="col-6 with-padding">
-                        <label for="">Success state</label>
-                        <input type="text" name="" id="" class="success">
-                    </div>
-                    <div class="col-6 with-padding">
-                        <label for="">Success state</label>
-                        <input type="text" name="" id="" class="success">
-                        <p class="success-text">
-                            Success message
-                        </p>
-                    </div>
+                <div class="input-group">
+                    <label for="focusDefault">Default</label>
+                    <input type="text" name="focusExample" id="focusDefault">
                 </div>
-                <div class="row">
-                    <div class="col-6 with-padding">
-                        <label for="">Error state</label>
-                        <input type="text" name="" id="" class="error">
-                        <p class="error-text">
-                            Error message
-                        </p>
-                    </div>
-
-                    <div class="col-6 with-padding">
-                        <label for="">Warning state</label>
-                        <input type="text" name="" id="" class="warning">
-                        <p class="warning-text">
-                            Warning message
-                        </p>
-                    </div>
+                <div class="input-group">
+                    <label for="focusWarning">Warning State</label>
+                    <input type="text" name="focusExample" id="focusWarning" class="_warning"/>
+                    <p class="-message">Oh no! Your answer wasn't formatted correctly.</p>
                 </div>
-                <div class="row">
-                    <div class="col-6 with-padding">
-                        <label for="">Input with help text</label>
-                        <input type="text" name="" id="">
-                        <p class="help-text">
-                            Help text goes below the field.
-                        </p>
-                    </div>
-
-                    <div class="col-6 with-padding">
-                        <label for="">Disabled / read-only state</label>
-                        <input type="text" name="" id="" disabled>
-                    </div>
+                <div class="input-group">
+                    <label for="focusError">Error State</label>
+                    <input type="text" name="focusExample" id="focusError" class="_error"/>
+                    <p class="-message">Oof. Yeah, that's nowhere close to being correct.</p>
+                </div>
+                <div class="input-group">
+                    <label for="focusSuccess">Success State</label>
+                    <input type="text" name="focusExample" id="focusSuccess" class="_success"/>
+                    <p class="-message">Huzzah! We understand this answer!</p>
+                </div>
+                <div class="input-group">
+                    <label for="focusDisabled">Disabled State</label>
+                    <input type="text" name="focusExample" id="focusDisabled" placeholder="I'm a disabled field. :(" disabled />
                 </div>
             </form>
         </div>
@@ -177,6 +160,207 @@ TBD
 
 <section class="stacks-section">
     <h2 id="toc-unique">Unique Styles</h2>
+    <h3 id="toc-unique-pends">Input Prepends &amp; Appends</h3>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="input-group">
+    <label for="inputIcon">Icon Prepended</label>
+    <div class="-prepend">
+        <span class="-fill"><i class="icon-github"></i></span>
+        <input type="text" name="example" id="inputIcon" />
+    </div>
+</div>
+<div class="input-group">
+    <label for="inputValue">Value Prepended</label>
+    <div class="-prepend">
+        <span class="-fill"><code>http://</code></span>
+        <input type="text" name="example" id="inputValue" placeholder="www.example.com" />
+    </div>
+</div>
+<div class="input-group">
+    <label for="inputIcon">Value Appended</label>
+    <div class="-append">
+        <span class="-fill"><code>$/month</code></span>
+        <input type="text" name="example" id="inputIcon" placeholder="Monthly salary">
+    </div>
+</div>
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <div class="input-group">
+                    <label for="inputIcon">Icon Prepended</label>
+                    <div class="-prepend">
+                        <span class="-fill"><i class="icon-github"></i></span>
+                        <input type="text" name="example" id="inputIcon" />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="inputValue">Value Prepended</label>
+                    <div class="-prepend">
+                        <span class="-fill"><code>http://</code></span>
+                        <input type="text" name="example" id="inputValue" placeholder="www.example.com" />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="inputIcon">Value Appended</label>
+                    <div class="-append">
+                        <span class="-fill"><code>$/month</code></span>
+                        <input type="text" name="example" id="inputIcon" placeholder="Monthly salary">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3 id="toc-unique-switcher">Options Toggle</h3>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="input-group">
+    <label>What is your job status?</label>
+    <div class="option-toggle">
+        <div>
+            <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking" />
+            <label for="active">Actively looking right now</label>
+        </div>
+        <div>
+            <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
+            <label for="passive">Open, but not actively looking</label>
+        </div>
+        <div>
+            <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
+            <label for="not-looking">Not interested in jobs</label>
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <div class="input-group">
+                    <label>Options Toggle</label>
+                    <div class="option-toggle">
+                        <div>
+                            <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking" />
+                            <label for="active">Actively looking right now</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
+                            <label for="passive">Open, but not actively looking</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
+                            <label for="not-looking">Not interested in jobs</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3 id="toc-unique-switcher">Inline Inputs</h3>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="input-group">
+    <label>Select Menus Inline</label>
+    <div class="row">
+        <select name="" id="">
+            <option selected>Select Start Date</option>
+            ...
+        </select>
+        to
+        <select name="" id="">
+            <option selected>Select End Date</option>
+            ...
+        </select>
+    </div>
+</div>
+<div class="input-group">
+    <label>Current Occupation</label>
+    <div class="row -col6 -multi">
+        <input type="text" id="exampleInline1" name="example" placeholder="Job Title" />
+        <span class="-fill"><code>at</code></span>
+        <input type="text" id="exampleInline2" name="example" placeholder="Company" />
+    </div>
+</div>
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <div class="input-group">
+                    <label>Select Menus Inline</label>
+                    <div class="row">
+                        <select name="" id="">
+                            <option selected>Select Start Date</option>
+                            <option>Today</option>
+                            <option>Yesterday</option>
+                            <option>Last Week</option>
+                            <option>Last Month</option>
+                            <option>Last Year</option>
+                        </select>
+                        to
+                        <select name="" id="">
+                            <option selected>Select End Date</option>
+                            <option>Today</option>
+                            <option>Yesterday</option>
+                            <option>Last Week</option>
+                            <option>Last Month</option>
+                            <option>Last Year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Current Occupation</label>
+                    <div class="row -col6 -multi">
+                        <input type="text" id="exampleInline1" name="example" placeholder="Job Title" />
+                        <span class="-fill"><code>at</code></span>
+                        <input type="text" id="exampleInline2" name="example" placeholder="Company" />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Inline Checkbox List</label>
+                    <div class="input-group _inline">
+                        <label for="choice1" class="checkbox">
+                            <input type="checkbox" name="choiceBox" id="choice1" checked /> Choice 1
+                        </label>
+                        <label for="choice2" class="checkbox">
+                            <input type="checkbox" name="choiceBox" id="choice2" /> Choice 2
+                        </label>
+                        <label for="choice3" class="checkbox">
+                            <input type="checkbox" name="choiceBox" id="choice3" /> Choice 3
+                        </label>
+                        <label for="choice4" class="checkbox">
+                            <input type="checkbox" name="choiceBox" id="choice4" /> Choice 4
+                        </label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Inline Radio List</label>
+                    <div class="input-group _inline">
+                        <label for="radio1" class="radio">
+                            <input type="radio" name="choiceRadio" id="radio1" checked /> Choice 1
+                        </label>
+                        <label for="radio2" class="radio">
+                            <input type="radio" name="choiceRadio" id="radio2" /> Choice 2
+                        </label>
+                        <label for="radio3" class="radio">
+                            <input type="radio" name="choiceRadio" id="radio3" /> Choice 3
+                        </label>
+                        <label for="radio4" class="radio">
+                            <input type="radio" name="choiceRadio" id="radio4" /> Choice 4
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-actions">Action Placement</h2>
     <div class="stacks-example">
         <div class="-codeBlock">
 {% highlight html linenos %}
@@ -185,141 +369,9 @@ TBD
         </div>
         <div class="-previewBlock">
             <form>
-                <div class="row">
-                    <div class="col-4 with-padding">
-                        <label for="">Input with icon</label>
-                        <div class="input-with-value">
-                            <span class="prepend">
-                                <i class="icon-github"></i>
-                            </span>
-                            <input type="text" name="" id="">
-                        </div>
-                    </div>
-                    <div class="col-4 with-padding">
-                        <label for="">Value prepended</label>
-                        <div class="input-with-value">
-                            <span class="prepend">http://</span>
-                            <input type="text" name="" id="" placeholder="www.your-site.com">
-                        </div>
-                    </div>
-                    <div class="col-4 with-padding">
-                        <label for="">Value appended</label>
-                        <div class="input-with-value">
-                            <span class="append">$/month</span>
-                            <input type="text" name="" id="" placeholder="Monthly salary">
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <label for="">Switcher</label>
-                <div class="switcher-container">
-                    <div class="switcher">
-                        <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking">
-                        <label for="active">Actively looking right now</label>
-
-                        <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
-                        <label for="passive">Open, but not actively looking</label>
-
-                        <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
-                        <label for="not-looking">Not interested in jobs</label>
-                    </div>
-                </div>
-                <hr>
-                <label for="">Dates range</label>
-                <div class="dates-range">
-                    <select name="" id=""><option>start date</option></select>
-                    <span class="to">to</span>
-                    <select name="" id=""><option>end date</option></select>
-                </div>
-                <hr>
-                <label for="">Checkboxes list</label>
-                <div class="input-list checkbox">
-                    <label for="choice-checkbox-1" class="has-checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
-                        <span class="check"></span>
-                    </label>
-
-                    <label for="choice-checkbox-2" class="has-checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-2"> Choice 2
-                        <span class="check"></span>
-                    </label>
-
-                    <label for="choice-checkbox-3" class="has-checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-3"> Choice 3
-                        <span class="check"></span>
-                    </label>
-
-                    <label for="choice-checkbox-4" class="has-checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-4"> Choice 4
-                        <span class="check"></span>
-                    </label>
-                </div>
-
-                <label for="">Radios list</label>
-                <div class="input-list radio">
-                    <label for="choice-radio-1" class="has-radio">
-                        <input type="radio" name="choices" id="choice-radio-1" checked> Choice 1
-                        <span class="check"></span>
-                    </label>
-
-                    <label for="choice-radio-2" class="has-radio">
-                        <input type="radio" name="choices" id="choice-radio-2"> Choice 2
-                        <span class="check"></span>
-                    </label>
-
-                    <label for="choice-radio-3" class="has-radio">
-                        <input type="radio" name="choices" id="choice-radio-3"> Choice 3
-                        <span class="check"></span>
-                    </label>
-
-                    <label for="choice-radio-4" class="has-radio">
-                        <input type="radio" name="choices" id="choice-radio-4"> Choice 4
-                        <span class="check"></span>
-                    </label>
-                </div>
-
-                <label for="cs1" class="has-checkbox has-message">
-                    <input type="checkbox" name="" id="cs1" checked> Checkbox with subtext
-                    <span class="check"></span>
-
-                    <span class="help-text">
-                        Lorem ipsum dolor sir amet.
-                    </span>
-                </label>
-
-                <label for="rs1" class="has-radio has-message">
-                    <input type="radio" name="" id="rs1" checked> Checkbox with subtext
-                    <span class="check"></span>
-
-                    <span class="help-text">
-                        Lorem ipsum dolor sir amet.
-                    </span>
-                </label>
-                <hr>
-                <label for="">Double input</label>
-                <div class="double-input">
-                    <input type="text" name="" id="" placeholder="Job title">
-                    <span class="separator">at</span>
-                    <input type="text" name="" id="" placeholder="Company">
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
-
-<section class="stacks-section">
-    <h2 id="toc-actions">Actions</h2>
-    <div class="stacks-example">
-        <div class="-codeBlock">
-{% highlight html linenos %}
-    ...
-{% endhighlight %}
-        </div>
-        <div class="-previewBlock">
-            <form action="">
-                <div class="ctas-container">
-                    <input type="submit" value="Save">
-                    <a href="/users/jobsearch/4264587" title="Cancel" class="btn-clear">Cancel</a>
+                <div class="button-group _border">
+                    <input type="submit" value="Primary Action">
+                    <a href="#" title="Cancel" class="btn-clear">Secondary Action</a>
                 </div>
             </form>
         </div>
@@ -331,31 +383,53 @@ TBD
     <div class="stacks-example">
         <div class="-codeBlock">
 {% highlight html linenos %}
-    ...
+<form class="_inline">
+    <div class="input-group">
+        <label for="">Short label</label>
+        <input type="text" name="" id="">
+    </div>
+    <div class="input-group">
+        <label for="">Very long label with many words</label>
+        <input type="text" name="" id="">
+    </div>
+    <div class="input-group">
+        <label for="">Label</label>
+        <input type="text" name="" id="">
+        <a href="" class="btn btn-secondary">Action</a>
+    </div>
+    <div class="input-group">
+        <label for="">Label</label>
+        <input type="submit" value="Something big will happen">
+    </div>
+    <div class="button-group _border">
+        <a href="" class="btn">Save</a>
+        <a href="" class="btn-clear">Cancel</a>
+    </div>
+</form>
 {% endhighlight %}
         </div>
         <div class="-previewBlock">
-            <form action="" class="inline-form">
-                <div class="inline-field">
+            <form class="_inline">
+                <div class="input-group">
                     <label for="">Short label</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="inline-field">
+                <div class="input-group">
                     <label for="">Very long label with many words</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="inline-field">
+                <div class="input-group">
                     <label for="">Label</label>
                     <input type="text" name="" id="">
                     <a href="" class="btn btn-secondary">Action</a>
                 </div>
-                <div class="inline-field">
+                <div class="input-group">
                     <label for="">Label</label>
-                    <input type="submit" value="Save">
+                    <input type="submit" value="Something big will happen">
                 </div>
-                <div class="ctas-container">
-                    <a href="" class="btn-clear">Cancel</a>
+                <div class="button-group _border">
                     <a href="" class="btn">Save</a>
+                    <a href="" class="btn-clear">Cancel</a>
                 </div>
             </form>
         </div>
@@ -416,12 +490,12 @@ TBD
                 <div class="form-item">
                     <label>Tags</label>
 
-                    <input id="tagnames" name="tagnames" type="text" size="60" value="" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="display: none;"><div class="tag-editor" style="width: 636px;height: 35px;"><span></span><input type="text" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="width: 628px;"><span></span></div>
+                    <input id="tagnames" name="tagnames" type="text" size="60" value="" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="display: none;"><div class="tag-editor" style="width: 636px;height: 35px;"><span></span><input type="text" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)"><span></span></div>
                 </div>
             </form>
 
             <label for="">Tag editor multi lines</label>
-            <div class="tag-editor multi-line" style="width: 332px; height: 98px;"><span><span class="post-tag rendered-element" title="">sql-server<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">asp.net<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">redis<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">elasticsearch<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">linux<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">haproxy<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">windows<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">c#<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder="" style="width: 19px;"><span></span>
+            <div class="tag-editor multi-line" style="width: 400px"><span><span class="post-tag rendered-element" title="">sql-server<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">asp.net<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">redis<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">elasticsearch<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">linux<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">haproxy<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">windows<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">c#<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder="" style="width: 19px;"><span></span>
             </div>
         </div>
     </div>

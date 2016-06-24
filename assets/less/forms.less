@@ -1,0 +1,885 @@
+//
+//  STACK OVERFLOW
+//  FORMS
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE STYLES
+//  • SPECIFIC STYLES
+//
+//  ============================================================================
+//  $ IMPORTS
+//  ----------------------------------------------------------------------------
+// @import "_composer";
+
+input[type="button"],
+input[type="submit"],
+button,
+.btn,
+[class*="btn-"] { padding: 0.8em 1.1em; } // Temporary. This will be updated on prod with the forms release
+
+//  ============================================================================
+//  $ VARIABLES
+//  ----------------------------------------------------------------------------
+@input-padding:                 (@padding-half + 1) (@padding-base - 1) @padding-half;
+@input-fontSize:                @body-font-size + 1;
+@input-lineHeight:              1.461538462;
+@input-color:                   @black-700;
+@input-border:                  @black-150;
+@input-sprite-width:            137px;
+@input-placeholder-color:       @black-150;
+
+@input_disabled-background:     @black-050;
+@input_disabled-border:         @black-075;
+@input_disabled-color:          @black-400;
+@input_disabled-shadowInner:    fade(@black-350,10%);
+
+@input_focused-border:          @blue-500;
+@input_focused-color:           @blue-400;
+@input_focused-shadowInner:     @black-050;
+@input_focused-shadowDrop:      fade(@input_focused-border,50%);
+
+@input-warning-border:          @yellow-500;
+@input-warning-color:           desaturate(@yellow-700,60%);
+
+
+//  ============================================================================
+//  $ TYPE STYLES
+//  ----------------------------------------------------------------------------
+//  -- Labels
+label, .label {
+    font-size: 14px;
+    font-weight: 700;
+    color: @black-700;
+
+    //  --  Layout
+    &._block    { display: block; }
+
+    //  --  Styles
+    &._muted    { color: @copy_muted-color; }
+
+    //  --  Sizes
+    &._small { font-size: @input-fontSize - 1; }
+    &._large { font-size: @input-fontSize + 4; }
+}
+
+//  --  Required / Optional
+span.required,
+span.optional {
+    display: inline-block;
+    margin-left: @margin-half;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 400;
+}
+span.required { color: @red-500; }
+span.optional { color: @black-400; }
+
+//  --  Help Text
+p.-help {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: @black-400;
+    font-size: 12px;
+}
+
+
+//  ============================================================================
+//  $ INPUT STYLES 
+//  ----------------------------------------------------------------------------
+//  Set the baseline styles for everything up front. Keeping this fairly generic.
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="datetime"],
+.input,
+.tag-editor,
+.container .chosen-container > .chosen-choices {
+    box-sizing: border-box;
+    margin: 0;
+    vertical-align: middle;
+
+    //  --  Placeholder
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,            // Firefox 19+
+    &:-moz-placeholder,             // Firefox 16-18
+    &:-ms-input-placeholder { color: @input-placeholder-color; }
+
+    //  Create some whitespace for the input when it directly follows a label
+    label + &,
+    & + label { margin-top: @margin-half; }
+
+    //  --  Layout
+    &._block   {
+        display: block;
+        margin-left: 0;
+    }
+
+    //  --  Sizes
+    &._large { padding: @padding-base (@padding-base - 1) (@padding-base - 1); }
+    &._small { padding: @padding-half (@padding-base - 2) (@padding-half - 1); }
+}
+
+//  --  Textarea styles
+textarea {
+    height: auto;
+    resize: vertical;
+    font-size: @input-fontSize - 1;
+    line-height: @input-lineHeight - 0.3;
+}
+
+//  --  Select styles
+select {
+    padding: 2px;
+    font-size: @input-fontSize - 1;
+    border-color: @input-color;
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        border-color: @input_focused-border;
+    }
+
+    &[disabled],
+    &.disabled {
+        background-color: @input_disabled-background;
+        border-color: @input_disabled-border;
+        color: @input_disabled-color;
+        cursor: not-allowed;
+    }
+}
+
+input[type="file"] {
+    display: block;
+    margin: 0;
+    padding: @padding-half 0;
+    font-size: 11px;
+}
+
+
+//  --  Okay now we can style input fields
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="datetime"],
+.input,
+.tag-editor,
+.container .chosen-container > .chosen-choices {
+    padding: @input-padding;
+    width: 100%;
+
+    font-size: @input-fontSize;
+    line-height: @input-lineHeight;
+    color: @input-color;
+
+    background-color: @white;
+    border: 1px solid @input-border;
+    box-shadow: inset 0 0 1px fade(@black-350,20%), 0 0 0 fade(@white,0%);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    
+    &:hover {
+        border-color: fade(@input_focused-border,50%);
+        box-shadow: inset 0 0 2px darken(@input_focused-shadowInner,10%), 0 0 2px fade(@input_focused-shadowDrop,20%);
+    }
+    
+    &:focus,
+    &._focus {
+        border-color: @input_focused-border;
+        box-shadow: inset 0 0 4px @input_focused-shadowInner, 0 0 5px @input_focused-shadowDrop;
+        outline: 0;
+    }
+
+    &[disabled], &._disabled,
+    &[readonly], &._readonly {
+        background-color: @input_disabled-background;
+        border-color: @input_disabled-border;
+        box-shadow: inset 0 0 3px @input_disabled-shadowInner;
+        color: @input_disabled-color;
+    }
+    &[disabled], &._disabled {
+        cursor: not-allowed;
+
+        // icon
+        background-image: url("../../Img/forms.png");
+        background-image: url("../../Img/forms.svg"), none;
+        background-repeat: no-repeat;
+        background-position: ~'calc(100% + @{input-sprite-width} - 124px)' -126px;
+    }
+}
+
+
+//  ============================================================================
+//  $ INPUT LAYOUT OPTIONS
+//  ----------------------------------------------------------------------------
+select,
+textarea,
+input,
+.input,
+.input._uneditable {
+    &._large  { font-size: 24px; }
+    &._medium { font-size: 18px; }
+    &._small  { font-size: 12px; }
+}
+
+
+//  ============================================================================
+//  $ CHECKBOXES & RADIO SELECTS
+//  ----------------------------------------------------------------------------
+input[type="radio"],
+input[type="checkbox"] { margin: 0; } // Reset browser
+
+.checkbox,
+.radio {
+    *,
+    *:before,
+    *:after { box-sizing: border-box; }
+
+    & + & { margin-top: @margin-half; }
+
+    label& {
+        padding-left: 19px; // Need to push it over so text doesn't wrap underneath the input
+        display: block;
+        font-weight: 400;
+        cursor: pointer;
+
+        select { margin-left: @margin-half; }
+    }
+
+    &._inline {
+        display: inline-block;
+        margin-bottom: 0;
+        padding-top: 1em;
+        vertical-align: middle;
+
+        & + & { margin-left: 0.5em; }
+    }
+
+    .input-group._inline & {
+        margin-left: @margin-double;
+        &:first-of-type { margin-left: 0; }
+
+        &.-fill {
+            padding-left: 19px + (@padding-base - 1);
+            font-size: @input-fontSize;
+            line-height: 1.5;
+
+            > input { margin-top: -2px; }
+        }
+    }
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+    vertical-align: middle;
+    margin: -1px 2px 0 -19px;
+
+    &:focus { outline: 0; }
+}
+
+
+//  ============================================================================
+//  $ STATES
+//  ----------------------------------------------------------------------------
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="datetime"],
+.input,
+.container .chosen-container .chosen-choices {
+
+    //  Message (Generic)
+    ~ .-message {
+        display: block;
+        margin-bottom: 0;
+        padding-top: @padding-half;
+        padding-bottom: @padding-half;
+    }
+
+    // Set icon for all states
+    &._warning,
+    &._error,
+    &._success {
+        background-image: url("../../Img/forms.png");
+        background-image: url("../../Img/forms.svg"), none;
+        background-repeat: no-repeat;
+    }
+
+    //  --  WARNING
+    &._warning,
+    &.validation-info  {
+        border-color: @yellow-500;
+        background-position: ~'calc(100% + @{input-sprite-width} - 72px)' -62px;
+
+        &:hover {
+            border-color: fade(@orange-200,50%);
+            box-shadow: inset 0 0 1px @black-100, 0 0 2px @yellow-200;
+        }
+        &:focus,
+        &._focus {
+            border-color: @orange-200;
+            box-shadow: inset 0 0 4px @black-050, 0 0 4px @yellow-200;
+        }
+
+        ~ .-message { color: @orange-600; }
+    }
+
+    //  --  ERROR
+    &._error,
+    &.validation-error  {
+        border-color: @red-400;
+        background-position: ~'calc(100% + @{input-sprite-width} - 99px)' -94px;
+
+        &:hover {
+            border-color: fade(@red-500,50%);
+            box-shadow: inset 0 0 1px @black-100, 0 0 2px @red-100;
+        }
+        &:focus,
+        &._focus {
+            border-color: @red-500;
+            box-shadow: inset 0 0 4px @black-050, 0 0 4px @red-200;
+        }
+
+        ~ .-message { color: @red-500; }
+    }
+
+    //  --  SUCCESS
+    &[required]:valid,
+    &.required:valid,
+    &._success {
+        border-color: @green-400;
+        background-position: ~'calc(100% + @{input-sprite-width} - 51px)' -30px;
+
+        &:hover {
+            border-color: fade(@green-500,50%);
+            box-shadow: inset 0 0 1px @black-100, 0 0 2px @green-100;
+        }
+        &:focus,
+        &._focus {
+            border-color: @green-500;
+            box-shadow: inset 0 0 4px @black-050, 0 0 4px @green-200;
+        }
+
+        ~ .-message { color: darken(@green-500,5%); }
+    }
+}
+
+//  ============================================================================
+//  $ GROUPS & LAYOUTS
+//  ----------------------------------------------------------------------------
+//  --  INPUT GROUPS
+//      Wrapping <div> that provides ammple white space around a unit of
+//      form elements
+.input-group {
+    &:extend(.row all);
+    position: relative;
+    margin-bottom: 1.4em;
+
+    //  If an input-group is nested within another, remove the bottom margin.
+    & > & { margin-bottom: 0; }
+
+    //  By default labels have a display of inline-block. However, if sibling
+    //  elements have a grid column width assigned to them, the label is moved to
+    //  the end of the order since it doesn't have a float property assigned to
+    //  it. Now assigning a float property doesn't help us, so instead we change
+    //  the display to block for direct child label elements within input-groups.
+    > label { display: block; }
+
+    > .row {
+        float: none;
+        margin-top: @margin-half;
+
+        > select {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: @margin-half;
+            margin-right: @margin-half;
+
+            &:first-of-type { margin-left: 0; }
+            &:last-of-type { margin-right: 0; }
+        }
+    }
+
+    //  Input prepends, appends, and connectors use the same grayed out box
+    //  style. This is the univesal style for it.
+    .-fill {
+        padding: @input-padding;
+        font-size: @input-fontSize;
+        line-height: @input-lineHeight;
+        background-color: @black-050;
+        border: 1px solid @input-border;
+        flex-shrink: 0;
+
+        code {
+            padding: 0;
+            font-size: 100%:;
+            color: @black-500;
+            background-color: transparent;
+        }
+    }
+
+    //  If an entire input-group is unavailable, make it look like that.
+    &._disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+//  --  INPUT GROUP: Input Prepend & Append
+.input-group {
+    > .-prepend,
+    > .-append {
+        -ms-display: flex;
+            display: flex;
+        margin-top: @margin-half;
+
+        .-fill,
+        > input { display: inline-block; }
+
+        .input-group & { margin-top: 0; }
+
+        //  If a checkbox or radio input follows a prepend
+        //  or an append div, insert some space.
+        + .checkbox,
+        + .radio { margin-top: 0.25em; }
+    }
+
+    > .-prepend {
+        .-fill { border-right-width: 0; }
+
+        + input[type="button"],
+        + input[type="submit"],
+        + button,
+        + .btn,
+        + [class*="btn-"] {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    > .-append {
+        .-fill {
+            -ms-order: 2;
+                order: 2;
+            border-left-width: 0;
+        }
+
+        + input[type="button"],
+        + input[type="submit"],
+        + button,
+        + .btn,
+        + [class*="btn-"] {
+            left: -1px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+
+//  --  INPUT GROUPS: Multi Input Rows
+.input-group > .-multi {
+    display: flex;
+    justify-content: flex-start;
+
+    label + & { margin-top: @margin-half; }
+
+    input { flex-grow: 2; }
+
+    .-fill {
+        flex-grow: 1;
+        border-left-width: 0;
+        border-right-width: 0;
+    }
+
+    input[disabled] {
+        color: @input_disabled-color;
+        border-color: @input-border;
+        background-color: @input_disabled-background;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+//  --  INPUT GROUPS: Inline Form Rows
+.input-group._inline {
+    display: flex;
+
+    .input-group & { margin-bottom: 0; }
+
+    input[type="button"],
+    input[type="submit"],
+    button,
+    .btn,
+    [class*="btn-"],
+    label,
+    .-control {
+        align-self: center;
+        margin: 0;
+    }
+
+    //  Reset font-size
+    input[type="button"],
+    input[type="submit"],
+    button,
+    .btn,
+    [class*="btn-"] { font-size: @input-fontSize; }
+
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="datetime"],
+    .input {
+        margin-top: 0;
+        width: auto;
+        flex-grow: 2;
+
+        ~ input[type="button"],
+        ~ input[type="submit"],
+        ~ button,
+        ~ .btn,
+        ~ [class*="btn-"] {
+            left: -1px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    //  Makes labels act like white-space: nowrap
+    label { flex-shrink: 0; }
+
+    &.-locationAddress {
+        .-append,
+        .-prepend { min-width: 90.5%; }
+    }
+
+    .-control {
+        width: auto;
+        > input { margin-left: @margin-base; }
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+
+//  --  BUTTON GROUPS
+//      Wrapping <div> for buttons / actions
+.button-group {
+    &:extend(.row all);
+    margin-top: @margin-base;
+
+    //  Applies top border to the button container
+    &._border {
+        padding-top: 1.4em;
+        border-top: 1px solid @divider-line-color;
+    }
+}
+
+
+//  --  FORM: Inline
+//      Here we set every input-group within a form to inline
+form._inline {
+    .input-group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="datetime"],
+    .input {
+        margin-top: 0;
+        width: auto;
+        flex-grow: 2;
+    }
+
+    label {
+        padding-right: 1em;
+        width: 25%;
+        align-self: center;
+        flex-shrink: 0;
+
+        + input[type="button"],
+        + input[type="submit"],
+        + button,
+        + .btn,
+        + [class*="btn-"] { flex-grow: 2; }
+    }
+}
+
+
+//  ============================================================================
+//  $ OPTION TOGGLE
+//  ----------------------------------------------------------------------------
+.option-toggle {
+    justify-content: space-between;
+    display: flex;
+
+    label + & { margin-top: @margin-half; }
+
+    > div {
+        display: flex;
+        flex-grow: 1;
+
+        input[type="radio"] {
+            display: none;
+            &:checked + label {
+                color: @white;
+                background-color: @blue-500;
+                border-color: @blue-500;
+                pointer-events: none;
+            }
+        }
+
+        label {
+            flex-grow: 1;
+            padding: @input-padding;
+            min-width: 100px;
+
+            font-weight: 400;
+            line-height: @input-lineHeight;
+            text-align: center;
+            color: @input-color;
+            background-color: @white;
+            border: 1px solid @input-border;
+
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+
+            &:hover {
+                color: darken(@input-color,10%);
+                background-color: @blue-050;
+                border-color: @blue-200;
+            }
+        }
+
+        &:not(:first-of-type) label { border-left: none; }
+    }
+}
+
+
+//  ============================================================================
+//  $ Image upload button
+//  ----------------------------------------------------------------------------
+.img-upload {
+    * { box-sizing: border-box; } // To be removed once we'll have it everywhere
+    
+    position: relative;
+    margin: 7px 0 18px;
+    padding: 10px;
+    min-height: 60px;
+    cursor: pointer;
+    
+    color: @black-700;
+    text-align: center;
+    background-color: @black-025;
+    border: 1px dashed @black-150;
+    transition: all 0.15s ease-in-out;
+
+    &._disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    &:hover {
+        background-color: darken(@black-025,1%);
+
+        .text-wrapper {
+            color: @link-color;
+            .img-size-hint { color: @black-400; }
+        }
+    }
+
+    .text-wrapper {
+        margin: 10px 0;
+        font-size: @input-fontSize;
+        font-weight: 700;
+        line-height: @input-lineHeight;
+        text-align: center;
+        transition: all 0.15s ease-in-out;
+
+        .icon { margin-bottom: 6px; }
+
+        .img-size-hint {
+            display: block;
+            margin-top: 1px;
+            font-weight: 400;
+            font-size: @input-fontSize - 2;
+            color: @black-350;
+            transition: all 0.15s ease-in-out;
+        }
+    }
+
+    // "X" button
+    .remove {
+        position: absolute;
+        top: -7px;
+        right: -11px;
+        padding: 4px;
+        width: 22px;
+        height: 22px;
+
+        color: @black-600;
+        text-align: center;
+        border-radius: 50%;
+        background-color: @black-150;
+        transition: all 0.15s ease-in-out;
+
+        &:hover {
+            color: @white;
+            background-color: @blue-500;
+        }
+    }
+}
+
+
+//  ============================================================================
+//  $ TAG EDITOR
+//  ----------------------------------------------------------------------------
+.tag-editor {
+    position: relative;
+    overflow: hidden;
+    padding: 5px 5px 4px;
+    white-space: nowrap;
+    cursor: text;
+
+    label ~ & { margin-top: @margin-half; }
+    
+    //  --  Multi-line Tag Editor
+    &.multi-line {
+        padding-top: 1px;
+        white-space: normal;
+        height: auto;
+
+        input { margin: 0 0 0 4px; }
+        .rendered-element,
+        .post-tag { margin: 4px 3px 0 0; }
+    }
+
+    //  Where the user types to add tags
+    input[type="text"] {
+        display: inline-block;
+        margin-top: -1px;
+        margin-left: 4px;
+        font-size: @input-fontSize - 1;
+        border: none;
+        box-shadow: none;
+        outline: 0;
+        padding: 0;
+
+        &:focus { border: 0; }
+    }
+
+    .post-tag { margin: 0 3px 0 0; }
+}
+
+
+//  ============================================================================
+//  $ Chosen plugin (JS plugin)
+//  ----------------------------------------------------------------------------
+.container .chosen-container {
+    margin-top: @margin-half;
+
+    &.chosen-container-active {
+        border: 1px solid @input_focused-color;
+
+        li.search-field input[type="text"] {
+            color: @input-color;
+        }
+    }
+
+    .chosen-choices {
+        box-shadow: none;
+        padding: 0 !important;
+        margin: 0 !important;
+
+        li.search-field input[type="text"] { padding: @input-padding; }
+    }
+
+    .team-join {
+        .addtoprofile {
+            margin-top: 6px;
+            font-weight: 400;
+        }
+        .join-date {
+            margin-top: 6px;
+        }
+    }
+}
+
+
+//  ============================================================================
+//  $ Input option (privacy)
+//    Used in the developer story: header > edit > "display name"
+//  ----------------------------------------------------------------------------
+.privacy-wrapper {
+    position: relative;
+
+    //
+    // Display off when hidden, inline when toggled
+    // "Synchronized with your profile" on the DS
+    .privacy-checkbox {
+        display: none;
+        width: auto;
+        padding: 3px 6px;
+        border-radius: 3px 3px 0px 0px;
+
+        position: absolute;
+        top: -8px;
+        right: 0;
+
+        font-size: 11px;
+        color: white;
+        background: @blue-500;
+
+        input[type="checkbox"] {
+            position: relative;
+            z-index: 1;
+            margin-right: 8px;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 24px;
+            background: darken(@blue-500, 12%);
+            z-index: 0;
+            border-radius: 3px 0px 0px 0px;
+        }
+    }
+}

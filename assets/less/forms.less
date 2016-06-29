@@ -16,7 +16,7 @@ input[type="button"],
 input[type="submit"],
 button,
 .btn,
-[class*="btn-"] { padding: 0.8em 1.1em; } // Temporary. This will be updated on prod with the forms release
+[class*="btn-"] { padding: 0.75em 1.1em; } // Temporary. This will be updated on prod with the forms release
 
 //  ============================================================================
 //  $ VARIABLES
@@ -256,16 +256,11 @@ input[type="checkbox"] { margin: 0; } // Reset browser
         select { margin-left: @margin-half; }
     }
 
-    &._inline {
+    .input-inline & {
         display: inline-block;
-        margin-bottom: 0;
-        padding-top: 1em;
         vertical-align: middle;
 
-        & + & { margin-left: 0.5em; }
-    }
-
-    .input-group._inline & {
+        margin-top: 0;
         margin-left: @margin-double;
         &:first-of-type { margin-left: 0; }
 
@@ -274,11 +269,11 @@ input[type="checkbox"] { margin: 0; } // Reset browser
             font-size: @input-fontSize;
             line-height: 1.5;
 
-            > input { margin-top: -2px; }
+            > input[type="checkbox"],
+            > input[type="radio"] { margin-top: -2px; }
         }
     }
 }
-
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
     vertical-align: middle;
@@ -380,57 +375,43 @@ input[type="datetime"],
 }
 
 //  ============================================================================
-//  $ GROUPS & LAYOUTS
+//  $   INPUT GROUP
+//      This is the wrapper that does it all. It sets up the layout. Adds in
+//      margins and padding. It's the component which takes the base elements
+//      above and makes them look great.
+//
+//      First we need to set up the base layout and grid system which can be
+//      applied to inputs, labels, and buttons within this component.
 //  ----------------------------------------------------------------------------
-//  --  INPUT GROUPS
-//      Wrapping <div> that provides ammple white space around a unit of
-//      form elements
-.input-group {
-    &:extend(.row all);
+//  --  GRID SYSTEM
+//  ----------------------------------------------------------------------------
+@grid-col-width:        100% / 12;
+
+.input-group,
+.button-group {
+    *,
+    *:before,
+    *:after { box-sizing: border-box; }
+
+    .clearfix();
     position: relative;
+}
+
+//  ----------------------------------------------------------------------------
+//  --  BASE STYLE
+//  ----------------------------------------------------------------------------
+.input-group {
     margin-bottom: 1.4em;
 
-    //  If an input-group is nested within another, remove the bottom margin.
-    & > & { margin-bottom: 0; }
-
-    //  By default labels have a display of inline-block. However, if sibling
-    //  elements have a grid column width assigned to them, the label is moved to
-    //  the end of the order since it doesn't have a float property assigned to
-    //  it. Now assigning a float property doesn't help us, so instead we change
-    //  the display to block for direct child label elements within input-groups.
+    //  Our default layout places labels on their own lines.
     > label { display: block; }
 
-    > .row {
-        float: none;
+    //  Boxes are ways to subdivide content within an input-group. These are
+    //  especially helpful for inserting margins between inputs and labels.
+    > .-box {
+        position: relative;
         margin-top: @margin-half;
-
-        > select {
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: @margin-half;
-            margin-right: @margin-half;
-
-            &:first-of-type { margin-left: 0; }
-            &:last-of-type { margin-right: 0; }
-        }
-    }
-
-    //  Input prepends, appends, and connectors use the same grayed out box
-    //  style. This is the univesal style for it.
-    .-fill {
-        padding: @input-padding;
-        font-size: @input-fontSize;
-        line-height: @input-lineHeight;
-        background-color: @black-050;
-        border: 1px solid @input-border;
-        flex-shrink: 0;
-
-        code {
-            padding: 0;
-            font-size: 100%:;
-            color: @black-500;
-            background-color: transparent;
-        }
+        min-height: 1rem;
     }
 
     //  If an entire input-group is unavailable, make it look like that.
@@ -440,119 +421,120 @@ input[type="datetime"],
     }
 }
 
-//  --  INPUT GROUP: Input Prepend & Append
-.input-group {
-    > .-prepend,
-    > .-append {
-        -ms-display: flex;
-            display: flex;
-        margin-top: @margin-half;
+//  ----------------------------------------------------------------------------
+//  --  INLINE
+//      By default, we use a left-aligned, each-element-on-their-own-row layout
+//      for forms. Sometimes though we would look to group various elements
+//      together into a row.
+//  ----------------------------------------------------------------------------
+.input-inline {
+    margin-top: @margin-half;
 
-        .-fill,
-        > input { display: inline-block; }
-
-        .input-group & { margin-top: 0; }
-
-        //  If a checkbox or radio input follows a prepend
-        //  or an append div, insert some space.
-        + .checkbox,
-        + .radio { margin-top: 0.25em; }
-    }
-
-    > .-prepend {
-        .-fill { border-right-width: 0; }
-
-        + input[type="button"],
-        + input[type="submit"],
-        + button,
-        + .btn,
-        + [class*="btn-"] {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-    }
-
-    > .-append {
-        .-fill {
-            -ms-order: 2;
-                order: 2;
-            border-left-width: 0;
-        }
-
-        + input[type="button"],
-        + input[type="submit"],
-        + button,
-        + .btn,
-        + [class*="btn-"] {
-            left: -1px;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-    }
-}
-
-//  --  INPUT GROUPS: Multi Input Rows
-.input-group > .-multi {
-    display: flex;
-    justify-content: flex-start;
-
-    label + & { margin-top: @margin-half; }
-
-    input { flex-grow: 2; }
-
-    .-fill {
-        flex-grow: 1;
-        border-left-width: 0;
-        border-right-width: 0;
-    }
-
-    input[disabled] {
-        color: @input_disabled-color;
-        border-color: @input-border;
-        background-color: @input_disabled-background;
-        cursor: not-allowed;
-        pointer-events: none;
-    }
-}
-
-//  --  INPUT GROUPS: Inline Form Rows
-.input-group._inline {
-    display: flex;
-
-    .input-group & { margin-bottom: 0; }
-
-    input[type="button"],
-    input[type="submit"],
-    button,
-    .btn,
-    [class*="btn-"],
-    label,
-    .-control {
-        align-self: center;
+    //  First we need to reset the margins and font-size for child items
+    > * {
         margin: 0;
+        font-size: @input-fontSize;
     }
 
-    //  Reset font-size
-    input[type="button"],
-    input[type="submit"],
-    button,
-    .btn,
-    [class*="btn-"] { font-size: @input-fontSize; }
+    // Fall backs?
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
 
-    textarea,
-    input[type="text"],
-    input[type="password"],
-    input[type="number"],
-    input[type="email"],
-    input[type="url"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="datetime"],
-    .input {
-        margin-top: 0;
+    > [class*="col"] { flex: 0 0 auto; }
+
+    //  --  Column Sizes
+    > .col1 {
+        flex-basis: @grid-col-width * 1;
+        max-width: @grid-col-width * 1;
+    }
+    > .col2 {
+        flex-basis: @grid-col-width * 2;
+        max-width: @grid-col-width * 2;
+    }
+    > .col3 {
+        flex-basis: @grid-col-width * 3;
+        max-width: @grid-col-width * 3;
+    }
+    > .col4 {
+        flex-basis: @grid-col-width * 4;
+        max-width: @grid-col-width * 4;
+    }
+    > .col5 {
+        flex-basis: @grid-col-width * 5;
+        max-width: @grid-col-width * 5;
+    }
+    > .col6 {
+        flex-basis: @grid-col-width * 6;
+        max-width: @grid-col-width * 6;
+    }
+    > .col7 {
+        flex-basis: @grid-col-width * 7;
+        max-width: @grid-col-width * 7;
+    }
+    > .col8 {
+        flex-basis: @grid-col-width * 8;
+        max-width: @grid-col-width * 8;
+    }
+    > .col9 {
+        flex-basis: @grid-col-width * 9;
+        max-width: @grid-col-width * 9;
+    }
+    > .col10 {
+        flex-basis: @grid-col-width * 10;
+        max-width: @grid-col-width * 10;
+    }
+    > .col11 {
+        flex-basis: @grid-col-width * 11;
+        max-width: @grid-col-width * 11;
+    }
+    > .col12 {
+        flex-basis: @grid-col-width * 12;
+        max-width: @grid-col-width * 12;
+    }
+
+    // Adds in spacing in-between column groups
+    &._gutter [class*="col"] {
+        padding-left: ceil(@margin-half / 2);
+        padding-right: ceil(@margin-half / 2);
+
+        &:first-of-type { padding-left: 0; }
+        &:last-of-type  { padding-right: 0; }
+    }
+
+    //  --  Row Alignment
+    &._align-top        { align-items: flex-start; }
+    &._align-center     { align-items: center; }        // Default value, class provided to override
+    &._align-bottom     { align-items: flex-end; }
+
+    //  --  Content Alignment
+    &._box-start        { justify-content: flex-start; }
+    &._box-center       { justify-content: center; }    // Default value, class provided to override
+    &._box-bottom       { justify-content: flex-end; }
+
+    //  If nested within another input-group, add top margin
+    .input-group & { margin-top: @margin-half; }
+
+    > textarea,
+    > input[type="text"],
+    > input[type="password"],
+    > input[type="number"],
+    > input[type="email"],
+    > input[type="url"],
+    > input[type="search"],
+    > input[type="tel"],
+    > input[type="datetime"],
+    > .input {
+        flex: 2 0 auto;
         width: auto;
-        flex-grow: 2;
 
+        //  If a button follows an input, it will put up against the input so 
+        //  we want to remove the left-side border-radius. Otherwise we leave
+        //  the button styles alone.
         ~ input[type="button"],
         ~ input[type="submit"],
         ~ button,
@@ -564,90 +546,113 @@ input[type="datetime"],
         }
     }
 
-    //  Makes labels act like white-space: nowrap
-    label { flex-shrink: 0; }
-
-    &.-locationAddress {
-        .-append,
-        .-prepend { min-width: 90.5%; }
-    }
-
-    .-control {
-        width: auto;
-        > input { margin-left: @margin-base; }
-    }
-
-    .row {
-        display: flex;
-        flex-wrap: wrap;
+    .-whitespace {
+        margin-left: @margin-base;
+        margin-right: @margin-base;
     }
 }
 
-
-//  --  BUTTON GROUPS
-//      Wrapping <div> for buttons / actions
-.button-group {
-    &:extend(.row all);
-    margin-top: @margin-base;
-
-    //  Applies top border to the button container
-    &._border {
-        padding-top: 1.4em;
-        border-top: 1px solid @divider-line-color;
-    }
-}
-
-
-//  --  FORM: Inline
-//      Here we set every input-group within a form to inline
-form._inline {
-    .input-group {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    textarea,
-    input[type="text"],
-    input[type="password"],
-    input[type="number"],
-    input[type="email"],
-    input[type="url"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="datetime"],
-    .input {
-        margin-top: 0;
+//  ----------------------------------------------------------------------------
+//  --  PREPENDS, CONNECTORS, & APPENDS
+//      Like an inline input-group, prepends, connectors, and appends add a
+//      colored fill box before, within, or after an input.
+//  ----------------------------------------------------------------------------
+.input-inline {
+    //  Default layout makes fills act like connectors
+    .-fill {
+        flex: 1 0 auto;
         width: auto;
-        flex-grow: 2;
+        max-width: 10%;
+
+        padding: @input-padding;
+        font-size: @input-fontSize;
+        font-family: @code-font-family;
+        line-height: @input-lineHeight;
+        color: @black-500;
+        background-color: @black-050;
+        border: 1px solid @input-border;
+        border-left-width: 0;
+        border-right-width: 0;
+        text-align: center;
+
+        //  Sometimes we need to adjust the fill box sizes
+        &._small { max-width: 50px; }
+        &._large { max-width: 25%; }
     }
 
-    label {
-        padding-right: 1em;
-        width: 25%;
-        align-self: center;
-        flex-shrink: 0;
+    input[disabled] {
+        color: @input_disabled-color;
+        border-color: @input-border;
+        background-color: @input_disabled-background;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    //  This adds the fill at the beginning of the group
+    &.prepend {
+        .-fill { border-left-width: 1px; }
 
         + input[type="button"],
         + input[type="submit"],
         + button,
         + .btn,
-        + [class*="btn-"] { flex-grow: 2; }
+        + [class*="btn-"] {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    //  This adds the fill at the end of the group
+    &.append {
+        .-fill {
+            order: 2;
+            border-right-width: 1px;
+        }
+
+        + input[type="button"],
+        + input[type="submit"],
+        + button,
+        + .btn,
+        + [class*="btn-"] {
+            left: -1px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
     }
 }
 
-
-//  ============================================================================
-//  $ OPTION TOGGLE
 //  ----------------------------------------------------------------------------
-.option-toggle {
-    justify-content: space-between;
-    display: flex;
+//  --  MULTI GROUP ROWS
+//      Certain forms, like search forms on Jobs, require multiple input-groups
+//      within one row.
+//  ----------------------------------------------------------------------------
+.multi-input {
+    &:extend(.input-inline all);
+    margin-bottom: 1.4em;
+
+    .input-group,
+    .button-group { align-self: flex-end; }
+
+    input[type="submit"],
+    input[type="button"],
+    button,
+    [class*="btn"] { margin: 0; }
+}
+
+//  ----------------------------------------------------------------------------
+//  --  MULTI GROUP ROWS
+//      Certain forms, like search forms on Jobs, require multiple input-groups
+//      within one row.
+//  ----------------------------------------------------------------------------
+.input-inline._toggle {
+    align-items: center;
 
     label + & { margin-top: @margin-half; }
 
-    > div {
-        display: flex;
+    > .-item { 
         flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
 
         input[type="radio"] {
             display: none;
@@ -660,10 +665,10 @@ form._inline {
         }
 
         label {
-            flex-grow: 1;
+            display: block;
+            margin: 0;
             padding: @input-padding;
-            min-width: 100px;
-
+            
             font-weight: 400;
             line-height: @input-lineHeight;
             text-align: center;
@@ -682,6 +687,47 @@ form._inline {
         }
 
         &:not(:first-of-type) label { border-left: none; }
+    }
+}
+
+//  ----------------------------------------------------------------------------
+//  --  INLINE FORMS
+//      Want to make the whole form inline? Apply a class to the form and all
+//      input-groups will act like .input-inline.
+//  ----------------------------------------------------------------------------
+form._inline {
+    .input-group {
+        &:extend(.input-inline all);
+        .input-inline { width: 75%; }
+    }
+
+    label {
+        padding-right: 1em;
+        width: 25%;
+        flex-shrink: 0;
+    }
+
+    input[type="button"],
+    input[type="submit"],
+    button,
+    .btn,
+    [class*="btn-"] {
+        &._block { width: 75%; }
+    }
+}
+
+
+//  ============================================================================
+//  $   BUTTON GROUP
+//      This is the wrapper for form actions.
+//  ----------------------------------------------------------------------------
+.button-group {
+    margin-top: @margin-base;
+
+    //  Applies top border to the button container
+    &._border {
+        padding-top: 1.4em;
+        border-top: 1px solid @divider-line-color;
     }
 }
 

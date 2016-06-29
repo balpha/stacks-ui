@@ -160,28 +160,29 @@ css: stacks
 
 <section class="stacks-section">
     <h2 id="toc-unique">Unique Styles</h2>
-    <h3 id="toc-unique-pends">Input Prepends &amp; Appends</h3>
+    <h3 id="toc-unique-pends">Input Prepends, Connectors, &amp; Appends</h3>
     <div class="stacks-example">
         <div class="-codeBlock">
 {% highlight html linenos %}
 <div class="input-group">
     <label for="inputIcon">Icon Prepended</label>
-    <div class="-prepend">
-        <span class="-fill"><i class="icon-github"></i></span>
+    <div class="col-8 input-inline prepend">
+        <span class="-fill _small"><i class="icon-github"></i></span>
         <input type="text" name="example" id="inputIcon" />
     </div>
 </div>
 <div class="input-group">
-    <label for="inputValue">Value Prepended</label>
-    <div class="-prepend">
-        <span class="-fill"><code>http://</code></span>
-        <input type="text" name="example" id="inputValue" placeholder="www.example.com" />
+    <label for="inputValue">Connect Inputs (Default)</label>
+    <div class="col-8 input-inline">
+        <input type="text" name="example" id="inputValue1" placeholder="Role Title" />
+        <span class="-fill">at</span>
+        <input type="text" name="example" id="inputValue2" placeholder="Company Name" />
     </div>
 </div>
 <div class="input-group">
     <label for="inputIcon">Value Appended</label>
-    <div class="-append">
-        <span class="-fill"><code>$/month</code></span>
+    <div class="col-8 input-inline append">
+        <span class="-fill _large">$/month</span>
         <input type="text" name="example" id="inputIcon" placeholder="Monthly salary">
     </div>
 </div>
@@ -191,69 +192,24 @@ css: stacks
             <form>
                 <div class="input-group">
                     <label for="inputIcon">Icon Prepended</label>
-                    <div class="-prepend">
-                        <span class="-fill"><i class="icon-github"></i></span>
+                    <div class="col-8 input-inline prepend">
+                        <span class="-fill _small"><i class="icon-github"></i></span>
                         <input type="text" name="example" id="inputIcon" />
                     </div>
                 </div>
                 <div class="input-group">
-                    <label for="inputValue">Value Prepended</label>
-                    <div class="-prepend">
-                        <span class="-fill"><code>http://</code></span>
-                        <input type="text" name="example" id="inputValue" placeholder="www.example.com" />
+                    <label for="inputValue">Connect Inputs (Default)</label>
+                    <div class="col-8 input-inline">
+                        <input type="text" name="example" id="inputValue1" placeholder="Role Title" />
+                        <span class="-fill">at</span>
+                        <input type="text" name="example" id="inputValue2" placeholder="Company Name" />
                     </div>
                 </div>
                 <div class="input-group">
                     <label for="inputIcon">Value Appended</label>
-                    <div class="-append">
-                        <span class="-fill"><code>$/month</code></span>
+                    <div class="col-8 input-inline append">
+                        <span class="-fill _large">$/month</span>
                         <input type="text" name="example" id="inputIcon" placeholder="Monthly salary">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <h3 id="toc-unique-switcher">Options Toggle</h3>
-    <div class="stacks-example">
-        <div class="-codeBlock">
-{% highlight html linenos %}
-<div class="input-group">
-    <label>What is your job status?</label>
-    <div class="option-toggle">
-        <div>
-            <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking" />
-            <label for="active">Actively looking right now</label>
-        </div>
-        <div>
-            <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
-            <label for="passive">Open, but not actively looking</label>
-        </div>
-        <div>
-            <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
-            <label for="not-looking">Not interested in jobs</label>
-        </div>
-    </div>
-</div>
-{% endhighlight %}
-        </div>
-        <div class="-previewBlock">
-            <form>
-                <div class="input-group">
-                    <label>Options Toggle</label>
-                    <div class="option-toggle">
-                        <div>
-                            <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking" />
-                            <label for="active">Actively looking right now</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
-                            <label for="passive">Open, but not actively looking</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
-                            <label for="not-looking">Not interested in jobs</label>
-                        </div>
                     </div>
                 </div>
             </form>
@@ -266,24 +222,64 @@ css: stacks
 {% highlight html linenos %}
 <div class="input-group">
     <label>Select Menus Inline</label>
-    <div class="row">
+    <div class="-box">
         <select name="" id="">
             <option selected>Select Start Date</option>
             ...
         </select>
-        to
+        <span class="-whitespace">to</span>
         <select name="" id="">
             <option selected>Select End Date</option>
             ...
         </select>
     </div>
 </div>
+<div class="multi-input _gutter">
+    <div class="input-group col5">
+        <label for="exampleSearch" class="_medium">Keyword Search:</label>
+        <input type="text" id="exampleSearch" name="search">
+    </div>
+    <div class="input-group col5">
+        <label for="exampleLocation" class="_medium">Location Search:</label>
+        <input type="text" id="exampleLocation" name="search">
+    </div>
+    <div class="button-group col2">
+        <button class="_block">Search</button>
+    </div>
+</div>
 <div class="input-group">
-    <label>Current Occupation</label>
-    <div class="row -col6 -multi">
-        <input type="text" id="exampleInline1" name="example" placeholder="Job Title" />
-        <span class="-fill"><code>at</code></span>
-        <input type="text" id="exampleInline2" name="example" placeholder="Company" />
+    <label>Options Toggle</label>
+    <div class="input-inline _toggle">
+        <div class="-item">
+            <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking" />
+            <label for="active">Actively looking right now</label>
+        </div>
+        <div class="-item">
+            <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
+            <label for="passive">Open, but not actively looking </label>
+        </div>
+        <div class="-item">
+            <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
+            <label for="not-looking">Not interested in jobs </label>
+        </div>
+    </div>
+</div>
+<div class="input-group">
+    <label>Inline Checkbox List</label>
+    <div class="input-inline">
+        <label for="choice1" class="checkbox">
+            <input type="checkbox" name="choiceBox" id="choice1" checked /> Choice 1
+        </label>
+        ...
+    </div>
+</div>
+<div class="input-group">
+    <label>Inline Radio List</label>
+    <div class="input-inline">
+        <label for="radio1" class="radio">
+            <input type="radio" name="choiceRadio" id="radio1" checked /> Choice 1
+        </label>
+        ...
     </div>
 </div>
 {% endhighlight %}
@@ -292,7 +288,7 @@ css: stacks
             <form>
                 <div class="input-group">
                     <label>Select Menus Inline</label>
-                    <div class="row">
+                    <div class="input-inline">
                         <select name="" id="">
                             <option selected>Select Start Date</option>
                             <option>Today</option>
@@ -301,7 +297,7 @@ css: stacks
                             <option>Last Month</option>
                             <option>Last Year</option>
                         </select>
-                        to
+                        <span class="-whitespace">to</span>
                         <select name="" id="">
                             <option selected>Select End Date</option>
                             <option>Today</option>
@@ -312,17 +308,39 @@ css: stacks
                         </select>
                     </div>
                 </div>
+                <div class="multi-input _gutter">
+                    <div class="input-group col5">
+                        <label for="exampleSearch" class="_medium">Keyword Search:</label>
+                        <input type="text" id="exampleSearch" name="search">
+                    </div>
+                    <div class="input-group col5">
+                        <label for="exampleLocation" class="_medium">Location Search:</label>
+                        <input type="text" id="exampleLocation" name="search">
+                    </div>
+                    <div class="button-group col2">
+                        <button class="_block">Search</button>
+                    </div>
+                </div>
                 <div class="input-group">
-                    <label>Current Occupation</label>
-                    <div class="row -col6 -multi">
-                        <input type="text" id="exampleInline1" name="example" placeholder="Job Title" />
-                        <span class="-fill"><code>at</code></span>
-                        <input type="text" id="exampleInline2" name="example" placeholder="Company" />
+                    <label>Options Toggle</label>
+                    <div class="input-inline _toggle">
+                        <div class="-item">
+                            <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking" />
+                            <label for="active">Actively looking right now</label>
+                        </div>
+                        <div class="-item">
+                            <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
+                            <label for="passive">Open, but not actively looking </label>
+                        </div>
+                        <div class="-item">
+                            <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
+                            <label for="not-looking">Not interested in jobs </label>
+                        </div>
                     </div>
                 </div>
                 <div class="input-group">
                     <label>Inline Checkbox List</label>
-                    <div class="input-group _inline">
+                    <div class="input-inline">
                         <label for="choice1" class="checkbox">
                             <input type="checkbox" name="choiceBox" id="choice1" checked /> Choice 1
                         </label>
@@ -339,7 +357,7 @@ css: stacks
                 </div>
                 <div class="input-group">
                     <label>Inline Radio List</label>
-                    <div class="input-group _inline">
+                    <div class="input-inline">
                         <label for="radio1" class="radio">
                             <input type="radio" name="choiceRadio" id="radio1" checked /> Choice 1
                         </label>
@@ -364,7 +382,10 @@ css: stacks
     <div class="stacks-example">
         <div class="-codeBlock">
 {% highlight html linenos %}
-    ...
+<div class="button-group _border">
+    <input type="submit" value="Primary Action">
+    <a href="#" title="Cancel" class="btn-clear">Secondary Action</a>
+</div>
 {% endhighlight %}
         </div>
         <div class="-previewBlock">
@@ -392,14 +413,16 @@ css: stacks
         <label for="">Very long label with many words</label>
         <input type="text" name="" id="">
     </div>
-    <div class="input-group _inline">
+    <div class="input-group">
         <label for="">Label</label>
-        <input type="text" name="" id="">
-        <a href="" class="btn-secondary">Action</a>
+        <div class="input-inline">
+            <input type="text" name="" id="" class="col-10">
+            <a href="" class="btn-secondary col-2">Action</a>
+        </div>
     </div>
     <div class="input-group">
         <label for="">Label</label>
-        <input type="submit" value="Something big will happen">
+        <input type="submit" value="Something big will happen" class="_block">
     </div>
     <div class="button-group _border">
         <a href="" class="btn">Save</a>
@@ -418,14 +441,16 @@ css: stacks
                     <label for="">Very long label with many words</label>
                     <input type="text" name="" id="">
                 </div>
-                <div class="input-group _inline">
+                <div class="input-group">
                     <label for="">Label</label>
-                    <input type="text" name="" id="">
-                    <a href="" class="btn-secondary">Action</a>
+                    <div class="input-inline">
+                        <input type="text" name="" id="" class="col-10">
+                        <a href="" class="btn-secondary col-2">Action</a>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label for="">Label</label>
-                    <input type="submit" value="Something big will happen">
+                    <input type="submit" value="Something big will happen" class="_block">
                 </div>
                 <div class="button-group _border">
                     <a href="" class="btn">Save</a>

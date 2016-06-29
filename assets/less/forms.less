@@ -21,7 +21,7 @@ button,
 //  ============================================================================
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
-@input-padding:                 (@padding-half + 1) (@padding-base - 1) @padding-half;
+@input-padding:                 @padding-half @padding-base;
 @input-fontSize:                @body-font-size + 1;
 @input-lineHeight:              1.571428571;
 @input-height:                  ((ceil(@input-fontSize * @input-lineHeight) + (@padding-half + 1) + @padding-half) / @input-fontSize) * 1em;
@@ -127,54 +127,6 @@ input[type="datetime"],
     &._small { padding: @padding-half (@padding-base - 2) (@padding-half - 1); }
 }
 
-//  --  Textarea styles
-textarea {
-    height: auto;
-    min-height: @input-height * 3;
-    resize: vertical;
-    font-size: @input-fontSize - 1;
-    line-height: @input-lineHeight - 0.3;
-}
-
-//  --  Select styles
-select {
-    border: 1px solid @input-border;
-
-    &:focus,
-    &.focus {
-        outline: 0;
-        border-color: @input_focused-border;
-    }
-
-    &[disabled],
-    &.disabled {
-        background-color: @input_disabled-background;
-        border-color: @input_disabled-border;
-        color: @input_disabled-color;
-        cursor: not-allowed;
-    }
-
-    &.select {
-        display: inline-block;
-        height: @input-height * 0.75;
-        min-height: @input-height * 0.75;
-        font-size: @input-fontSize - 1;
-        vertical-align: middle;
-        outline: none;
-
-        color: @input-color;
-        background-color: @white;
-    }
-}
-
-input[type="file"] {
-    display: block;
-    margin: 0;
-    padding: @padding-half 0;
-    font-size: 11px;
-}
-
-
 //  --  Okay now we can style input fields
 textarea,
 input[type="text"],
@@ -233,6 +185,52 @@ input[type="datetime"],
         background-repeat: no-repeat;
         background-position: ~'calc(100% + @{input-sprite-width} - 124px)' -126px;
     }
+}
+
+//  --  Textarea styles
+textarea {
+    padding: @padding-half;
+    height: auto;
+    min-height: @input-height * 3;
+    resize: vertical;
+}
+
+//  --  Select styles
+select {
+    border: 1px solid @input-border;
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        border-color: @input_focused-border;
+    }
+
+    &[disabled],
+    &.disabled {
+        background-color: @input_disabled-background;
+        border-color: @input_disabled-border;
+        color: @input_disabled-color;
+        cursor: not-allowed;
+    }
+
+    &.select {
+        display: inline-block;
+        height: @input-height * 0.75;
+        min-height: @input-height * 0.75;
+        font-size: @input-fontSize - 1;
+        vertical-align: middle;
+        outline: none;
+
+        color: @input-color;
+        background-color: @white;
+    }
+}
+
+input[type="file"] {
+    display: block;
+    margin: 0;
+    padding: @padding-half 0;
+    font-size: 11px;
 }
 
 
@@ -362,8 +360,8 @@ input[type="datetime"],
     }
 
     //  --  SUCCESS
-    &[required]:valid,
-    &.required:valid,
+    // &[required]:valid,
+    // &.required:valid,
     &._success {
         border-color: @green-400;
         background-position: ~'calc(100% + @{input-sprite-width} - 51px)' -30px;

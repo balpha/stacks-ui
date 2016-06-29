@@ -130,6 +130,7 @@ input[type="datetime"],
 //  --  Textarea styles
 textarea {
     height: auto;
+    min-height: @input-height * 3;
     resize: vertical;
     font-size: @input-fontSize - 1;
     line-height: @input-lineHeight - 0.3;
@@ -179,7 +180,7 @@ input[type="datetime"],
 .container .chosen-container > .chosen-choices {
     padding: @input-padding;
     width: 100%;
-    
+
     //  IE, Firefox, and Opera don't recognize line-height within inputs.
     //  Instead we have to declare the height. The @input-height variables
     //  calculates the target pixel height based on @input-fontSize and

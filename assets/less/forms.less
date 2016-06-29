@@ -24,6 +24,7 @@ button,
 @input-padding:                 (@padding-half + 1) (@padding-base - 1) @padding-half;
 @input-fontSize:                @body-font-size + 1;
 @input-lineHeight:              1.461538462;
+@input-height:                  ((ceil(@input-fontSize * @input-lineHeight) + (@padding-half + 1) + @padding-half) / @input-fontSize) * 1em;
 @input-color:                   @black-700;
 @input-border:                  @black-150;
 @input-sprite-width:            137px;
@@ -178,9 +179,14 @@ input[type="datetime"],
 .container .chosen-container > .chosen-choices {
     padding: @input-padding;
     width: 100%;
+    
+    //  IE, Firefox, and Opera don't recognize line-height within inputs.
+    //  Instead we have to declare the height. The @input-height variables
+    //  calculates the target pixel height based on @input-fontSize and
+    //  then converts it to an em value.
+    height: @input-height;
 
     font-size: @input-fontSize;
-    line-height: @input-lineHeight;
     color: @input-color;
 
     background-color: @white;

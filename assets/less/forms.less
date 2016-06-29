@@ -265,6 +265,9 @@ input[type="checkbox"] { margin: 0; } // Reset browser
 
     .input-inline & {
         margin-top: 0;
+        margin-left: 1.4em;
+        &:first-of-type { margin-left: 0; }
+
         // Need to restate earlier padding because .-fill overrides this.
         &.-fill { padding-left: 19px; }
     }
@@ -272,7 +275,7 @@ input[type="checkbox"] { margin: 0; } // Reset browser
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
     vertical-align: middle;
-    margin: -1px 2px 0 -19px;
+    margin: -2px 2px 0 -19px;
 
     &:focus { outline: 0; }
 }
@@ -558,10 +561,10 @@ input[type="datetime"],
     //  Default layout makes fills act like connectors
     .-fill {
         flex: 1 0 auto;
-        height: @input-height;
+        height: ((ceil(@input-fontSize * @input-lineHeight) + (@padding-half + 1) + @padding-half) / (@input-fontSize - 1)) * 1em;
 
         padding: @input-padding;
-        font-size: @input-fontSize;
+        font-size: @input-fontSize - 1;
         font-family: @code-font-family;
         line-height: @input-lineHeight;
         color: @black-500;

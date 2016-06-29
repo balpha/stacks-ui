@@ -23,7 +23,7 @@ button,
 //  ----------------------------------------------------------------------------
 @input-padding:                 (@padding-half + 1) (@padding-base - 1) @padding-half;
 @input-fontSize:                @body-font-size + 1;
-@input-lineHeight:              1.461538462;
+@input-lineHeight:              1.571428571;
 @input-height:                  ((ceil(@input-fontSize * @input-lineHeight) + (@padding-half + 1) + @padding-half) / @input-fontSize) * 1em;
 @input-color:                   @black-700;
 @input-border:                  @black-150;
@@ -264,21 +264,9 @@ input[type="checkbox"] { margin: 0; } // Reset browser
     }
 
     .input-inline & {
-        display: inline-block;
-        vertical-align: middle;
-
         margin-top: 0;
-        margin-left: @margin-double;
-        &:first-of-type { margin-left: 0; }
-
-        &.-fill {
-            padding-left: 19px + (@padding-base - 1);
-            font-size: @input-fontSize;
-            line-height: 1.5;
-
-            > input[type="checkbox"],
-            > input[type="radio"] { margin-top: -2px; }
-        }
+        // Need to restate earlier padding because .-fill overrides this.
+        &.-fill { padding-left: 19px; }
     }
 }
 .radio input[type="radio"],
@@ -437,6 +425,10 @@ input[type="datetime"],
 .input-inline {
     margin-top: @margin-half;
 
+    //  If nested within another input-group, add top margin; but only for the
+    //  first level.
+    .input-group > & { margin-top: @margin-half; }
+
     //  First we need to reset the margins and font-size for child items
     > * {
         margin: 0;
@@ -523,9 +515,7 @@ input[type="datetime"],
     &._box-center       { justify-content: center; }    // Default value, class provided to override
     &._box-bottom       { justify-content: flex-end; }
 
-    //  If nested within another input-group, add top margin
-    .input-group & { margin-top: @margin-half; }
-
+    //  -- Input Adjustments
     > textarea,
     > input[type="text"],
     > input[type="password"],
@@ -568,8 +558,7 @@ input[type="datetime"],
     //  Default layout makes fills act like connectors
     .-fill {
         flex: 1 0 auto;
-        width: auto;
-        max-width: 10%;
+        height: @input-height;
 
         padding: @input-padding;
         font-size: @input-fontSize;
@@ -581,6 +570,7 @@ input[type="datetime"],
         border-left-width: 0;
         border-right-width: 0;
         text-align: center;
+        white-space: nowrap;
 
         //  Sometimes we need to adjust the fill box sizes
         &._small { max-width: 50px; }
@@ -599,13 +589,14 @@ input[type="datetime"],
     &.prepend {
         .-fill { border-left-width: 1px; }
 
-        + input[type="button"],
-        + input[type="submit"],
-        + button,
-        + .btn,
-        + [class*="btn-"] {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+        .button-group {
+            input[type="button"],
+            input[type="submit"],
+            button,
+            [class*="btn"] {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
         }
     }
 
@@ -616,14 +607,15 @@ input[type="datetime"],
             border-right-width: 1px;
         }
 
-        + input[type="button"],
-        + input[type="submit"],
-        + button,
-        + .btn,
-        + [class*="btn-"] {
-            left: -1px;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
+        .button-group {
+            input[type="button"],
+            input[type="submit"],
+            button,
+            [class*="btn"] {
+                left: -1px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
         }
     }
 }
@@ -729,7 +721,11 @@ form._inline {
 //      This is the wrapper for form actions.
 //  ----------------------------------------------------------------------------
 .button-group {
-    margin-top: @margin-base;
+    //  Applies a top margin / padding to the group
+    &._pad {
+        margin-top: @margin-base;
+        padding-top: 1.4em;
+    }
 
     //  Applies top border to the button container
     &._border {

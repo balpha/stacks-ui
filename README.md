@@ -135,4 +135,4 @@ Again, fairly straight-forward here, but now you can add in your page content. M
 
  - The `section` example above can be repeated as times as needed throughout your document.
  - The ID on your section title (`<h2 id="toc-sectionTitle">`) is used for tertiary page navigation. IDs should always be prepended by `toc-` and then a unique section title. This title only needs to be unique to this page.
- - The `{% highlight html linenos %}` area is special plugin that allows us to print example code on-screen and it will highlight the code for you automatically and add line numbers. **This tool respects all whitespace so you must push all code flush left in your docuemnt as shown above.**
+ - The `{% highlight html linenos %}` area is special plugin that allows us to print example code on-screen and it will highlight the code for you automatically and add line numbers. **This tool respects all whitespace so you must push all code flush left as shown above.**

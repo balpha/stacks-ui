@@ -1,6 +1,6 @@
 <section id="uikit-sidebar">
     <div class="uikit-logo">
-        <a href="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}/">UIkit</a>
+        <a href="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}">UIkit</a>
     </div><!-- / logo -->
 
     {% assign current_page = page.url %}
@@ -23,7 +23,7 @@
                         </ul>
                     </li>
                 {% else %}
-                    <li{{ current }}><a href="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}/{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a></li>
+                    <li{{ current }}><a href="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}/{{ entry.url }}">{{ entry.title }}</a></li>
                 {% endif %}
             {% endfor %}
 

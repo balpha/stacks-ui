@@ -14,11 +14,12 @@ url: "http://stackexchange.github.io/stacks/" # the base hostname & protocol for
 # Build settings
 markdown: kramdown
 
+lib: /assets
+img: /assets/images
+css: /assets/stylesheets
+js: /assets/javascripts
+
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, docs-*.html, .asset-cache]
 
 permalink: pretty
-
-gems:
-  - jekyll-assets
-  - jekyll-contentblocks

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Stacks
 
 Stacks is the Stack Overflow's Pattern Design Library. It is an internal tool used to document user-interface elements, experience design patterns, and establish consistent interaction patterns for our products. This effort provides visibility for all team members into what patterns are being used and supports internal efforts to decrease our product maintainence costs. More importantly, however, a consistent pattern library benefits our users. It lowers their cognitive load and frees them from having to remember multiple patterns which achieve the same goal.
@@ -137,6 +136,3 @@ Again, fairly straight-forward here, but now you can add in your page content. M
  - The `section` example above can be repeated as times as needed throughout your document.
  - The ID on your section title (`<h2 id="toc-sectionTitle">`) is used for tertiary page navigation. IDs should always be prepended by `toc-` and then a unique section title. This title only needs to be unique to this page.
  - The `{% highlight html linenos %}` area is special plugin that allows us to print example code on-screen and it will highlight the code for you automatically and add line numbers. **This tool respects all whitespace so you must push all code flush left as shown above.**
-=======
-# stacks-ui
->>>>>>> ce8219200c776e77e3d863cf926caf6830e09142

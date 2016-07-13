@@ -1,0 +1,11 @@
+<script>
+    String.prototype.escapeHTML = function () {
+        return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
+    };
+
+    var codeEl = document.getElementsByClassName('uikit-prettyprint'),
+        key;
+    for( key in codeEl ) {
+        if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
+    }
+</script>

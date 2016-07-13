@@ -1,127 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>UIkit | Tabs</title>
+---
+layout: default
+title: Tabs
+description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reiciendis dolore reprehenderit fugiat natus, magni quos dicta? Eaque amet nostrum assumenda architecto fugiat dicta ut in voluptate, voluptatem corrupti ducimus!
+---
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
-    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+<section class="uikit-section">
+    <h2 id="toc-tabs">Tabs</h2>
 
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <div class="uikit-code uikit-has-preview">
+        <pre class="uikit-prettyprint linenums">
+            <div class="subheader">
+                <div class="tabs">
+                    <a href="#" class="youarehere">Lorem</a>
+                    <a href="#">Ipsum</a>
+                    <a href="#">Dolor</a>
+                    <a href="#">Sir</a>
+                    <a href="#">Amet</a>
+                </div>
+            </div>
+        </pre>
 
-    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
-    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
+        <div class="uikit-preview">
+            <div class="subheader">
+                <div class="tabs">
+                    <a href="#" class="youarehere">Lorem</a>
+                    <a href="#">Ipsum</a>
+                    <a href="#">Dolor</a>
+                    <a href="#">Sir</a>
+                    <a href="#">Amet</a>
+                </div>
+            </div>
+        </div><!-- / preview -->
+    </div><!-- / uikit-code uikit-has-preview -->
+</section>
 
-    <script src="/ui-kit/assets/js/less.js"></script>
-    <script src="/ui-kit/assets/js/jquery.js"></script>
-    <script src="/ui-kit/assets/js/main.js"></script>
+<section class="uikit-section">
+    <h2 id="toc-sub-tabs">Sub tabs</h2>
 
-    <link rel="import" href="../nav.html">
-</head>
+    <div class="uikit-code uikit-has-preview">
+        <pre class="uikit-prettyprint linenums">
+            <div class="subtabs">
+                <a href="#">all</a>
+                <a href="#">year</a>
+                <a href="#">quarter</a>
+                <a href="#">month</a>
+                <a class="youarehere" href="#">week</a>
+            </div>
+        </pre>
 
-<body>
-    <section id="uikit-sidebar">
-        <div class="uikit-logo">
-            <a href="../index.html">UIkit</a>
-        </div><!-- / logo -->
-
-        <div id="nav-wrapper"></div>
-        <script>
-            var link = document.querySelector('link[rel="import"]');
-            var content = link.import;
-
-            var el = content.querySelector('.uikit-nav');
-
-
-            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
-        </script>
-    </section><!-- / sidebar -->
-
-    <section id="uikit-sidebar-right">
-        <nav id="uikit-toc">
-            <ol>
-                <li><a href="#toc-tabs">Tabs</a></li>
-                <li><a href="#toc-sub-tabs">Sub tabs</a></li>
-            </ol>
-        </nav><!-- / uikit-toc -->
-    </section><!-- / uikit-sidebar-right -->
-
-    <main id="uikit-content">
-        <header>
-            <h1>Tabs &amp; sub tabs</h1>
-        </header>
-        <div class="uikit-intro">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo repellat quis necessitatibus soluta minus, atque quod sequi provident repudiandae asperiores accusamus itaque enim, nobis ipsum. Aliquid quo adipisci provident veritatis!</p>
-        </div><!-- / intro -->
-
-        <section class="uikit-section">
-            <h2 id="toc-tabs">Tabs</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    <div class="subheader">
-                        <div class="tabs">
-                            <a href="#" class="youarehere">Lorem</a>
-                            <a href="#">Ipsum</a>
-                            <a href="#">Dolor</a>
-                            <a href="#">Sir</a>
-                            <a href="#">Amet</a>
-                        </div>
-                    </div>
-                </pre>
-
-                <div class="uikit-preview">
-                    <div class="subheader">
-                        <div class="tabs">
-                            <a href="#" class="youarehere">Lorem</a>
-                            <a href="#">Ipsum</a>
-                            <a href="#">Dolor</a>
-                            <a href="#">Sir</a>
-                            <a href="#">Amet</a>
-                        </div>
-                    </div>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-        </section>
-
-        <section class="uikit-section">
-            <h2 id="toc-sub-tabs">Sub tabs</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    <div class="subtabs">
-                        <a href="#">all</a>
-                        <a href="#">year</a>
-                        <a href="#">quarter</a>
-                        <a href="#">month</a>
-                        <a class="youarehere" href="#">week</a>
-                    </div>
-                </pre>
-
-                <div class="uikit-preview">
-                    <div class="subtabs">
-                        <a href="#">all</a>
-                        <a href="#">year</a>
-                        <a href="#">quarter</a>
-                        <a href="#">month</a>
-                        <a class="youarehere" href="#">week</a>
-                    </div>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-        </section>
-    </main><!-- / content -->
-
-    <script>
-        String.prototype.escapeHTML = function () {
-            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
-        };
-
-        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
-            key;
-        for( key in codeEl ) {
-            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
-        }
-    </script>
-</body>
-
-</html>
+        <div class="uikit-preview">
+            <div class="subtabs">
+                <a href="#">all</a>
+                <a href="#">year</a>
+                <a href="#">quarter</a>
+                <a href="#">month</a>
+                <a class="youarehere" href="#">week</a>
+            </div>
+        </div><!-- / preview -->
+    </div><!-- / uikit-code uikit-has-preview -->
+</section>

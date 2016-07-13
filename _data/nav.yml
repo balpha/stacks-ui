@@ -1,79 +1,50 @@
-- title: Home
-<<<<<<< HEAD
-  url: /
-=======
-  url: index.html
->>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
-
-- title: Guidelines
-  url: guidelines/
-  sublinks:
-    - title: File Structure
-<<<<<<< HEAD
-      url: guidelines/file-structure/
-    - title: Writing LESS
-      url: guidelines/writing-less/
-    - title: Colors
-      url: guidelines/colors/
-=======
-      url: file-structure/
-    - title: Writing LESS
-      url: writing-less/
-    - title: Colors
-      url: colors/
->>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
-
-- title: Base Elements
-  url: base/
-  sublinks:
-    - title: Grid
-      url: base/grid/
-    - title: Typography
-      url: base/typography/
-    - title: Tables
-      url: base/tables/
-    - title: Forms
-      url: base/forms/
-    - title: Buttons
-      url: base/buttons/
-    - title: Badges
-      url: base/badges/
-    - title: Tags
-      url: base/tags/
-
+# URLs below should be exactly the same as real paths. Just follow examples...
 - title: Components
-  url: components/
+  url: /components/
   sublinks:
+    - title: Badges
+      url: /components/badges/
+    - title: Buttons
+      url: /components/buttons/
     - title: Dropdowns
-      url: components/dropdowns/
+      url: /components/dropdowns/
+    - title: Forms
+      url: /components/forms/
+    - title: Grid
+      url: /components/grid/
     - title: Modals
-      url: components/modals/
+      url: /components/modals/
     - title: Navigation
-      url: components/navigation/
+      url: /components/navigation/
     - title: Notifications
-      url: components/notifications/
+      url: /components/notifications/
     - title: Pagination
-      url: components/pagination/
+      url: /components/pagination/
     - title: Popovers
-      url: components/popovers/
-    - title: Progress Bars
-      url: components/progress-bars/
+      url: /components/popovers/
+    - title: Progress bars
+      url: /components/progress-bars/
+    - title: Tables
+      url: /components/tables/
     - title: Tabs
-      url: components/tabs/
+      url: /components/tabs/
+    - title: Tags
+      url: /components/tags/
     - title: Tooltips
-      url: components/Tooltips/
-
-- title: Views
-  url: views/
-
+      url: /components/tooltips/
+    - title: Typography
+      url: /components/typography/
+- title: Guidelines
+  url: /guidelines/
+  sublinks:
+    - title: Colors
+      url: /guidelines/colors/
+    - title: Files structure
+      url: /guidelines/files-structure/
+    - title: Writing LESS
+      url: /guidelines/writing-less/
 - title: Resources
-<<<<<<< HEAD
-  url: resources/
-=======
-  url: resources/
+  url: /resources/
   sublinks:
     - title: Logos
-      url: resources/logos/
-    - title: Colors
-      url: resources/colors/
->>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
+      url: /resources/logos/

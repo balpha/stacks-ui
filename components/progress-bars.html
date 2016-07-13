@@ -1,126 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>UIkit | Progress Bars</title>
+---
+layout: default
+title: Progress bars
+description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reiciendis dolore reprehenderit fugiat natus, magni quos dicta? Eaque amet nostrum assumenda architecto fugiat dicta ut in voluptate, voluptatem corrupti ducimus!
+---
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
-    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+<section class="uikit-section">
+    <h2 id="toc-default">Default</h2>
+    <div class="uikit-code uikit-has-preview">
+        <pre class="uikit-prettyprint linenums">
+            <div class="progress-bar-regular">
+                <div class="label">label</div>
+                <div class="bar">
+                    <div class="percent" style="width:50%;"></div>
+                </div>
+            </div>
 
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-
-    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
-    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
-
-    <script src="/ui-kit/assets/js/less.js"></script>
-    <script src="/ui-kit/assets/js/jquery.js"></script>
-    <script src="/ui-kit/assets/js/main.js"></script>
-
-    <link rel="import" href="../nav.html">
-</head>
-
-<body>
-    <section id="uikit-sidebar">
-        <div class="uikit-logo">
-            <a href="../index.html">UIkit</a>
-        </div><!-- / logo -->
-
-        <div id="nav-wrapper"></div>
-        <script>
-            var link = document.querySelector('link[rel="import"]');
-            var content = link.import;
-
-            var el = content.querySelector('.uikit-nav');
-
-
-            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
-        </script>
-    </section><!-- / sidebar -->
-
-    <section id="uikit-sidebar-right">
-        <nav id="uikit-toc">
-            <ol>
-                <li><a href="#toc-default">Default</a></li>
-                <li><a href="#toc-undocumented">Undocumented</a></li>
-            </ol>
-        </nav>
-    </section><!-- / uikit-sidebar-right -->
-
-    <main id="uikit-content">
-        <header>
-            <h1>Progress bars</h1>
-        </header>
-        <div class="uikit-intro">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos error unde soluta hic sed, corporis adipisci ab architecto nesciunt voluptates ut animi dolorum non, repudiandae alias et fugiat laboriosam dolore.</p>
-        </div><!-- / intro -->
-
-        <section class="uikit-section">
-            <h2 id="toc-default">Default</h2>
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    <div class="progress-bar-regular">
-                        <div class="label">label</div>
-                        <div class="bar">
-                            <div class="percent" style="width:50%;"></div>
-                        </div>
+            <div class="progress-bar green">
+                <div class="bar">
+                    <div class="label">
+                        <i class="icon icon-milestone" title="Milestone"></i>See votes, expandable usercard
                     </div>
+                    <div class="percent" style="width: 56%;"></div>
+                </div>
+            </div>
+        </pre>
 
-                    <div class="progress-bar green">
-                        <div class="bar">
-                            <div class="label">
-                                <i class="icon icon-milestone" title="Milestone"></i>See votes, expandable usercard
-                            </div>
-                            <div class="percent" style="width: 56%;"></div>
-                        </div>
+        <div class="uikit-preview">
+            <div class="progress-bar-regular">
+                <div class="label">label</div>
+                <div class="bar">
+                    <div class="percent" style="width:50%;"></div>
+                </div>
+            </div>
+
+            <div class="progress-bar green">
+                <div class="bar">
+                    <div class="label">
+                        <i class="icon icon-milestone" title="Milestone"></i>See votes, expandable usercard
                     </div>
-                </pre>
+                    <div class="percent" style="width: 56%;"></div>
+                </div>
+            </div>
+        </div><!-- / preview -->
+    </div><!-- / uikit-code uikit-has-preview -->
+</section>
 
-                <div class="uikit-preview">
-                    <div class="progress-bar-regular">
-                        <div class="label">label</div>
-                        <div class="bar">
-                            <div class="percent" style="width:50%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="progress-bar green">
-                        <div class="bar">
-                            <div class="label">
-                                <i class="icon icon-milestone" title="Milestone"></i>See votes, expandable usercard
-                            </div>
-                            <div class="percent" style="width: 56%;"></div>
-                        </div>
-                    </div>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-        </section>
-
-        <section class="uikit-section" data-inprogress>
-            <h2 id="toc-undocumented">Undocumented</h2>
-            <ul>
-                <li>.small</li>
-                <li>.percent</li>
-                <li>.rounded</li>
-                <li>.inline</li>
-                <li>.gray</li>
-                <li>.progress-bar-large</li>
-                <li>.progress-bar-regular</li>
-            </ul>
-        </section>
-
-    </main><!-- / content -->
-
-    <script>
-        String.prototype.escapeHTML = function () {
-            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
-        };
-
-        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
-            key;
-        for( key in codeEl ) {
-            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
-        }
-    </script>
-</body>
-
-</html>
+<section class="uikit-section" data-inprogress>
+    <h2 id="toc-undocumented">Undocumented</h2>
+    <ul>
+        <li>.small</li>
+        <li>.percent</li>
+        <li>.rounded</li>
+        <li>.inline</li>
+        <li>.gray</li>
+        <li>.progress-bar-large</li>
+        <li>.progress-bar-regular</li>
+    </ul>
+</section>

@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en-us">
+    {% include head.html %}
 
-	{% include head-pages.html %}
+    <body>
+        {% include sidebar.html %}
 
-	<body data-spy="scroll" data-target="#stacks-nav" class="stacks-ui">
-		<div class="container" id="{{ page.id }}-top">
-            <div class="row">
-            	<div id="stacks-nav">
-<<<<<<< HEAD
-            		{% include navigation.html %}
-=======
-            		<nav id="stacks-nav" role="navigation">
-    					<a href="index.html" class="stacks-logo">Stacks</a>
-            			{% include navigation.html nav=site.data.nav%}
-            		</nav>
->>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
-            		{% include copyright.html %}
-            	</div>
-            	<div id="stacks-content">
-					{{ content }}
-				</div>
-			</div>
-		</div>
-	</body>
+        <main id="uikit-content">
+        	<header>
+        	    <h1>{{ page.title }}</h1>
+        	</header>
+
+        	{% if page.description %}
+        	    <div class="uikit-intro">
+        	        {{ page.description }}
+        	    </div><!-- / intro -->
+        	{% endif %}
+
+            {{ content }}
+        </main><!-- / content -->
+    </body>
+
+    {% include footer.html %}
 </html>
+
+
+

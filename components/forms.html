@@ -1,0 +1,854 @@
+---
+layout: default
+title: Forms
+description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reiciendis dolore reprehenderit fugiat natus, magni quos dicta? Eaque amet nostrum assumenda architecto fugiat dicta ut in voluptate, voluptatem corrupti ducimus!
+---
+
+<h2>Things to know:</h2>
+<ul>
+	<li>
+		Labels in <code>&lt;form&gt;</code> get <code>display: block;</code>
+	</li>
+	<li>
+		Inputs in <code>&lt;form&gt;</code> get <code>display: block;</code> and <code>width: 100%;</code>
+	</li>
+	<li>
+		Use <code>&lt;span class="required-asterisk"&gt;*&lt;/span&gt;</code> in <code>labels</code> for required inputs.
+	</li>
+	<li>
+		You can use <code>.input-list</code> to wrap a single checkbox/radio (when you need margin). It's currently used in this page ("Do you agree?" checkbox).
+	</li>
+</ul>
+
+<!-- section -->
+<section class="uikit-section" data-core>
+	<h2 class="toc-basic-styles">Basic styles</h2>
+
+	<div class="uikit-code uikit-has-preview">
+		<pre class="uikit-prettyprint linenums">
+			...
+		</pre>
+
+		<div class="uikit-preview">
+			<form>
+				<label for="">Required input<span class="required-asterisk">*</span></label>
+				<input type="text" name="" id="" required placeholder="Required field">
+
+				<label for="">Regular input</label>
+				<input type="text" name="" id="" placeholder="Optional field">
+
+				<label for="">Textarea</label>
+				<textarea name="" id="" cols="30" rows="5" placeholder="Placeholder text"></textarea>
+
+
+				<label for="#">
+					Choose something<span class="required-asterisk">*</span>
+				</label>
+				<div class="input-list radio">
+					<label for="r1" class="">
+						<input type="radio" name="r" id="r1" checked="checked"> Choice 1
+					</label>
+
+					<label for="r2" class="">
+						<input type="radio" name="r" id="r2"> Choice 2
+					</label>
+
+					<label for="r3" class="">
+						<input type="radio" name="r" id="r3"> Choice 3
+					</label>
+				</div>
+
+
+				<label class="block">
+					Do you agree?<span class="required-asterisk">*</span>
+				</label>
+
+				<div class="input-list">
+					<label for="checkbox-basic-3b" >
+						<input type="checkbox" name="" id="checkbox-basic-3b" checked="checked">
+						Yes
+					</label>
+				</div>
+
+				<div class="ctas-container">
+					<input type="submit" value="Submit">
+				</div>
+			</form>
+		</div><!-- / preview -->
+	</div><!-- / uikit-code uikit-has-preview -->
+</section>
+<!-- / section -->
+
+<!-- section -->
+<section class="uikit-section" data-core>
+	<h2 class="toc-specific-styles">Field states</h2>
+
+	<h3>Success</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<form action="">
+				<label for="">Success state</label>
+				<input type="text" name="" id="" class="success">
+			</form>
+		</pre>
+
+		<div class="uikit-preview">
+			<form action="">
+				<label for="">Success state</label>
+				<input type="text" name="" id="" class="success">
+			</form>
+		</div>
+
+	</div>
+
+	<h3>Error</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<form action="">
+				<label for="">Error state</label>
+				<input type="text" name="" id="" class="error">
+				<p class="error-text">
+					Error message
+				</p>
+			</form>
+		</pre>
+
+		<div class="uikit-preview">
+			<form action="">
+				<label for="">Error state</label>
+				<input type="text" name="" id="" class="error">
+				<p class="error-text">
+					Error message
+				</p>
+			</form>
+		</div>
+
+	</div>
+
+	<h3>Warning</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<form action="">
+				<label for="">Warning state</label>
+				<input type="text" name="" id="" class="warning">
+				<p class="warning-text">
+					Warning message
+				</p>
+			</form>
+		</pre>
+
+		<div class="uikit-preview">
+			<form action="">
+				<label for="">Warning state</label>
+				<input type="text" name="" id="" class="warning">
+				<p class="warning-text">
+					Warning message
+				</p>
+			</form>
+		</div>
+
+	</div>
+
+	<h3>Disabled</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<form action="">
+				<label for="">Disabled / read-only state</label>
+				<input type="text" name="" id="" disabled value="I'm disabled">
+			</form>
+		</pre>
+
+		<div class="uikit-preview">
+			<form action="">
+				<label for="">Disabled / read-only state</label>
+				<input type="text" name="" id="" disabled value="I'm disabled">
+			</form>
+		</div>
+
+	</div>
+
+	<h3>Help text</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<form action="">
+				<label for="">Input with help text</label>
+				<input type="text" name="" id="">
+				<p class="help-text">
+					Help text goes below the field.
+				</p>
+			</form>
+		</pre>
+
+		<div class="uikit-preview">
+			<form action="">
+				<label for="">Input with help text</label>
+				<input type="text" name="" id="">
+				<p class="help-text">
+					Help text goes below the field.
+				</p>
+			</form>
+		</div>
+
+	</div>
+
+</section>
+<!-- / section -->
+
+<!-- section -->
+<section class="uikit-section" data-core>
+	<h2 class="toc-specific-styles">Specific styles</h2>
+
+	<h3>Switcher</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<div class="switcher-container">
+				<div class="switcher">
+					<input type="radio" name="type-dev" id="pro" value="Work" class="type-dev" checked="">
+					<label for="pro">Work</label>
+
+					<input type="radio" name="type-dev" id="student" value="School" class="type-dev">
+					<label for="student">School</label>
+
+					<input type="radio" name="type-dev" id="hobby" value="Other" class="type-dev">
+					<label for="hobby">Just &lt;3 Code</label>
+				</div>
+			</div>
+
+			<div class="switcher-container full-width">
+				<div class="switcher">
+					<input type="radio" name="btype-dev" id="bpro" value="Work" class="type-dev" checked="">
+					<label for="bpro">Work</label>
+
+					<input type="radio" name="btype-dev" id="bstudent" value="School" class="type-dev">
+					<label for="bstudent">School</label>
+
+					<input type="radio" name="btype-dev" id="bhobby" value="Other" class="type-dev">
+					<label for="bhobby">Just &lt;3 Code</label>
+				</div>
+			</div>
+		</pre>
+
+		<div class="uikit-preview">
+			<label class="block">Where do you code? (switcher)</label>
+			<div class="switcher-container">
+				<div class="switcher">
+					<input type="radio" name="type-dev" id="pro" value="Work" class="type-dev" checked="">
+					<label for="pro">Work</label>
+
+					<input type="radio" name="type-dev" id="student" value="School" class="type-dev">
+					<label for="student">School</label>
+
+					<input type="radio" name="type-dev" id="hobby" value="Other" class="type-dev">
+					<label for="hobby">Just &lt;3 Code</label>
+				</div>
+			</div>
+
+			<hr>
+
+			<label for="" class="block">Full with switcher</label>
+
+			<div class="switcher-container full-width">
+				<div class="switcher">
+					<input type="radio" name="btype-dev" id="bpro" value="Work" class="type-dev" checked="">
+					<label for="bpro">Work</label>
+
+					<input type="radio" name="btype-dev" id="bstudent" value="School" class="type-dev">
+					<label for="bstudent">School</label>
+
+					<input type="radio" name="btype-dev" id="bhobby" value="Other" class="type-dev">
+					<label for="bhobby">Just &lt;3 Code</label>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<h3>Prepended/Appended inputs</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<label for="">Input with icon</label>
+			<div class="input-with-value">
+				<span class="prepend">
+					<i class="icon-github"></i>
+				</span>
+				<input type="text" name="" id="">
+			</div>
+
+			<label for="">Value prepended</label>
+			<div class="input-with-value">
+				<span class="prepend">http://</span>
+				<input type="text" name="" id="" placeholder="www.your-site.com">
+			</div>
+
+			<label for="">Value appended</label>
+			<div class="input-with-value">
+				<span class="append">$/month</span>
+				<input type="text" name="" id="" placeholder="Monthly salary">
+			</div>
+		</pre>
+
+		<div class="uikit-preview">
+			<form action="">
+				<div class="row">
+
+					<div class="col-4 with-padding">
+						<label for="">Input with icon</label>
+						<div class="input-with-value">
+							<span class="prepend">
+								<i class="icon-github"></i>
+							</span>
+							<input type="text" name="" id="">
+						</div>
+					</div>
+
+
+					<div class="col-4 with-padding">
+						<label for="">Value prepended</label>
+						<div class="input-with-value">
+							<span class="prepend">http://</span>
+							<input type="text" name="" id="" placeholder="www.your-site.com">
+						</div>
+					</div>
+
+					<div class="col-4 with-padding">
+						<label for="">Value appended</label>
+						<div class="input-with-value">
+							<span class="append">$/month</span>
+							<input type="text" name="" id="" placeholder="Monthly salary">
+						</div>
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+	<h3>Salary selector</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<div class="salary-selector">
+
+				<div class="double-field">
+					<div class="field-with-defined-option">
+						<span class="option">+</span>
+						<input type="text" name="CompensationMin">
+					</div>
+
+					<div class="field-with-bg">
+						<select name="CompensationMinUnit">
+								<option value="USD" selected="selected">
+									US Dollars ($)
+								</option>
+								<option value="EUR">
+									Euros (€)
+								</option>
+								<option value="GBP">
+									British Pounds (£)
+								</option>
+								<option value="CAD">
+									Canadian Dollars ($)
+								</option>
+								<option value="AUD">
+									Australian Dollars ($)
+								</option>
+								<option value="INR">
+									Indian Rupees (INR)
+								</option>
+								<option value="SEK">
+									Swedish Kronor (kr)
+								</option>
+								<option value="PLN">
+									Polish Zlotys (zł)
+								</option>
+								<option value="CHF">
+									Swiss Francs (CHF)
+								</option>
+								<option value="DKK">
+									Danish Kroner (kr)
+								</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="option">
+					<label>
+						<input name="CompensationProvidesEquity" type="checkbox" value="true">
+						Provides equity
+					</label>
+
+				</div>
+			</div>
+		</pre>
+
+		<div class="uikit-preview">
+			<div class="salary-selector">
+
+				<div class="double-field">
+					<div class="field-with-defined-option">
+						<span class="option">+</span>
+						<input type="text" name="CompensationMin">
+					</div>
+
+					<div class="field-with-bg">
+						<select name="CompensationMinUnit">
+								<option value="USD" selected="selected">
+									US Dollars ($)
+								</option>
+								<option value="EUR">
+									Euros (€)
+								</option>
+								<option value="GBP">
+									British Pounds (£)
+								</option>
+								<option value="CAD">
+									Canadian Dollars ($)
+								</option>
+								<option value="AUD">
+									Australian Dollars ($)
+								</option>
+								<option value="INR">
+									Indian Rupees (INR)
+								</option>
+								<option value="SEK">
+									Swedish Kronor (kr)
+								</option>
+								<option value="PLN">
+									Polish Zlotys (zł)
+								</option>
+								<option value="CHF">
+									Swiss Francs (CHF)
+								</option>
+								<option value="DKK">
+									Danish Kroner (kr)
+								</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="option">
+					<label>
+						<input name="CompensationProvidesEquity" type="checkbox" value="true">
+						Provides equity
+					</label>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<h3>Double input</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<div class="double-input">
+				<input type="text" name="" id="" placeholder="Job title">
+				<span class="separator">at</span>
+				<input type="text" name="" id="" placeholder="Company">
+			</div>
+		</pre>
+
+		<div class="uikit-preview">
+			<div class="double-input">
+				<input type="text" name="" id="" placeholder="Job title">
+				<span class="separator">at</span>
+				<input type="text" name="" id="" placeholder="Company">
+			</div>
+		</div>
+
+	</div>
+
+	<h3>Checkboxes / radios lists</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<label for="">Horizontal list</label>
+			<div class="input-list">
+				<label for="choice-checkbox-1" class="">
+					<input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
+
+				</label>
+
+				<label for="choice-checkbox-2" class="">
+					<input type="checkbox" name="" id="choice-checkbox-2"> Choice 2
+
+				</label>
+
+				<label for="choice-checkbox-3" class="">
+					<input type="checkbox" name="" id="choice-checkbox-3"> Choice 3
+
+				</label>
+			</div>
+
+			<label for="">Vertical list</label>
+			<div class="input-list vertical">
+				<label for="vchoice-checkbox-1" class="">
+					<input type="checkbox" name="" id="vchoice-checkbox-1" checked> Choice 1
+
+				</label>
+
+				<label for="vchoice-checkbox-2" class="">
+					<input type="checkbox" name="" id="vchoice-checkbox-2"> Choice 2
+
+				</label>
+
+				<label for="vchoice-checkbox-3" class="">
+					<input type="checkbox" name="" id="vchoice-checkbox-3"> Choice 3
+
+				</label>
+			</div>
+		</pre>
+
+		<div class="uikit-preview">
+			<label for="">Horizontal list</label>
+			<div class="input-list">
+				<label for="choice-checkbox-1" class="">
+					<input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
+
+				</label>
+
+				<label for="choice-checkbox-2" class="">
+					<input type="checkbox" name="" id="choice-checkbox-2"> Choice 2
+
+				</label>
+
+				<label for="choice-checkbox-3" class="">
+					<input type="checkbox" name="" id="choice-checkbox-3"> Choice 3
+
+				</label>
+			</div>
+
+			<hr>
+
+			<label for="">Vertical list</label>
+			<div class="input-list vertical">
+				<label for="vchoice-checkbox-1" class="">
+					<input type="checkbox" name="" id="vchoice-checkbox-1" checked> Choice 1
+
+				</label>
+
+				<label for="vchoice-checkbox-2" class="">
+					<input type="checkbox" name="" id="vchoice-checkbox-2"> Choice 2
+
+				</label>
+
+				<label for="vchoice-checkbox-3" class="">
+					<input type="checkbox" name="" id="vchoice-checkbox-3"> Choice 3
+
+				</label>
+			</div>
+		</div>
+
+	</div>
+
+	<h3>Miscellaneous</h3>
+
+	<div class="uikit-code uikit-has-preview">
+
+		<pre class="uikit-prettyprint linenums">
+			<label for="cs1" class=" has-message">
+				<input type="checkbox" name="" id="cs1" checked> Checkbox with subtext
+
+				<span class="help-text">
+					Lorem ipsum dolor sir amet.
+				</span>
+			</label>
+
+			<label for="rs1" class=" has-message">
+				<input type="radio" name="" id="rs1" checked> Radio with subtext
+
+				<span class="help-text">
+					Lorem ipsum dolor sir amet.
+				</span>
+			</label>
+
+			<label for="">Dates range</label>
+
+			<div class="dates-range">
+				<select name="" id=""><option>start date</option></select>
+				<span class="to">to</span>
+				<select name="" id=""><option>end date</option></select>
+			</div>
+		</pre>
+
+		<div class="uikit-preview">
+			<div class="input-list">
+				<label for="cs1" class=" has-message">
+					<input type="checkbox" name="" id="cs1" checked> Checkbox with subtext
+
+
+					<span class="help-text">
+						Lorem ipsum dolor sir amet.
+					</span>
+				</label>
+
+				<label for="rs1" class=" has-message">
+					<input type="radio" name="" id="rs1" checked> Radio with subtext
+
+
+					<span class="help-text">
+						Lorem ipsum dolor sir amet.
+					</span>
+				</label>
+			</div>
+
+			<hr>
+
+			<label for="">Dates range</label>
+
+			<div class="dates-range">
+				<select name="" id=""><option>start date</option></select>
+				<span class="to">to</span>
+				<select name="" id=""><option>end date</option></select>
+			</div>
+		</div>
+
+	</div>
+
+</section>
+<!-- / section -->
+
+<section class="uikit-section" data-core>
+	<h2 class="toc-tag-editor">Form actions</h2>
+
+	<div class="uikit-code uikit-has-preview">
+		<pre class="uikit-prettyprint linenums">
+			<div class="ctas-container">
+				<input class="btn" type="submit" value="Save">
+				<a href="#" title="Cancel" class="btn-clear">Cancel</a>
+			</div>
+
+			<label for="" class="block">Form Ctas justified</label>
+			<div class="ctas-container justified">
+				<input class="btn" type="submit" value="Save">
+				<a href="#" title="Cancel">Cancel</a>
+			</div>
+
+			<label for="" class="block">Form Ctas without border</label>
+			<div class="ctas-container no-border">
+				<input class="btn" type="submit" value="Save">
+				<a href="#" title="Cancel" class="btn-clear">Cancel</a>
+			</div>
+		</pre>
+
+		<div class="uikit-preview">
+			<form action="">
+				<div class="ctas-container">
+					<input class="btn" type="submit" value="Save">
+					<a href="#" title="Cancel" class="btn-clear">Cancel</a>
+				</div>
+			</form>
+
+			<hr>
+
+			<form action="">
+				<label for="" class="block">Form CTAs justified</label>
+				<div class="ctas-container justified">
+					<input class="btn" type="submit" value="Save">
+					<a href="#" title="Cancel">Cancel</a>
+				</div>
+			</form>
+
+			<hr>
+
+			<form action="">
+				<label for="" class="block">Form CTAs without border top</label>
+				<div class="ctas-container no-border">
+					<input class="btn" type="submit" value="Save">
+					<a href="#" title="Cancel" class="btn-clear">Cancel</a>
+				</div>
+			</form>
+		</div>
+	</div> <!-- /preview -->
+</section>
+<!-- / section -->
+
+<section class="uikit-section" data-core>
+	<h2 class="toc-tag-editor">Inline forms</h2>
+
+	<p>
+		<code>.no-width</code> is available (apply it on <code>.inline-field</code>) to remove the <code>width:15%</code> on the label.
+	</p>
+
+	<div class="uikit-code uikit-has-preview">
+		<pre class="uikit-prettyprint linenums">
+			<form action="" class="inline-form">
+				<div class="inline-field">
+					...
+				</div>
+
+				<div class="inline-field">
+					...
+				</div>
+			</form>
+		</pre>
+
+		<div class="uikit-preview">
+
+			<form action="" class="inline-form">
+
+				<div class="inline-field">
+					<label for="">Short label</label>
+					<input type="text" name="" id="">
+				</div>
+
+				<div class="inline-field">
+					<label for="">Very long label with many words</label>
+					<input type="text" name="" id="">
+				</div>
+
+				<div class="inline-field">
+					<label for="">Label</label>
+					<input type="text" name="" id="">
+					<a href="" class="btn btn-secondary">Action</a>
+				</div>
+
+				<div class="inline-field">
+					<label for="">Label</label>
+					<input type="submit" value="Save">
+				</div>
+
+				<div class="ctas-container">
+					<a href="" class="btn">Save</a>
+					<a href="" class="btn-clear">Cancel</a>
+				</div>
+
+			</form>
+		</div>
+	</div> <!-- /preview -->
+</section>
+<!-- / section -->
+
+<section class="uikit-section" data-core>
+	<h2 class="toc-tag-editor">Image upload</h2>
+
+	<div class="uikit-code uikit-has-preview">
+		<pre class="uikit-prettyprint linenums">
+			<div class="img-upload js-img-edit full">
+
+				<a href="#" class="remove js-img-remove" alt="remove">×</a>
+
+				<img src="" class="js-img-preview dno">
+
+				<div class="text-wrapper js-img-empty">
+					<div class="icon icon-image-upload"></div>
+
+					<div class="img-text">
+						Click to add an image
+							<span class="img-size-hint">Recommended size: 350x150px</span>
+					</div>
+				</div>
+
+				<input type="hidden" name="ImageUrl">
+
+			</div>
+		</pre>
+
+		<div class="uikit-preview">
+			<div class="img-upload js-img-edit full">
+
+				<a href="#" class="remove js-img-remove" alt="remove">×</a>
+
+				<img src="" class="js-img-preview dno">
+
+				<div class="text-wrapper js-img-empty">
+					<div class="icon icon-image-upload"></div>
+
+					<div class="img-text">
+						Click to add an image
+							<span class="img-size-hint">Recommended size: 350x150px</span>
+					</div>
+				</div>
+
+				<input type="hidden" name="ImageUrl">
+
+			</div>
+		</div>
+	</div> <!-- /preview -->
+</section>
+<!-- / section -->
+
+<section id="tag-editor" class="uikit-section" data-core>
+	<h2 class="toc-tag-editor">Tag editor</h2>
+
+	<div class="uikit-code uikit-has-preview">
+		<pre class="uikit-prettyprint linenums">
+			...
+		</pre>
+
+		<div class="uikit-preview">
+			<label for="">Tag editor full</label>
+			<div class="tag-editor"><span><span class="post-tag rendered-element">html<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">sass<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">less<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">javascript<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder=""><span></span>
+			</div>
+
+			<form action="">
+				<div class="form-item">
+					<label>Tags editor empty</label>
+
+					<input id="tagnames" name="tagnames" type="text" size="60" value="" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="display: none;"><div class="tag-editor" style="width: 636px;height: 35px;"><span></span><input type="text" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="width: 628px;"><span></span></div>
+				</div>
+			</form>
+
+			<label for="">Tag editor multi lines</label>
+			<div class="tag-editor multi-line" style="width: 332px; height: 98px;"><span><span class="post-tag rendered-element" title="">sql-server<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">asp.net<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">redis<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">elasticsearch<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">linux<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">haproxy<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">windows<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">c#<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder="" style="width: 19px;"><span></span>
+			</div>
+		</div>
+	</div> <!-- /preview -->
+</section>
+<!-- / section -->
+
+<section class="uikit-section" data-core>
+	<h2 class="toc-tag-editor">Composer</h2>
+
+	<div class="uikit-code uikit-has-preview">
+		<pre class="uikit-prettyprint linenums">
+			...
+		</pre>
+
+		<div class="uikit-preview">
+			<div id="post-editor" class="post-editor js-post-editor">
+
+				<div style="position: relative;">
+					<div class="wmd-container">
+						<div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li class="wmd-button" id="wmd-bold-button" title="Strong <strong> Ctrl+B" style="left: 0px;"><span style="background-position: 0px 0px;"></span></li><li class="wmd-button" id="wmd-italic-button" title="Emphasis <em> Ctrl+I" style="left: 25px;"><span style="background-position: -20px 0px;"></span></li><li class="wmd-spacer wmd-spacer1" id="wmd-spacer1"></li><li class="wmd-button" id="wmd-link-button" title="Hyperlink <a> Ctrl+L" style="left: 75px;"><span style="background-position: -40px 0px;"></span></li><li class="wmd-button" id="wmd-quote-button" title="Blockquote <blockquote> Ctrl+Q" style="left: 100px;"><span style="background-position: -60px 0px;"></span></li><li class="wmd-button" id="wmd-code-button" title="Code Sample <pre><code> Ctrl+K" style="left: 125px;"><span style="background-position: -80px 0px;"></span></li><li class="wmd-button" id="wmd-image-button" title="Image <img> Ctrl+G" style="left: 150px;"><span style="background-position: -100px 0px;"></span></li><li class="wmd-button wmd-snippet-button" style="left:175px" id="wmd-snippet-button" title="JavaScript/HTML/CSS snippet Ctrl-M"><span style="background-image: url(&quot;/content/Shared/balsamiq/wmd-mockup-button.png&quot;);"></span></li><li class="wmd-spacer wmd-spacer2" id="wmd-spacer2" style="left: 220px;"></li><li class="wmd-button" id="wmd-olist-button" title="Numbered List <ol> Ctrl+O" style="left: 225px;"><span style="background-position: -120px 0px;"></span></li><li class="wmd-button" id="wmd-ulist-button" title="Bulleted List <ul> Ctrl+U" style="left: 250px;"><span style="background-position: -140px 0px;"></span></li><li class="wmd-button" id="wmd-heading-button" title="Heading <h1>/<h2> Ctrl+H" style="left: 275px;"><span style="background-position: -160px 0px;"></span></li><li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule <hr> Ctrl+R" style="left: 300px;"><span style="background-position: -180px 0px;"></span></li><li class="wmd-spacer wmd-spacer3" id="wmd-spacer3" style="left: 346px;"></li><li class="wmd-button" id="wmd-undo-button" title="Undo - Ctrl+Z" style="left: 350px;"><span style="background-position: -200px -20px;"></span></li><li class="wmd-button" id="wmd-redo-button" title="Redo - Ctrl+Shift+Z" style="left: 375px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-button wmd-help-button" id="wmd-help-button" title="Markdown Editing Help" style="right: 0px;"><span style="background-position: -240px 0px;"></span></li></ul></div>
+						<textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+					<div class="grippie" style="margin-right: 0px;"></div></div>
+				</div>
+
+				<div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+				<div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+				<div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+				<div id="wmd-preview" class="wmd-preview"></div>
+				<div></div>
+				<div class="edit-block">
+					<input id="fkey" name="fkey" type="hidden" value="85cc0e94900ba1c514f3b8935129eda1">
+					<input id="author" name="author" type="text">
+				</div>
+
+			</div>
+		</div>
+	</div> <!-- /preview -->
+</section><!-- / section -->

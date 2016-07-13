@@ -1,203 +1,130 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>UIkit | Navigation</title>
+---
+layout: default
+title: Navigation
+description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reiciendis dolore reprehenderit fugiat natus, magni quos dicta? Eaque amet nostrum assumenda architecto fugiat dicta ut in voluptate, voluptatem corrupti ducimus!
+---
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" href="/ui-kit/assets/img/favicon.ico">
-    <link rel="apple-touch-icon image_src" href="/ui-kit/assets/img/apple-touch-icon.png">
+<section class="uikit-section">
+    <h2 id="toc-basic-navigation">Basic navigation</h2>
 
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <div class="uikit-code uikit-has-preview">
+        <pre class="uikit-prettyprint linenums">
+            <div class="nav mainnavs">
+                <ul>
+                    <li class="youarehere"><a href="#">Menu 1</a></li>
+                    <li><a href="#">Menu 2</a></li>
+                    <li><a href="#">Menu 3</a></li>
+                    <li><a href="#">Menu 4</a></li>
+                    <li><a href="#">Menu 5</a></li>
+                </ul>
+            </div>
+        </pre>
 
-    <link rel="stylesheet/less" type="text/css" href="/ui-kit/assets/less/uikit-layout.less">
-    <link rel="stylesheet/less" type="text/css" href="../../StackOverflow/StackOverflow/Content/Sites/stackoverflow/all.less">
+        <div class="uikit-preview">
+            <div class="nav mainnavs">
+                <ul>
+                    <li class="youarehere"><a href="#">Menu 1</a></li>
+                    <li><a href="#">Menu 2</a></li>
+                    <li><a href="#">Menu 3</a></li>
+                    <li><a href="#">Menu 4</a></li>
+                    <li><a href="#">Menu 5</a></li>
+                </ul>
+            </div>
+        </div><!-- / preview -->
+    </div><!-- / uikit-code uikit-has-preview -->
+</section>
 
-    <script src="/ui-kit/assets/js/less.js"></script>
-    <script src="/ui-kit/assets/js/jquery.js"></script>
-    <script src="/ui-kit/assets/js/main.js"></script>
+<section class="uikit-section">
+    <h2 id="toc-q-a-site-navigation">Q/A site navigation</h2>
 
-    <link rel="import" href="../nav.html">
-</head>
+    <div class="uikit-code uikit-has-preview">
+        <pre class="uikit-prettyprint linenums">
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                        <li><a href="#">Menu 4</a></li>
+                        <li><a href="#">Menu 5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </pre>
 
-<body>
-    <section id="uikit-sidebar">
-        <div class="uikit-logo">
-            <a href="../index.html">UIkit</a>
-        </div><!-- / logo -->
+        <div class="uikit-preview" data-minheight="100">
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                        <li><a href="#">Menu 4</a></li>
+                        <li><a href="#">Menu 5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- / preview -->
+    </div><!-- / uikit-code uikit-has-preview -->
+</section>
 
-        <div id="nav-wrapper"></div>
-        <script>
-            var link = document.querySelector('link[rel="import"]');
-            var content = link.import;
+<section class="uikit-section">
+    <h2 id="toc-side-navigation">Side navigation</h2>
 
-            var el = content.querySelector('.uikit-nav');
+    <section class="uikit-section">
+        <h3 id="toc-profile">Profile</h3>
 
+        <div class="uikit-code uikit-has-preview">
+            <pre class="uikit-prettyprint linenums">
+                <div id="side-menu" style="width: 220px;"><!-- style attribute is only for presentation purpose -->
+                    <ul>
+                        <li class="category">
+                            Category name 1
+                            <ul>
+                                <li><a href="#">Sample link</a></li>
+                                <li class="external"><a href="#">External sample link</a></li>
+                            </ul>
+                        </li>
+                        <li class="category">
+                            Another category
+                            <ul>
+                                <li><a href="#">Example link</a></li>
+                                <li><a href="#">Another one</a></li>
+                                <li><a href="#" class="youarehere">Current location</a></li>
+                                <li><a href="#">Last one</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </pre>
 
-            document.getElementById('nav-wrapper').appendChild(el.cloneNode(true));
-        </script>
-    </section><!-- / sidebar -->
-
-    <section id="uikit-sidebar-right">
-        <nav id="uikit-toc">
-            <ol>
-                <li><a href="#toc-basic-navigation">Basic navigation</a></li>
-                <li><a href="#toc-q-a-site-navigation">Q/A site navigation</a></li>
-                <li>
-                    <a href="#toc-side-navigation">Side navigation</a>
-                    <ol>
-                        <li><a href="#toc-profile">Profile</a></li>
-                        <li><a href="#toc-others">Others</a></li>
-                    </ol>
-                </li>
-            </ol>
-        </nav>
+            <div class="uikit-preview">
+                <div id="side-menu" style="width: 220px;"><!-- style attribute is only for presentation purpose -->
+                    <ul>
+                        <li class="category">
+                            Category name 1
+                            <ul>
+                                <li><a href="#">Sample link</a></li>
+                                <li class="external"><a href="#">External sample link</a></li>
+                            </ul>
+                        </li>
+                        <li class="category">
+                            Another category
+                            <ul>
+                                <li><a href="#">Example link</a></li>
+                                <li><a href="#">Another one</a></li>
+                                <li><a href="#" class="youarehere">Current location</a></li>
+                                <li><a href="#">Last one</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- / uikit-preview -->
+        </div><!-- / uikit-code uikit-has-preview -->
     </section>
 
-    <main id="uikit-content">
-        <header>
-            <h1>Navigation</h1>
-        </header>
-        <div class="uikit-intro">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio beatae accusantium sed dolore ullam, nostrum nulla neque eum hic adipisci nemo, ipsa laboriosam itaque, maxime est blanditiis consequatur. Hic, quia.</p>
-        </div><!-- / intro -->
-
-        <section class="uikit-section">
-            <h2 id="toc-basic-navigation">Basic navigation</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    <div class="nav mainnavs">
-                        <ul>
-                            <li class="youarehere"><a href="#">Menu 1</a></li>
-                            <li><a href="#">Menu 2</a></li>
-                            <li><a href="#">Menu 3</a></li>
-                            <li><a href="#">Menu 4</a></li>
-                            <li><a href="#">Menu 5</a></li>
-                        </ul>
-                    </div>
-                </pre>
-
-                <div class="uikit-preview">
-                    <div class="nav mainnavs">
-                        <ul>
-                            <li class="youarehere"><a href="#">Menu 1</a></li>
-                            <li><a href="#">Menu 2</a></li>
-                            <li><a href="#">Menu 3</a></li>
-                            <li><a href="#">Menu 4</a></li>
-                            <li><a href="#">Menu 5</a></li>
-                        </ul>
-                    </div>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-        </section>
-
-        <section class="uikit-section">
-            <h2 id="toc-q-a-site-navigation">Q/A site navigation</h2>
-
-            <div class="uikit-code uikit-has-preview">
-                <pre class="uikit-prettyprint linenums">
-                    <div id="hmenus">
-                        <div class="nav mainnavs">
-                            <ul>
-                                <li class="youarehere"><a href="#">Menu 1</a></li>
-                                <li><a href="#">Menu 2</a></li>
-                                <li><a href="#">Menu 3</a></li>
-                                <li><a href="#">Menu 4</a></li>
-                                <li><a href="#">Menu 5</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </pre>
-
-                <div class="uikit-preview" data-minheight="100">
-                    <div id="hmenus">
-                        <div class="nav mainnavs">
-                            <ul>
-                                <li class="youarehere"><a href="#">Menu 1</a></li>
-                                <li><a href="#">Menu 2</a></li>
-                                <li><a href="#">Menu 3</a></li>
-                                <li><a href="#">Menu 4</a></li>
-                                <li><a href="#">Menu 5</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!-- / preview -->
-            </div><!-- / uikit-code uikit-has-preview -->
-        </section>
-
-        <section class="uikit-section">
-            <h2 id="toc-side-navigation">Side navigation</h2>
-
-            <section class="uikit-section">
-                <h3 id="toc-profile">Profile</h3>
-
-                <div class="uikit-code uikit-has-preview">
-                    <pre class="uikit-prettyprint linenums">
-                        <div id="side-menu" style="width: 220px;"><!-- style attribute is only for presentation purpose -->
-                            <ul>
-                                <li class="category">
-                                    Category name 1
-                                    <ul>
-                                        <li><a href="#">Sample link</a></li>
-                                        <li class="external"><a href="#">External sample link</a></li>
-                                    </ul>
-                                </li>
-                                <li class="category">
-                                    Another category
-                                    <ul>
-                                        <li><a href="#">Example link</a></li>
-                                        <li><a href="#">Another one</a></li>
-                                        <li><a href="#" class="youarehere">Current location</a></li>
-                                        <li><a href="#">Last one</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </pre>
-
-                    <div class="uikit-preview">
-                        <div id="side-menu" style="width: 220px;"><!-- style attribute is only for presentation purpose -->
-                            <ul>
-                                <li class="category">
-                                    Category name 1
-                                    <ul>
-                                        <li><a href="#">Sample link</a></li>
-                                        <li class="external"><a href="#">External sample link</a></li>
-                                    </ul>
-                                </li>
-                                <li class="category">
-                                    Another category
-                                    <ul>
-                                        <li><a href="#">Example link</a></li>
-                                        <li><a href="#">Another one</a></li>
-                                        <li><a href="#" class="youarehere">Current location</a></li>
-                                        <li><a href="#">Last one</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- / uikit-preview -->
-                </div><!-- / uikit-code uikit-has-preview -->
-            </section>
-
-            <section class="uikit-section" data-inprogress>
-                <h3 id="toc-others">Others</h3>
-                <p><strong>Paweł:</strong> We have bunch of other aside navigations but I'm going to unify all across SE network, so I'm not documenting them because it doesn't make sense.</p>
-            </section>
-        </section>
-    </main><!-- / content -->
-
-    <script>
-        String.prototype.escapeHTML = function () {
-            return( this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;') );
-        };
-
-        var codeEl = document.getElementsByClassName('uikit-prettyprint'),
-            key;
-        for( key in codeEl ) {
-            if( !isNaN(key) ) { codeEl[key].innerHTML = codeEl[key].innerHTML.escapeHTML(); }
-        }
-    </script>
-</body>
-
-</html>
+    <section class="uikit-section" data-inprogress>
+        <h3 id="toc-others">Others</h3>
+        <p><strong>Paweł:</strong> We have bunch of other aside navigations but I'm going to unify all across SE network, so I'm not documenting them because it doesn't make sense.</p>
+    </section>
+</section>

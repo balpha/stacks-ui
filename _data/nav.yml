@@ -1,50 +1,50 @@
 # URLs below should be exactly the same as real paths. Just follow examples...
 - title: Components
-  url: components/
+  url: /components/
   sublinks:
     - title: Badges
-      url: components/badges/
+      url: /components/badges/
     - title: Buttons
-      url: components/buttons/
+      url: /components/buttons/
     - title: Dropdowns
-      url: components/dropdowns/
+      url: /components/dropdowns/
     - title: Forms
-      url: components/forms/
+      url: /components/forms/
     - title: Grid
-      url: components/grid/
+      url: /components/grid/
     - title: Modals
-      url: components/modals/
+      url: /components/modals/
     - title: Navigation
-      url: components/navigation/
+      url: /components/navigation/
     - title: Notifications
-      url: components/notifications/
+      url: /components/notifications/
     - title: Pagination
-      url: components/pagination/
+      url: /components/pagination/
     - title: Popovers
-      url: components/popovers/
+      url: /components/popovers/
     - title: Progress bars
-      url: components/progress-bars/
+      url: /components/progress-bars/
     - title: Tables
-      url: components/tables/
+      url: /components/tables/
     - title: Tabs
-      url: components/tabs/
+      url: /components/tabs/
     - title: Tags
-      url: components/tags/
+      url: /components/tags/
     - title: Tooltips
-      url: components/tooltips/
+      url: /components/tooltips/
     - title: Typography
-      url: components/typography/
+      url: /components/typography/
 - title: Guidelines
-  url: guidelines/
+  url: /guidelines/
   sublinks:
     - title: Colors
-      url: guidelines/colors/
+      url: /guidelines/colors/
     - title: Files structure
-      url: guidelines/files-structure/
+      url: /guidelines/files-structure/
     - title: Writing LESS
-      url: guidelines/writing-less/
+      url: /guidelines/writing-less/
 - title: Resources
-  url: resources/
+  url: /resources/
   sublinks:
     - title: Logos
-      url: resources/logos/
+      url: /resources/logos/

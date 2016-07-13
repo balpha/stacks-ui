@@ -3,6 +3,7 @@
 
 	{% include head.html %}
 
+<<<<<<< HEAD
 	<body data-spy="scroll" data-target=".navSidebar" class="patternGuide">
 		<div class="container" id="{{ page.id }}-top">
             <div class="-row">
@@ -14,6 +15,20 @@
             		<main id="content">
 						{{ content }}
 					</main>
+=======
+	<body data-spy="scroll" data-target="#stack-nav" class="stacks-ui">
+		<div class="container" id="{{ page.id }}-top">
+            <div class="row">
+            	<div id="stacks-nav">
+            		<nav id="stacks-nav" role="navigation">
+    					<a href="index.html" class="stacks-logo">Stacks</a>
+            			{% include navigation.html nav=site.data.nav%}
+            		</nav>
+            		{% include copyright.html %}
+            	</div>
+            	<div id="stacks-content">
+					{{ content }}
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
 				</div>
 			</div>
 		</div>

@@ -5,7 +5,11 @@ name: Stacks | Stack Overflow
 description: The UI pattern library for the Stack Overflow, Stack Overflow Carers, and the Stack Exchange Network.
 
 # The URL of your actual domain. This will be used to make absolute links in the RSS feed.
+<<<<<<< HEAD
 url: http://stackexchange.github.io/stacks/
+=======
+url: http://stackexchange.github.io/stacks-ui/
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
 
 #### Under the Hood Stuff #####
 
@@ -31,4 +35,8 @@ lib:      assets
 img:      assets/img
 css:		  assets/less
 js:		    assets/js
+<<<<<<< HEAD
 include: 	[base.html, modules.html, grid.html]
+=======
+include: 	[base.html, modules.html, grid.html, resources.html]
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142

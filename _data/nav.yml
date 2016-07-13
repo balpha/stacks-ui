@@ -1,15 +1,27 @@
 - title: Home
+<<<<<<< HEAD
   url: /
+=======
+  url: index.html
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
 
 - title: Guidelines
   url: guidelines/
   sublinks:
     - title: File Structure
+<<<<<<< HEAD
       url: guidelines/file-structure/
     - title: Writing LESS
       url: guidelines/writing-less/
     - title: Colors
       url: guidelines/colors/
+=======
+      url: file-structure/
+    - title: Writing LESS
+      url: writing-less/
+    - title: Colors
+      url: colors/
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
 
 - title: Base Elements
   url: base/
@@ -55,4 +67,13 @@
   url: views/
 
 - title: Resources
+<<<<<<< HEAD
   url: resources/
+=======
+  url: resources/
+  sublinks:
+    - title: Logos
+      url: resources/logos/
+    - title: Colors
+      url: resources/colors/
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142

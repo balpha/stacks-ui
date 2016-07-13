@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -646,3 +647,597 @@
 </body>
 
 </html>
+=======
+---
+layout: default
+title: Forms
+permalink: base/forms/
+id: forms
+css: stacks
+---
+<header>
+    <h1>Forms</h1>
+</header>
+<div class="uikit-intro">
+    <p>Intro</p>
+</div>
+
+<section class="stacks-section">
+    <h2 id="toc-forms">Default Styles</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="input-group">
+    <label for="exampleEmail">Email Address <span class="optional">Optional</span></label>
+    <input id="exampleEmail" name="example" type="email" placeholder="e.g. an example, an idea, etc.">
+</div>
+<div class="input-group">
+    <label for="examplePassword">Password <span class="required">Required</span></label>
+    <input id="examplePassword" name="example" type="password" placeholder="Password" required>
+</div>
+<div class="input-group">
+    <label for="exampleTextArea">Your Answer <span class="required">Required</span></label>
+    <textarea id="exampleTextArea" name="example" rows="5" placeholder="Try to make your answer at least 140 characters" required></textarea>
+</div>
+<div class="input-group">
+    <label for="exampleFile">Select File</label>
+    <input id="exampleFile" type="file">
+    <p class="-help">A description of help text would go here.</p>
+</div>
+<div class="input-group">
+    <label class="checkbox"><input type="checkbox" /> Please sign me up</label>
+    <label class="checkbox">
+        <input type="checkbox" /> How about a free vacation too?
+        <p class="-help">Not responsible for any vacation costs</p>
+    </label>
+</div>
+<div class="input-group">
+    <label class="radio"><input type="radio" name="radio-list" id="item1" checked/> Once</label>
+    <label class="radio">
+        <input type="radio" name="radio-list" id="item2" checked/> Twice
+        <p class="-help">Which is better than only once</p>
+    </label>
+    <label class="radio"><input type="radio" name="radio-list" id="item3" checked/> Thrice</label>
+</div>
+<div class="button-group">
+    <button type="submit">Submit</button>
+    <a href="#" class="btn-clear">Cancel</a>
+</div>
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <div class="input-group">
+                    <label for="exampleEmail">Email Address <span class="optional">Optional</span></label>
+                    <input id="exampleEmail" name="example" type="email" placeholder="e.g. an example, an idea, etc.">
+                </div>
+                <div class="input-group">
+                    <label for="examplePassword">Password <span class="required">Required</span></label>
+                    <input id="examplePassword" name="example" type="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="exampleTextArea">Your Answer <span class="required">Required</span></label>
+                    <textarea id="exampleTextArea" name="example" rows="5" placeholder="Try to make your answer at least 140 characters" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="exampleFile">Select File</label>
+                    <input id="exampleFile" type="file">
+                    <p class="-help">A description of help text would go here.</p>
+                </div>
+                <div class="input-group">
+                    <label class="checkbox"><input type="checkbox" /> Please sign me up</label>
+                    <label class="checkbox">
+                        <input type="checkbox" /> How about a free vacation too?
+                        <p class="-help">Not responsible for any vacation costs</p>
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label class="radio"><input type="radio" name="radio-list" id="item1" checked/> Once</label>
+                    <label class="radio">
+                        <input type="radio" name="radio-list" id="item2" checked/> Twice
+                        <p class="-help">Which is better than only once</p>
+                    </label>
+                    <label class="radio"><input type="radio" name="radio-list" id="item3" checked/> Thrice</label>
+                </div>
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                    <a href="#" class="btn-clear">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-states">States</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="input-group">
+    <label for="focusDefault">Default</label>
+    <input type="text" name="focusExample" id="focusDefault">
+</div>
+<div class="input-group">
+    <label for="focusWarning">Warning State</label>
+    <input type="text" name="focusExample" id="focusWarning" class="_warning"/>
+    <p class="-message">Oh no! Your answer wasn't formatted correctly.</p>
+</div>
+<div class="input-group">
+    <label for="focusError">Error State</label>
+    <input type="text" name="focusExample" id="focusError" class="_error"/>
+    <p class="-message">Oof. Yeah, that's nowhere close to being correct.</p>
+</div>
+<div class="input-group">
+    <label for="focusSuccess">Success State</label>
+    <input type="text" name="focusExample" id="focusSuccess" class="_success"/>
+    <p class="-message">Huzzah! We understand this answer!</p>
+</div>
+<div class="input-group">
+    <label for="focusDisabled">Disabled State</label>
+    <input type="text" name="focusExample" id="focusDisabled" placeholder="I'm a disabled field. :(" disabled />
+</div>
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <div class="input-group">
+                    <label for="focusDefault">Default</label>
+                    <input type="text" name="focusExample" id="focusDefault">
+                </div>
+                <div class="input-group">
+                    <label for="focusWarning">Warning State</label>
+                    <input type="text" name="focusExample" id="focusWarning" class="_warning"/>
+                    <p class="-message">Oh no! Your answer wasn't formatted correctly.</p>
+                </div>
+                <div class="input-group">
+                    <label for="focusError">Error State</label>
+                    <input type="text" name="focusExample" id="focusError" class="_error"/>
+                    <p class="-message">Oof. Yeah, that's nowhere close to being correct.</p>
+                </div>
+                <div class="input-group">
+                    <label for="focusSuccess">Success State</label>
+                    <input type="text" name="focusExample" id="focusSuccess" class="_success"/>
+                    <p class="-message">Huzzah! We understand this answer!</p>
+                </div>
+                <div class="input-group">
+                    <label for="focusDisabled">Disabled State</label>
+                    <input type="text" name="focusExample" id="focusDisabled" placeholder="I'm a disabled field. :(" disabled />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-unique">Unique Styles</h2>
+    <h3 id="toc-unique-pends">Input Prepends, Connectors, &amp; Appends</h3>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="input-group">
+    <label for="inputIcon">Icon Prepended</label>
+    <div class="col-8 input-inline prepend">
+        <span class="-fill _small"><i class="icon-github"></i></span>
+        <input type="text" name="example" id="inputIcon" />
+    </div>
+</div>
+<div class="input-group">
+    <label for="inputValue">Connect Inputs (Default)</label>
+    <div class="col-8 input-inline">
+        <input type="text" name="example" id="inputValue1" placeholder="Role Title" />
+        <span class="-fill">at</span>
+        <input type="text" name="example" id="inputValue2" placeholder="Company Name" />
+    </div>
+</div>
+<div class="input-group">
+    <label for="inputIcon">Value Appended</label>
+    <div class="col-8 input-inline append">
+        <span class="-fill _large">$/month</span>
+        <input type="text" name="example" id="inputIcon" placeholder="Monthly salary">
+    </div>
+</div>
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <div class="input-group">
+                    <label for="inputIcon">Icon Prepended</label>
+                    <div class="col-8 input-inline prepend">
+                        <span class="-fill _small"><i class="icon-github"></i></span>
+                        <input type="text" name="example" id="inputIcon" />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="inputValue">Connect Inputs (Default)</label>
+                    <div class="col-8 input-inline">
+                        <input type="text" name="example" id="inputValue1" placeholder="Role Title" />
+                        <span class="-fill">at</span>
+                        <input type="text" name="example" id="inputValue2" placeholder="Company Name" />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="inputIcon">Value Appended</label>
+                    <div class="col-8 input-inline append">
+                        <span class="-fill _large">$/month</span>
+                        <input type="text" name="example" id="inputIcon" placeholder="Monthly salary">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3 id="toc-unique-switcher">Inline Inputs</h3>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="input-group">
+    <label>Select Menus Inline</label>
+    <div class="-box">
+        <select name="" id="" class="select col3">
+            <option selected>Select Start Date</option>
+            ...
+        </select>
+        <span class="-whitespace">to</span>
+        <select name="" id="" class="select col3">
+            <option selected>Select End Date</option>
+            ...
+        </select>
+    </div>
+</div>
+<div class="multi-input _gutter">
+    <div class="input-group col5">
+        <label for="exampleSearch" class="_medium">Keyword Search:</label>
+        <input type="text" id="exampleSearch" name="search">
+    </div>
+    <div class="input-group col5">
+        <label for="exampleLocation" class="_medium">Location Search:</label>
+        <input type="text" id="exampleLocation" name="search">
+    </div>
+    <div class="button-group col2">
+        <button class="_block">Search</button>
+    </div>
+</div>
+<div class="input-group">
+    <label for="locationWork">Where do you want to work?</label>
+    <div class="input-inline append">
+        <div class="input-inline col10">
+            <input type="text" name="locationWork" id="locationWork">
+            <label for="visaSponsorship" class="-fill checkbox col5">
+                <input type="checkbox" name="CareersSearchStatus" id="visaSponsorship" value="" />
+                Need Visa Sponsorship
+            </label>
+        </div>
+        <div class="button-group col2">
+            <button>Add</button>
+        </div>
+    </div>
+</div>
+<div class="input-group">
+    <label>Options Toggle</label>
+    <div class="input-inline _toggle">
+        <div class="-item">
+            <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking" />
+            <label for="active">Actively looking right now</label>
+        </div>
+        <div class="-item">
+            <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
+            <label for="passive">Open, but not actively looking </label>
+        </div>
+        <div class="-item">
+            <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
+            <label for="not-looking">Not interested in jobs </label>
+        </div>
+    </div>
+</div>
+<div class="input-group">
+    <label>Inline Checkbox List</label>
+    <div class="input-inline">
+        <label for="choice1" class="checkbox">
+            <input type="checkbox" name="choiceBox" id="choice1" checked /> Choice 1
+        </label>
+        ...
+    </div>
+</div>
+<div class="input-group">
+    <label>Inline Radio List</label>
+    <div class="input-inline">
+        <label for="radio1" class="radio">
+            <input type="radio" name="choiceRadio" id="radio1" checked /> Choice 1
+        </label>
+        ...
+    </div>
+</div>
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <div class="input-group">
+                    <label>Select Menus Inline</label>
+                    <div class="input-inline">
+                        <select name="" id="" class="select col3">
+                            <option selected>Select Start Date</option>
+                            <option>Today</option>
+                            <option>Yesterday</option>
+                            <option>Last Week</option>
+                            <option>Last Month</option>
+                            <option>Last Year</option>
+                        </select>
+                        <span class="-whitespace">to</span>
+                        <select name="" id="" class="select col3">
+                            <option selected>Select End Date</option>
+                            <option>Today</option>
+                            <option>Yesterday</option>
+                            <option>Last Week</option>
+                            <option>Last Month</option>
+                            <option>Last Year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="multi-input _gutter">
+                    <div class="input-group col5">
+                        <label for="exampleSearch" class="_medium">Keyword Search:</label>
+                        <input type="text" id="exampleSearch" name="search">
+                    </div>
+                    <div class="input-group col5">
+                        <label for="exampleLocation" class="_medium">Location Search:</label>
+                        <input type="text" id="exampleLocation" name="search">
+                    </div>
+                    <div class="button-group col2">
+                        <button class="_block">Search</button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="locationWork">Where do you want to work?</label>
+                    <div class="input-inline append">
+                        <div class="input-inline col10">
+                            <input type="text" name="locationWork" id="locationWork">
+                            <label for="visaSponsorship" class="-fill checkbox col5">
+                                <input type="checkbox" name="CareersSearchStatus" id="visaSponsorship" value="" />
+                                Need Visa Sponsorship
+                            </label>
+                        </div>
+                        <div class="button-group col2">
+                            <button class="_block">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Options Toggle</label>
+                    <div class="input-inline _toggle">
+                        <div class="-item">
+                            <input type="radio" name="CareersSearchStatus" id="active" value="ActivelyLooking" />
+                            <label for="active">Actively looking right now</label>
+                        </div>
+                        <div class="-item">
+                            <input type="radio" name="CareersSearchStatus" id="passive" value="PassivelyLooking" checked="checked">
+                            <label for="passive">Open, but not actively looking </label>
+                        </div>
+                        <div class="-item">
+                            <input type="radio" name="CareersSearchStatus" id="not-looking" value="NotLooking">
+                            <label for="not-looking">Not interested in jobs </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Inline Checkbox List</label>
+                    <div class="input-inline">
+                        <label for="choice1" class="checkbox">
+                            <input type="checkbox" name="choiceBox" id="choice1" checked /> Choice 1
+                        </label>
+                        <label for="choice2" class="checkbox">
+                            <input type="checkbox" name="choiceBox" id="choice2" /> Choice 2
+                        </label>
+                        <label for="choice3" class="checkbox">
+                            <input type="checkbox" name="choiceBox" id="choice3" /> Choice 3
+                        </label>
+                        <label for="choice4" class="checkbox">
+                            <input type="checkbox" name="choiceBox" id="choice4" /> Choice 4
+                        </label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Inline Radio List</label>
+                    <div class="input-inline">
+                        <label for="radio1" class="radio">
+                            <input type="radio" name="choiceRadio" id="radio1" checked /> Choice 1
+                        </label>
+                        <label for="radio2" class="radio">
+                            <input type="radio" name="choiceRadio" id="radio2" /> Choice 2
+                        </label>
+                        <label for="radio3" class="radio">
+                            <input type="radio" name="choiceRadio" id="radio3" /> Choice 3
+                        </label>
+                        <label for="radio4" class="radio">
+                            <input type="radio" name="choiceRadio" id="radio4" /> Choice 4
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-actions">Action Placement</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="button-group _border">
+    <input type="submit" value="Primary Action">
+    <a href="#" title="Cancel" class="btn-clear">Secondary Action</a>
+</div>
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form>
+                <div class="button-group _border">
+                    <input type="submit" value="Primary Action">
+                    <a href="#" title="Cancel" class="btn-clear">Secondary Action</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-badges">Inline Forms</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+<form class="_inline">
+    <div class="input-group">
+        <label for="">Short label</label>
+        <input type="text" name="" id="">
+    </div>
+    <div class="input-group">
+        <label for="">Very long label with many words</label>
+        <input type="text" name="" id="">
+    </div>
+    <div class="input-group">
+        <label for="">Label</label>
+        <div class="input-inline">
+            <input type="text" name="" id="" class="col-10">
+            <a href="" class="btn-secondary col-2">Action</a>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="">Label</label>
+        <input type="submit" value="Something big will happen" class="_block">
+    </div>
+    <div class="button-group _border">
+        <a href="" class="btn">Save</a>
+        <a href="" class="btn-clear">Cancel</a>
+    </div>
+</form>
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <form class="_inline">
+                <div class="input-group">
+                    <label for="">Short label</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="input-group">
+                    <label for="">Very long label with many words</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="input-group">
+                    <label for="">Label</label>
+                    <div class="input-inline">
+                        <input type="text" name="" id="" class="col-10">
+                        <a href="" class="btn-secondary col-2">Action</a>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="">Label</label>
+                    <input type="submit" value="Something big will happen" class="_block">
+                </div>
+                <div class="button-group _border">
+                    <a href="" class="btn">Save</a>
+                    <a href="" class="btn-clear">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-images">Image Upload</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <div class="img-upload js-img-edit full">
+                <a href="#" class="remove js-img-remove" alt="remove">×</a>
+                <img src="" class="js-img-preview dno">
+                <div class="text-wrapper js-img-empty">
+                    <div class="icon icon-image-upload"></div>
+                    <div class="img-text">
+                        Click to add an image
+                            <span class="img-size-hint">Recommended size: 350x150px</span>
+                    </div>
+                </div>
+                <input type="hidden" name="ImageUrl">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-auto">Auto-complete</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">Coming Soon</div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-tageditor">Tag Editor</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <label for="">Tag editor</label>
+            <div class="tag-editor"><span><span class="post-tag rendered-element">html<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">sass<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">less<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">javascript<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder=""><span></span>
+            </div>
+
+            <form action="">
+                <div class="form-item">
+                    <label>Tags</label>
+
+                    <input id="tagnames" name="tagnames" type="text" size="60" value="" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="display: none;"><div class="tag-editor" style="width: 636px;height: 35px;"><span></span><input type="text" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)"><span></span></div>
+                </div>
+            </form>
+
+            <label for="">Tag editor multi lines</label>
+            <div class="tag-editor multi-line" style="width: 400px"><span><span class="post-tag rendered-element" title="">sql-server<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">asp.net<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">redis<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">elasticsearch<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">linux<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">haproxy<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">windows<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element" title="">c#<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder="" style="width: 19px;"><span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stacks-section">
+    <h2 id="toc-composer">Composer</h2>
+    <div class="stacks-example">
+        <div class="-codeBlock">
+{% highlight html linenos %}
+    ...
+{% endhighlight %}
+        </div>
+        <div class="-previewBlock">
+            <div id="post-editor" class="post-editor js-post-editor">
+                <div style="position: relative;">
+                    <div class="wmd-container">
+                        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li class="wmd-button" id="wmd-bold-button" title="Strong <strong> Ctrl+B" style="left: 0px;"><span style="background-position: 0px 0px;"></span></li><li class="wmd-button" id="wmd-italic-button" title="Emphasis <em> Ctrl+I" style="left: 25px;"><span style="background-position: -20px 0px;"></span></li><li class="wmd-spacer wmd-spacer1" id="wmd-spacer1"></li><li class="wmd-button" id="wmd-link-button" title="Hyperlink <a> Ctrl+L" style="left: 75px;"><span style="background-position: -40px 0px;"></span></li><li class="wmd-button" id="wmd-quote-button" title="Blockquote <blockquote> Ctrl+Q" style="left: 100px;"><span style="background-position: -60px 0px;"></span></li><li class="wmd-button" id="wmd-code-button" title="Code Sample <pre><code> Ctrl+K" style="left: 125px;"><span style="background-position: -80px 0px;"></span></li><li class="wmd-button" id="wmd-image-button" title="Image <img> Ctrl+G" style="left: 150px;"><span style="background-position: -100px 0px;"></span></li><li class="wmd-button wmd-snippet-button" style="left:175px" id="wmd-snippet-button" title="JavaScript/HTML/CSS snippet Ctrl-M"><span style="background-image: url(&quot;/content/Shared/balsamiq/wmd-mockup-button.png&quot;);"></span></li><li class="wmd-spacer wmd-spacer2" id="wmd-spacer2" style="left: 220px;"></li><li class="wmd-button" id="wmd-olist-button" title="Numbered List <ol> Ctrl+O" style="left: 225px;"><span style="background-position: -120px 0px;"></span></li><li class="wmd-button" id="wmd-ulist-button" title="Bulleted List <ul> Ctrl+U" style="left: 250px;"><span style="background-position: -140px 0px;"></span></li><li class="wmd-button" id="wmd-heading-button" title="Heading <h1>/<h2> Ctrl+H" style="left: 275px;"><span style="background-position: -160px 0px;"></span></li><li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule <hr> Ctrl+R" style="left: 300px;"><span style="background-position: -180px 0px;"></span></li><li class="wmd-spacer wmd-spacer3" id="wmd-spacer3" style="left: 346px;"></li><li class="wmd-button" id="wmd-undo-button" title="Undo - Ctrl+Z" style="left: 350px;"><span style="background-position: -200px -20px;"></span></li><li class="wmd-button" id="wmd-redo-button" title="Redo - Ctrl+Shift+Z" style="left: 375px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-button wmd-help-button" id="wmd-help-button" title="Markdown Editing Help" style="right: 0px;"><span style="background-position: -240px 0px;"></span></li></ul></div>
+                        <textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+                    <div class="grippie" style="margin-right: 0px;"></div></div>
+                </div>
+
+                <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+                <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+                <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+                <div id="wmd-preview" class="wmd-preview"></div>
+                <div></div>
+                <div class="edit-block">
+                    <input id="fkey" name="fkey" type="hidden" value="85cc0e94900ba1c514f3b8935129eda1">
+                    <input id="author" name="author" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142

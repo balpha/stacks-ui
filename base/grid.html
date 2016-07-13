@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -201,3 +202,150 @@
 </body>
 
 </html>
+=======
+---
+layout: default
+title: Grid
+permalink: base/grid/
+id: grid
+css: stacks
+---
+<!--<section id="stacks-nav_right">
+    <nav id="stacks-toc">
+        <ol>
+            <li><a href="#toc-default">Grid (Default)</a></li>
+            <li><a href="#toc-with-padding">Grid, With Gutters</a></li>
+        </ol>
+    </nav>
+</section>-->
+
+<main>
+    <header>
+        <h1>Grid</h1>
+        <div class="stacks-intro">
+            <p>TBD</p>
+        </div>
+    </header>
+    <section class="stacks-section">
+        <h2 id="toc-default">Default</h2>
+        <p>The grid comes with 12 columns. Grid's container needs <code>box-sizing: border-box;</code></p>
+        <div class="stacks-example">
+            <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
+</div>
+<div class="row">
+    <div class="col-8"></div>
+    <div class="col-4"></div>
+</div>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+</div>
+{% endhighlight %}
+            </div>
+            <div class="-previewBlock">
+                <div class="row">
+                    <div class="col-1">abc</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                    <div class="col-1">col-1</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">col-8</div>
+                    <div class="col-4">col-4</div>
+                </div>
+                <div class="row">
+                    <div class="col-4">col-4</div>
+                    <div class="col-4">col-4</div>
+                    <div class="col-4">col-4</div>
+                </div>
+                <br>
+                <small>(additional styling has been added to visually present grid in example above)</small>
+            </div>
+        </div>
+    </section>
+
+    <section class="stacks-section">
+        <h2 id="toc-with-padding">With Gutters</h2>
+        <p>The grid comes with 12 columns. Grid's container needs <code>box-sizing: border-box;</code>.</p>
+        <div class="stacks-example">
+            <div class="-codeBlock">
+{% highlight html linenos %}
+<div class="row">
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+    <div class="col-1 with-padding"></div>
+</div>
+<div class="row">
+    <div class="col-8 with-padding"></div>
+    <div class="col-4 with-padding"></div>
+</div>
+<div class="row">
+    <div class="col-4 with-padding"></div>
+    <div class="col-4 with-padding"></div>
+    <div class="col-4 with-padding"></div>
+</div>
+{% endhighlight %}
+            </div>
+            <div class="-previewBlock">
+                <div class="row">
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                    <div class="col-1 with-padding">col-1</div>
+                </div>
+                <div class="row">
+                    <div class="col-8 with-padding">col-8</div>
+                    <div class="col-4 with-padding">col-4</div>
+                </div>
+                <div class="row">
+                    <div class="col-4 with-padding">col-4</div>
+                    <div class="col-4 with-padding">col-4</div>
+                    <div class="col-4 with-padding">col-4</div>
+                </div>
+                <br>
+                <small>(additional styling has been added to visually present grid in example above)</small>
+            </div>
+        </div>
+    </section>
+</main>
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142

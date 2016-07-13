@@ -33,7 +33,11 @@
 //  ---------------------------------------------------------------------------
 *,
 *:before,
+<<<<<<< HEAD
 *:after { .box-sizing(border-box); }
+=======
+*:after { box-sizing: border-box; }
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
 
 .container {
     margin-left: auto;
@@ -44,6 +48,7 @@
     // @media (min-width: @mediaQuery-large)   { max-width: @mediaQuery-large - 30; }
 
     &,
+<<<<<<< HEAD
     .-row {
         &:before, &:after {
             display: table;
@@ -55,6 +60,12 @@
 
     .-row,
     .-row > [class*="-col"] > .-row {
+=======
+    .row { .clearfix(); }
+
+    .row,
+    .row .row {
+>>>>>>> ce8219200c776e77e3d863cf926caf6830e09142
         > [class*="-col"] {
             position: relative;
             min-height: 1px;

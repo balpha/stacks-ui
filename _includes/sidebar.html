@@ -1,6 +1,5 @@
-{% if jekyll.environment == 'production' %}
+{% if jekyll.environment != 'production' %}
     {% assign site_url = site.url %}
-    {% break %}
 {% else %}
     {% assign site_url = '/' %}
 {% endif %}

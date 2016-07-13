@@ -1,6 +1,12 @@
+{% if jekyll.environment == 'production' %}
+    {% assign site_url = site.url %}
+    {% break %}
+{% else %}
+    {% assign site_url = '/' %}
+{% endif %}
 <section id="uikit-sidebar">
     <div class="uikit-logo">
-        <a href="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}/">UIkit</a>
+        <a href="{{ site_url }}">UIkit</a>
     </div><!-- / logo -->
 
     {% assign current_page = page.url %}
@@ -18,12 +24,12 @@
                         <span class="root">{{ entry.title }}</span>
                         <ul>
                             {% for sublink in sublinks %}
-                                <li {% if current_page == sublink.url %}class="current"{% endif %}><a href="{% if jekyll.environment == 'production' %}{{ site.url }}/{% endif %}{{ sublink.url }}">{{ sublink.title }}</a></li>
+                                <li {% if current_page == sublink.url %}class="current"{% endif %}><a href="{{ site_url }}{{ sublink.url }}">{{ sublink.title }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
                 {% else %}
-                    <li{{ current }}><a href="{% if jekyll.environment == 'production' %}{{ site.url }}/{% endif %}{{ entry.url }}">{{ entry.title }}</a></li>
+                    <li{{ current }}><a href="{{ site_url }}{{ entry.url }}">{{ entry.title }}</a></li>
                 {% endif %}
             {% endfor %}
 

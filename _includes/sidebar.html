@@ -1,6 +1,6 @@
 <section id="uikit-sidebar">
     <div class="uikit-logo">
-        <a href="/">UIkit</a>
+        <a href="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}/">UIkit</a>
     </div><!-- / logo -->
 
     {% assign current_page = page.url %}

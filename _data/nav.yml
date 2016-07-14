@@ -1,4 +1,13 @@
 # URLs below should be exactly the same as real paths. Just follow examples...
+- title: Guidelines
+  url: guidelines/
+  sublinks:
+    - title: Colors
+      url: guidelines/colors/
+    - title: Files structure
+      url: guidelines/files-structure/
+    - title: Writing LESS
+      url: guidelines/writing-less/
 - title: Components
   url: components/
   sublinks:
@@ -34,15 +43,6 @@
       url: components/tooltips/
     - title: Typography
       url: components/typography/
-- title: Guidelines
-  url: guidelines/
-  sublinks:
-    - title: Colors
-      url: guidelines/colors/
-    - title: Files structure
-      url: guidelines/files-structure/
-    - title: Writing LESS
-      url: guidelines/writing-less/
 - title: Resources
   url: resources/
   sublinks:

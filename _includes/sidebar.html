@@ -3,11 +3,12 @@
 {% else %}
     {% assign site_url = '/' %}
 {% endif %}
+
 <section id="uikit-sidebar">
     <div class="uikit-logo">
         <a href="{{ site_url }}">UIkit</a>
     </div><!-- / logo -->
-    
+
     <nav id="uikit-nav" role="navigation" class="uikit-nav">
         <ul>
             {% for entry in site.data.nav %}
@@ -41,7 +42,4 @@
             </li>
         </ul>
     </nav><!-- / uikit-nav -->
-
-
-
 </section><!-- / uikit-sidebar -->

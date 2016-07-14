@@ -4,12 +4,13 @@
 
 	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-	<link rel="stylesheet/less" type="text/css" href="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}{{site.css}}/app.less">
 
-	<!-- LESS: Start LESS watch -->
+	<!-- LESS -->
+	<link rel="stylesheet/less" type="text/css" href="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}{{site.css}}/app.less">
     <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}{{site.js}}/vendor/less.js"></script>
     <script>less.watch();</script>
 
+    <!-- JS Libs -->
     <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}{{site.js}}/vendor/jquery.js"></script>
     <script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.url }}{% endif %}{{site.js}}/main.js"></script>
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
@@ -18,3 +19,5 @@
 	{{ page.js }}
 	
 </head>
+
+{% contentblock test %}

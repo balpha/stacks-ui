@@ -10,3 +10,9 @@ title: Home
 <p>Another thing... Using less.js for compiling less files is kinda painfull because we have tons of less files. And it takes a lot of time to compile it, everytime you refresh the page... Would be cool to have some server-side precompiling or some other magic :).</p>
 <p>To be clear, <em>_less</em> folder is our library of less files with all stuff we use in core. This folder is the one we are going to sync with core repo at some point... And <em>stackoverflow</em> folder is folder with all.less &amp; sobase.less files which are needed to make it all running (unfortunately... because it shouldn't work this way but that's another topic).</p>
 <p>We don't need any CMS or big templating engine - we can code some stuff so that won't be a problem for us. We are only looking for some automatization whole process of creating those pages.</p>
+
+{% contentfor test %}
+	* Some content
+	* in a markdown list
+	* with some {{ 'liquid' }} tags too!
+{% endcontentfor %}

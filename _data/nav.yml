@@ -2,12 +2,12 @@
 - title: Guidelines
   url: guidelines/
   sublinks:
-    - title: Colors
-      url: guidelines/colors/
     - title: Files structure
       url: guidelines/files-structure/
     - title: Writing LESS
       url: guidelines/writing-less/
+    - title: Colors
+      url: guidelines/colors/
 - title: Components
   url: components/
   sublinks:

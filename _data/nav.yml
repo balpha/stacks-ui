@@ -45,6 +45,8 @@
       url: components/tooltips/
     - title: Typography
       url: components/typography/
+    - title: Misc
+      url: components/misc/
 - title: Resources
   url: resources/
   sublinks:

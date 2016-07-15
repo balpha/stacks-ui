@@ -9,21 +9,21 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
     <p>The easiest way to display a tooltip is to use the css only version. The tooltip will automatically takes 100% of its parent's width. You can set a defined size of 200px using <code>.size-200</code>.</p>
 
     <div class="uikit-code uikit-has-preview">
-        <pre class="uikit-prettyprint linenums">
-            <a href="#" class="button has-tooltip">
-                Trigger tooltip
-                <span class="informative-tooltip display-above">
-                    I'm a CSS only tooltip!
-                </span>
-            </a>
+{% highlight html linenos %}
+<a href="#" class="button has-tooltip">
+    Trigger tooltip
+    <span class="informative-tooltip display-above">
+        I'm a CSS only tooltip!
+    </span>
+</a>
 
-            <a href="#" class="button has-tooltip">
-                200px width tooltip
-                <span class="informative-tooltip display-above size-200">
-                    I'm a 200px wide CSS only tooltip!
-                </span>
-            </a>
-        </pre>
+<a href="#" class="button has-tooltip">
+    200px width tooltip
+    <span class="informative-tooltip display-above size-200">
+        I'm a 200px wide CSS only tooltip!
+    </span>
+</a>
+{% endhighlight %}
 
         <div class="uikit-preview">
             <a href="#" class="button has-tooltip">
@@ -50,23 +50,23 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
     <p>They need JS in order to be triggered/displayed. You also need to set their size.</p>
 
     <div class="uikit-code uikit-has-preview">
-        <pre class="uikit-prettyprint linenums">
-            <div class="informative-tooltip arrow up-left">Tooltip up left</div>
-            <div class="informative-tooltip arrow up-center">Tooltip up center</div>
-            <div class="informative-tooltip arrow up-right">Tooltip up right</div>
+{% highlight html linenos %}
+<div class="informative-tooltip arrow up-left">Tooltip up left</div>
+<div class="informative-tooltip arrow up-center">Tooltip up center</div>
+<div class="informative-tooltip arrow up-right">Tooltip up right</div>
 
-            <div class="informative-tooltip arrow down-left">Tooltip down left</div>
-            <div class="informative-tooltip arrow down-center">Tooltip down center</div>
-            <div class="informative-tooltip arrow down-right">Tooltip down right</div>
+<div class="informative-tooltip arrow down-left">Tooltip down left</div>
+<div class="informative-tooltip arrow down-center">Tooltip down center</div>
+<div class="informative-tooltip arrow down-right">Tooltip down right</div>
 
-            <div class="informative-tooltip arrow left-top">Tooltip left top</div>
-            <div class="informative-tooltip arrow left-center">Tooltip left center</div>
-            <div class="informative-tooltip arrow left-bottom">Tooltip left bottom</div>
+<div class="informative-tooltip arrow left-top">Tooltip left top</div>
+<div class="informative-tooltip arrow left-center">Tooltip left center</div>
+<div class="informative-tooltip arrow left-bottom">Tooltip left bottom</div>
 
-            <div class="informative-tooltip arrow right-top">Tooltip right top</div>
-            <div class="informative-tooltip arrow right-center">Tooltip right center</div>
-            <div class="informative-tooltip arrow right-bottom">Tooltip right bottom</div>
-        </pre>
+<div class="informative-tooltip arrow right-top">Tooltip right top</div>
+<div class="informative-tooltip arrow right-center">Tooltip right center</div>
+<div class="informative-tooltip arrow right-bottom">Tooltip right bottom</div>
+{% endhighlight %}
 
         <div class="uikit-preview tooltips-preview">
             <div class="informative-tooltip arrow up-left">Tooltip up left</div>

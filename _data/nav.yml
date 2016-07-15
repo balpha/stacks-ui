@@ -11,6 +11,8 @@
 - title: Components
   url: components/
   sublinks:
+    - title: Avatars
+      url: components/avatars/
     - title: Badges
       url: components/badges/
     - title: Buttons
@@ -45,8 +47,8 @@
       url: components/tooltips/
     - title: Typography
       url: components/typography/
-    - title: Misc
-      url: components/misc/
+    - title: Miscellaneous
+      url: components/miscellaneous/
 - title: Resources
   url: resources/
   sublinks:

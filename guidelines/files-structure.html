@@ -10,85 +10,45 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
             <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
             <strong class="uikit-folder">less</strong>
         </div>
-        <div class="uikit-definition message gray centered-block">
-            <header>Definition</header>
-            <p>This is the root folder, nothing should be here unless it is a global style</p>
-        </div><!-- / uikit-definition message gray centered-block -->
+        <small>This is the root folder, nothing should be here unless it is a global style</small>
         <ul>
             <li>
                 <div class="uikit-name">
-                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
-                    <strong>_base.less</strong>
+                    <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
+                    <strong class="uikit-folder">_templates</strong>
                 </div>
-                <small>Non-reusable, basic structure</small>
-            </li>
-            <li>
-                <div class="uikit-name">
-                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
-                    <strong>_basemeta.less</strong>
-                </div>
-                <small>Basic structure for meta</small>
-            </li>
-            <li>
-                <div class="uikit-name">
-                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
-                    <strong>_footer.less</strong>
-                </div>
-                <small>Everything in the footer</small>
-            </li>
-            <li>
-                <div class="uikit-name">
-                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
-                    <strong>_topbar.less</strong>
-                </div>
-                <small>The black top bar on all the Q/A sites</small>
-            </li>
-            <li>
-                <div class="uikit-name">
-                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
-                    <strong>_vars.less</strong>
-                </div>
-                <small>Global variables</small>
-            </li>
-            <li>
-                <div class="uikit-name">
-                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
-                    <strong>_vars-colors.less</strong>
-                </div>
-                <small>Global color variables</small>
+                <small>This is folder with templates for site specific LESS. Maybe we can remove it..?</small>
             </li>
             <li>
                 <div class="uikit-name">
                     <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
-                    <strong class="uikit-folder">Components</strong>
+                    <strong class="uikit-folder">animations</strong>
                 </div>
-                <div class="uikit-definition message gray centered-block">
-                    <header>Definition</header>
-                    <p>Reusable components like buttons, tables, etc.</p>
-                    <p style="color: red;">This is still missing part...</p>
-                </div>
-            </li> <!--/ Components -->
-
+                <small>Animations used throughout the Stack Overflow.</small>
+            </li>
             <li>
                 <div class="uikit-name">
                     <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
-                    <strong class="uikit-folder">Helpers</strong>
+                    <strong class="uikit-folder">components</strong>
                 </div>
-                <div class="uikit-definition message gray centered-block">
-                    <header>Definition</header>
-                    <p>Helpers help you build components and views, they are not meant to be used on their own (except <code>_utilities.less</code> classes).</p>
-                    <p>If you're working on a specific .less file which need to use helpers, just import <code>_less/helpers/_helpers.less</code>, it contains all the helpers.</p>
+                <small>Reusable components like buttons, tables, etc. <span style="color: red;">This is still missing part...</span></small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
+                    <strong class="uikit-folder">favicons</strong>
                 </div>
-                <div class="uikit-definition message gray centered-block">
-                    <header>Example</header>
-                    <p>Build a tooltip in /components/_tooltips.less using:</p>
-                    <ul>
-                        <li>.triangle() to create the arrows</li>
-                        <li>.ellipsis() to prevent text overflow</li>
-                        <li>.animate-in() for a little fade in animation</li>
-                        <li>visibility classes to hide the tooltip on mobile</li>
-                    </ul>
+                <small>Less files containing data for favicons</span></small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
+                    <strong class="uikit-folder">helpers</strong>
                 </div>
+                <small>
+                    Helpers help you build components and views, they are not meant to be used on their own (except <code>_utilities.less</code> classes).<br>
+                    If you're working on a specific .less file which need to use helpers, just import <code>_less/helpers/_helpers.less</code>, it contains all the helpers.
+                </small>
                 <ul>
                     <li>
                         <div class="uikit-name">
@@ -114,6 +74,13 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
                     <li>
                         <div class="uikit-name">
                             <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                            <strong>_prettifyjs.less</strong>
+                        </div>
+                        <small>Styling for code highlighter.</small>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
                             <strong>_mixins.less</strong>
                         </div>
                         <small>.triangle(), .ellipsis(), .transition(), .clearfix()... built to avoid repetition.</small>
@@ -134,32 +101,41 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
                     </li>
                 </ul>
             </li> <!-- /helpers -->
-
             <li>
                 <div class="uikit-name">
                     <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
-                    <strong class="uikit-folder">Views</strong>
+                    <strong class="uikit-folder">mobile</strong>
                 </div>
-                <div class="uikit-definition message gray centered-block">
-                    <header>Definition</header>
-                    <p>Views are page specific less plus component overrides. The structure inside this folder should follow SO navigation. These files need to be loaded into base.less.</p>
+                <small>Mobile specific stylesheets</span></small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
+                    <strong class="uikit-folder">ui</strong>
                 </div>
-                <div class="uikit-definition message gray centered-block">
-                    <header>Example</header>
-                    <p>Put Job matching preferences page specific style in: <code>_less/views/settings/job-matching-preferences.less.</code></p>
-                    <p>Start this file with a parent class name and override specific component in it.</p>
-{% highlight css linenos %}
-// You’ll need this class name on the .container
-.job-matching-preferences {
-    input { background: red; }
-}
-{% endhighlight %}
+                <small>Less files with all components / core elements we use to build SO.</span></small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
+                    <strong class="uikit-folder">views</strong>
                 </div>
+                <small>
+                    Views are page specific less plus component overrides. The structure inside this folder should follow SO navigation. These files need to be loaded into base.less.<br><br>
+                    Put Job matching preferences page specific style in: <code>_less/views/settings/job-matching-preferences.less.</code><br>
+                    Start this file with a parent class name and override specific component in it.
+                </small>
                 <ul>
                     <li>
                         <div class="uikit-name">
                             <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
-                            <strong class="uikit-folder">documentation</strong>
+                            <strong class="uikit-folder">docs</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
+                            <strong class="uikit-folder">help-center</strong>
                         </div>
                     </li>
                     <li>
@@ -189,12 +165,87 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
                     <li>
                         <div class="uikit-name">
                             <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
+                            <strong class="uikit-folder">story</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uikit-name">
+                            <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
                             <strong class="folder-name">teams</strong>
                         </div>
                     </li>
                 </ul>
-
             </li> <!--/ Views -->
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>_base.less</strong>
+                </div>
+                <small>Non-reusable, basic structure</small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>_base-meta.less</strong>
+                </div>
+                <small>Basic structure for meta</small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>_base-mobile.less</strong>
+                </div>
+                <small>Non-reusable, basic structure for mobile</small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>_base-mobilemeta.less</strong>
+                </div>
+                <small>Non-reusable, basic structure for mobile meta</small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>_icons.less</strong>
+                </div>
+                <small>Contains icons paths etc.</small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>_messages.less</strong>
+                </div>
+                <small>???</small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>_vars.less</strong>
+                </div>
+                <small>Global variables</small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>_vars-colors.less</strong>
+                </div>
+                <small>Global color variables</small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>login.less</strong>
+                </div>
+                <small>Probably some styling about login views.. Should be moved to /views folder?</small>
+            </li>
+            <li>
+                <div class="uikit-name">
+                    <svg class="icon icon-file"><use xlink:href="../../assets/images/symbol-defs.svg#icon-file"></use></svg>
+                    <strong>topbar.less</strong>
+                </div>
+                <small>The black top bar on all the Q/A sites</small>
+            </li>
         </ul>
     </li>
 
@@ -203,11 +254,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
             <svg class="icon icon-folder"><use xlink:href="../../assets/images/symbol-defs.svg#icon-folder"></use></svg>
             <strong class="uikit-folder">img</strong>
         </div>
-
-        <div class="uikit-definition message gray centered-block">
-            <header>Definition</header>
-            <p>Paths within the img folder should be parallel to the structure of /views/</p>
-        </div>
+        <small>Paths within the img folder should be parallel to the structure of /views/</small>
     </li>
 
     <li class="uikit-root">

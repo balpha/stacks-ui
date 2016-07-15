@@ -39,6 +39,8 @@
       url: components/tabs/
     - title: Tags
       url: components/tags/
+    - title: Labels
+      url: components/labels/
     - title: Tooltips
       url: components/tooltips/
     - title: Typography

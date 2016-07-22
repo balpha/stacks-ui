@@ -62,22 +62,24 @@ description: These are the basic form input styles currently. The styles below a
                 <label for="exampleInputField" class="_medium">Label Example</label>
                 <p class="-help">Help Text: If you have some instructions beyond the label, place them here. Just remember, users will most likely miss this so have descriptive field labels.</p>
                 <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items" />
-                <label class="checkbox">
-                    <input type="checkbox" checked="checked"> Sign me up!
-                </label>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" id="checkbox-example" checked="checked" /></div>
+                    <label for="checkbox-example">Sign me up!</label>
+                </div>
             </div>
             <div class="input-group">
                 <label class="_medium">I say...</label>
-                <div class="input-group">
-                    <label class="radio">
-                        <input type="radio" name="Group1" checked="checked"> Haters gonna hate, hate, hate
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="Group1"> Players gonna play, play, play
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="Group1"> Fakers gonna fake, fake, fake
-                    </label>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="Group1" checked="checked" id="option-radio-1" /></div>
+                    <label for="option-radio-1">Haters gonna hate, hate, hate.</label>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="Group1" checked="checked" id="option-radio-2" /></div>
+                    <label for="option-radio-2">Players gonna play, play, play</label>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="Group1" checked="checked" id="option-radio-1" /></div>
+                    <label for="option-radio-1">Fakers gonna fake, fake, fake</label>
                 </div>
             </div>
         </div><!-- / preview -->
@@ -157,36 +159,36 @@ description: These are the basic form input styles currently. The styles below a
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="input-group">
-    <div class="row"><div class="col12">...</div></div>
-    <div class="row"><div class="col1">...</div><div class="col11">...</div></div>
+    <div class="-row"><div class="col12">...</div></div>
+    <div class="-row"><div class="col1">...</div><div class="col11">...</div></div>
     ...
 </div>    
 {% endhighlight %}
         <div class="uikit-preview grid-preview">
             <div class="input-group">
-                <div class="row"><div class="col12"><div>.col12</div></div></div>
-                <div class="row"><div class="col1"><div>.col1</div></div><div class="col11"><div>.col11</div></div></div>
-                <div class="row"><div class="col2"><div>.col2</div></div><div class="col10"><div>.col10</div></div></div>
-                <div class="row"><div class="col3"><div>.col3</div></div><div class="col9"><div>.col9</div></div></div>
-                <div class="row"><div class="col4"><div>.col4</div></div><div class="col8"><div>.col8</div></div></div>
-                <div class="row"><div class="col5"><div>.col5</div></div><div class="col7"><div>.col7</div></div></div>
-                <div class="row"><div class="col6"><div>.col6</div></div><div class="col6"><div>.col6</div></div></div>
+                <div class="-row"><div class="col12"><div>.col12</div></div></div>
+                <div class="-row"><div class="col1"><div>.col1</div></div><div class="col11"><div>.col11</div></div></div>
+                <div class="-row"><div class="col2"><div>.col2</div></div><div class="col10"><div>.col10</div></div></div>
+                <div class="-row"><div class="col3"><div>.col3</div></div><div class="col9"><div>.col9</div></div></div>
+                <div class="-row"><div class="col4"><div>.col4</div></div><div class="col8"><div>.col8</div></div></div>
+                <div class="-row"><div class="col5"><div>.col5</div></div><div class="col7"><div>.col7</div></div></div>
+                <div class="-row"><div class="col6"><div>.col6</div></div><div class="col6"><div>.col6</div></div></div>
             </div>
         </div>
     </div>
 
-    <p>The column sizes can be used with or without the <code>.row</code> class names. If you want the column direction flow to be horizontal (row) versus vertical (column), then you will need to use the <code>.row</code> class selector as it changes the flexbox direction to a row.</p>
+    <p>The column sizes can be used with or without the <code>.-row</code> class names. If you want the column direction flow to be horizontal (-row) versus vertical (column), then you will need to use the <code>.-row</code> class selector as it changes the flexbox direction to a -row.</p>
     <h3>Auto-Width Grids</h3>
     <p>To let the grid automatically determine the column widths, simply use a <code>.col</code> class name selector instead of a specifc numbered one (e.g. <code>.col12</code>).</p>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="input-group">
-    <div class="row">
+    <div class="-row">
         <div class="col">...</div>
         <div class="col">...</div>
     </div>
-    <div class="row">
+    <div class="-row">
         <div class="col">...</div>
         <div class="col">...</div>
         <div class="col">...</div>
@@ -195,11 +197,11 @@ description: These are the basic form input styles currently. The styles below a
 {% endhighlight %}
         <div class="uikit-preview grid-preview">
             <div class="input-group">
-                <div class="row">
+                <div class="-row">
                     <div class="col"><div>.col</div></div>
                     <div class="col"><div>.col</div></div>
                 </div>
-                <div class="row">
+                <div class="-row">
                     <div class="col"><div>.col</div></div>
                     <div class="col"><div>.col</div></div>
                     <div class="col"><div>.col</div></div>
@@ -214,11 +216,11 @@ description: These are the basic form input styles currently. The styles below a
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="input-group">
-    <div class="row">
+    <div class="-row">
         <div class="col">...</div>
         <div class="col">...</div>
     </div>
-    <div class="row">
+    <div class="-row">
         <div class="col">...</div>
         <div class="col">...</div>
         <div class="col">...</div>
@@ -227,15 +229,15 @@ description: These are the basic form input styles currently. The styles below a
 {% endhighlight %}
         <div class="uikit-preview grid-preview">
             <div class="input-group">
-                <div class="row">
+                <div class="-row">
                     <div class="col8">
-                        <div class="row">
+                        <div class="-row">
                             <div class="col4"><div>.col4</div></div>
                             <div class="col8"><div>.col4</div></div>
                         </div>
                     </div>
                     <div class="col4">
-                        <div class="row">
+                        <div class="-row">
                             <div class="col"><div>.col</div></div>
                         </div>
                     </div>
@@ -275,7 +277,7 @@ description: These are the basic form input styles currently. The styles below a
 
         <div class="uikit-preview">
             <div class="input-group">
-                <div class="row option-toggle">
+                <div class="-row option-toggle">
                     <div class="col">
                         <input type="radio" name="sample-group" id="optionA" checked="checked" />
                         <label for="optionA">Option A</label>
@@ -299,55 +301,69 @@ description: These are the basic form input styles currently. The styles below a
 {% highlight html linenos %}
 <div class="input-group">
     <label for="github-url">Prepended Input with Icon</label>
-    <div class="-prepend">
+    <div class="-row fill-first">
         <span class="-fill"><i class="icon-github"></i></span>
-        <input type="text" name="input-examples" id="github-url" placeholder="stackexchange" />
+        <div class="-item"><input type="text" name="input-examples" id="github-url" placeholder="stackexchange" /></div>
     </div>
 </div>
-...
+<div class="input-group">
+    <label for="github-url">Prepended Input with Text Value</label>
+    <div class="-row fill-first">
+        <span class="-fill">http://</span>
+        <div class="-item"><input type="text" name="input-examples" id="website-url" placeholder="stackoverflow.com" /></div>
+    </div>
+</div>
 <div class="input-group">
     <label for="github-url">Appended Input with Text Value</label>
-    <div class="-append">
+    <div class="-row fill-last">
         <span class="-fill">$/month</span>
-        <input type="number" name="input-examples" id="salary" placeholder="100,000" />
+        <div class="-item"><input type="number" name="input-examples" id="salary" placeholder="100,000" /></div>
     </div>
 </div>
 <div class="input-group">
     <label for="github-url">Prepended and Appended Input with Select Menu</label>
-    <div class="input-group _inline">
-        <div class="-append -prepend">
-            <span class="-fill">+</span>
-            <span class="-fill">
-                <select name="CompensationMinUnit">
-                    ...
-                    <option value="USD" selected="selected">US Dollars ($)</option>
-                </select>
-            </span>
-            <input type="number" name="input-examples" id="salary" placeholder="100,000" />
-        </div>
+    <div class="-row fill-multiple">
+        <span class="-fill">+</span>
+        <span class="-fill">
+            <select name="CompensationMinUnit">
+                <option value="AUD">Australian Dollars ($)</option>
+                <option value="GBP">British Pounds (£)</option>
+                <option value="CAD">Canadian Dollars ($)</option>
+                <option value="DKK">Danish Kroner (kr)</option>
+                <option value="EUR">Euros (€)</option>
+                <option value="INR">Indian Rupees (INR)</option>
+                <option value="PLN">Polish Zlotys (zł)</option>
+                <option value="SEK">Swedish Kronor (kr)</option>
+                <option value="CHF">Swiss Francs (CHF)</option>
+                <option value="USD" selected="selected">US Dollars ($)</option>
+            </select>
+        </span>
+        <div class="-item"><input type="number" name="input-examples" id="salary" placeholder="100,000" /></div>
+    </div>
+    <div class="-row checkbox _right">
+        <div class="-item"><input name="CompensationProvidesEquity" id="CompensationProvidesEquity" type="checkbox" value="true" /></div>
+        <label for="CompensationProvidesEquity">Provides equity</label>
     </div>
 </div>
 <div class="input-group">
     <label for="github-url">Appended Input with Checkbox and Button</label>
-    <div class="row">
-        <div class="-append">                        
-            <span class="-fill">
-                <label class="checkbox">
-                    <input name="NeedsVisaSponsorship" type="checkbox" />
-                    Need Visa Sponsorship
-                </label>
-            </span>
-            <input type="number" name="input-examples" id="locationWork" placeholder="City, State, or Country" />
-            <button>Add</button>
-        </div>
+    <div class="-row fill-last">
+        <span class="-fill">
+            <div class="-row checkbox">
+                <div class="-item"><input name="NeedsVisaSponsorship" id="NeedsVisaSponsorship" type="checkbox" /></div>
+                <label for="NeedsVisaSponsorship">Need Visa Sponsorship</label>
+            </div>
+        </span>
+        <div class="-item"><input type="number" name="input-examples" id="locationWork" placeholder="City, State, or Country" /></div>
+        <button>Add</button>
     </div>
 </div>
 <div class="input-group">
     <label for="github-url">Connected Inputs</label>
-    <div class="row">
-        <input type="text" name="input-examples" id="workTitle" placeholder="Senior Web Developer" />
+    <div class="-row">
+        <div class="-item"><input type="text" name="input-examples" id="workTitle" placeholder="Senior Web Developer" /></div>
         <span class="-fill">at</span>
-        <input type="text" name="input-examples" id="workCompany" placeholder="Stack Overflow" />
+        <div class="-item"><input type="text" name="input-examples" id="workCompany" placeholder="Stack Overflow" /></div>
     </div>
 </div>
 {% endhighlight %}
@@ -355,79 +371,77 @@ description: These are the basic form input styles currently. The styles below a
         <div class="uikit-preview">
             <div class="input-group">
                 <label for="github-url">Prepended Input with Icon</label>
-                <div class="-prepend">
+                <div class="-row fill-first">
                     <span class="-fill"><i class="icon-github"></i></span>
-                    <input type="text" name="input-examples" id="github-url" placeholder="stackexchange" />
+                    <div class="-item"><input type="text" name="input-examples" id="github-url" placeholder="stackexchange" /></div>
                 </div>
             </div>
             <div class="input-group">
                 <label for="github-url">Prepended Input with Text Value</label>
-                <div class="-prepend">
+                <div class="-row fill-first">
                     <span class="-fill">http://</span>
-                    <input type="text" name="input-examples" id="website-url" placeholder="stackoverflow.com" />
+                    <div class="-item"><input type="text" name="input-examples" id="website-url" placeholder="stackoverflow.com" /></div>
                 </div>
             </div>
             <div class="input-group">
                 <label for="github-url">Appended Input with Text Value</label>
-                <div class="-append">
+                <div class="-row fill-last">
                     <span class="-fill">$/month</span>
-                    <input type="number" name="input-examples" id="salary" placeholder="100,000" />
+                    <div class="-item"><input type="number" name="input-examples" id="salary" placeholder="100,000" /></div>
                 </div>
             </div>
             <div class="input-group">
                 <label for="github-url">Prepended and Appended Input with Select Menu</label>
-                <div class="row">
-                    <div class="-append -prepend">
-                        <span class="-fill">+</span>
-                        <span class="-fill">
-                            <select name="CompensationMinUnit">
-                                <option value="AUD">Australian Dollars ($)</option>
-                                <option value="GBP">British Pounds (£)</option>
-                                <option value="CAD">Canadian Dollars ($)</option>
-                                <option value="DKK">Danish Kroner (kr)</option>
-                                <option value="EUR">Euros (€)</option>
-                                <option value="INR">Indian Rupees (INR)</option>
-                                <option value="PLN">Polish Zlotys (zł)</option>
-                                <option value="SEK">Swedish Kronor (kr)</option>
-                                <option value="CHF">Swiss Francs (CHF)</option>
-                                <option value="USD" selected="selected">US Dollars ($)</option>
-                            </select>
-                        </span>
-                        <input type="number" name="input-examples" id="salary" placeholder="100,000" />
-                    </div>
+                <div class="-row fill-multiple">
+                    <span class="-fill">+</span>
+                    <span class="-fill">
+                        <select name="CompensationMinUnit">
+                            <option value="AUD">Australian Dollars ($)</option>
+                            <option value="GBP">British Pounds (£)</option>
+                            <option value="CAD">Canadian Dollars ($)</option>
+                            <option value="DKK">Danish Kroner (kr)</option>
+                            <option value="EUR">Euros (€)</option>
+                            <option value="INR">Indian Rupees (INR)</option>
+                            <option value="PLN">Polish Zlotys (zł)</option>
+                            <option value="SEK">Swedish Kronor (kr)</option>
+                            <option value="CHF">Swiss Francs (CHF)</option>
+                            <option value="USD" selected="selected">US Dollars ($)</option>
+                        </select>
+                    </span>
+                    <div class="-item"><input type="number" name="input-examples" id="salary" placeholder="100,000" /></div>
                 </div>
-                <label class="checkbox _right">
-                    <input name="CompensationProvidesEquity" type="checkbox" value="true" />
-                    Provides equity
-                </label>
+                <div class="-row checkbox _right">
+                    <div class="-item"><input name="CompensationProvidesEquity" id="CompensationProvidesEquity" type="checkbox" value="true" /></div>
+                    <label for="CompensationProvidesEquity">Provides equity</label>
+                </div>
             </div>
             <div class="input-group">
                 <label for="github-url">Appended Input with Checkbox and Button</label>
-                <div class="row">
-                    <div class="-append">                        
-                        <span class="-fill">
-                            <label class="checkbox">
-                                <input name="NeedsVisaSponsorship" type="checkbox" />
-                                Need Visa Sponsorship
-                            </label>
-                        </span>
-                        <input type="number" name="input-examples" id="locationWork" placeholder="City, State, or Country" />
-                        <button>Add</button>
-                    </div>
+                <div class="-row fill-last">
+                    <span class="-fill">
+                        <div class="-row checkbox">
+                            <div class="-item"><input name="NeedsVisaSponsorship" id="NeedsVisaSponsorship" type="checkbox" /></div>
+                            <label for="NeedsVisaSponsorship">Need Visa Sponsorship</label>
+                        </div>
+                    </span>
+                    <div class="-item"><input type="number" name="input-examples" id="locationWork" placeholder="City, State, or Country" /></div>
+                    <button>Add</button>
                 </div>
             </div>
             <div class="input-group">
                 <label for="github-url">Connected Inputs</label>
-                <div class="row">
-                    <input type="text" name="input-examples" id="workTitle" placeholder="Senior Web Developer" />
+                <div class="-row">
+                    <div class="-item"><input type="text" name="input-examples" id="workTitle" placeholder="Senior Web Developer" /></div>
                     <span class="-fill">at</span>
-                    <input type="text" name="input-examples" id="workCompany" placeholder="Stack Overflow" />
+                    <div class="-item"><input type="text" name="input-examples" id="workCompany" placeholder="Stack Overflow" /></div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <h3>Checkbox & Radios Lists</h3>
+<section class="uikit-section" data-core-careers>
+    <h2 class="toc-specific-styles">Checkbox & Radios Lists</h3>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
@@ -448,7 +462,7 @@ description: These are the basic form input styles currently. The styles below a
 ...
 <div class="input-group">
     <label for="">Horizontal List</label>
-    <div class="row">
+    <div class="-row">
         <label for="choice-checkbox-1" class="checkbox">
             <input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
         </label>
@@ -464,122 +478,165 @@ description: These are the basic form input styles currently. The styles below a
         <div class="uikit-preview">
             <div class="input-group">
                 <label for="">Vertical List (Default)</label>
-                <div class="input-group">
-                    <label for="choice-checkbox-1" class="checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
-                    </label>
-                    <label for="choice-checkbox-2" class="checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-2"> Choice 2
-                    </label>
-                    <label for="choice-checkbox-3" class="checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-3"> Choice 3
-                    </label>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+                    <div class="-item">
+                        <label for="choice-checkbox-1">Choice 1</label>
+                        <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="choice-checkbox-1" class="radio">
-                        <input type="radio" name="" id="choice-radio-1" checked> Choice 1
-                    </label>
-                    <label for="choice-radio-2" class="radio">
-                        <input type="radio" name="" id="choice-radio-2"> Choice 2
-                    </label>
-                    <label for="choice-radio-3" class="radio">
-                        <input type="radio" name="" id="choice-radio-3"> Choice 3
-                    </label>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+                    <label for="choice-checkbox-2">Choice 2</label>
+                </div>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+                    <label for="choice-checkbox-3">Choice 3</label>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-1" checked /></div>
+                    <label for="choice-radio-1">Choice 1</label>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-2" /></div>
+                    <label for="choice-radio-2">Choice 2</label>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-3" /></div>
+                    <label for="choice-radio-3">Choice 3</label>
                 </div>
             </div>
             <hr/>
-            <div class="input-group">
+            <div class="input-group _inline">
                 <label for="">Horizontal List</label>
-                <div class="row">
-                    <label for="choice-checkbox-1" class="checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
-                    </label>
-                    <label for="choice-checkbox-2" class="checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-2"> Choice 2
-                    </label>
-                    <label for="choice-checkbox-3" class="checkbox">
-                        <input type="checkbox" name="" id="choice-checkbox-3"> Choice 3
-                    </label>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+                    <div class="-item">
+                        <label for="choice-checkbox-1">Choice 1</label>
+                        <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+                    </div>
+                </span>
                 </div>
-                <div class="row">
-                    <label for="choice-checkbox-1" class="radio">
-                        <input type="radio" name="" id="choice-radio-1" checked> Choice 1
-                    </label>
-                    <label for="choice-radio-2" class="radio">
-                        <input type="radio" name="" id="choice-radio-2"> Choice 2
-                    </label>
-                    <label for="choice-radio-3" class="radio">
-                        <input type="radio" name="" id="choice-radio-3"> Choice 3
-                    </label>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+                    <div class="-item"><label for="choice-checkbox-2">Choice 2</label></div>
+                </div>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+                    <div class="-item"><label for="choice-checkbox-3">Choice 3</label></div>
+                </div>
+            </div>
+            <div class="input-group _inline">
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-1" checked /></div>
+                    <div class="-item"><label for="choice-radio-1">Choice 1</label></div>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-2" /></div>
+                    <div class="-item"><label for="choice-radio-2">Choice 2</label></div>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-3" /></div>
+                    <div class="-item"><label for="choice-radio-3">Choice 3</label></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <h3>Miscellaneous</h3>
+    <h3>Selects</h3>
 
     <div class="uikit-code uikit-has-preview">
-
-        <pre class="uikit-prettyprint linenums">
-            <label for="cs1" class=" has-message">
-                <input type="checkbox" name="" id="cs1" checked> Checkbox with subtext
-
-                <span class="help-text">
-                    Lorem ipsum dolor sir amet.
-                </span>
-            </label>
-
-            <label for="rs1" class=" has-message">
-                <input type="radio" name="" id="rs1" checked> Radio with subtext
-
-                <span class="help-text">
-                    Lorem ipsum dolor sir amet.
-                </span>
-            </label>
-
-            <label for="">Dates range</label>
-
-            <div class="dates-range">
-                <select name="" id=""><option>start date</option></select>
-                <span class="to">to</span>
-                <select name="" id=""><option>end date</option></select>
-            </div>
-        </pre>
-
+{% highlight html linenos %}
+<div class="input-group">
+    <label for="select-menu">Select Menu (Default)</label>
+    <select id="select-menu">
+        <option name="" id="" selected="selected">Please select one…</option>
+        <option name="" id="">Apples</option>
+        <option name="" id="">Oranges</option>
+        <option name="" id="">Bananas</option>
+    </select>
+</div>
+<div class="input-group">
+    <label for="select-menu-2">Select Menu (Styled, <strong>Preferred</strong>)</label>
+    <div class="-row select">
+        <select id="select-menu-2">
+            <option name="" id="" selected="selected">Please select one…</option>
+            <option name="" id="">Planes</option>
+            <option name="" id="">Trains</option>
+            <option name="" id="">Automobiles</option>
+        </select>
+    </div>
+</div>
+<div class="input-group">
+    <label for="select-menu">Select Menu</label>
+    <div class="-row">
+        <div class="-item select">
+            <select id="from-menu">
+                <option name="" id="" selected="selected">Please select one…</option>
+                <option name="" id="">Today</option>
+                <option name="" id="">Yesterday</option>
+                <option name="" id="">Tomorrow</option>
+            </select>
+        </div>
+        <div class="-fill _clean">to</div>
+        <div class="-item select">
+            <select id="to-menu">
+                <option name="" id="" selected="selected">Please select one…</option>
+                <option name="" id="">Next Week</option>
+                <option name="" id="">Next Month</option>
+                <option name="" id="">Next Year</option>
+            </select>
+        </div>
+    </div>
+</div>
+{% endhighlight %}
         <div class="uikit-preview">
-            <div class="input-list">
-                <label for="cs1" class=" has-message">
-                    <input type="checkbox" name="" id="cs1" checked> Checkbox with subtext
-
-
-                    <span class="help-text">
-                        Lorem ipsum dolor sir amet.
-                    </span>
-                </label>
-
-                <label for="rs1" class=" has-message">
-                    <input type="radio" name="" id="rs1" checked> Radio with subtext
-
-
-                    <span class="help-text">
-                        Lorem ipsum dolor sir amet.
-                    </span>
-                </label>
+            <div class="input-group">
+                <label for="select-menu">Select Menu (Default)</label>
+                <select id="select-menu">
+                    <option name="" id="" selected="selected">Please select one…</option>
+                    <option name="" id="">Apples</option>
+                    <option name="" id="">Oranges</option>
+                    <option name="" id="">Bananas</option>
+                </select>
             </div>
-
-            <hr>
-
-            <label for="">Dates range</label>
-
-            <div class="dates-range">
-                <select name="" id=""><option>start date</option></select>
-                <span class="to">to</span>
-                <select name="" id=""><option>end date</option></select>
+            <div class="input-group">
+                <label for="select-menu-2">Select Menu (Styled, <strong>Preferred</strong>)</label>
+                <div class="-row select">
+                    <select id="select-menu-2">
+                        <option name="" id="" selected="selected">Please select one…</option>
+                        <option name="" id="">Planes</option>
+                        <option name="" id="">Trains</option>
+                        <option name="" id="">Automobiles</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="select-menu">Select Menu</label>
+                <div class="-row">
+                    <div class="-item select">
+                        <select id="from-menu">
+                            <option name="" id="" selected="selected">Please select one…</option>
+                            <option name="" id="">Today</option>
+                            <option name="" id="">Yesterday</option>
+                            <option name="" id="">Tomorrow</option>
+                        </select>
+                    </div>
+                    <div class="-fill _clean">to</div>
+                    <div class="-item select">
+                        <select id="to-menu">
+                            <option name="" id="" selected="selected">Please select one…</option>
+                            <option name="" id="">Next Week</option>
+                            <option name="" id="">Next Month</option>
+                            <option name="" id="">Next Year</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
-
 </section>
 <!-- / section -->
 

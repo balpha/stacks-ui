@@ -110,7 +110,8 @@ input[type="datetime"],
     &:-ms-input-placeholder { color: @input-placeholder-color; }
 
     //  Create some whitespace for the input when it directly follows a label
-    label + & { margin-top: @margin-half; }
+    label + &,
+    & + .-row { margin-top: @margin-half; }
 
     //  --  Layout
     &._block   {
@@ -123,7 +124,8 @@ input[type="datetime"],
     &._small { padding: @padding-half (@padding-base - 2) (@padding-half - 1); }
 }
 
-//  --  Textarea styles
+//  $ TEXTAREA 
+//  ----------------------------------------------------------------------------
 textarea {
     height: auto;
     resize: vertical;
@@ -131,7 +133,9 @@ textarea {
     line-height: @input-lineHeight - 0.3;
 }
 
-//  --  Select styles
+//  $ SELECTS 
+//  ----------------------------------------------------------------------------
+//  We leave the base, default styles intact
 select {
     padding: 2px;
     font-size: @input-fontSize - 1;
@@ -151,6 +155,64 @@ select {
         cursor: not-allowed;
     }
 }
+
+//  But we prefer to use these beautiful custom styles
+.select {
+    position: relative;
+    align-items: stretch;
+
+    select {
+        .appearance(none);
+        padding: @input-padding;
+        width: 100%;
+
+        font-size: @input-fontSize;
+        line-height: @input-lineHeight;
+        color: @input-color;
+        background-color: @white;
+        border: 1px solid @input-border;
+        border-radius: @borderRadius-small;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+        &:hover {
+            border-color: fade(@input_focused-border,50%);
+            box-shadow: inset 0 0 2px darken(@input_focused-shadowInner,10%), 0 0 2px fade(@input_focused-shadowDrop,20%);
+        }
+        
+        &:focus,
+        &._focus {
+            border-color: @input_focused-border;
+            box-shadow: inset 0 0 4px @input_focused-shadowInner, 0 0 5px @input_focused-shadowDrop;
+            outline: 0;
+        }
+    }
+
+    label + & { margin-top: @margin-half; }
+
+    // Create custom arrows since appearance removes them.
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        right: 10px;
+        pointer-events: none;
+
+        border-width: 4px;
+        border-style: solid;
+        border-color: @input-color transparent;
+    }
+    &:before {
+        top: calc(~"50% - 7px");
+        border-top-width: 0;
+        border-bottom-width: 6px;
+    }
+    &:after {
+        top: calc(~"50% + 1px");
+        border-top-width: 6px;
+        border-bottom-width: 0;
+    }
+}
+
 
 input[type="file"] {
     display: block;
@@ -174,6 +236,7 @@ input[type="datetime"],
 .tag-editor,
 .container .chosen-container > .chosen-choices {
     padding: @input-padding;
+    min-height: auto;
     width: 100%;
 
     font-size: @input-fontSize;
@@ -232,42 +295,46 @@ input,
 //  ============================================================================
 //  $ CHECKBOXES & RADIO SELECTS
 //  ----------------------------------------------------------------------------
-input[type="radio"],
-input[type="checkbox"] { margin: 0; } // Reset browser
-
 .checkbox,
 .radio {
     *,
     *:before,
     *:after { box-sizing: border-box; }
 
-    //  --  LABEL
-    //      Most of the time, .checkbox and .radio are used with labels
-    label& {
-        padding-left: 19px; // Need to push it over so text doesn't wrap underneath the input
-        display: block;
+    .flexbox();
+
+    input {
+        margin: 0;
+        margin-right: @margin-half;
+        &:focus { outline: 0; }
+    }
+    label {
         font-weight: 400;
         cursor: pointer;
-
-        select { margin-left: @margin-half; }
+    }
+    p.-help {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding-right: 1em;
     }
 
     //  --  LAYOUTS
     //  When you have multiple checkbox or radios next to each other, space them out
     & + &,
-    input + &,
-    .row + & { margin-top: @margin-half; }
+    input + & { margin-top: @margin-half; }
 
     //  Position Alignment
-    &._right { align-self: flex-end; }
+    &._right { .flex-justify(flex-end); }
 }
 
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
-    vertical-align: middle;
-    margin: -1px 2px 0 -19px;
+    margin: 0; // Reset browser
 
-    &:focus { outline: 0; }
+    label > & {
+        margin: 0;
+        margin-right: @margin-half;
+    }
 }
 
 
@@ -383,7 +450,6 @@ input[type="datetime"],
         flex-shrink: 0;
         padding: @input-padding;
         
-        font-family: @code-font-family;
         font-size: @input-fontSize - 1;
         line-height: 1.538461538;
         color: @black-600;
@@ -402,10 +468,38 @@ input[type="datetime"],
         > i { align-self: center; }
 
         .checkbox,
-        .radio { padding-left: 0; }
+        .radio { margin-top: 0; }
 
-        .radio input[type="radio"],
-        .checkbox input[type="checkbox"] { margin: -2px 6px 0 0; }
+        //  When we don't want borders or backgrounds
+        &._clean {
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+
+    // Make an input-group's children display in a row versus column (default)
+    &._inline {
+        .flex-flow(row wrap);
+
+        //  The first label we set on its own line
+        > label:first-of-type {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+
+        //  Now let's float the rows
+        .-row {
+            display: inline-flex;
+            flex-grow: 1;
+            flex-basis: 0;
+
+            //  Within checkbox and radio rows, the first item needs to stay small
+            &.checkbox,
+            &.radio {
+                // Reset any previously set margins
+                &:first-of-type:not(:only-of-type) { margin-top: @margin-half; }
+            }
+        }
     }
 
     //  If an entire input-group is unavailable, make it look like that.
@@ -431,36 +525,46 @@ input[type="datetime"],
     .flex-flow(column nowrap);
     .flex-justify(flex-start);
 
-    //  --  Rows reset the flow direction and act as a wrapping container for elements
-    .row {
-        .flexbox();
-        .flex(0 1 auto);
-        .flex-flow(row nowrap);
-        .flex-justify(center);
-        margin-top: @margin-base;
+    .-item {
+        .flex(2 1 auto);
 
-        input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
-        .input {
-            .flex(0 2 auto);
-
-            ~ input[type="button"],
-            ~ input[type="submit"],
-            ~ button,
-            ~ .btn,
-            ~ [class*="btn-"] {
-                left: -1px;
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-            }
+        > * {
+            align-items: stretch;
+            min-height: 100%;
         }
 
-        > label { flex-shrink: 0; } //  Makes labels act like white-space: nowrap
+        input[type="button"],
+        input[type="submit"],
+        button,
+        .btn,
+        [class*="btn-"] {
+            left: -1px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
 
-        .checkbox,
-        .radio {
-            display: inline-flex;
-            .flex(1 1 0);
-            align-items: center;
+    //  --  Rows reset the flow direction and act as a wrapping container for elements
+    .-row {
+        .flexbox();
+        .flex(0 1 auto);
+        margin-top: @margin-half;
+
+        //  Flow adjustments
+        &._start    { .flex-justify(flex-start); }
+        &._end      { .flex-justify(flex-end); }
+        &._reverse  { .flex-flow(row-reverse nowrap); }
+
+        &.checkbox,
+        &.radio {
+            &:first-of-type:not(:only-of-type) { margin-top: @margin-base; }
+
+            .-item {
+                padding-right: 0.5em;
+
+                &:first-of-type { flex-grow: 0; }
+                &:not(:first-of-type) { flex-grow: 1; }
+            }
         }
 
         //  --  PADDING
@@ -471,16 +575,6 @@ input[type="datetime"],
                 padding-right: 0.5em;
             }
         }
-    }
-
-    //  Row Spacing
-    .row {
-        &:first-of-type { margin-top: @margin-half; }
-
-        .-prepend,
-        .-append,
-        .checkbox,
-        .radio { margin-top: 0; }
     }
 
     [class*="col"] { .flex(0 0 auto); }
@@ -542,20 +636,25 @@ input[type="datetime"],
 
 //  --  INPUT GROUP: Input Prepend & Append
 .input-group {
-    .-prepend,
-    .-append {
-        .flexbox();
-        .flex-flow(row nowrap);
-        margin-top: @margin-half;
-        width: 100%;
-
-        > * { display: inline-flex; }
-
+    .fill-first,
+    .fill-last,
+    .fill-multiple {
         //  If a checkbox or radio input follows a prepend
         //  or an append div, insert some space.
         + .checkbox,
         + .radio { margin-top: @margin-half; }
+    }
 
+    .fill-first .-fill {
+        .flex-order(-1);
+        border-left-width: 1px;
+    }
+
+    .fill-last {
+        .-fill {
+            .flex-order(2);
+            border-right-width: 1px;
+        }
         input[type="button"],
         input[type="submit"],
         button,
@@ -568,27 +667,15 @@ input[type="datetime"],
         }
     }
 
-    .-prepend .-fill { border-left-width: 1px; }
-
-    .-append {
-        .-fill {
-            .flex-order(99);
-            border-right-width: 1px;
-
-            &.checkbox,
-            &.radio { padding-left: 30px; }
-        }
-    }
-
     //  Sometimes we actually want BOTH append and prepend
-    .-append.-prepend {
+    .fill-multiple {
         .-fill:first-of-type {
             .flex-order(-1);
-            border-right-width: 0;
+            border-left-width: 1px;
         }
         .-fill:last-of-type {
             .flex-order(99);
-            border-left-width: 0;
+            border-right-width: 1px;
         }
     }
 }
@@ -599,7 +686,7 @@ input[type="datetime"],
 .button-group {
     margin-top: @margin-base;
 
-    .row {
+    .-row {
         input[type="button"],
         input[type="submit"],
         button,
@@ -667,7 +754,10 @@ form._inline {
 
     > .col {
         input[type="radio"] {
-            display: none;
+            position: absolute;
+            left: -9999em;
+            opacity: 0;
+
             &:checked + label {
                 color: @white;
                 background-color: @blue-500;

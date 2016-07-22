@@ -33,7 +33,7 @@
 	z-index: 999;
 }
 
-.row * {
+.-row * {
 	box-sizing: border-box;
 }
 
@@ -615,13 +615,13 @@
 	&.uikit-preview .input-group {
 		width: 100%;
 
-		.row {
+		.-row {
 			.flex-justify(center);
 			align-items: center;
 
 			[class*="col"] { padding: 1em; }
 
-			[class*="col"] > div:not(.row),
+			[class*="col"] > div:not(.-row),
 			[class*="col"] div:not([class*="col"]) {
 				padding: 1em;
 				font-family: @code-font-family;
@@ -629,7 +629,7 @@
 				background-color: @orange-300;
 			}
 
-			.row div:not(.row):not([class*="col"]) { border: 1px solid @white; }
+			.-row div:not(.-row):not([class*="col"]) { border: 1px solid @white; }
 		}
 	}
 }

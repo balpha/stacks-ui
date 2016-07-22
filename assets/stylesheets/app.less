@@ -12,6 +12,9 @@
 @import 'utilities.less';
 @import 'syntax.less';
 
+// TEMPORARY UNTIL FORMS ARE INTEGRATED
+@import "forms.less";
+
 
 
 // --------------------------------------------------------------
@@ -229,15 +232,34 @@
 				margin-left: 10px;
 				display: inline-block;
 				text-transform: uppercase;
-				position: relative; top: -1px;
+				position: relative;
+				top: -4px;
 			}
+		}
+
+		//	Custom header and paragraph styling
+		> p {
+			width: 60%;
+			color: @black-750;
+			font-size: 16px;
+			line-height: 1.375;
+		}
+		> h2 {
+			margin-top: 2em;
+			font-size: 24px;
+			line-height: 1.166666667;
+		}
+		> h3 {
+			margin-top: 2em;
+			font-size: 18px;
+			line-height: 1.166666667;
 		}
 
 		&[data-core] {
 			> h2, > h3, > h4, > h5, > h6 {
 				&:after {
 					content: 'core';
-					background: @orange;
+					background: @orange-400;
 				}
 			}
 		}
@@ -246,7 +268,16 @@
 			> h2, > h3, > h4, > h5, > h6 {
 				&:after {
 					content: 'careers';
-					background: @blue;
+					background: @blue-500;
+				}
+			}
+		}
+
+		&[data-core-careers] {
+			> h2, > h3, > h4, > h5, > h6 {
+				&:after {
+					content: 'core & careers';
+					background: @green-400;
 				}
 			}
 		}
@@ -580,6 +611,27 @@
 			background: darken(@powder, 5%);
 		}
 	}
+
+	&.uikit-preview .input-group {
+		width: 100%;
+
+		.row {
+			.flex-justify(center);
+			align-items: center;
+
+			[class*="col"] { padding: 1em; }
+
+			[class*="col"] > div:not(.row),
+			[class*="col"] div:not([class*="col"]) {
+				padding: 1em;
+				font-family: @code-font-family;
+				color: @black-800;
+				background-color: @orange-300;
+			}
+
+			.row div:not(.row):not([class*="col"]) { border: 1px solid @white; }
+		}
+	}
 }
 
 
@@ -870,3 +922,7 @@ body.composer-on {
 // ---------------------------------------------------------------
 //	PAGE: Form
 // ---------------------------------------------------------------
+.uikit-preview {
+	> .input-group,
+	> .option-toggle { width: 60%; }
+} 

@@ -1,10 +1,43 @@
 //  ============================================================================
 //  VARIABLES
 //  ============================================================================
-//  $ TYPE
-//  ----------------------------------------------------------------------------
+//  --  TYPE, LINKS
+//  The @fontFamily-sans was created because sometimes we need to quickly reset @type-face
+@fontFamily-sans:                   Arial, "Helvetica Neue", Helvetica, sans-serif;
 @code-font-family:                  Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+@body-font-size:                    13px;
+@copy_muted-color:                  @black-400;
+@divider-line-color:                @black-075;
+@link-color:                        #4E82C2;
+@link-color-hover:                  #4CA3D7;
+@link-color-visited:                #36649D;
 
+// ===========================================================================
+//  $   HELPERS
+//      The following variables are helper variables to quickly set z-index,
+//      border-radius, margin, and padding values. These SHOULD NOT be reset.
+// ---------------------------------------------------------------------------
+//  --  Z-INDEX
+@zindex-navbar:                     1000;
+@zindex-navbar_fixed:               1030;
+@zindex-dropdown:                   1000;
+@zindex-popover:                    1010;
+@zindex-tooltip:                    1020;
+@zindex-modal:                      1050;
+@zindex-modalBackdrop:              1040;
+
+//  --  BORDER-RADIUS
+@borderRadius-large:                @borderRadius-base * 2;
+@borderRadius-base:                 4px;
+@borderRadius-small:                @borderRadius-base / 2;
+
+//  --  PADDING & MARGIN
+@padding-half:                      ceil(@padding-base / 2);
+@padding-base:                      @body-font-size * 1px;
+@padding-double:                    @padding-base * 2;
+@margin-half:                       ceil(@margin-base / 2);
+@margin-base:                       @body-font-size * 1px;
+@margin-double:                     @margin-base * 2;
 
 //  ============================================================================
 //  $ STACK OVERFLOW COLORS

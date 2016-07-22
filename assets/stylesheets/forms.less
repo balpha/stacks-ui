@@ -15,7 +15,7 @@
 //  ============================================================================
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
-@input-padding:                 (@padding-half + 1) (@padding-base - 1);
+@input-padding:                 (@padding-half + 1) @padding-base;
 @input-fontSize:                @body-font-size + 1;
 @input-lineHeight:              1.461538462;
 @input-color:                   @black-700;
@@ -400,6 +400,12 @@ input[type="datetime"],
 
         //  For icons
         > i { align-self: center; }
+
+        .checkbox,
+        .radio { padding-left: 0; }
+
+        .radio input[type="radio"],
+        .checkbox input[type="checkbox"] { margin: -2px 6px 0 0; }
     }
 
     //  If an entire input-group is unavailable, make it look like that.

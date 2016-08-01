@@ -3,23 +3,6 @@ layout: default
 title: Forms
 description: These are the basic form input styles currently. The styles below are applied by default and you can modify their appearance with the classes outlined below.
 ---
-
-<h2>Things to know:</h2>
-<ul>
-    <li>
-        Labels in <code>&lt;form&gt;</code> get <code>display: block;</code>
-    </li>
-    <li>
-        Inputs in <code>&lt;form&gt;</code> get <code>display: block;</code> and <code>width: 100%;</code>
-    </li>
-    <li>
-        Use <code>&lt;span class="required-asterisk"&gt;*&lt;/span&gt;</code> in <code>labels</code> for required inputs.
-    </li>
-    <li>
-        You can use <code>.input-list</code> to wrap a single checkbox/radio (when you need margin). It's currently used in this page ("Do you agree?" checkbox).
-    </li>
-</ul>
-
 <!-- section -->
 <section class="uikit-section" data-core-careers>
     <h2 class="toc-basic-styles">Default Styles</h2>
@@ -640,54 +623,160 @@ description: These are the basic form input styles currently. The styles below a
 </section>
 <!-- / section -->
 
-<section class="uikit-section" data-core>
-    <h2 class="toc-tag-editor">Form actions</h2>
+<section class="uikit-section" data-core-careers>
+    <h2 class="toc-tag-editor">Button Placement</h2>
+    <h3>Default</h3>
+    <p>The default button placement within a form is <em>left-aligned</em>, with the primary call-to-action (CTA) being listed first, followed by the secondary CTA, and so on. The <code>.button-group</code> only addresses spacing around the buttons. It does not add any visual decoration.</p>
 
     <div class="uikit-code uikit-has-preview">
-        <pre class="uikit-prettyprint linenums">
-            <div class="ctas-container">
-                <input class="btn" type="submit" value="Save">
-                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
-            </div>
-
-            <label for="" class="block">Form Ctas justified</label>
-            <div class="ctas-container justified">
-                <input class="btn" type="submit" value="Save">
-                <a href="#" title="Cancel">Cancel</a>
-            </div>
-
-            <label for="" class="block">Form Ctas without border</label>
-            <div class="ctas-container no-border">
-                <input class="btn" type="submit" value="Save">
-                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
-            </div>
-        </pre>
-
+{% highlight html linenos %}
+<!-- Default -->
+<div class="button-group">
+    <input class="btn" type="submit" value="Save">
+    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+</div>
+{% endhighlight %}
         <div class="uikit-preview">
-            <form action="">
-                <div class="ctas-container">
-                    <input class="btn" type="submit" value="Save">
-                    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+            <div class="button-group">
+                <input class="btn" type="submit" value="Save">
+                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+            </div>
+        </div>
+    </div> <!-- /preview -->
+
+    <h3>Borders</h3>
+    <p>If you would like to insert a border between the button area and the inputs above, you must add the modifying class of <code>._border</code> to the <code>.button-group</code> div.</p>
+
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<div class="button-group _border">
+    <input class="btn" type="submit" value="Save">
+    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+</div>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <div class="button-group _border">
+                <input class="btn" type="submit" value="Save">
+                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+    <p>There are situations in which the button placement can be adjusted, though these should be used only when needed.</p>
+    <h3>Stacked Layout</h3>
+    <p>Primarily used in layouts where button label length force us to stack the buttons on top of each other. In this scenario, the primary CTA is still listed first.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<div class="button-group _stacked">
+    <div class="-row _stacked">
+        <a href="#" title="Primary action" class="btn">Primary Action</a>
+        <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
+    </div>
+</div>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <div class="button-group">
+                <div class="-row _stacked">
+                    <a href="#" title="Primary action" class="btn">Primary Action</a>
+                    <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
                 </div>
-            </form>
-
-            <hr>
-
-            <form action="">
-                <label for="" class="block">Form CTAs justified</label>
-                <div class="ctas-container justified">
-                    <input class="btn" type="submit" value="Save">
-                    <a href="#" title="Cancel">Cancel</a>
+            </div>
+        </div>
+    </div>
+            
+    <h3>Justified</h3>
+    <p>In situations where a user is progressing through a series of steps (e.g. like within an onboarding wizard), we place the primary action to the right.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<div class="button-group">
+    <div class="-row _justify">
+        <a href="#" title="Previous Step" class="btn-secondary">Previous Step</a>
+        <a href="#" title="Next Step" class="btn">Next Step</a>
+    </div>
+</div>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <div class="button-group">
+                <div class="-row _justify">
+                    <a href="#" title="Previous Step" class="btn-secondary">Previous Step</a>
+                    <a href="#" title="Next Step" class="btn">Next Step</a>
                 </div>
-            </form>
+            </div>
+        </div>
+    </div>
 
-            <hr>
+    <h3>Action Row</h3>
+    <p>Sometimes UI controls are placed in heading areas along with titles. In these scenarios, the buttons should always be pulled to the right and the primary action is to placed on right.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<div class="button-group _end">
+    <div class="-row _end">
+        <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
+        <a href="#" title="Primary action" class="btn">Primary Action</a>
+    </div>
+</div>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <div class="button-group">
+                <div class="-row _end">
+                    <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
+                    <a href="#" title="Primary action" class="btn">Primary Action</a>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+</section>
+<!-- / section -->
 
-            <form action="">
-                <label for="" class="block">Form CTAs without border top</label>
-                <div class="ctas-container no-border">
-                    <input class="btn" type="submit" value="Save">
-                    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+<section class="uikit-section" data-core-careers>
+    <h2 class="toc-tag-editor">Inline Forms</h2>
+
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form class="_inline">
+    <div class="input-group">
+        <label for="example-item01" class="col3">Label Example</label>
+        <input type="text" name="example-item01" id="example-item01" class="col9" />
+    </div>
+    <div class="input-group">
+        <label for="example-item02" class="col3">Label Example That Is Very Long</label>
+        <input type="text" name="example-item02" id="example-item02" class="col9" />
+    </div>
+    <div class="input-group">
+        <label for="example-item03" class="col3">Label Example</label>
+        <div class="-row col9">
+            <input type="text" name="example-item03" id="example-item03" />
+            <input type="button" id="example-button01" value="Action Item" class="btn-secondary" />
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="example-button02" class="col3">Label Example</label>
+        <input type="button" id="example-button02" value="Save Item" class="btn col9" />
+    </div>
+</form>
+{% endhighlight %}
+        <div class="uikit-preview">
+
+            <form class="_inline">
+                <div class="input-group">
+                    <label for="example-item01" class="col3">Label Example</label>
+                    <input type="text" name="example-item01" id="example-item01" class="col9" />
+                </div>
+                <div class="input-group">
+                    <label for="example-item02" class="col3">Label Example That Is Very Long</label>
+                    <input type="text" name="example-item02" id="example-item02" class="col9" />
+                </div>
+                <div class="input-group">
+                    <label for="example-item03" class="col3">Label Example</label>
+                    <div class="-row col9">
+                        <input type="text" name="example-item03" id="example-item03" />
+                        <input type="button" id="example-button01" value="Action Item" class="btn-secondary" />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="example-button02" class="col3">Label Example</label>
+                    <input type="button" id="example-button02" value="Save Item" class="btn col9" />
                 </div>
             </form>
         </div>
@@ -696,104 +785,36 @@ description: These are the basic form input styles currently. The styles below a
 <!-- / section -->
 
 <section class="uikit-section" data-core>
-    <h2 class="toc-tag-editor">Inline forms</h2>
-
-    <p>
-        <code>.no-width</code> is available (apply it on <code>.inline-field</code>) to remove the <code>width:15%</code> on the label.
-    </p>
+    <h2 class="toc-tag-editor">Image Upload</h2>
 
     <div class="uikit-code uikit-has-preview">
-        <pre class="uikit-prettyprint linenums">
-            <form action="" class="inline-form">
-                <div class="inline-field">
-                    ...
-                </div>
-
-                <div class="inline-field">
-                    ...
-                </div>
-            </form>
-        </pre>
-
-        <div class="uikit-preview">
-
-            <form action="" class="inline-form">
-
-                <div class="inline-field">
-                    <label for="">Short label</label>
-                    <input type="text" name="" id="">
-                </div>
-
-                <div class="inline-field">
-                    <label for="">Very long label with many words</label>
-                    <input type="text" name="" id="">
-                </div>
-
-                <div class="inline-field">
-                    <label for="">Label</label>
-                    <input type="text" name="" id="">
-                    <a href="" class="btn btn-secondary">Action</a>
-                </div>
-
-                <div class="inline-field">
-                    <label for="">Label</label>
-                    <input type="submit" value="Save">
-                </div>
-
-                <div class="ctas-container">
-                    <a href="" class="btn">Save</a>
-                    <a href="" class="btn-clear">Cancel</a>
-                </div>
-
-            </form>
+{% highlight html linenos %}
+<div class="img-upload js-img-edit full">
+    <a href="#" class="remove js-img-remove" alt="remove">×</a>
+    <img src="" class="js-img-preview dno">
+    <div class="text-wrapper js-img-empty">
+        <div class="icon icon-image-upload"></div>
+        <div class="img-text">
+            Click to add an image
+            <span class="img-size-hint">Recommended size: 350x150px</span>
         </div>
-    </div> <!-- /preview -->
-</section>
-<!-- / section -->
-
-<section class="uikit-section" data-core>
-    <h2 class="toc-tag-editor">Image upload</h2>
-
-    <div class="uikit-code uikit-has-preview">
-        <pre class="uikit-prettyprint linenums">
-            <div class="img-upload js-img-edit full">
-
-                <a href="#" class="remove js-img-remove" alt="remove">×</a>
-
-                <img src="" class="js-img-preview dno">
-
-                <div class="text-wrapper js-img-empty">
-                    <div class="icon icon-image-upload"></div>
-
-                    <div class="img-text">
-                        Click to add an image
-                            <span class="img-size-hint">Recommended size: 350x150px</span>
-                    </div>
-                </div>
-
-                <input type="hidden" name="ImageUrl">
-
-            </div>
-        </pre>
+    </div>
+    <input type="hidden" name="ImageUrl">
+</div>
+{% endhighlight %}
 
         <div class="uikit-preview">
             <div class="img-upload js-img-edit full">
-
                 <a href="#" class="remove js-img-remove" alt="remove">×</a>
-
                 <img src="" class="js-img-preview dno">
-
                 <div class="text-wrapper js-img-empty">
                     <div class="icon icon-image-upload"></div>
-
                     <div class="img-text">
                         Click to add an image
-                            <span class="img-size-hint">Recommended size: 350x150px</span>
+                        <span class="img-size-hint">Recommended size: 350x150px</span>
                     </div>
                 </div>
-
                 <input type="hidden" name="ImageUrl">
-
             </div>
         </div>
     </div> <!-- /preview -->
@@ -804,20 +825,25 @@ description: These are the basic form input styles currently. The styles below a
     <h2 class="toc-tag-editor">Tag editor</h2>
 
     <div class="uikit-code uikit-has-preview">
-        <pre class="uikit-prettyprint linenums">
-            ...
-        </pre>
+{% highlight html linenos %}
+<label for="tagnames">Tag editor full</label>
+<input id="tagnames" name="tagnames" type="text" size="60" value="" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="display: none;">
+<div class="tag-editor" style="width: 636px;height: 35px;">
+    <span></span>
+    <input type="text" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="width: 628px;">
+    <span></span>
+</div>
+{% endhighlight %}
 
         <div class="uikit-preview">
-            <label for="">Tag editor full</label>
-            <div class="tag-editor"><span><span class="post-tag rendered-element">html<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">sass<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">less<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">javascript<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder=""><span></span>
+            <label for="tagnames01">Tag editor full</label>
+            <div id="tagnames01" class="tag-editor"><span><span class="post-tag rendered-element">html<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">sass<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">less<span class="delete-tag" title="remove this tag"></span></span><span class="post-tag rendered-element">javascript<span class="delete-tag" title="remove this tag"></span></span></span><input type="text" tabindex="0" placeholder=""><span></span>
             </div>
 
             <form action="">
                 <div class="form-item">
-                    <label>Tags editor empty</label>
-
-                    <input id="tagnames" name="tagnames" type="text" size="60" value="" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="display: none;"><div class="tag-editor" style="width: 636px;height: 35px;"><span></span><input type="text" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="width: 628px;"><span></span></div>
+                    <label for="tagnames02">Tags editor empty</label>
+                    <input id="tagnames02" name="tagnames" type="text" size="60" value="" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="display: none;"><div class="tag-editor" style="width: 636px;height: 35px;"><span></span><input type="text" tabindex="103" placeholder="must include at least one of (bug feature-request discussion support)" style="width: 628px;"><span></span></div>
                 </div>
             </form>
 
@@ -833,9 +859,9 @@ description: These are the basic form input styles currently. The styles below a
     <h2 class="toc-tag-editor">Composer</h2>
 
     <div class="uikit-code uikit-has-preview">
-        <pre class="uikit-prettyprint linenums">
-            ...
-        </pre>
+{% highlight html linenos %}
+TBD
+{% endhighlight %}
 
         <div class="uikit-preview">
             <div id="post-editor" class="post-editor js-post-editor">

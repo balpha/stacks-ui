@@ -12,6 +12,16 @@
 //  ----------------------------------------------------------------------------
 //  @import "../modules/_composer";
 
+//  TEMPORARY BUTTON OVERRIDE
+input[type="submit"],
+input[type="button"],
+button, .button,
+[class^="btn"] {
+    margin: 0;
+    padding: 0.885em 1.1em;
+    min-height: initial;
+}
+
 //  ============================================================================
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
@@ -499,6 +509,9 @@ input[type="datetime"],
                 // Reset any previously set margins
                 &:first-of-type:not(:only-of-type) { margin-top: @margin-half; }
             }
+
+            //  When a row and input are next to each other in a row, reset the margin
+            label + input { margin-top: 0; }
         }
     }
 
@@ -551,9 +564,10 @@ input[type="datetime"],
         margin-top: @margin-half;
 
         //  Flow adjustments
-        &._start    { .flex-justify(flex-start); }
-        &._end      { .flex-justify(flex-end); }
-        &._reverse  { .flex-flow(row-reverse nowrap); }
+        &._start        { .flex-justify(flex-start); }
+        &._end          { .flex-justify(flex-end); }
+        &._justify      { .flex-justify(space-between); }
+        &._reverse      { .flex-flow(row-reverse nowrap); }
 
         &.checkbox,
         &.radio {
@@ -569,11 +583,9 @@ input[type="datetime"],
 
         //  --  PADDING
         //      If padding between elements is desired
-        &._padding {
-            [class*="col"]  {
-                padding-left: 0.5em;
-                padding-right: 0.5em;
-            }
+        &._padding [class^="col"]  {
+            padding-left: 0.5em;
+            padding-right: 0.5em;
         }
     }
 
@@ -684,64 +696,51 @@ input[type="datetime"],
 //  --  BUTTON GROUPS
 //      Wrapping <div> for buttons / actions
 .button-group {
+    .flex-flow(row nowrap);
     margin-top: @margin-base;
 
-    .-row {
-        input[type="button"],
-        input[type="submit"],
-        button,
-        .btn,
-        [class*="btn-"] { align-self: flex-end; }
-    }
+    [class^="btn"] + [class^="btn"] { margin-left: @margin-half; }
+
+    .-row { width: 100%; }
 
     //  Applies top border to the button container
     &._border {
         padding-top: 1.4em;
         border-top: 1px solid @divider-line-color;
     }
+
+    //  Stack the buttons on top of each other
+    .-row._stacked {
+        flex-direction: column;
+        [class^="btn"] + [class^="btn"] {
+            margin-left: 0;
+            margin-top: @margin-half;
+        }
+    }
 }
 
 
-//  --  FORM: Inline
-//      Here we set every input-group within a form to inline
-form._inline {
-    .input-group {
-        display: flex;
-        flex-wrap: wrap;
-    }
+//  ============================================================================
+//  $ INLINE FORMS
+//  --  As much as possible we want the inline input-group component to control
+//      way items lay out. Sometimes though we want to override these inline
+//      components at the form level so everything is affected.
+//  ----------------------------------------------------------------------------
+form._inline .input-group {
+    flex-direction: row;
+    align-items: center;
 
-    textarea,
-    input[type="text"],
-    input[type="password"],
-    input[type="number"],
-    input[type="email"],
-    input[type="url"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="datetime"],
-    .input {
-        margin-top: 0;
-        width: auto;
-        flex-grow: 2;
+    > input { margin: 0; }
 
-        + input[type="button"],
-        + input[type="submit"],
-        + button,
-        + .btn,
-        + [class*="btn-"] { margin-left: @margin-half; }
-    }
-
-    label {
-        padding-right: 1em;
-        width: 25%;
-        align-self: center;
-        flex-shrink: 0;
-
-        + input[type="button"],
-        + input[type="submit"],
-        + button,
-        + .btn,
-        + [class*="btn-"] { flex-grow: 2; }
+    .-row {
+        input[type="submit"],
+        input[type="button"],
+        button,
+        [class^="btn"] {
+            margin-left: -1px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
     }
 }
 

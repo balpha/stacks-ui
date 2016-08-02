@@ -5,196 +5,579 @@ description: These are the basic form input styles currently. The styles below a
 ---
 <!-- section -->
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-basic-styles">Default Styles</h2>
-
+    <h2 class="toc-basic-styles">Form Labels</h2>
+    <p>Labels should be written in sentence case. For usability reasons, if a label is connected with an input, the <code>for</code> attribute should be filled in. The <code>for</code> attribute references the input's <code>id</code> value. Additionally if you would like to add required or optional labels, whenever possible use the full word label instead of asterisks as this allows it to be more flexible for translations.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<label for="exampleInputField" class="_medium">Input Label Example</label>
-<p><small class="text _help">...</small></p>
-<input type="text" id="exampleInputField" placeholder="i.e. Placeholder text">
-<div class="inputGroup">
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" checked="checked">
-            Sign me up!
-        </label>
-    </div>
-</div>
-<div class="inputGroup">
-    <label class="_medium"> ... </label>
-    <div class="radio">
-        <label>
-            <input type="radio" name="Group1" checked="checked"> ...
-        </label>
-    </div>
-    <div class="radio">
-        <label>
-            <input type="radio" name="Group1" > ...
-        </label>
-    </div>
-    <div class="radio">
-        <label>
-            <input type="radio" name="Group1" > ...
-        </label>
-    </div>
-</div>
+<form>
+    <label for="example-item">Question title</label>
+    <label for="example-item">Question title <span class="required">(Required)</span></label>
+    <label for="example-item">How was your breakfast? <span class="optional">(Optional)</span></label>
+</form>
 {% endhighlight %}
-
         <div class="uikit-preview">
-            <div class="input-group">
-                <label for="exampleInputField" class="_medium">Label Example</label>
-                <p class="-help">Help Text: If you have some instructions beyond the label, place them here. Just remember, users will most likely miss this so have descriptive field labels.</p>
-                <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items" />
-                <div class="-row checkbox">
-                    <div class="-item"><input type="checkbox" id="checkbox-example" checked="checked" /></div>
-                    <label for="checkbox-example">Sign me up!</label>
-                </div>
-            </div>
-            <div class="input-group">
-                <label class="_medium">I say...</label>
-                <div class="-row radio">
-                    <div class="-item"><input type="radio" name="Group1" checked="checked" id="option-radio-1" /></div>
-                    <label for="option-radio-1">Haters gonna hate, hate, hate.</label>
-                </div>
-                <div class="-row radio">
-                    <div class="-item"><input type="radio" name="Group1" checked="checked" id="option-radio-2" /></div>
-                    <label for="option-radio-2">Players gonna play, play, play</label>
-                </div>
-                <div class="-row radio">
-                    <div class="-item"><input type="radio" name="Group1" checked="checked" id="option-radio-1" /></div>
-                    <label for="option-radio-1">Fakers gonna fake, fake, fake</label>
-                </div>
-            </div>
-        </div><!-- / preview -->
-    </div><!-- / uikit-code uikit-has-preview -->
+            <form>
+                <div class="input-group"><label for="example-item">Question title</label></div>
+                <div class="input-group"><label for="example-item">Question title <span class="required">(Required)</span></label></div>
+                <div class="input-group"><label for="example-item">How was your breakfast? <span class="optional">(Optional)</span></label></div>
+            </form>
+        </div>
+    </div>
+
+    <h3>Sizes & Styles</h3>
+    <p>Labels are available in four sizes: Small (13px), Normal (14px), Medium (18px), and Large (22px). Labels use the <code>@black-700</code> color by default. For a muted color, use the <code>._muted</code> class.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <label for="example-item" class="_small">Question title</label>
+    <label for="example-item">Question title</label>
+    <label for="example-item" class="_muted">Question title</label>
+    <label for="example-item" class="_medium">Question title</label>
+    <label for="example-item" class="_large">Question title</label>
+</form>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group"><label for="example-item" class="_small">Question title</label></div>
+                <div class="input-group"><label for="example-item">Question title</label></div>
+                <div class="input-group"><label for="example-item" class="_muted">Question title</label></div>
+                <div class="input-group"><label for="example-item" class="_medium">Question title</label></div>
+                <div class="input-group"><label for="example-item" class="_large">Question title</label></div>
+            </form>
+        </div>
+    </div>
 </section>
-<!-- / section -->
 
-<!-- section -->
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-specific-styles">Field states</h2>
+    <h2 class="toc-basic-styles">Text Inputs</h2>
+    <p>Text inputs are (almost) always paired with a label to assist users. Placeholder text should be used <em>as a content prompt only, <strong>not as a label.</strong></em></p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <label for="example-item">Question title</label>
+        <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+    </div>
+    <div class="input-group">
+        <label for="example-item">Tags</label>
+        <input type="text" id="example-item" placeholder="e.g. css, c#, less" disabled="" />
+    </div>
+</form>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group">
+                    <label for="example-item">Question title</label>
+                    <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+                </div>
+                <div class="input-group">
+                    <label for="example-item">Tags</label>
+                    <input type="text" id="example-item" placeholder="e.g. css, c#, less" disabled="" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3>Textareas</h3>
+    <p>Textareas should be used for multi-line content areas.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <label for="example-item">Question body</label>
+        <textarea id="example-item" placeholder="e.g. The Stack Overflow glyph used to have 6 bars, but now…"></textarea>
+    </div>
+</form>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group">
+                    <label for="example-item">Question body</label>
+                    <textarea id="example-item" placeholder="e.g. The Stack Overflow glyph used to have 6 bars, but now…"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3>Input States</h3>
+    <p>In cases when you would like validation states attached to an input, you will need to wrap the input with <code>.-row</code> div so the icon can be placed correctly.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group _warning">
+        <label for="example-warning">Username</label>
+        <div class="-row">
+            <input type="text" name="" id="example-warning" />
+            <span class="-icon"></span>
+        </div>
+        <p class="-message">Caps lock is on!</p>
+    </div>
+    <div class="input-group _error">
+        <label for="example-error">Username</label>
+        <div class="-row">
+            <input type="text" name="" id="example-error" />
+            <span class="-icon"></span>
+        </div>
+        <p class="-message">That username is already taken.</p>
+    </div>
+    <div class="input-group _success">
+        <label for="example-success">Username</label>
+        <div class="-row">
+            <input type="text" name="" id="example-success" />
+            <span class="-icon"></span>
+        </div>
+        <p class="-message">Congrats! That name is available.</p>
+    </div>
+</form>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group _warning">
+                    <label for="example-warning">Username</label>
+                    <div class="-row">
+                        <input type="text" name="" id="example-warning" />
+                        <span class="-icon"></span>
+                    </div>
+                    <p class="-message">Caps lock is on!</p>
+                </div>
+                <div class="input-group _error">
+                    <label for="example-error">Username</label>
+                    <div class="-row">
+                        <input type="text" name="" id="example-error" />
+                        <span class="-icon"></span>
+                    </div>
+                    <p class="-message">That username is already taken.</p>
+                </div>
+                <div class="input-group _success">
+                    <label for="example-success">Username</label>
+                    <div class="-row">
+                        <input type="text" name="" id="example-success" />
+                        <span class="-icon"></span>
+                    </div>
+                    <p class="-message">Congrats! That name is available.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="uikit-section" data-core-careers>
+    <h2 class="toc-basic-styles">Helper Text</h2>
+    <p>When a label or input needs further copy to sufficiently describe itself, you can also add helper text. This text should be placed next to the item it is helping describe further.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <label for="example-item">Question title</label>
+        <p class="-help"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
+        <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+        <p class="-help">Questions which can have definitive answers are much more likely to answered.</p>
+    </div>
+</form>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group">
+                    <label for="example-item">Question title</label>
+                    <p class="-help"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
+                    <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+                    <p class="-help">Questions which can have definitive answers are much more likely to answered.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3>Helper Text Sizes</h3>
+    <p>To make helper text the same size as labels, use the <code>._medium</code> class.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <label for="example-item">Question title</label>
+        <p class="-help _medium"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
+        <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+    </div>
+</form>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group">
+                    <label for="example-item">Question title</label>
+                    <p class="-help _medium"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
+                    <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="uikit-section" data-core-careers>
+    <h2 class="toc-specific-styles">Selects</h2>
+    <p>By default we style all attributes available to us via CSS without reseting the appearance, which is basically nothing except providing correct margins and focused states.</p>
+
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <label for="select-menu">What fruit would you like for lunch?</label>
+        <select id="select-menu">
+            <option name="" id="" selected="selected">Please select one…</option>
+            <option name="" id="">Apples</option>
+            <option name="" id="">Oranges</option>
+            <option name="" id="">Bananas</option>
+        </select>
+    </div>
+</form>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group">
+                    <label for="example-item">Question title</label>
+                    <p class="-help _medium"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
+                    <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3>Select (Styled, <strong>Preferred</strong>)</h3>
+    <p>The preferred select styling is applied with the <code>.select</code> class on a wrapping <code>.-row</code> div.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <label for="select-menu-2">How are you traveling to New York, New York?</label>
+        <div class="-row select">
+            <select id="select-menu-2">
+                <option name="" id="" selected="selected">Please select one…</option>
+                <option name="" id="">Walking</option>
+                <option name="" id="">Bicycle</option>
+                <option name="" id="">Automobile</option>
+                <option name="" id="">Train</option>
+                <option name="" id="">Plane</option>
+            </select>
+        </div>
+    </div>
+</form>
+{% endhighlight %}  
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group">
+                    <label for="select-menu-2">How are you traveling to New York, New York?</label>
+                    <div class="-row select">
+                        <select id="select-menu-2">
+                            <option name="" id="" selected="selected">Please select one…</option>
+                            <option name="" id="">Walking</option>
+                            <option name="" id="">Bicycle</option>
+                            <option name="" id="">Automobile</option>
+                            <option name="" id="">Train</option>
+                            <option name="" id="">Plane</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3>Select Menu Groups</h3>
+    <p>You can also connect select menus together by wrapping them within the wrapping <code>.-row</code> div.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <label for="select-menu">How long is your stay?</label>
+        <div class="-row">
+            <div class="-item select">
+                <select id="from-menu">
+                    <option name="" id="" selected="selected">Please select one…</option>
+                    <option name="" id="">Today</option>
+                    <option name="" id="">Yesterday</option>
+                    <option name="" id="">Tomorrow</option>
+                </select>
+            </div>
+            <div class="-fill _clean">to</div>
+            <div class="-item select">
+                <select id="to-menu">
+                    <option name="" id="" selected="selected">Please select one…</option>
+                    <option name="" id="">Next Week</option>
+                    <option name="" id="">Next Month</option>
+                    <option name="" id="">Next Year</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>
+{% endhighlight %}  
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group">
+                    <label for="select-menu">How long is your stay?</label>
+                    <div class="-row">
+                        <div class="-item select">
+                            <select id="from-menu">
+                                <option name="" id="" selected="selected">Please select one…</option>
+                                <option name="" id="">Today</option>
+                                <option name="" id="">Yesterday</option>
+                                <option name="" id="">Tomorrow</option>
+                            </select>
+                        </div>
+                        <div class="-fill _clean">to</div>
+                        <div class="-item select">
+                            <select id="to-menu">
+                                <option name="" id="" selected="selected">Please select one…</option>
+                                <option name="" id="">Next Week</option>
+                                <option name="" id="">Next Month</option>
+                                <option name="" id="">Next Year</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>  
+</section>
+
+<section class="uikit-section" data-core-careers>
+    <h2 class="toc-specific-styles">Checkbox & Radios Lists</h2>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="input-group">
-    <label for="example-success">Warning state</label>
-    <input type="text" name="" id="example-success" class="_warning" />
+    <label for="">Vertical List (Default)</label>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+        <div class="-item">
+            <label for="choice-checkbox-1">Choice 1</label>
+            <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+        </div>
+    </div>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+        <label for="choice-checkbox-2">Choice 2</label>
+    </div>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+        <label for="choice-checkbox-3">Choice 3</label>
+    </div>
 </div>
+...
 <div class="input-group">
-    <label for="example-success">Error state</label>
-    <input type="text" name="" id="example-success" class="_error" />
-</div>
-<div class="input-group">
-    <label for="example-success">Success state</label>
-    <input type="text" name="" id="example-success" class="_success" />
-</div>
-<div class="input-group">
-    <label for="example-success">Disabled state</label>
-    <input type="text" name="" id="example-success" disabled />
+    <label for="">Horizontal List</label>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+        <div class="-item">
+            <label for="choice-checkbox-1">Choice 1</label>
+            <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+        </div>
+    </div>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+        <div class="-item"><label for="choice-checkbox-2">Choice 2</label></div>
+    </div>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+        <div class="-item"><label for="choice-checkbox-3">Choice 3</label></div>
+    </div>
 </div>
 {% endhighlight %}
-
         <div class="uikit-preview">
             <div class="input-group">
-                <label for="example-success">Warning state</label>
-                <input type="text" name="" id="example-success" class="_warning" />
+                <label for="">Vertical List (Default)</label>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+                    <div class="-item">
+                        <label for="choice-checkbox-1">Choice 1</label>
+                        <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+                    </div>
+                </div>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+                    <label for="choice-checkbox-2">Choice 2</label>
+                </div>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+                    <label for="choice-checkbox-3">Choice 3</label>
+                </div>
             </div>
             <div class="input-group">
-                <label for="example-success">Error state</label>
-                <input type="text" name="" id="example-success" class="_error" />
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-1" checked /></div>
+                    <label for="choice-radio-1">Choice 1</label>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-2" /></div>
+                    <label for="choice-radio-2">Choice 2</label>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-3" /></div>
+                    <label for="choice-radio-3">Choice 3</label>
+                </div>
             </div>
-            <div class="input-group">
-                <label for="example-success">Success state</label>
-                <input type="text" name="" id="example-success" class="_success" />
+            <hr/>
+            <div class="input-group _inline">
+                <label for="">Horizontal List</label>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+                    <div class="-item">
+                        <label for="choice-checkbox-1">Choice 1</label>
+                        <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+                    </div>
+                </div>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+                    <div class="-item"><label for="choice-checkbox-2">Choice 2</label></div>
+                </div>
+                <div class="-row checkbox">
+                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+                    <div class="-item"><label for="choice-checkbox-3">Choice 3</label></div>
+                </div>
             </div>
-            <div class="input-group">
-                <label for="example-success">Disabled state</label>
-                <input type="text" name="" id="example-success" disabled />
+            <div class="input-group _inline">
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-1" checked /></div>
+                    <div class="-item"><label for="choice-radio-1">Choice 1</label></div>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-2" /></div>
+                    <div class="-item"><label for="choice-radio-2">Choice 2</label></div>
+                </div>
+                <div class="-row radio">
+                    <div class="-item"><input type="radio" name="" id="choice-radio-3" /></div>
+                    <div class="-item"><label for="choice-radio-3">Choice 3</label></div>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<!-- / section -->
+
 
 <!-- section -->
 <section class="uikit-section" data-core-careers>
     <h2 class="toc-specific-styles">Input Groups</h2>
-    <p>To use our forms styles you must understand input groups. These are self-contained groups which visually collect related core elements together. Input groups are powerful ways to re-order content based on your UI needs without needing to create new custom names. At a minimum, an input group is comprised of two elements: typically a label and an input. Here's an example of that:
-
+    <p>Input groups are a key layout element for our forms styles. Many of the styles that you've seen above are only possible because of input groups. So <em>what are input groups?</em> They are self-contained groups which can be visually collected together. They are versatile, powerful controls to arrange content based on your UI needs without needing to create new custom names.</p>
+    <p>At a minimum, an input group is typically comprised of at least two elements: a label and an input.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="input-group">
-    <label for="sampleInput">Search</label>
-    <input type="text" name="input-examples" id="sampleInput" placeholder="e.g. css, jquery, r" />
-</div>      
+<form>
+    <div class="input-group">
+        <label for="sampleInput">Search</label>
+        <input type="text" name="input-examples" id="sampleInput" placeholder="e.g. css, jquery, r" />
+    </div>
+</form>      
 {% endhighlight %}
         <div class="uikit-preview">
-            <div class="input-group">
-                <label for="sampleInput">Search</label>
-                <input type="text" name="input-examples" id="sampleInput" placeholder="e.g. css, jquery, r" />
-            </div>  
+            <form>
+                <div class="input-group">
+                    <label for="sampleInput">Search</label>
+                    <input type="text" name="input-examples" id="sampleInput" placeholder="e.g. css, jquery, r" />
+                </div>
+            </form>
         </div>
     </div>
 
-    <p>Input groups utilize <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a> to work its magic. A standard <code>.input-group</code> element will stack child elements in a column fashion. This is because, by default, our approach with forms are to stack labels, inputs, description text, etc on top of each other, along the left edge.</p>
-    <p>Unfortunately unique layouts arise and the standard layout above won't solve all of our problems. While we can't foresee every possible layout, we can create a number of ready-made tools for people to use so we don't have to resort to creating custom classes. The biggest tool at our disposal is a flexbox-based grid system.</p>
+    <p>The power of input groups lie in their use of <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a>. All forms, by default, are stacked elements (i.e. not inline, in a row) along the left edge.</p>
+
     <h3>Fluid Grids</h3>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="input-group">
-    <div class="-row"><div class="col12">...</div></div>
-    <div class="-row"><div class="col1">...</div><div class="col11">...</div></div>
-    ...
-</div>    
+<form>
+    <div class="input-group">
+        <div class="-row"><div class="col12">...</div></div>
+        <div class="-row"><div class="col1">...</div><div class="col11">...</div></div>
+        ...
+    </div>
+</form>    
 {% endhighlight %}
         <div class="uikit-preview grid-preview">
-            <div class="input-group">
-                <div class="-row"><div class="col12"><div>.col12</div></div></div>
-                <div class="-row"><div class="col1"><div>.col1</div></div><div class="col11"><div>.col11</div></div></div>
-                <div class="-row"><div class="col2"><div>.col2</div></div><div class="col10"><div>.col10</div></div></div>
-                <div class="-row"><div class="col3"><div>.col3</div></div><div class="col9"><div>.col9</div></div></div>
-                <div class="-row"><div class="col4"><div>.col4</div></div><div class="col8"><div>.col8</div></div></div>
-                <div class="-row"><div class="col5"><div>.col5</div></div><div class="col7"><div>.col7</div></div></div>
-                <div class="-row"><div class="col6"><div>.col6</div></div><div class="col6"><div>.col6</div></div></div>
-            </div>
+            <form>
+                <div class="input-group">
+                    <div class="-row"><div class="col12"><div>.col12</div></div></div>
+                    <div class="-row"><div class="col1"><div>.col1</div></div><div class="col11"><div>.col11</div></div></div>
+                    <div class="-row"><div class="col2"><div>.col2</div></div><div class="col10"><div>.col10</div></div></div>
+                    <div class="-row"><div class="col3"><div>.col3</div></div><div class="col9"><div>.col9</div></div></div>
+                    <div class="-row"><div class="col4"><div>.col4</div></div><div class="col8"><div>.col8</div></div></div>
+                    <div class="-row"><div class="col5"><div>.col5</div></div><div class="col7"><div>.col7</div></div></div>
+                    <div class="-row"><div class="col6"><div>.col6</div></div><div class="col6"><div>.col6</div></div></div>
+                </div>
+            </form>
         </div>
     </div>
 
-    <p>The column sizes can be used with or without the <code>.-row</code> class names. If you want the column direction flow to be horizontal (-row) versus vertical (column), then you will need to use the <code>.-row</code> class selector as it changes the flexbox direction to a -row.</p>
+    <p>The column sizes can be used either within an <code>.input-group</code> or <code>.-row</code> class. The only difference between the two classes are elements within an input-group have a column flex-direction and elements within <code>.-row</code> have a row flex-direction. This is because we want forms to align along the left-edge for the most part. Sometimes though we need to create custom, inline input groups.</p>
+
     <h3>Auto-Width Grids</h3>
-    <p>To let the grid automatically determine the column widths, simply use a <code>.col</code> class name selector instead of a specifc numbered one (e.g. <code>.col12</code>).</p>
+    <p>If you don't want to declare a column width, you can let flexbox automatically determine the column widths. To do this use a <code>.col</code> class name selector instead of a specifc numbered one (e.g. <code>.col12</code>).</p>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="input-group">
-    <div class="-row">
-        <div class="col">...</div>
-        <div class="col">...</div>
+<form>
+    <div class="input-group">
+        <div class="-row">
+            <div class="col">...</div>
+            <div class="col">...</div>
+        </div>
+        <div class="-row">
+            <div class="col">...</div>
+            <div class="col">...</div>
+            <div class="col">...</div>
+        </div>
     </div>
-    <div class="-row">
-        <div class="col">...</div>
-        <div class="col">...</div>
-        <div class="col">...</div>
-    </div>
-</div>    
+</form>
 {% endhighlight %}
         <div class="uikit-preview grid-preview">
-            <div class="input-group">
-                <div class="-row">
-                    <div class="col"><div>.col</div></div>
-                    <div class="col"><div>.col</div></div>
+            <form>
+                <div class="input-group">
+                    <div class="-row">
+                        <div class="col"><div>.col</div></div>
+                        <div class="col"><div>.col</div></div>
+                    </div>
+                    <div class="-row">
+                        <div class="col"><div>.col</div></div>
+                        <div class="col"><div>.col</div></div>
+                        <div class="col"><div>.col</div></div>
+                    </div>
                 </div>
-                <div class="-row">
-                    <div class="col"><div>.col</div></div>
-                    <div class="col"><div>.col</div></div>
-                    <div class="col"><div>.col</div></div>
+            </form>
+        </div>
+    </div>
+
+    <h3>Auto-Width + Specified Width Grids</h3>
+    <p>You can also mix auto-width <code>.col</code> divs with specified width divs.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <div class="-row">
+            <div class="col2"><div>.col2</div></div>
+            <div class="col"><div>.col</div></div>
+        </div>
+        <div class="-row">
+            <div class="col5"><div>.col5</div></div>
+            <div class="col"><div>.col</div></div>
+            <div class="col"><div>.col</div></div>
+        </div>
+    </div>
+</form>
+{% endhighlight %}
+        <div class="uikit-preview grid-preview">
+            <form>
+                <div class="input-group">
+                    <div class="-row">
+                        <div class="col2"><div>.col2</div></div>
+                        <div class="col"><div>.col</div></div>
+                    </div>
+                    <div class="-row">
+                        <div class="col5"><div>.col5</div></div>
+                        <div class="col"><div>.col</div></div>
+                        <div class="col"><div>.col</div></div>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
     <h3>Nested Grids</h3>
-    <p>Grids can be infinitely nested within each other, allowing you to create unique, custom layouts without needing to reset, override or extend universal styles.</p>
+    <p>Grids can be nested within each other as well, allowing you to create unique, custom layouts without needing to reset, override or extend universal styles.</p>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
@@ -216,7 +599,7 @@ description: These are the basic form input styles currently. The styles below a
                     <div class="col8">
                         <div class="-row">
                             <div class="col4"><div>.col4</div></div>
-                            <div class="col8"><div>.col4</div></div>
+                            <div class="col"><div>.col</div></div>
                         </div>
                     </div>
                     <div class="col4">
@@ -228,8 +611,6 @@ description: These are the basic form input styles currently. The styles below a
             </div>
         </div>
     </div>
-        
-
 </section>
 
 <!-- section -->
@@ -278,7 +659,7 @@ description: These are the basic form input styles currently. The styles below a
         </div>
     </div>
 
-    <h3>Prepended, Connected &amp; Appended inputs</h3>
+    <h3>Prepended, Connected &amp; Appended Inputs</h3>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
@@ -424,213 +805,6 @@ description: These are the basic form input styles currently. The styles below a
 </section>
 
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-specific-styles">Checkbox & Radios Lists</h3>
-
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<div class="input-group">
-    <label for="">Vertical List (Default)</label>
-    <div class="-row checkbox">
-        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
-        <div class="-item">
-            <label for="choice-checkbox-1">Choice 1</label>
-            <p class="-help">This is some help text to help further explain the choice you will be making.</p>
-        </div>
-    </div>
-    <div class="-row checkbox">
-        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
-        <label for="choice-checkbox-2">Choice 2</label>
-    </div>
-    <div class="-row checkbox">
-        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
-        <label for="choice-checkbox-3">Choice 3</label>
-    </div>
-</div>
-...
-<div class="input-group">
-    <label for="">Horizontal List</label>
-    <div class="-row checkbox">
-        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
-        <div class="-item">
-            <label for="choice-checkbox-1">Choice 1</label>
-            <p class="-help">This is some help text to help further explain the choice you will be making.</p>
-        </div>
-    </div>
-    <div class="-row checkbox">
-        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
-        <div class="-item"><label for="choice-checkbox-2">Choice 2</label></div>
-    </div>
-    <div class="-row checkbox">
-        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
-        <div class="-item"><label for="choice-checkbox-3">Choice 3</label></div>
-    </div>
-</div>
-{% endhighlight %}
-        <div class="uikit-preview">
-            <div class="input-group">
-                <label for="">Vertical List (Default)</label>
-                <div class="-row checkbox">
-                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
-                    <div class="-item">
-                        <label for="choice-checkbox-1">Choice 1</label>
-                        <p class="-help">This is some help text to help further explain the choice you will be making.</p>
-                    </div>
-                </div>
-                <div class="-row checkbox">
-                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
-                    <label for="choice-checkbox-2">Choice 2</label>
-                </div>
-                <div class="-row checkbox">
-                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
-                    <label for="choice-checkbox-3">Choice 3</label>
-                </div>
-            </div>
-            <div class="input-group">
-                <div class="-row radio">
-                    <div class="-item"><input type="radio" name="" id="choice-radio-1" checked /></div>
-                    <label for="choice-radio-1">Choice 1</label>
-                </div>
-                <div class="-row radio">
-                    <div class="-item"><input type="radio" name="" id="choice-radio-2" /></div>
-                    <label for="choice-radio-2">Choice 2</label>
-                </div>
-                <div class="-row radio">
-                    <div class="-item"><input type="radio" name="" id="choice-radio-3" /></div>
-                    <label for="choice-radio-3">Choice 3</label>
-                </div>
-            </div>
-            <hr/>
-            <div class="input-group _inline">
-                <label for="">Horizontal List</label>
-                <div class="-row checkbox">
-                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
-                    <div class="-item">
-                        <label for="choice-checkbox-1">Choice 1</label>
-                        <p class="-help">This is some help text to help further explain the choice you will be making.</p>
-                    </div>
-                </div>
-                <div class="-row checkbox">
-                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
-                    <div class="-item"><label for="choice-checkbox-2">Choice 2</label></div>
-                </div>
-                <div class="-row checkbox">
-                    <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
-                    <div class="-item"><label for="choice-checkbox-3">Choice 3</label></div>
-                </div>
-            </div>
-            <div class="input-group _inline">
-                <div class="-row radio">
-                    <div class="-item"><input type="radio" name="" id="choice-radio-1" checked /></div>
-                    <div class="-item"><label for="choice-radio-1">Choice 1</label></div>
-                </div>
-                <div class="-row radio">
-                    <div class="-item"><input type="radio" name="" id="choice-radio-2" /></div>
-                    <div class="-item"><label for="choice-radio-2">Choice 2</label></div>
-                </div>
-                <div class="-row radio">
-                    <div class="-item"><input type="radio" name="" id="choice-radio-3" /></div>
-                    <div class="-item"><label for="choice-radio-3">Choice 3</label></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <h3>Selects</h3>
-
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<div class="input-group">
-    <label for="select-menu">Select Menu (Default)</label>
-    <select id="select-menu">
-        <option name="" id="" selected="selected">Please select one…</option>
-        <option name="" id="">Apples</option>
-        <option name="" id="">Oranges</option>
-        <option name="" id="">Bananas</option>
-    </select>
-</div>
-<div class="input-group">
-    <label for="select-menu-2">Select Menu (Styled, <strong>Preferred</strong>)</label>
-    <div class="-row select">
-        <select id="select-menu-2">
-            <option name="" id="" selected="selected">Please select one…</option>
-            <option name="" id="">Planes</option>
-            <option name="" id="">Trains</option>
-            <option name="" id="">Automobiles</option>
-        </select>
-    </div>
-</div>
-<div class="input-group">
-    <label for="select-menu">Select Menu</label>
-    <div class="-row">
-        <div class="-item select">
-            <select id="from-menu">
-                <option name="" id="" selected="selected">Please select one…</option>
-                <option name="" id="">Today</option>
-                <option name="" id="">Yesterday</option>
-                <option name="" id="">Tomorrow</option>
-            </select>
-        </div>
-        <div class="-fill _clean">to</div>
-        <div class="-item select">
-            <select id="to-menu">
-                <option name="" id="" selected="selected">Please select one…</option>
-                <option name="" id="">Next Week</option>
-                <option name="" id="">Next Month</option>
-                <option name="" id="">Next Year</option>
-            </select>
-        </div>
-    </div>
-</div>
-{% endhighlight %}
-        <div class="uikit-preview">
-            <div class="input-group">
-                <label for="select-menu">Select Menu (Default)</label>
-                <select id="select-menu">
-                    <option name="" id="" selected="selected">Please select one…</option>
-                    <option name="" id="">Apples</option>
-                    <option name="" id="">Oranges</option>
-                    <option name="" id="">Bananas</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="select-menu-2">Select Menu (Styled, <strong>Preferred</strong>)</label>
-                <div class="-row select">
-                    <select id="select-menu-2">
-                        <option name="" id="" selected="selected">Please select one…</option>
-                        <option name="" id="">Planes</option>
-                        <option name="" id="">Trains</option>
-                        <option name="" id="">Automobiles</option>
-                    </select>
-                </div>
-            </div>
-            <div class="input-group">
-                <label for="select-menu">Select Menu</label>
-                <div class="-row">
-                    <div class="-item select">
-                        <select id="from-menu">
-                            <option name="" id="" selected="selected">Please select one…</option>
-                            <option name="" id="">Today</option>
-                            <option name="" id="">Yesterday</option>
-                            <option name="" id="">Tomorrow</option>
-                        </select>
-                    </div>
-                    <div class="-fill _clean">to</div>
-                    <div class="-item select">
-                        <select id="to-menu">
-                            <option name="" id="" selected="selected">Please select one…</option>
-                            <option name="" id="">Next Week</option>
-                            <option name="" id="">Next Month</option>
-                            <option name="" id="">Next Year</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- / section -->
-
-<section class="uikit-section" data-core-careers>
     <h2 class="toc-tag-editor">Button Placement</h2>
     <h3>Default</h3>
     <p>The default button placement within a form is <em>left-aligned</em>, with the primary call-to-action (CTA) being listed first, followed by the secondary CTA, and so on. The <code>.button-group</code> only addresses spacing around the buttons. It does not add any visual decoration.</p>
@@ -738,52 +912,62 @@ description: These are the basic form input styles currently. The styles below a
 
 <section class="uikit-section" data-core-careers>
     <h2 class="toc-tag-editor">Inline Forms</h2>
+    <p>If you wish all input groups to act like inline, you can add the <code>._inline</code> class to the form instead of on each individual input group.</p>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form class="_inline">
     <div class="input-group">
         <label for="example-item01" class="col3">Label Example</label>
-        <input type="text" name="example-item01" id="example-item01" class="col9" />
+        <div class="-row col">
+            <input type="text" name="example-item01" id="example-item01" />
+        </div>
     </div>
     <div class="input-group">
         <label for="example-item02" class="col3">Label Example That Is Very Long</label>
-        <input type="text" name="example-item02" id="example-item02" class="col9" />
+        <div class="-row col">
+            <input type="text" name="example-item02" id="example-item02"/>
+        </div>
     </div>
     <div class="input-group">
         <label for="example-item03" class="col3">Label Example</label>
-        <div class="-row col9">
+        <div class="-row col">
             <input type="text" name="example-item03" id="example-item03" />
             <input type="button" id="example-button01" value="Action Item" class="btn-secondary" />
         </div>
     </div>
     <div class="input-group">
         <label for="example-button02" class="col3">Label Example</label>
-        <input type="button" id="example-button02" value="Save Item" class="btn col9" />
+        <div class="-row col">
+            <input type="button" id="example-button02" value="Save Item" class="btn" />
+        </div>
     </div>
 </form>
 {% endhighlight %}
         <div class="uikit-preview">
-
             <form class="_inline">
                 <div class="input-group">
                     <label for="example-item01" class="col3">Label Example</label>
-                    <input type="text" name="example-item01" id="example-item01" class="col9" />
+                    <div class="-row col">
+                        <input type="text" name="example-item01" id="example-item01" />
+                    </div>
                 </div>
                 <div class="input-group">
                     <label for="example-item02" class="col3">Label Example That Is Very Long</label>
-                    <input type="text" name="example-item02" id="example-item02" class="col9" />
+                    <div class="-row col">
+                        <input type="text" name="example-item02" id="example-item02"/>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label for="example-item03" class="col3">Label Example</label>
-                    <div class="-row col9">
+                    <div class="-row col">
                         <input type="text" name="example-item03" id="example-item03" />
                         <input type="button" id="example-button01" value="Action Item" class="btn-secondary" />
                     </div>
                 </div>
                 <div class="input-group">
                     <label for="example-button02" class="col3">Label Example</label>
-                    <input type="button" id="example-button02" value="Save Item" class="btn col9" />
+                    <input type="button" id="example-button02" value="Save Item" class="btn col" />
                 </div>
             </form>
         </div>

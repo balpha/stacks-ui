@@ -88,8 +88,10 @@ p.-help {
     margin-top: @margin-half;
     margin-bottom: @margin-base;
     color: @black-400;
-    font-size: 13px;
+    font-size: @input-fontSize - 1;
     line-height: 1.461538462;
+
+    &._medium { font-size: @input-fontSize; }
 }
 
 
@@ -351,90 +353,87 @@ input,
 //  ============================================================================
 //  $ STATES
 //  ----------------------------------------------------------------------------
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="datetime"],
-.input,
-.container .chosen-container .chosen-choices {
-
+.input-group {
     //  Message (Generic)
-    ~ .-message {
+    .-message {
         display: block;
         margin-bottom: 0;
         padding-top: @padding-half;
         padding-bottom: @padding-half;
     }
 
-    // Set icon for all states
-    &._warning,
-    &._error,
-    &._success {
-        background-image: url("../images/forms.svg"), none;
+    .-icon {
+        position: absolute;
+        top: calc(~"50% - 12px");
+        right: 10px;
+        width: 16px;
+        height: 16px;
+
+        background-position: 0 0;
         background-repeat: no-repeat;
+        background-size: cover;
     }
 
     //  --  WARNING
-    &._warning,
-    &.validation-info  {
-        border-color: @yellow-500;
-        background-position: ~'calc(100% + @{input-sprite-width} - 72px)' -62px;
+    &._warning {
+        input {
+            border-color: mix(@yellow-500,@orange-600);
 
-        &:hover {
-            border-color: fade(@orange-200,50%);
-            box-shadow: inset 0 0 1px @black-100, 0 0 2px @yellow-200;
-        }
-        &:focus,
-        &._focus {
-            border-color: @orange-200;
-            box-shadow: inset 0 0 4px @black-050, 0 0 4px @yellow-200;
+            &:hover {
+                border-color: lighten(mix(@yellow-500,@orange-600),10%);
+                box-shadow: inset 0 0 1px @black-100, 0 0 2px @yellow-200;
+            }
+            &:focus {
+                border-color: saturate(mix(@yellow-500,@orange-600),10%);
+                box-shadow: inset 0 0 4px @black-050, 0 0 4px @yellow-200;
+            }
         }
 
-        ~ .-message { color: @orange-600; }
+        .-message { color: mix(@yellow-500,@orange-600); }
+
+        .-icon { background-image: url(../images/icon-warning.svg), none; }
     }
 
     //  --  ERROR
-    &._error,
-    &.validation-error  {
-        border-color: @red-400;
-        background-position: ~'calc(100% + @{input-sprite-width} - 99px)' -94px;
+    &._error {
+        input {
+            border-color: @red-400;
 
-        &:hover {
-            border-color: fade(@red-500,50%);
-            box-shadow: inset 0 0 1px @black-100, 0 0 2px @red-100;
-        }
-        &:focus,
-        &._focus {
-            border-color: @red-500;
-            box-shadow: inset 0 0 4px @black-050, 0 0 4px @red-200;
+            &:hover {
+                border-color: @red-300;
+                box-shadow: inset 0 0 1px @black-100, 0 0 2px @red-100;
+            }
+            &:focus {
+                border-color: @red-500;
+                box-shadow: inset 0 0 4px @black-050, 0 0 4px @red-200;
+            }
         }
 
-        ~ .-message { color: @red-500; }
+        .-message { color: @red-500; }
+
+        .-icon { background-image: url(../images/icon-error.svg), none; }
     }
 
     //  --  SUCCESS
-    &[required]:valid,
-    &.required:valid,
     &._success {
-        border-color: @green-400;
-        background-position: ~'calc(100% + @{input-sprite-width} - 51px)' -30px;
-
-        &:hover {
-            border-color: fade(@green-500,50%);
-            box-shadow: inset 0 0 1px @black-100, 0 0 2px @green-100;
+        input[required]:valid,
+        input:valid,
+        input {
+            border-color: @green-400;
+            
+            &:hover {
+                border-color: @green-300;
+                box-shadow: inset 0 0 1px @black-100, 0 0 2px @green-100;
+            }
+            &:focus {
+                border-color: @green-500;
+                box-shadow: inset 0 0 4px @black-050, 0 0 4px @green-200;
+            }
         }
-        &:focus,
-        &._focus {
-            border-color: @green-500;
-            box-shadow: inset 0 0 4px @black-050, 0 0 4px @green-200;
-        }
 
-        ~ .-message { color: darken(@green-500,5%); }
+        .-message { color: darken(@green-500,5%); }
+
+        .-icon { background-image: url(../images/icon-success.svg), none; }
     }
 }
 
@@ -445,11 +444,11 @@ input[type="datetime"],
 //      Wrapping <div> that provides ammple white space around a unit of
 //      form elements
 .input-group {
-    margin-bottom: 2em;
+    margin-bottom: @margin-double;
 
     //  If an input-group is the only one or nested within another, remove the bottom margin on the last one.
     &:only-child,
-    & > &:last-of-type { margin-bottom: 0; }
+    &:last-of-type { margin-bottom: 0; }
 
     //  If a nested input-group directly follows a label, give it a top margin.
     label + & { margin-top: @margin-base; }
@@ -697,7 +696,7 @@ input[type="datetime"],
 //      Wrapping <div> for buttons / actions
 .button-group {
     .flex-flow(row nowrap);
-    margin-top: @margin-base;
+    margin-top: @margin-double;
 
     [class^="btn"] + [class^="btn"] { margin-left: @margin-half; }
 
@@ -731,6 +730,8 @@ form._inline .input-group {
     align-items: center;
 
     > input { margin: 0; }
+
+    > label { padding-right: @padding-double; }
 
     .-row {
         input[type="submit"],

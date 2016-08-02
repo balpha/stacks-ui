@@ -430,31 +430,39 @@ description: These are the basic form input styles currently. The styles below a
 {% highlight html linenos %}
 <div class="input-group">
     <label for="">Vertical List (Default)</label>
-    <div class="input-group">
-        <label for="choice-checkbox-1" class="checkbox">
-            <input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
-        </label>
-        <label for="choice-checkbox-2" class="checkbox">
-            <input type="checkbox" name="" id="choice-checkbox-2"> Choice 2
-        </label>
-        <label for="choice-checkbox-3" class="checkbox">
-            <input type="checkbox" name="" id="choice-checkbox-3"> Choice 3
-        </label>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+        <div class="-item">
+            <label for="choice-checkbox-1">Choice 1</label>
+            <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+        </div>
+    </div>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+        <label for="choice-checkbox-2">Choice 2</label>
+    </div>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+        <label for="choice-checkbox-3">Choice 3</label>
     </div>
 </div>
 ...
 <div class="input-group">
     <label for="">Horizontal List</label>
-    <div class="-row">
-        <label for="choice-checkbox-1" class="checkbox">
-            <input type="checkbox" name="" id="choice-checkbox-1" checked> Choice 1
-        </label>
-        <label for="choice-checkbox-2" class="checkbox">
-            <input type="checkbox" name="" id="choice-checkbox-2"> Choice 2
-        </label>
-        <label for="choice-checkbox-3" class="checkbox">
-            <input type="checkbox" name="" id="choice-checkbox-3"> Choice 3
-        </label>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+        <div class="-item">
+            <label for="choice-checkbox-1">Choice 1</label>
+            <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+        </div>
+    </div>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+        <div class="-item"><label for="choice-checkbox-2">Choice 2</label></div>
+    </div>
+    <div class="-row checkbox">
+        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+        <div class="-item"><label for="choice-checkbox-3">Choice 3</label></div>
     </div>
 </div>
 {% endhighlight %}
@@ -500,7 +508,6 @@ description: These are the basic form input styles currently. The styles below a
                         <label for="choice-checkbox-1">Choice 1</label>
                         <p class="-help">This is some help text to help further explain the choice you will be making.</p>
                     </div>
-                </span>
                 </div>
                 <div class="-row checkbox">
                     <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>

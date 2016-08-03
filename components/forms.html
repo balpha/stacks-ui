@@ -163,7 +163,7 @@ description: These are the basic form input styles currently. The styles below a
 
 <section class="uikit-section" data-core-careers>
     <h2 class="toc-basic-styles">Helper Text</h2>
-    <p>When a label or input needs further copy to sufficiently describe itself, you can also add helper text. This text should be placed next to the item it is helping describe further.</p>
+    <p>When a label or input needs further copy to explain itself sufficiently, use helper text. This text should be placed next to the item it is providing further detail about.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
@@ -232,9 +232,13 @@ description: These are the basic form input styles currently. The styles below a
         <div class="uikit-preview">
             <form>
                 <div class="input-group">
-                    <label for="example-item">Question title</label>
-                    <p class="-help _medium"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
-                    <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+                    <label for="select-menu">What fruit would you like for lunch?</label>
+                    <select id="select-menu">
+                        <option name="" id="" selected="selected">Please select one…</option>
+                        <option name="" id="">Apples</option>
+                        <option name="" id="">Oranges</option>
+                        <option name="" id="">Bananas</option>
+                    </select>
                 </div>
             </form>
         </div>
@@ -454,8 +458,7 @@ description: These are the basic form input styles currently. The styles below a
 <!-- section -->
 <section class="uikit-section" data-core-careers>
     <h2 class="toc-specific-styles">Input Groups</h2>
-    <p>Input groups are a key layout element for our forms styles. Many of the styles that you've seen above are only possible because of input groups. So <em>what are input groups?</em> They are self-contained groups which can be visually collected together. They are versatile, powerful controls to arrange content based on your UI needs without needing to create new custom names.</p>
-    <p>At a minimum, an input group is typically comprised of at least two elements: a label and an input.</p>
+    <p>Input groups are a key layout element for our forms styles. Many of the styles that you've seen above are only possible because of input groups. So <em>what are input groups?</em> They are self-contained groups of related input elements which are visually collected together. They are a versatile, powerful control to arrange content based on your UI needs without needing to create new custom names. At a minimum, an input group is typically comprised of at least two elements: a label and an input.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
@@ -503,7 +506,7 @@ description: These are the basic form input styles currently. The styles below a
         </div>
     </div>
 
-    <p>The column sizes can be used either within an <code>.input-group</code> or <code>.-row</code> class. The only difference between the two classes are elements within an input-group have a column flex-direction and elements within <code>.-row</code> have a row flex-direction. This is because we want forms to align along the left-edge for the most part. Sometimes though we need to create custom, inline input groups.</p>
+    <p>The column sizes can be used either within an <code>.input-group</code> or <code>.-row</code> class. The only difference between the two classes are elements within <code>.input-group</code> has a <code>flex-direction: column;</code> property and <code>.-row</code> has a <code>flex-direction: row;</code> property. We do this because most forms are to be aligned along the left-edge versus in a row.</p>
 
     <h3>Auto-Width Grids</h3>
     <p>If you don't want to declare a column width, you can let flexbox automatically determine the column widths. To do this use a <code>.col</code> class name selector instead of a specifc numbered one (e.g. <code>.col12</code>).</p>
@@ -890,7 +893,7 @@ description: These are the basic form input styles currently. The styles below a
     <p>Sometimes UI controls are placed in heading areas along with titles. In these scenarios, the buttons should always be pulled to the right and the primary action is to placed on right.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="button-group _end">
+<div class="button-group">
     <div class="-row _end">
         <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
         <a href="#" title="Primary action" class="btn">Primary Action</a>

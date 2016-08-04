@@ -861,47 +861,87 @@ description: These are the basic form input styles currently. The styles below a
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-...
+<form>
+    <div class="input-group _cluster">
+        <label>Annual Salary</label>
+        <div class="-row">
+            <div class="input-group col6">
+                <label for="currencyType">Currency</label>
+                <div class="-row select">
+                    <select name="currencyType" id="currencyType">
+                        <option value="AUD">Australian Dollars ($)</option>
+                        <option value="GBP">British Pounds (£)</option>
+                        <option value="CAD">Canadian Dollars ($)</option>
+                        <option value="DKK">Danish Kroner (kr)</option>
+                        <option value="EUR">Euros (€)</option>
+                        <option value="INR">Indian Rupees (INR)</option>
+                        <option value="PLN">Polish Zlotys (zł)</option>
+                        <option value="SEK">Swedish Kronor (kr)</option>
+                        <option value="CHF">Swiss Francs (CHF)</option>
+                        <option value="USD" selected="selected">US Dollars ($)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group col">
+                <label for="salary-range-min">Salary Range</label>
+                <div class="-row">
+                    <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="50,000" /></div>
+                    <div class="-fill"> - </div>
+                    <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="100,000" /></div>
+                </div>
+            </div>
+        </div>
+        <div class="-row checkbox">
+            <div class="-item"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
+            <div class="-item">
+                <label for="input-group-multi-checkbox"><strong>Provides equity</strong></label>
+                <p class="-help">Equity is provided as part of the compensation package.</p>
+            </div>
+        </div>
+    </div>
+</form>
 {% endhighlight %}
 
         <div class="uikit-preview">
-            <div class="input-group _cluster">
-                <label>Annual Salary</label>
-                <div class="-row">
-                    <div class="input-group col6">
-                        <label for="currencyType">Currency</label>
-                        <div class="-row select">
-                            <select name="currencyType" id="currencyType">
-                                <option value="AUD">Australian Dollars ($)</option>
-                                <option value="GBP">British Pounds (£)</option>
-                                <option value="CAD">Canadian Dollars ($)</option>
-                                <option value="DKK">Danish Kroner (kr)</option>
-                                <option value="EUR">Euros (€)</option>
-                                <option value="INR">Indian Rupees (INR)</option>
-                                <option value="PLN">Polish Zlotys (zł)</option>
-                                <option value="SEK">Swedish Kronor (kr)</option>
-                                <option value="CHF">Swiss Francs (CHF)</option>
-                                <option value="USD" selected="selected">US Dollars ($)</option>
-                            </select>
+            <form>
+                <div class="input-group _cluster">
+                    <label>Annual Salary</label>
+                    <div class="-row">
+                        <div class="input-group col6">
+                            <label for="currencyType">Currency</label>
+                            <div class="-row select">
+                                <select name="currencyType" id="currencyType">
+                                    <option value="AUD">Australian Dollars ($)</option>
+                                    <option value="GBP">British Pounds (£)</option>
+                                    <option value="CAD">Canadian Dollars ($)</option>
+                                    <option value="DKK">Danish Kroner (kr)</option>
+                                    <option value="EUR">Euros (€)</option>
+                                    <option value="INR">Indian Rupees (INR)</option>
+                                    <option value="PLN">Polish Zlotys (zł)</option>
+                                    <option value="SEK">Swedish Kronor (kr)</option>
+                                    <option value="CHF">Swiss Francs (CHF)</option>
+                                    <option value="USD" selected="selected">US Dollars ($)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group col">
+                            <label for="salary-range-min">Salary Range</label>
+                            <div class="-row">
+                                <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="50,000" /></div>
+                                <div class="-fill"> - </div>
+                                <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="100,000" /></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="input-group col">
-                        <label for="salary-range-min">Salary Range</label>
-                        <div class="-row">
-                            <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="50,000" /></div>
-                            <div class="-fill"> - </div>
-                            <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="100,000" /></div>
+                    <div class="-row checkbox">
+                        <div class="-item"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
+                        <div class="-item">
+                            <label for="input-group-multi-checkbox"><strong>Provides equity</strong></label>
+                            <p class="-help">Equity is provided as part of the compensation package.</p>
                         </div>
                     </div>
                 </div>
-                <div class="-row checkbox">
-                    <div class="-item"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
-                    <div class="-item">
-                        <label for="input-group-multi-checkbox"><strong>Provides equity</strong></label>
-                        <p class="-help">Equity is provided as part of the compensation package.</p>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>

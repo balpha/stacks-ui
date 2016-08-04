@@ -84,12 +84,12 @@ span.required { color: @red-500; }
 span.optional { color: @black-400; }
 
 //  --  Help Text
-p.-help {
+.-help {
     margin-top: @margin-half;
     margin-bottom: @margin-base;
     color: @black-400;
     font-size: @input-fontSize - 1;
-    line-height: 1.461538462;
+    line-height: 1.230769231;   // 16px / 13px 
 
     &._medium { font-size: @input-fontSize; }
 }
@@ -153,14 +153,12 @@ select {
     font-size: @input-fontSize - 1;
     border-color: @input-color;
 
-    &:focus,
-    &.focus {
+    &:focus {
         outline: 0;
         border-color: @input_focused-border;
     }
 
-    &[disabled],
-    &.disabled {
+    &[disabled] {
         background-color: @input_disabled-background;
         border-color: @input_disabled-border;
         color: @input_disabled-color;
@@ -191,8 +189,7 @@ select {
             box-shadow: inset 0 0 2px darken(@input_focused-shadowInner,10%), 0 0 2px fade(@input_focused-shadowDrop,20%);
         }
         
-        &:focus,
-        &._focus {
+        &:focus {
             border-color: @input_focused-border;
             box-shadow: inset 0 0 4px @input_focused-shadowInner, 0 0 5px @input_focused-shadowDrop;
             outline: 0;
@@ -222,6 +219,24 @@ select {
         top: calc(~"50% + 1px");
         border-top-width: 6px;
         border-bottom-width: 0;
+    }
+
+    //  Disabled State
+    //  You have to apply this to the wrapping div so the arrows look disabled too.
+    &._disabled {
+        &:before,
+        &:after { opacity: 0.3; }
+
+        select {
+            color: lighten(@input-color,45%);
+            background-color: @black-050;
+            border-color: lighten(@input-border,10%);
+
+            &:hover {
+                border-color: lighten(@input-border,10%);
+                box-shadow: none;
+            }
+        }
     }
 }
 
@@ -324,7 +339,7 @@ input,
         font-weight: 400;
         cursor: pointer;
     }
-    p.-help {
+    .-help {
         margin-top: 2px;
         margin-bottom: 2px;
         padding-right: 1em;
@@ -336,7 +351,8 @@ input,
     input + & { margin-top: @margin-half; }
 
     //  Position Alignment
-    &._right { .flex-justify(flex-end); }
+    //  Have to use margin-left to push items to the right: http://stackoverflow.com/a/22429853/2640230
+    &._right { margin-left: auto; }
 }
 
 .radio input[type="radio"],
@@ -438,90 +454,9 @@ input,
 }
 
 //  ============================================================================
-//  $ GROUPS & LAYOUTS
+//  $ INPUT & BUTTON GROUPS 
 //  ----------------------------------------------------------------------------
-//  --  INPUT GROUPS
-//      Wrapping <div> that provides ammple white space around a unit of
-//      form elements
-.input-group {
-    margin-bottom: @margin-double;
-
-    //  If an input-group is the only one or nested within another, remove the bottom margin on the last one.
-    &:only-child,
-    &:last-of-type { margin-bottom: 0; }
-
-    //  If a nested input-group directly follows a label, give it a top margin.
-    label + & { margin-top: @margin-base; }
-
-    //  Input prepends, appends, and connectors use the same grayed out box
-    //  style. This is the univesal style for it.
-    .-fill {
-        flex-shrink: 0;
-        padding: @input-padding;
-        
-        font-size: @input-fontSize - 1;
-        line-height: 1.538461538;
-        color: @black-600;
-
-        background-color: @black-050;
-        border: 1px solid @input-border;
-        border-left-width: 0;
-        border-right-width: 0;
-        
-        > label {
-            font-size: inherit;
-            line-height: inherit;
-        }
-
-        //  For icons
-        > i { align-self: center; }
-
-        .checkbox,
-        .radio { margin-top: 0; }
-
-        //  When we don't want borders or backgrounds
-        &._clean {
-            border-color: transparent;
-            background-color: transparent;
-        }
-    }
-
-    // Make an input-group's children display in a row versus column (default)
-    &._inline {
-        .flex-flow(row wrap);
-
-        //  The first label we set on its own line
-        > label:first-of-type {
-            flex-basis: 100%;
-            max-width: 100%;
-        }
-
-        //  Now let's float the rows
-        .-row {
-            display: inline-flex;
-            flex-grow: 1;
-            flex-basis: 0;
-
-            //  Within checkbox and radio rows, the first item needs to stay small
-            &.checkbox,
-            &.radio {
-                // Reset any previously set margins
-                &:first-of-type:not(:only-of-type) { margin-top: @margin-half; }
-            }
-
-            //  When a row and input are next to each other in a row, reset the margin
-            label + input { margin-top: 0; }
-        }
-    }
-
-    //  If an entire input-group is unavailable, make it look like that.
-    &._disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
-}
-
-//  --  INPUT GROUP: Grid Systems
+//  --  Grid Systems
 @grid-col-width: 100% / 12;
 
 .input-group,
@@ -533,23 +468,19 @@ input,
     position: relative;
     
     .flexbox();
-    .flex(0 1 auto);
+    .flex(1 1 auto);
     .flex-flow(column nowrap);
     .flex-justify(flex-start);
 
     .-item {
         .flex(2 1 auto);
 
-        > * {
-            align-items: stretch;
-            min-height: 100%;
-        }
+        > input { min-height: 100%; }
 
         input[type="button"],
         input[type="submit"],
         button,
-        .btn,
-        [class*="btn-"] {
+        [class^="btn"] {
             left: -1px;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
@@ -573,19 +504,19 @@ input,
             &:first-of-type:not(:only-of-type) { margin-top: @margin-base; }
 
             .-item {
-                padding-right: 0.5em;
+                flex-grow: 1;
+                padding-left: 0.5em;
 
-                &:first-of-type { flex-grow: 0; }
-                &:not(:first-of-type) { flex-grow: 1; }
+                &:first-of-type {
+                    flex-grow: 0;
+                    padding-left: 0;
+                }
+
+                &._top > * { min-height: auto; }
             }
         }
 
-        //  --  PADDING
-        //      If padding between elements is desired
-        &._padding [class^="col"]  {
-            padding-left: 0.5em;
-            padding-right: 0.5em;
-        }
+        &._padding {}
     }
 
     [class*="col"] { .flex(0 0 auto); }
@@ -644,9 +575,85 @@ input,
         max-width: @grid-col-width * 12;
     }
 }
-
-//  --  INPUT GROUP: Input Prepend & Append
+//  --  INPUT GROUPS
+//      Wrapping <div> that provides ammple white space around a unit of
+//      form elements
 .input-group {
+    margin-bottom: @margin-double;
+
+    //  If an input-group is the only one or nested within another, remove the bottom margin on the last one.
+    &:only-child,
+    &:last-of-type { margin-bottom: 0; }
+
+    //  If a nested input-group directly follows a label, give it a top margin.
+    label + & { margin-top: @margin-base; }
+
+    //  --  Input Clusters
+    //      Some layouts require us to group similar input groups, but they have their own
+    //      labels and input group elements.
+    &._cluster {
+        .input-group {
+            //  We don't need bottom margins here. Let's let rows take care of that.
+            margin-bottom: 0;
+
+            //  Nested input-group labels shouldn't be bold as they're secondary labels
+            label { font-weight: 400; }
+        }
+
+        //  We want visuall spacing between input-groups
+        .-row {
+            position: relative;
+
+            //  Within checkbox and radio rows, the first item needs to stay small
+            &.checkbox,
+            &.radio {
+                // Reset any previously set margins
+                &:first-of-type:not(:only-of-type) { margin-top: @margin-half; }
+            }
+
+            [class*="col"] {
+                padding-left: 0.25em;
+                padding-right: 0.25em;
+
+                &:first-of-type { padding-left: 0; }
+                &:last-of-type { padding-right: 0; }
+            }
+        }
+    }
+
+    //  Input prepends, appends, and connectors use the same grayed out box
+    //  style. This is the univesal style for it.
+    .-fill {
+        flex-shrink: 0;
+        padding: @input-padding;
+        
+        font-size: @input-fontSize - 1;
+        line-height: 1.538461538;
+        color: @black-600;
+
+        background-color: @black-050;
+        border: 1px solid @input-border;
+        border-left-width: 0;
+        border-right-width: 0;
+        
+        > label {
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        //  For icons
+        > i { align-self: center; }
+
+        .checkbox,
+        .radio { margin-top: 0; }
+
+        //  When we don't want borders or backgrounds
+        &._clean {
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+
     .fill-first,
     .fill-last,
     .fill-multiple {
@@ -689,8 +696,13 @@ input,
             border-right-width: 1px;
         }
     }
-}
 
+    //  If an entire input-group is unavailable, make it look like that.
+    &._disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
 
 //  --  BUTTON GROUPS
 //      Wrapping <div> for buttons / actions
@@ -734,6 +746,8 @@ form._inline .input-group {
     > label { padding-right: @padding-double; }
 
     .-row {
+        margin-top: 0;
+
         input[type="submit"],
         input[type="button"],
         button,

@@ -315,7 +315,7 @@ description: These are the basic form input styles currently. The styles below a
 {% highlight html linenos %}
 <form>
     <div class="input-group">
-        <label for="select-menu">How long is your stay?</label>
+        <label for="from-menu">How long is your stay?</label>
         <div class="-row">
             <div class="-item select">
                 <select id="from-menu">
@@ -359,6 +359,163 @@ description: These are the basic form input styles currently. The styles below a
                                 <option name="" id="">Next Month</option>
                                 <option name="" id="">Next Year</option>
                             </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3>Grouped Select Menus</h3>
+    <p>To visually group select menus together, wrap them in a <code>.-group</code> div.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <label for="from-job-month">How long have you worked at your job?</label>
+        <div class="-row">
+            <div class="-group">
+                <div class="-item select">
+                    <select id="from-job-month">
+                        <option name="" id="" selected="selected">Please select…</option>
+                        <option name="" id="">January</option>
+                        <option name="" id="">February</option>
+                        <option name="" id="">March</option>
+                        <option name="" id="">April</option>
+                        <option name="" id="">May</option>
+                        <option name="" id="">June</option>
+                        <option name="" id="">July</option>
+                        <option name="" id="">August</option>
+                        <option name="" id="">September</option>
+                        <option name="" id="">October</option>
+                        <option name="" id="">November</option>
+                        <option name="" id="">December</option>
+                    </select>
+                </div>
+                <div class="-item select">
+                    <select id="from-job-year">
+                        <option name="" id="">1920</option>
+                        <option name="" id="">1921</option>
+                        <option name="" id="">1922</option>
+                        <option name="" id="">1923</option>
+                        <option name="" id="">1924</option>
+                        <option name="" id="">1925</option>
+                        <option name="" id="">1926</option>
+                        <option name="" id="">1927</option>
+                        <option name="" id="">1928</option>
+                        <option name="" id="" selected="selected">1929</option>
+                    </select>
+                </div>
+            </div>
+            <div class="-fill _clean">to</div>
+            <div class="-group">
+                <div class="-item select">
+                    <select id="to-job-month">
+                        <option name="" id="" selected="selected">Please select…</option>
+                        <option name="" id="">January</option>
+                        <option name="" id="">February</option>
+                        <option name="" id="">March</option>
+                        <option name="" id="">April</option>
+                        <option name="" id="">May</option>
+                        <option name="" id="">June</option>
+                        <option name="" id="">July</option>
+                        <option name="" id="">August</option>
+                        <option name="" id="">September</option>
+                        <option name="" id="">October</option>
+                        <option name="" id="">November</option>
+                        <option name="" id="">December</option>
+                    </select>
+                </div>
+                <div class="-item select">
+                    <select id="to-job-year">
+                        <option name="" id="">1920</option>
+                        <option name="" id="">1921</option>
+                        <option name="" id="">1922</option>
+                        <option name="" id="">1923</option>
+                        <option name="" id="">1924</option>
+                        <option name="" id="">1925</option>
+                        <option name="" id="">1926</option>
+                        <option name="" id="">1927</option>
+                        <option name="" id="">1928</option>
+                        <option name="" id="" selected="selected">1929</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endhighlight %}  
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group">
+                    <label for="from-job-month">How long have you worked at your job?</label>
+                    <div class="-row">
+                        <div class="-group">
+                            <div class="-item select">
+                                <select id="from-job-month">
+                                    <option name="" id="" selected="selected">Please select…</option>
+                                    <option name="" id="">January</option>
+                                    <option name="" id="">February</option>
+                                    <option name="" id="">March</option>
+                                    <option name="" id="">April</option>
+                                    <option name="" id="">May</option>
+                                    <option name="" id="">June</option>
+                                    <option name="" id="">July</option>
+                                    <option name="" id="">August</option>
+                                    <option name="" id="">September</option>
+                                    <option name="" id="">October</option>
+                                    <option name="" id="">November</option>
+                                    <option name="" id="">December</option>
+                                </select>
+                            </div>
+                            <div class="-item select">
+                                <select id="from-job-year">
+                                    <option name="" id="">1920</option>
+                                    <option name="" id="">1921</option>
+                                    <option name="" id="">1922</option>
+                                    <option name="" id="">1923</option>
+                                    <option name="" id="">1924</option>
+                                    <option name="" id="">1925</option>
+                                    <option name="" id="">1926</option>
+                                    <option name="" id="">1927</option>
+                                    <option name="" id="">1928</option>
+                                    <option name="" id="" selected="selected">1929</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="-fill _clean">to</div>
+                        <div class="-group">
+                            <div class="-item select">
+                                <select id="to-job-month">
+                                    <option name="" id="" selected="selected">Please select…</option>
+                                    <option name="" id="">January</option>
+                                    <option name="" id="">February</option>
+                                    <option name="" id="">March</option>
+                                    <option name="" id="">April</option>
+                                    <option name="" id="">May</option>
+                                    <option name="" id="">June</option>
+                                    <option name="" id="">July</option>
+                                    <option name="" id="">August</option>
+                                    <option name="" id="">September</option>
+                                    <option name="" id="">October</option>
+                                    <option name="" id="">November</option>
+                                    <option name="" id="">December</option>
+                                </select>
+                            </div>
+                            <div class="-item select">
+                                <select id="to-job-year">
+                                    <option name="" id="">1920</option>
+                                    <option name="" id="">1921</option>
+                                    <option name="" id="">1922</option>
+                                    <option name="" id="">1923</option>
+                                    <option name="" id="">1924</option>
+                                    <option name="" id="">1925</option>
+                                    <option name="" id="">1926</option>
+                                    <option name="" id="">1927</option>
+                                    <option name="" id="">1928</option>
+                                    <option name="" id="" selected="selected">1929</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>

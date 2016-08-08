@@ -516,6 +516,18 @@ input,
                 &._top > * { min-height: auto; }
             }
         }
+        > .col > .checkbox,
+        > .col > .radio { margin-top: 0; }
+
+        //  Buttons
+        .btn._last,
+        [class*="btn-"]._last {
+            .flex-order(99);    // Because we always want it last.
+            margin-left: -1px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            white-space: nowrap;
+        }
 
         //  A way to visually collect and space groups
         .-group {
@@ -588,6 +600,36 @@ input,
         flex-basis: @grid-col-width * 12;
         max-width: @grid-col-width * 12;
     }
+
+    .col {
+        //  When you need to push a column over
+        &-push1  { margin-left: @grid-col-width * 1; }
+        &-push2  { margin-left: @grid-col-width * 2; }
+        &-push3  { margin-left: @grid-col-width * 3; }
+        &-push4  { margin-left: @grid-col-width * 4; }
+        &-push5  { margin-left: @grid-col-width * 5; }
+        &-push6  { margin-left: @grid-col-width * 6; }
+        &-push7  { margin-left: @grid-col-width * 7; }
+        &-push8  { margin-left: @grid-col-width * 8; }
+        &-push9  { margin-left: @grid-col-width * 9; }
+        &-push10 { margin-left: @grid-col-width * 10; }
+        &-push11 { margin-left: @grid-col-width * 11; }
+        &-push12 { margin-left: @grid-col-width * 12; }
+
+        //  When you need to pull a column over
+        &-pull1  { margin-left: -(@grid-col-width * 1); }
+        &-pull2  { margin-left: -(@grid-col-width * 2); }
+        &-pull3  { margin-left: -(@grid-col-width * 3); }
+        &-pull4  { margin-left: -(@grid-col-width * 4); }
+        &-pull5  { margin-left: -(@grid-col-width * 5); }
+        &-pull6  { margin-left: -(@grid-col-width * 6); }
+        &-pull7  { margin-left: -(@grid-col-width * 7); }
+        &-pull8  { margin-left: -(@grid-col-width * 8); }
+        &-pull9  { margin-left: -(@grid-col-width * 9); }
+        &-pull10 { margin-left: -(@grid-col-width * 10); }
+        &-pull11 { margin-left: -(@grid-col-width * 11); }
+        &-pull12 { margin-left: -(@grid-col-width * 12); }
+    }
 }
 //  --  INPUT GROUPS
 //      Wrapping <div> that provides ammple white space around a unit of
@@ -610,13 +652,31 @@ input,
             //  We don't need bottom margins here. Let's let rows take care of that.
             margin-bottom: 0;
 
+            //  If an input-group is nested though, we want bottom margin, but not the normal amount.
+            .input-group { margin-bottom: @margin-base; }
+
             //  Nested input-group labels shouldn't be bold as they're secondary labels
             label { font-weight: 400; }
+        }
+
+        .button-group._end {
+            margin-top: 0;
+            align-items: flex-end;
+            .flex-justify(flex-end);
+
+            .btn,
+            [class^="btn-"] {
+                margin: 0;
+                // border-radius: @btn-border-radius;
+            }
         }
 
         //  We want visuall spacing between input-groups
         .-row {
             position: relative;
+
+            //  The first direct row we want to wrap
+            > & { flex-wrap: wrap; }
 
             //  Within checkbox and radio rows, the first item needs to stay small
             &.checkbox,
@@ -687,13 +747,9 @@ input,
             .flex-order(2);
             border-right-width: 1px;
         }
-        input[type="button"],
-        input[type="submit"],
-        button,
-        .btn,
-        [class*="btn-"] {
-            .flex-order(99);    // Because we always want it last.
-            margin-left: -1px;
+        
+        .btn._last,
+        [class*="btn-"]._last {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
@@ -759,18 +815,7 @@ form._inline .input-group {
 
     > label { padding-right: @padding-double; }
 
-    .-row {
-        margin-top: 0;
-
-        input[type="submit"],
-        input[type="button"],
-        button,
-        [class^="btn"] {
-            margin-left: -1px;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-    }
+    .-row { margin-top: 0; }
 }
 
 

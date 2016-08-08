@@ -517,6 +517,7 @@ input,
             }
         }
 
+        //  A way to visually collect and space groups
         .-group {
             .flexbox();
 
@@ -528,6 +529,8 @@ input,
                 &:last-of-type { padding-right: 0; }
             }
         }
+
+        > label + input { margin-top: 0; }
     }
 
     [class*="col"] { .flex(0 0 auto); }

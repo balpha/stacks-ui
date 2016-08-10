@@ -928,5 +928,18 @@ body.composer-on {
 	> .input-group,
 	> form > .input-group,
 	> .button-group,
-	> .option-toggle { width: 60%; }
+	> .option-toggle,
+	> .header-title { width: 60%; }
+
+	.header-title {
+		.flexbox();
+		margin-bottom: @margin-base;
+		padding-bottom: @padding-base;
+
+		.-title,
+		.button-group,
+		.-row { margin: 0; }
+
+		.-title { line-height: 2; }
+	}
 } 

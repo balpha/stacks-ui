@@ -477,19 +477,17 @@ input,
         .flex(2 1 auto);
 
         > input { min-height: 100%; }
-
-        input[type="button"],
-        input[type="submit"],
-        button,
-        [class^="btn"] {
-            left: -1px;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
     }
 
     //  --  Rows reset the flow direction and act as a wrapping container for elements
     .-row {
+        //  HACK -- TEMPORARY
+        //  Because Careers' grid.less applies .clearfix() to the .-row class, we need to
+        //  remove the before and after elements because flexbox picks them up. This can
+        //  be removed when we update the grid.less to flexbox.
+        &:before,
+        &:after { position: absolute; }
+
         .flexbox();
         .flex(0 1 auto);
         margin-top: @margin-half;
@@ -499,6 +497,7 @@ input,
         &._end          { .flex-justify(flex-end); }
         &._justify      { .flex-justify(space-between); }
         &._reverse      { .flex-flow(row-reverse nowrap); }
+        &._wrap         { .flex-flow(row wrap); }
 
         &.checkbox,
         &.radio {
@@ -533,7 +532,8 @@ input,
         .-group {
             .flexbox();
 
-            .-item {
+            // Apply spacing to groups and items within groups
+            &, > .-item {
                 padding-left: 2px;
                 padding-right: 2px;
 
@@ -665,18 +665,15 @@ input,
             .flex-justify(flex-end);
 
             .btn,
-            [class^="btn-"] {
-                margin: 0;
-                // border-radius: @btn-border-radius;
-            }
+            [class^="btn-"] { margin: 0; }
         }
+
+        //  The first direct row we want to wrap
+        > .-row { flex-wrap: wrap; }
 
         //  We want visuall spacing between input-groups
         .-row {
             position: relative;
-
-            //  The first direct row we want to wrap
-            > & { flex-wrap: wrap; }
 
             //  Within checkbox and radio rows, the first item needs to stay small
             &.checkbox,
@@ -692,6 +689,42 @@ input,
                 &:first-of-type { padding-left: 0; }
                 &:last-of-type { padding-right: 0; }
             }
+        }
+    }
+
+    //  --  Input Filters
+    //      This allows you to visually nest a select menu (usually for filtering) within
+    //      an input. This applied within an input-group on a .-row element.
+    .-filters {
+        //  First we need to reset the input and select appearances and apply it to the .-row
+        border: 1px solid @input-border;
+        padding: @input-padding;
+
+        input,
+        .select select {
+            padding: 0;
+            border-color: transparent;
+            box-shadow: none;
+            background-color: transparent;
+
+            &:focus,
+            &:hover,
+            &:active {
+                outline: 0;
+                box-shadow: none;
+                background-color: transparent;
+                border-color: transparent;
+            }
+        }
+
+        .select {
+            padding-left: @padding-base;
+            border-left: 1px solid @input-border;
+        }
+
+        &._active {
+            border-color: @input_focused-border;
+            box-shadow: inset 0 0 4px @input_focused-shadowInner, 0 0 5px @input_focused-shadowDrop;
         }
     }
 
@@ -791,7 +824,7 @@ input,
     }
 
     //  Stack the buttons on top of each other
-    .-row._stacked {
+    ._stacked {
         flex-direction: column;
         [class^="btn"] + [class^="btn"] {
             margin-left: 0;

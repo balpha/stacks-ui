@@ -1101,6 +1101,67 @@ description: These are the basic form input styles currently. The styles below a
             </form>
         </div>
     </div>
+
+    <h3>Input Filters</h3>
+    <p>Used on Jobs currently, this allows a select menu to be nested within an input. Usually this is used when you want to allow the user further filtering options. <strong>Note:</strong> To properly do this we have to disable focus states. If you want to enable them, you must use Javascript.</p>
+
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group">
+        <label for="location-search">Location</label>
+        <div class="-row -filters js-filters">
+            <input type="text" name="" id="location-search" placeholder="City, State, or Country" class="col" />
+            <div class="-item select col4">
+                <select name="currencyType" id="location-distance">
+                    <option value="">5 miles</option>
+                    <option value="">15 miles</option>
+                    <option value="" selected="selected">25 miles</option>
+                    <option value="">50 miles</option>
+                    <option value="">100 miles</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#location-search, #location-distance").on("focus", function(){
+            $(".js-filters").addClass("_active");
+        });
+        $("#location-search, #location-distance").on("focusout", function(){
+            $(".js-filters").removeClass("_active");
+        });
+    </script>
+</form>
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group">
+                    <label for="location-search">Location</label>
+                    <div class="-row -filters js-filters">
+                        <input type="text" name="" id="location-search" placeholder="City, State, or Country" class="col" />
+                        <div class="-item select col4">
+                            <select name="currencyType" id="location-distance">
+                                <option value="">5 miles</option>
+                                <option value="">15 miles</option>
+                                <option value="" selected="selected">25 miles</option>
+                                <option value="">50 miles</option>
+                                <option value="">100 miles</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $("#location-search, #location-distance").on("focus", function(){
+                        $(".js-filters").addClass("_active");
+                    });
+                    $("#location-search, #location-distance").on("focusout", function(){
+                        $(".js-filters").removeClass("_active");
+                    });
+                </script>
+            </form>
+        </div>
+    </div>
 </section>
 
 <section class="uikit-section" data-core-careers>
@@ -1189,18 +1250,24 @@ description: These are the basic form input styles currently. The styles below a
     <p>Sometimes UI controls are placed in heading areas along with titles. In these scenarios, the buttons should always be pulled to the right and the primary action is to placed on right.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="button-group">
-    <div class="-row _end">
-        <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
-        <a href="#" title="Primary action" class="btn">Primary Action</a>
+<div class="header-title">
+    <h2 class="-title">Page Title</h2>
+    <div class="button-group">
+        <div class="-row _end">
+            <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
+            <a href="#" title="Primary action" class="btn">Primary Action</a>
+        </div>
     </div>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
-            <div class="button-group">
-                <div class="-row _end">
-                    <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
-                    <a href="#" title="Primary action" class="btn">Primary Action</a>
+            <div class="header-title">
+                <h2 class="-title">Page Title</h2>
+                <div class="button-group">
+                    <div class="-row _end">
+                        <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
+                        <a href="#" title="Primary action" class="btn">Primary Action</a>
+                    </div>
                 </div>
             </div>
         </div>

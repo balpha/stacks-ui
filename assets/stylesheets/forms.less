@@ -121,10 +121,6 @@ input[type="datetime"],
     &::-moz-placeholder,            // Firefox 19+
     &:-ms-input-placeholder { color: @input-placeholder-color; }
 
-    //  Create some whitespace for the input when it directly follows a label
-    label + &,
-    & + .-row { margin-top: @margin-half; }
-
     //  --  Layout
     &._block   {
         display: block;
@@ -241,7 +237,8 @@ select {
     }
 }
 
-
+//  $ FILE UPLOAD INPUT 
+//  ----------------------------------------------------------------------------
 input[type="file"] {
     display: block;
     margin: 0;
@@ -281,8 +278,7 @@ input[type="datetime"],
         box-shadow: inset 0 0 2px darken(@input_focused-shadowInner,10%), 0 0 2px fade(@input_focused-shadowDrop,20%);
     }
     
-    &:focus,
-    &._focus {
+    &:focus {
         border-color: @input_focused-border;
         box-shadow: inset 0 0 4px @input_focused-shadowInner, 0 0 5px @input_focused-shadowDrop;
         outline: 0;
@@ -325,10 +321,6 @@ input,
 //  ----------------------------------------------------------------------------
 .checkbox,
 .radio {
-    *,
-    *:before,
-    *:after { box-sizing: border-box; }
-
     .flexbox();
 
     input {
@@ -408,7 +400,7 @@ input,
 
         .-message { color: mix(@yellow-500,@orange-600); }
 
-        .-icon { background-image: url(../images/icon-warning.svg), none; }
+        .-icon { background-image: url("../images/icon-warning.svg"), none; }
     }
 
     //  --  ERROR
@@ -428,7 +420,7 @@ input,
 
         .-message { color: @red-500; }
 
-        .-icon { background-image: url(../images/icon-error.svg), none; }
+        .-icon { background-image: url("../images/icon-error.svg"), none; }
     }
 
     //  --  SUCCESS
@@ -450,7 +442,7 @@ input,
 
         .-message { color: darken(@green-500,5%); }
 
-        .-icon { background-image: url(../images/icon-success.svg), none; }
+        .-icon { background-image: url("../images/icon-success.svg"), none; }
     }
 }
 
@@ -515,7 +507,13 @@ input,
                     padding-left: 0;
                 }
 
-                &._top > * { min-height: auto; }
+                //  All items within an .-item is given a min-height of 100%. This causes
+                //  radios and checkboxes to vertically center. So we need to reset their
+                //  height and nudge them down a few pixels.
+                &._top > * {
+                    min-height: auto;
+                    margin-top: 3px;
+                }
             }
         }
 
@@ -535,6 +533,7 @@ input,
 
             // Apply spacing to groups and items within groups
             &, > .-item {
+                position: relative;
                 padding-left: 2px;
                 padding-right: 2px;
 
@@ -631,7 +630,11 @@ input,
         &-pull11 { margin-left: -(@grid-col-width * 11); }
         &-pull12 { margin-left: -(@grid-col-width * 12); }
     }
+
+    //  --  SPACING
+    &._section { margin-top: @margin-double; }
 }
+
 //  --  INPUT GROUPS
 //      Wrapping <div> that provides ammple white space around a unit of
 //      form elements
@@ -839,6 +842,14 @@ form._inline .input-group {
     > label { padding-right: @padding-double; }
 
     .-row { margin-top: 0; }
+
+    // For nested input-groups, we want to reset the flow direction
+    > .-row > .input-group {
+        .flex-flow(column wrap);
+        align-items: flex-start;
+
+        .-row:not(:first-of-type) { margin-top: @margin-half;}
+    }
 }
 
 

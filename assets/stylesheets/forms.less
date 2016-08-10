@@ -479,6 +479,10 @@ input,
         > input { min-height: 100%; }
     }
 
+    //  --  ROWS
+    //  When anything is directly in front of a row, add margin. Otherwise don't.
+    * + .-row { margin-top: @margin-half; }
+
     //  --  Rows reset the flow direction and act as a wrapping container for elements
     .-row {
         //  HACK -- TEMPORARY
@@ -490,7 +494,6 @@ input,
 
         .flexbox();
         .flex(0 1 auto);
-        margin-top: @margin-half;
 
         //  Flow adjustments
         &._start        { .flex-justify(flex-start); }
@@ -515,8 +518,6 @@ input,
                 &._top > * { min-height: auto; }
             }
         }
-        > .col > .checkbox,
-        > .col > .radio { margin-top: 0; }
 
         //  Buttons
         .btn._last,
@@ -722,6 +723,7 @@ input,
             border-left: 1px solid @input-border;
         }
 
+        //  To apply this to -filters you will need to use Javascript. :(
         &._active {
             border-color: @input_focused-border;
             box-shadow: inset 0 0 4px @input_focused-shadowInner, 0 0 5px @input_focused-shadowDrop;
@@ -751,23 +753,11 @@ input,
         //  For icons
         > i { align-self: center; }
 
-        .checkbox,
-        .radio { margin-top: 0; }
-
         //  When we don't want borders or backgrounds
         &._clean {
             border-color: transparent;
             background-color: transparent;
         }
-    }
-
-    .fill-first,
-    .fill-last,
-    .fill-multiple {
-        //  If a checkbox or radio input follows a prepend
-        //  or an append div, insert some space.
-        + .checkbox,
-        + .radio { margin-top: @margin-half; }
     }
 
     .fill-first .-fill {

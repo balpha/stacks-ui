@@ -193,8 +193,6 @@ select {
         }
     }
 
-    label + & { margin-top: @margin-half; }
-
     // Create custom arrows since appearance removes them.
     &:before,
     &:after {
@@ -322,6 +320,23 @@ input,
 .checkbox,
 .radio {
     .flexbox();
+
+    .-item {
+        flex-grow: 1;
+        .flex-justify(center);
+        .flex-flow(column nowrap);
+        padding-left: 0.5em;
+
+        &:first-of-type {
+            flex-grow: 0;
+            padding-left: 0;
+        }
+
+        &._top {
+            .flex-justify(flex-start);
+            padding-top: 2px;
+        }
+    }
 
     input {
         margin: 0;
@@ -466,13 +481,17 @@ input,
     .flex-justify(flex-start);
 
     .-item {
-        .flex(2 1 auto);
+        position: relative;
+        display: inline-flex;
+        .flex(1 auto);
 
         > input { min-height: 100%; }
     }
 
     //  --  ROWS
-    //  When anything is directly in front of a row, add margin. Otherwise don't.
+    //  --------------------------------------------------------------------------
+    //      Instead of applying a top margin by default, we say if a .-row is
+    //      preceeded by ANYTHING else, then give it a top margin. Otherwise don't.
     * + .-row { margin-top: @margin-half; }
 
     //  --  Rows reset the flow direction and act as a wrapping container for elements
@@ -485,37 +504,15 @@ input,
         &:after { position: absolute; }
 
         .flexbox();
-        .flex(0 1 auto);
+        .flex(1 auto);
 
         //  Flow adjustments
-        &._start        { .flex-justify(flex-start); }
-        &._end          { .flex-justify(flex-end); }
-        &._justify      { .flex-justify(space-between); }
-        &._reverse      { .flex-flow(row-reverse nowrap); }
-        &._wrap         { .flex-flow(row wrap); }
-
-        &.checkbox,
-        &.radio {
-            &:first-of-type:not(:only-of-type) { margin-top: @margin-base; }
-
-            .-item {
-                flex-grow: 1;
-                padding-left: 0.5em;
-
-                &:first-of-type {
-                    flex-grow: 0;
-                    padding-left: 0;
-                }
-
-                //  All items within an .-item is given a min-height of 100%. This causes
-                //  radios and checkboxes to vertically center. So we need to reset their
-                //  height and nudge them down a few pixels.
-                &._top > * {
-                    min-height: auto;
-                    margin-top: 3px;
-                }
-            }
-        }
+        &._start            { .flex-justify(flex-start); }
+        &._end              { .flex-justify(flex-end); }
+        &._justify          { .flex-justify(space-between); }
+        &._reverse          { .flex-flow(row-reverse nowrap); }
+        &._wrap             { .flex-flow(row wrap); }
+        &._align-center     { align-items: center; }
 
         //  Buttons
         .btn._last,
@@ -645,7 +642,10 @@ input,
     &:only-child,
     &:last-of-type { margin-bottom: 0; }
 
-    //  If a nested input-group directly follows a label, give it a top margin.
+    //  If there's a label, we generally want a top margin.
+    label + * { margin-top: @margin-half; }
+
+    //  Yet if it's an input-group, we want that top margin to be greater
     label + & { margin-top: @margin-base; }
 
     //  --  Input Clusters
@@ -803,7 +803,7 @@ input,
 //  --  BUTTON GROUPS
 //      Wrapping <div> for buttons / actions
 .button-group {
-    .flex-flow(row nowrap);
+    //.flex-flow(row nowrap);
     margin-top: @margin-double;
 
     [class^="btn"] + [class^="btn"] { margin-left: @margin-half; }

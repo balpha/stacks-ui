@@ -1049,7 +1049,7 @@ description: These are the basic form input styles currently. The styles below a
             </div>
         </div>
         <div class="-row checkbox">
-            <div class="-item"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
+            <div class="-item _top"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
             <div class="-item">
                 <label for="input-group-multi-checkbox"><strong>Provides equity</strong></label>
                 <p class="-help">Equity is provided as part of the compensation package.</p>
@@ -1091,7 +1091,7 @@ description: These are the basic form input styles currently. The styles below a
                         </div>
                     </div>
                     <div class="-row checkbox">
-                        <div class="-item"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
+                        <div class="-item _top"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
                         <div class="-item">
                             <label for="input-group-multi-checkbox"><strong>Provides equity</strong></label>
                             <p class="-help">Equity is provided as part of the compensation package.</p>
@@ -1173,14 +1173,18 @@ description: These are the basic form input styles currently. The styles below a
 {% highlight html linenos %}
 <!-- Default -->
 <div class="button-group">
-    <input class="btn" type="submit" value="Save">
-    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+    <div class="-row">
+        <input class="btn" type="submit" value="Save" class="btn">
+        <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+    </div>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
             <div class="button-group">
-                <input class="btn" type="submit" value="Save">
-                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+                <div class="-row">
+                    <input class="btn" type="submit" value="Save" class="btn">
+                    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+                </div>
             </div>
         </div>
     </div> <!-- /preview -->
@@ -1191,14 +1195,18 @@ description: These are the basic form input styles currently. The styles below a
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="button-group _border">
-    <input class="btn" type="submit" value="Save">
-    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+    <div class="-row">
+        <input class="btn" type="submit" value="Save" class="btn">
+        <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+    </div>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
             <div class="button-group _border">
-                <input class="btn" type="submit" value="Save">
-                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+                <div class="-row">
+                    <input class="btn" type="submit" value="Save" class="btn">
+                    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+                </div>
             </div>
         </div>
     </div>

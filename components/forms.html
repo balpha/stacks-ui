@@ -833,20 +833,24 @@ description: These are the basic form input styles currently. The styles below a
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="option-toggle">
-    <div>
-        <input type="radio" name="sample-group" id="optionA" checked="checked" />
-        <label for="optionA">Option A</label>
+<form>
+    <div class="input-group">
+        <div class="-row option-toggle">
+            <div class="col">
+                <input type="radio" name="sample-group" id="optionA" checked="checked" />
+                <label for="optionA">Option A</label>
+            </div>
+            <div class="col">
+                <input type="radio" name="sample-group" id="optionB" />
+                <label for="optionB">Option B</label>
+            </div>
+            <div class="col">
+                <input type="radio" name="sample-group" id="optionC" />
+                <label for="optionC">Option C</label>
+            </div>
+        </div>
     </div>
-    <div>
-        <input type="radio" name="sample-group" id="optionB" />
-        <label for="optionB">Option B</label>
-    </div>
-    <div>
-        <input type="radio" name="sample-group" id="optionC" />
-        <label for="optionC">Option C</label>
-    </div>
-</div>
+</form>
 {% endhighlight %}
 
         <div class="uikit-preview">
@@ -1173,18 +1177,14 @@ description: These are the basic form input styles currently. The styles below a
 {% highlight html linenos %}
 <!-- Default -->
 <div class="button-group">
-    <div class="-row">
-        <input class="btn" type="submit" value="Save" class="btn">
-        <a href="#" title="Cancel" class="btn-clear">Cancel</a>
-    </div>
+    <input class="btn" type="submit" value="Save" class="btn">
+    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
             <div class="button-group">
-                <div class="-row">
-                    <input class="btn" type="submit" value="Save" class="btn">
-                    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
-                </div>
+                <input class="btn" type="submit" value="Save" class="btn">
+                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
             </div>
         </div>
     </div> <!-- /preview -->
@@ -1195,36 +1195,38 @@ description: These are the basic form input styles currently. The styles below a
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="button-group _border">
-    <div class="-row">
-        <input class="btn" type="submit" value="Save" class="btn">
-        <a href="#" title="Cancel" class="btn-clear">Cancel</a>
-    </div>
+    <input class="btn" type="submit" value="Save" class="btn">
+    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
             <div class="button-group _border">
-                <div class="-row">
-                    <input class="btn" type="submit" value="Save" class="btn">
-                    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
-                </div>
+                <input class="btn" type="submit" value="Save" class="btn">
+                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
             </div>
         </div>
     </div>
 
     <p>There are situations in which the button placement can be adjusted, though these should be used only when needed.</p>
     <h3>Stacked Layout</h3>
-    <p>Primarily used in layouts where button label length force us to stack the buttons on top of each other. In this scenario, the primary CTA is still listed first.</p>
+    <p>Sometimes we want to stack buttons or other content within a button group. In those cases, we need to reset the flow direction from a row (horizontal) to a column (vertical).</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="button-group">
-    <a href="#" title="Primary action" class="btn">Primary Action</a>
-    <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
+<div class="button-group _stacked">
+    <div class="-row">
+        <a href="#" title="Primary action" class="btn">Primary Action</a>
+        <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
+    </div>
+    <p class="-help">By clicking the Primary Action button, you accept all the rules.</p>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
-            <div class="button-group">
-                <a href="#" title="Primary action" class="btn">Primary Action</a>
-                <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
+            <div class="button-group _stacked">
+                <div class="-row">
+                    <a href="#" title="Primary action" class="btn">Primary Action</a>
+                    <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
+                </div>
+                <p class="-help">By clicking the Primary Action button, you accept all the rules.</p>
             </div>
         </div>
     </div>

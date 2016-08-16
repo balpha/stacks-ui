@@ -335,6 +335,7 @@ input,
         &._top {
             .flex-justify(flex-start);
             padding-top: 2px;
+            > input { min-height: auto; }
         }
     }
 
@@ -348,8 +349,8 @@ input,
         cursor: pointer;
     }
     .-help {
-        margin-top: 2px;
-        margin-bottom: 2px;
+        margin-top: 3px;
+        margin-bottom: 3px;
         padding-right: 1em;
     }
 
@@ -491,8 +492,9 @@ input,
     //  --  ROWS
     //  --------------------------------------------------------------------------
     //      Instead of applying a top margin by default, we say if a .-row is
-    //      preceeded by ANYTHING else, then give it a top margin. Otherwise don't.
-    * + .-row { margin-top: @margin-half; }
+    //      preceeded by ANYTHING else (except a label), then give it a top margin.
+    //      Otherwise don't give it a top margin.
+    *:not(label) + .-row { margin-top: @margin-half; }
 
     //  --  Rows reset the flow direction and act as a wrapping container for elements
     .-row {
@@ -638,15 +640,17 @@ input,
 .input-group {
     margin-bottom: @margin-double;
 
-    //  If an input-group is the only one or nested within another, remove the bottom margin on the last one.
+    //  If an input-group is the only one or nested within another, remove
+    //  the bottom margin on the last one.
     &:only-child,
     &:last-of-type { margin-bottom: 0; }
 
-    //  If there's a label, we generally want a top margin.
-    label + * { margin-top: @margin-half; }
+    //  If there's a label, we generally want a top margin on the item below.
+    //  But ONLY on labels that are direct children.
+    > label + * { margin-top: @margin-half; }
 
-    //  Yet if it's an input-group, we want that top margin to be greater
-    label + & { margin-top: @margin-base; }
+    //  If an input-group follows a label though, we want that top margin to be greater.
+    > label + & { margin-top: @margin-base; }
 
     //  --  Input Clusters
     //      Some layouts require us to group similar input groups, but they have their own
@@ -762,6 +766,13 @@ input,
             background-color: transparent;
         }
     }
+    
+    //  If the input-group is disabled, make fills look disabled too
+    &._disabled .-fill {
+        background-color: @black-075;
+        border-color: @input_disabled-border;
+        box-shadow: inset 0 0 3px @input_disabled-shadowInner;
+    }
 
     .fill-first .-fill {
         .flex-order(-1);
@@ -804,13 +815,20 @@ input,
 //      Wrapping <div> for buttons / actions
 .button-group {
     margin-top: @margin-double;
+    .flex-flow(row wrap);
 
-    [class^="btn"]:not(:first-of-type) { margin-top: @margin-half; }
+    [class^="btn"]:not(:first-of-type) { margin-left: @margin-half; }
 
-    .-row [class^="btn"]:not(:first-of-type) {
-        margin-top: 0;
-        margin-left: @margin-half;
+    &._stacked {
+        .flex-flow(column wrap);
+
+        > [class^="btn"]:not(:first-of-type) {
+            margin-top: @margin-half; 
+            margin-left: 0;
+        }
     }
+
+    ._end { margin-left: auto; }
 
     //  Applies top border to the button container
     &._border {
@@ -1061,38 +1079,46 @@ form._inline .input-group {
     .privacy-checkbox {
         display: none;
         width: auto;
+        vertical-align: middle;
         padding: 3px 6px;
-        border-radius: 3px 3px 0px 0px;
+        border-radius: @borderRadius-small @borderRadius-small 0 0;
 
         position: absolute;
-        top: -8px;
+        top: 4px;
         right: 0;
 
         font-size: 11px;
+        font-weight: 400;
         color: white;
         background: @blue-500;
 
         input[type="checkbox"] {
             position: relative;
             z-index: 1;
+            margin: 0;
             margin-right: 8px;
+            vertical-align: text-top;
         }
 
-        &:focus {
-            outline: 0;
-        }
+        &:focus { outline: 0; }
 
         &:before {
-            content: '';
+            content: "";
             display: inline-block;
             position: absolute;
             left: 0;
             top: 0;
             bottom: 0;
             width: 24px;
-            background: darken(@blue-500, 12%);
+            background: @blue-600;
             z-index: 0;
-            border-radius: 3px 0px 0px 0px;
+            border-top-left-radius: @borderRadius-small
+        }
+
+        //  If this preceeds an input-group, remove the margin
+        + .input-group {
+            margin-top: 0;
+            margin-bottom: @margin-base;
         }
     }
 }

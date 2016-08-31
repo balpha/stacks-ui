@@ -1,0 +1,93 @@
+---
+layout: default
+title: Hero boxes
+description: All those bix boxes on top of the page which we use to inform users about something or to announce new feature etc...
+---
+
+<section class="uikit-section">
+    <h2 id="toc-notifications-style-1">Anonymous herobox</h2>
+
+    <section class="uikit-section">
+        <h3 id="toc-inline">Full</h3>
+        <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<div id="herobox">
+    <div id="hero-content">
+        <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Meta Stack Exchange is where users like you discuss bugs, features, and support issues that affect the software powering all 2 Stack Exchange communities.
+            <br>
+            <br>
+            <a href="#" id="tell-me-more" class="button">What is meta?</a>
+        </div>
+        <div id="desc">
+            <b>Here's how it works:</b>
+            <ol id="hiw">
+                <li id="q">Any Stack Exchange user can ask a question</li>
+                <li id="an">The community provides support, votes on ideas, and reports bugs</li>
+                <li id="b">Your voice helps shape the way Stack Exchange operates</li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+{% endhighlight %}
+
+            <div class="uikit-preview">
+                <div id="herobox">
+                    <div id="hero-content">
+                        <div id="close"><a title="click to minimize">_</a></div>
+                        <div id="blurb">
+                            Meta Stack Exchange is where users like you discuss bugs, features, and support issues that affect the software powering all 2 Stack Exchange communities.
+                            <br>
+                            <br>
+                            <a href="#" id="tell-me-more" class="button">What is meta?</a>
+                        </div>
+                        <div id="desc">
+                            <b>Here's how it works:</b>
+                            <ol id="hiw">
+                                <li id="q">Any Stack Exchange user can ask a question</li>
+                                <li id="an">The community provides support, votes on ideas, and reports bugs</li>
+                                <li id="b">Your voice helps shape the way Stack Exchange operates</li>
+                            </ol>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+            </div><!-- / preview -->
+        </div><!-- / uikit-code uikit-has-preview -->
+    </section>
+
+    <section class="uikit-section">
+        <h3 id="toc-full-width">Minimized</h2>
+        <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="#" id="tell-me-more" class="button">What is meta?</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Meta Stack Exchange is where users like you discuss bugs, features, and support issues that affect the software powering all 2 Stack Exchange communities.
+        </div>        
+    </div>
+</div>
+{% endhighlight %}
+
+            <div class="uikit-preview">
+                <div id="herobox-mini">
+                    <div id="hero-content">
+                        <span id="controls">
+                            <a href="#" id="tell-me-more" class="button">What is meta?</a>
+                            <span id="close"><a title="click to dismiss">×</a></span>
+                        </span>
+                        <div id="blurb">
+                            Meta Stack Exchange is where users like you discuss bugs, features, and support issues that affect the software powering all 2 Stack Exchange communities.
+                        </div>        
+                    </div>
+                </div>
+            </div><!-- / preview -->
+        </div><!-- / uikit-code uikit-has-preview -->
+    </section>
+</section>

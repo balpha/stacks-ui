@@ -23,6 +23,8 @@
       url: components/forms/
     - title: Grid
       url: components/grid/
+    - title: Hero boxes
+      url: components/hero-boxes/
     - title: Modals
       url: components/modals/
     - title: Navigation

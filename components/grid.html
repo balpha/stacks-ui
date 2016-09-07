@@ -1,10 +1,9 @@
 ---
 layout: default
 title: Grid
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reiciendis dolore reprehenderit fugiat natus, magni quos dicta? Eaque amet nostrum assumenda architecto fugiat dicta ut in voluptate, voluptatem corrupti ducimus!
+description: Currently the Core and Career codebases use two different grid systems. This page reports both grids. Future development is to combine these into one system.
 ---
-
-<section class="uikit-section">
+<section class="uikit-section" data-core>
     <h2 id="toc-without">Without padding</h2>
     <p>The grid comes with 12 columns. Grid's container needs <code>box-sizing: border-box;</code></p>
 
@@ -37,31 +36,31 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
 </div>
 {% endhighlight %}
 
-        <div class="uikit-preview grid-preview">
+        <div class="uikit-preview grid-preview -core">
             <div class="row">
-                <div class="col-1">abc</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
-                <div class="col-1">col-1</div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
+                <div class="col-1"><p><code>.col-1</code></p></div>
             </div>
 
             <div class="row">
-                <div class="col-8">col-8</div>
-                <div class="col-4">col-4</div>
+                <div class="col-8"><p><code>.col-8</code></p></div>
+                <div class="col-4"><p><code>.col-4</code></p></div>
             </div>
 
             <div class="row">
-                <div class="col-4">col-4</div>
-                <div class="col-4">col-4</div>
-                <div class="col-4">col-4</div>
+                <div class="col-4"><p><code>.col-4</code></p></div>
+                <div class="col-4"><p><code>.col-4</code></p></div>
+                <div class="col-4"><p><code>.col-4</code></p></div>
             </div>
             <br>
             <small>(additional styling has been added to visually present grid in example above)</small>
@@ -69,7 +68,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
     </div><!-- / uikit-code uikit-has-preview -->
 </section>
 
-<section class="uikit-section">
+<section class="uikit-section" data-core>
     <h2 id="toc-with-padding">With padding</h2>
     <p>The grid comes with 12 columns. Grid's container needs <code>box-sizing: border-box;</code>.</p>
 
@@ -102,31 +101,31 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
 </div>
 {% endhighlight %}
 
-        <div class="uikit-preview grid-preview">
+        <div class="uikit-preview grid-preview -core">
             <div class="row">
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
-                <div class="col-1 with-padding">col-1</div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
+                <div class="col-1 with-padding"><p><code>.col-1</code></p></div>
             </div>
 
             <div class="row">
-                <div class="col-8 with-padding">col-8</div>
-                <div class="col-4 with-padding">col-4</div>
+                <div class="col-8 with-padding"><p><code>.col-8</code></p></div>
+                <div class="col-4 with-padding"><p><code>.col-4</code></p></div>
             </div>
 
             <div class="row">
-                <div class="col-4 with-padding">col-4</div>
-                <div class="col-4 with-padding">col-4</div>
-                <div class="col-4 with-padding">col-4</div>
+                <div class="col-4 with-padding"><p><code>.col-4</code></p></div>
+                <div class="col-4 with-padding"><p><code>.col-4</code></p></div>
+                <div class="col-4 with-padding"><p><code>.col-4</code></p></div>
             </div>
 
             <br>
@@ -134,3 +133,12 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
         </div><!-- / preview -->
     </div><!-- / uikit-code uikit-has-preview -->
 </section>
+
+<hr/>
+
+{% include careers-grid/basicUsage.html %}
+{% include careers-grid/columns.html %}
+{% include careers-grid/columnsOffset.html %}
+{% include careers-grid/columnsNesting.html %}
+{% include careers-grid/columnsOrder.html %}
+{% include careers-grid/gutters.html %}

@@ -5,7 +5,9 @@
 //	to avoid some styling conflicts with stackoverflow/all.less
 //	file which is included below.
 // --------------------------------------------------------------
-@import "http://cdn.sstatic.net/Sites/stackoverflow/all.css";
+// @import "http://cdn.sstatic.net/careers/cso/all.min.css";					// 	Careers
+// @import "http://cdn.sstatic.net/careers/less/views/employers.min.css";		//	Careers -- Employers Only
+@import "http://cdn.sstatic.net/Sites/stackoverflow/all.css";				// 	Core
 
 @import 'vars.less';
 @import 'mixins.less';
@@ -14,6 +16,7 @@
 
 // TEMPORARY UNTIL FORMS ARE INTEGRATED
 @import "forms.less";
+@import "careers-grid";
 
 
 
@@ -174,7 +177,7 @@
 //	Main Container
 #uikit-content {
 	padding: 30px 40px 40px 240px+40px;
-	max-width: 1060px;
+	//max-width: 1060px;
 
 	> header {
 		margin-bottom: 20px;
@@ -599,19 +602,64 @@
 // ---------------------------------------------------------------
 //	PAGE: Grid
 // ---------------------------------------------------------------
-
+//  Used to showcase grid layouts and cells
+@grid-core-background:      @orange-050;
+@grid-core-border:          @orange-100;
+@grid-careers-background:   @blue-050;
+@grid-careers-border:       @blue-100;
 .grid-preview {
 	* { box-sizing: border-box; }
 
-	[class^="col-"] {
-		height: 50px;
-		background: @powder;
-		border: 1px solid darken(@powder, 7%);
+	.-row,
+    .row {
+        margin-bottom: 1em;
+        .-row,
+        .row {
+            border: 1px solid transparent;
+            margin-bottom: 0;
+            margin-top: -1px;
+            padding: 1.5em;
+        }
 
-		&:nth-child(even) {
-			background: darken(@powder, 5%);
-		}
-	}
+        > [class*="-col"]:last-of-type > p,
+        > [class*="col-"]:last-of-type > p { border-right: 1px solid transparent; }
+    }
+
+    p {
+        margin-bottom: 0;
+        padding: 1em;
+        border: 1px solid transparent;
+        border-right: none;
+
+        .col1 &,
+        .col-1 & {
+            padding: 0.5em 0.5em 0.75em;
+            code { font-size: 80%; }
+        }
+    }
+    code {
+        padding: 0;
+        color: @black-800;
+        background-color: transparent;
+    }
+    &.-core {
+        p,
+        .row {
+            background-color: @grid-core-background;
+            border-color: @grid-core-border;
+        }
+
+        .row > [class*="col-"]:last-of-type > p { border-right-color: @grid-core-border; }
+    }
+    &.-careers {
+        p,
+        .-row .-row {
+            background-color: @grid-careers-background;
+            border-color: @grid-careers-border;
+        }
+
+        .-row > [class*="-col"]:last-of-type > p { border-right-color: @grid-careers-border; }
+    }
 
 	&.uikit-preview .input-group {
 		width: 100%;
@@ -634,7 +682,6 @@
 		}
 	}
 }
-
 
 
 

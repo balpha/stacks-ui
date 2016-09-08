@@ -23,6 +23,8 @@
       url: components/forms/
     - title: Grid
       url: components/grid/
+    - title: Header Groups
+      url: components/header-groups/
     - title: Hero boxes
       url: components/hero-boxes/
     - title: Modals

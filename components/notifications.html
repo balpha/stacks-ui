@@ -129,14 +129,55 @@ description: Notifications call out important information to users. They should 
     </div>
 </section>
 
-
+<section class="uikit-section" data-careers>
+    <h2 id="toc-toast">Banners</h2>
+    <p>Used primarily in Jobs right now.</p>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<div class="jobs-banner">
+    ...
+    <div class="dismiss">...</div>
+</div>
+<div class="jobs-banner success">
+    ...
+    <div class="dismiss">...</div>
+</div>
+<div class="jobs-banner warning">
+    ...
+    <div class="dismiss">...</div>
+</div>
+<div class="jobs-banner error">
+    ...
+    <div class="dismiss">...</div>
+</div>
+{% endhighlight %}
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/notices-banners.png" />
+        </div>
+    </div>
+</section>
 
 <section class="uikit-section" data-core-careers>
     <h2 id="toc-toast">Toast Notifications</h2>
     <p>Toasts are used either to quickly alert a user about an action's status that they just took or to inform the user about new items that are available. They are ephemeral, lasting only long enough for the user to read them. Copy should be kept extremely short (1-2 sentences at the most) and easily understood.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-TBA
+<div class="animated-flash-message">
+    <div class="flash-content">...</div>
+    <div class="flash-dismiss">...</div>
+</div>
+<div class="animated-flash-message success">
+    <div class="flash-content">...</div>
+    <div class="flash-dismiss">...</div>
+</div>
+<div class="animated-flash-message warning">
+    <div class="flash-content">...</div>
+    <div class="flash-dismiss">...</div>
+</div>
+<div class="animated-flash-message error">
+    <div class="flash-content">...</div>
+    <div class="flash-dismiss">...</div>
+</div>
 {% endhighlight %}
         <div class="uikit-preview">
             <img src="../../assets/stickers/notices-toast.png" />

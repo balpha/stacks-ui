@@ -1,41 +1,62 @@
 ---
 layout: default
 title: Tabs
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reiciendis dolore reprehenderit fugiat natus, magni quos dicta? Eaque amet nostrum assumenda architecto fugiat dicta ut in voluptate, voluptatem corrupti ducimus!
+description: Tabs are a navigation compentent which focuses the user on a single container and hides related containers. These hidden containers can be accessed through the tab navigation. Tabs should be used to group similar data together.
 ---
 
-<section class="uikit-section">
+<section class="uikit-section" data-core>
     <h2 id="toc-tabs">Tabs</h2>
-
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="subheader">
     <div class="tabs">
-        <a href="#" class="youarehere">Lorem</a>
-        <a href="#">Ipsum</a>
-        <a href="#">Dolor</a>
-        <a href="#">Sir</a>
-        <a href="#">Amet</a>
+        <a href="#" class="youarehere">Profile</a>
+        <a href="#">Activity</a>
+        <a href="#">Developer Story</a>
+        <a href="#">CV</a>
     </div>
 </div>
 {% endhighlight %}
 
         <div class="uikit-preview">
-            <div class="subheader">
+            <div class="subheader" style="box-sizing:content-box;">
                 <div class="tabs">
-                    <a href="#" class="youarehere">Lorem</a>
-                    <a href="#">Ipsum</a>
-                    <a href="#">Dolor</a>
-                    <a href="#">Sir</a>
-                    <a href="#">Amet</a>
+                    <a href="#" class="youarehere">Profile</a>
+                    <a href="#">Activity</a>
+                    <a href="#">Developer Story</a>
+                    <a href="#">CV</a>
                 </div>
             </div>
-        </div><!-- / preview -->
-    </div><!-- / uikit-code uikit-has-preview -->
+        </div>
+    </div>
 </section>
 
-<section class="uikit-section">
-    <h2 id="toc-sub-tabs">Sub tabs</h2>
+<section class="uikit-section" data-careers>
+    <h2 id="toc-tabs">Tabs</h2>
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<ul class="tabNav">
+    <li class="-tab _selected">
+        <a href="#">Stack Overflow</a>
+    </li>
+    <li class="-tab">
+        <a href="#">Server Fault</a>
+    </li>
+    <li class="-tab">
+        <a href="#">Super User</a>
+    </li>
+</ul>
+<div class="tabNav-borderBottom"></div>
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/tabs.png" />
+        </div>
+    </div>
+</section>
+
+<section class="uikit-section" data-core>
+    <h2 id="toc-sub-tabs">Filters</h2>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
@@ -49,13 +70,36 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
 {% endhighlight %}
 
         <div class="uikit-preview">
-            <div class="subtabs">
+            <div class="subtabs" style="float:left;width:auto;">
                 <a href="#">all</a>
                 <a href="#">year</a>
                 <a href="#">quarter</a>
                 <a href="#">month</a>
                 <a class="youarehere" href="#">week</a>
             </div>
-        </div><!-- / preview -->
-    </div><!-- / uikit-code uikit-has-preview -->
+        </div>
+    </div>
+</section>
+
+<section class="uikit-section" data-careers>
+    <h2 id="toc-sub-tabs">Filters</h2>
+
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<div class="navTools">
+    <div class="-toggles">
+        <a href="#">7d</a>
+        <a href="#">30d</a>
+        <a href="#">3m</a>
+        <a href="#">6m</a>
+        <a href="#">12m</a>
+        <a class="-selected" href="#">Total</a>
+    </div>
+</div>
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/filters-reporting.png" />
+        </div>
+    </div>
 </section>

@@ -43,10 +43,6 @@
       url: components/pagination/
     - title: Popouts
       url: components/popouts/
-    - title: Popovers
-      url: components/popovers/
-    - title: Prompts
-      url: components/prompts/
     - title: Reporting
       url: components/reporting/
     - title: Tabs

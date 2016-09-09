@@ -11,8 +11,6 @@
 - title: Components
   url: components/
   sublinks:
-    - title: Announcements
-      url: components/announcements/
     - title: Badges
       url: components/badges/
     - title: Banners

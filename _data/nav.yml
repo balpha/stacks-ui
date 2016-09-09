@@ -17,6 +17,8 @@
       url: components/banners/
     - title: Buttons
       url: components/buttons/
+    - title: Cards
+      url: components/cards/
     - title: Dropdowns
       url: components/dropdowns/
     - title: Forms

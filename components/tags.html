@@ -1,66 +1,12 @@
 ---
 layout: default
 title: Tags
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reiciendis dolore reprehenderit fugiat natus, magni quos dicta? Eaque amet nostrum assumenda architecto fugiat dicta ut in voluptate, voluptatem corrupti ducimus!
+description: Element which a user can use to discover more or related information about the stated topic.
 ---
-<!-- this piece of styling is added inline in /tags page to create proper grid -->
-<style type="text/css">
-    .excerpt, .stats-row
-    {
-        padding-top: 4px;
-        padding-right: 8px;
-        font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;  
-        font-size: 12px;
-        color: #858C93;     
-    }
-    .excerpt
-    {
-      font-size: 12px;
-      height: 39px;
-      line-height: 14px;
-      overflow: hidden;
-      margin-bottom: 4px;
-    }
-    .stats-row, .stats-row a, .stats-row a:visited
-    {
-        font-size: 11px;
-        color: #3C3F44;
-    }
-    .stats-row .caption
-    {
-        color: #858C93;
-    }
-    .tags-browser
-    {
-        width: 25%;    
-    }
-    .tag-cell
-    {
-        width: 230px;
-        border-bottom: 1px dotted #E4E6E7;
-        padding-bottom: 12px;
-        padding-right: 6px;
-        padding-top: 6px;
-        vertical-align: top;
-    }
-    .tag-cell * {
-        box-sizing: content-box;
-    }
-    #tags-browser tr:last-child td { border-bottom: none; }
-    .edit-link
-    {
-        float: right;
-        margin-right: 18px;
-        display: none;
-        font-size: 11px;
-    }
-</style>
-
-
 <section class="uikit-section">
     <h2 id="toc-styles-types">Styles / Types</h2>
 
-    <section class="uikit-section">
+    <section class="uikit-section" data-core-careers>
         <h3 id="toc-regular">Regular</h3>
         <p>This is regular and the most common post-tag. It is also base for other types of post tags.</p>
 
@@ -76,7 +22,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
         </div><!-- / uikit-code uikit-has-preview -->
     </section>
 
-    <section class="uikit-section">
+    <section class="uikit-section" data-core>
         <h3 id="toc-disliked">Disliked</h3>
         <p>Purpose of disliked tags is exactly what you think it is. As an example, you can take a look at user's developer story, where are defined tags that user doesn't like (well, obviously...)</p>
 
@@ -90,7 +36,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
         </div><!-- / uikit-code uikit-has-preview -->
     </section>
 
-    <section class="uikit-section">
+    <section class="uikit-section" data-core>
         <h3 id="toc-favorite">Favorite</h3>
         <p>User may subscribe to tag which means that posts with particular tag will be highlighted on the list.</p>
 
@@ -104,9 +50,8 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
         </div><!-- / uikit-code uikit-has-preview -->
     </section>
 
-    <section class="uikit-section">
+    <section class="uikit-section" data-core>
         <h3 id="toc-moderator">Moderator</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tempora explicabo ex mollitia natus, id, odio dolores, aspernatur consequuntur.</p>
 
         <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
@@ -118,9 +63,8 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
         </div><!-- / uikit-code uikit-has-preview -->
     </section>
 
-    <section class="uikit-section">
+    <section class="uikit-section" data-core>
         <h3 id="toc-required">Required</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tempora explicabo ex mollitia natus, id, odio dolores, aspernatur consequuntur.</p>
 
         <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
@@ -132,9 +76,8 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
         </div><!-- / uikit-code uikit-has-preview -->
     </section>
 
-    <section class="uikit-section">
+    <section class="uikit-section" data-core>
         <h3 id="toc-company">Company</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tempora explicabo ex mollitia natus, id, odio dolores, aspernatur consequuntur.</p>
 
         <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
@@ -154,100 +97,4 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
         <h3 id="toc-chosen-plugin"><em>Chosen</em> Plugin</h3>
         <p>This is something undocumented yet but probably should especially we have special classes for this.</p>
     </section>
-</section>
-
-
-<section class="uikit-section">
-    <h2>Tags grid</h2>
-    <div class="uikit-code uikit-has-preview">
-
-{% highlight html linenos %}
-<table id="tags-browser"><tbody>
-    <tr>
-        <td class="tag-cell">
-            <a href="#" class="post-tag" title="show questions tagged 'javascript'" rel="tag">javascript</a><span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">1210787</span></span>
-                <div class="excerpt">JavaScript (not to be confused with Java or Jscript) is a dynamic, weakly-typed language used for client-side as well as server-side scripting. Use this tag for questions regarding ECMAScript and its …</div>
-            <div>
-                <div class="stats-row fl"><a href="#" title="1057 questions tagged javascript in the last 24 hours">1057 asked today</a>, <a href="#" title="5884 questions tagged javascript in the last 7 days">5884 this week</a></div>
-                <div class="cbt"></div>
-            </div>
-        </td>
-        ...
-    </tr>
-</tbody></table>
-{% endhighlight %}
-
-        <div class="uikit-preview">
-            <table id="tags-browser"><tbody>
-                <tr>
-                    <td class="tag-cell">
-                        <a href="#" class="post-tag" title="show questions tagged 'javascript'" rel="tag">javascript</a><span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">1210787</span></span>
-                            <div class="excerpt">JavaScript (not to be confused with Java or Jscript) is a dynamic, weakly-typed language used for client-side as well as server-side scripting. Use this tag for questions regarding ECMAScript and its …</div>
-                        <div>
-                            <div class="stats-row fl"><a href="#" title="1057 questions tagged javascript in the last 24 hours">1057 asked today</a>, <a href="#" title="5884 questions tagged javascript in the last 7 days">5884 this week</a></div>
-                            <div class="cbt"></div>
-                        </div>
-                    </td>
-                    <td class="tag-cell">
-                        <a href="#" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a><span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">1132127</span></span>
-                            <div class="excerpt">Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be used in conjunction with the Java Virtual Machine (JVM). "Java platform" is the name …</div>
-                        <div>
-                            <div class="stats-row fl"><a href="#" title="810 questions tagged java in the last 24 hours">810 asked today</a>, <a href="#" title="4404 questions tagged java in the last 7 days">4404 this week</a></div>
-                            <div class="cbt"></div>
-                        </div>
-                    </td>
-                    <td class="tag-cell">
-                        <a href="#" class="post-tag" title="show questions tagged 'c#'" rel="tag">c#</a><span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">999969</span></span>
-                            <div class="excerpt">a multi-paradigm, managed, type safe, object-oriented programming language. Questions should include code examples sufficient to reproduce the problem. Add extra tags relevant to the technology …</div>
-                        <div>
-                            <div class="stats-row fl"><a href="#" title="599 questions tagged c# in the last 24 hours">599 asked today</a>, <a href="#" title="3260 questions tagged c# in the last 7 days">3260 this week</a></div>
-                            <div class="cbt"></div>
-                        </div>
-                    </td>
-                    <td class="tag-cell">
-                        <a href="#" class="post-tag" title="show questions tagged 'php'" rel="tag">php</a><span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">972603</span></span>
-                            <div class="excerpt">a general-purpose programming language that is especially suited for web development.</div>
-                        <div>
-                            <div class="stats-row fl"><a href="#" title="675 questions tagged php in the last 24 hours">675 asked today</a>, <a href="#" title="3868 questions tagged php in the last 7 days">3868 this week</a></div>
-                            <div class="cbt"></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tag-cell">
-                        <a href="#" class="post-tag" title="show questions tagged 'android'" rel="tag"><img src="//i.stack.imgur.com/tKsDb.png" height="16" width="18" alt="" class="sponsor-tag-img">android</a><span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">889904</span></span>
-                            <div class="excerpt">Android, used for programming or developing digital devices (Smartphones, Tablets, Autos, TVs, Wear, Glass), is Google's mobile OS. Please use Android-specific tags such as android-intent, not intent,…</div>
-                        <div>
-                            <div class="stats-row fl"><a href="#" title="604 questions tagged android in the last 24 hours">604 asked today</a>, <a href="#" title="3872 questions tagged android in the last 7 days">3872 this week</a></div>
-                            <div class="cbt"></div>
-                        </div>
-                    </td>
-                    <td class="tag-cell">
-                        <a href="#" class="post-tag" title="show questions tagged 'jquery'" rel="tag">jquery</a><span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">771855</span></span>
-                            <div class="excerpt">a popular cross-browser JavaScript library that facilitates DOM (Document Object Model - HTML Structure) traversal, event handling, animations, and AJAX interactions by minimizing the discre…</div>
-                        <div>
-                            <div class="stats-row fl"><a href="#" title="436 questions tagged jquery in the last 24 hours">436 asked today</a>, <a href="#" title="2459 questions tagged jquery in the last 7 days">2459 this week</a></div>
-                            <div class="cbt"></div>
-                        </div>
-                    </td>
-                    <td class="tag-cell">
-                        <a href="#" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a><span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">626524</span></span>
-                            <div class="excerpt">a dynamic and strongly typed programming language designed to emphasize usability. Two similar but incompatible versions of Python are in widespread use (2 and 3). If you have a version-spec…</div>
-                        <div>
-                            <div class="stats-row fl"><a href="#" title="582 questions tagged python in the last 24 hours">582 asked today</a>, <a href="#" title="3344 questions tagged python in the last 7 days">3344 this week</a></div>
-                            <div class="cbt"></div>
-                        </div>
-                    </td>
-                    <td class="tag-cell">
-                        <a href="#" class="post-tag" title="show questions tagged 'html'" rel="tag">html</a><span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">574484</span></span>
-                            <div class="excerpt">the standard markup language used for structuring web pages and formatting content. HTML describes the structure of a website semantically along with cues for pres…</div>
-                        <div>
-                            <div class="stats-row fl"><a href="#" title="430 questions tagged html in the last 24 hours">430 asked today</a>, <a href="#" title="2577 questions tagged html in the last 7 days">2577 this week</a></div>
-                            <div class="cbt"></div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody></table>
-        </div>
-    </div>
 </section>

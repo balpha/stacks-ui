@@ -45,10 +45,10 @@
       url: components/popouts/
     - title: Popovers
       url: components/popovers/
-    - title: Progress Bars
-      url: components/progress-bars/
     - title: Prompts
       url: components/prompts/
+    - title: Reporting
+      url: components/reporting/
     - title: Tabs
       url: components/tabs/
     - title: Tables

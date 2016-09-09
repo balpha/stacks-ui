@@ -21,6 +21,8 @@
       url: components/dropdowns/
     - title: Forms
       url: components/forms/
+    - title: Gallery
+      url: components/gallery/
     - title: Grid
       url: components/grid/
     - title: Header Groups

@@ -5,51 +5,152 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
 ---
 
 <section class="uikit-section">
-
-    <section class="uikit-section">
-        <h3 id="">Loader in links</h3>
-        <div class="uikit-code uikit-has-preview">
+    <h2 id="">Loader in links</h2>
+    <div class="uikit-code uikit-has-preview">
 
 {% highlight html linenos %}
 <a href="#" class="loading">Loading</a>
 {% endhighlight %}
 
-            <div class="uikit-preview">
-                <a href="#" class="loading">Loading</a>
-            </div><!-- / preview -->
-        </div><!-- / uikit-code uikit-has-preview -->
-    </section>
+        <div class="uikit-preview">
+            <a href="#" class="loading">Loading</a>
+        </div><!-- / preview -->
+    </div><!-- / uikit-code uikit-has-preview -->
+</section>
 
-    <section class="uikit-section">
-        <h3 id="">User card</h3>
-        <div class="uikit-code uikit-has-preview">
+<section class="uikit-section">
+    <h2 id="">User card</h2>
+    <div class="uikit-code uikit-has-preview">
 
 {% highlight html linenos %}
 ...
 {% endhighlight %}
 
-            <div class="uikit-preview">
+        <div class="uikit-preview">
 
-                <div class="user-info ">
-                    <div class="user-action-time">
-                        asked <span title="2016-07-15 09:40:29Z" class="relativetime">3 hours ago</span>
-                    </div>
-                    <div class="user-gravatar32">
-                        <a href="#"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/9e88fcf2540becd3d8da32074ef26557?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
-                    </div>
-                    <div class="user-details">
-                        <a href="/users/4270211/akshat-arora">John Doe</a>
-                        <div class="-flair">
-                            <span class="reputation-score" title="reputation score " dir="ltr">395</span>
-                            <span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span>
-                            <span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span>
-                            <span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
-                        </div>
+            <div class="user-info ">
+                <div class="user-action-time">
+                    asked <span title="2016-07-15 09:40:29Z" class="relativetime">3 hours ago</span>
+                </div>
+                <div class="user-gravatar32">
+                    <a href="#"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/9e88fcf2540becd3d8da32074ef26557?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+                </div>
+                <div class="user-details">
+                    <a href="/users/4270211/akshat-arora">John Doe</a>
+                    <div class="-flair">
+                        <span class="reputation-score" title="reputation score " dir="ltr">395</span>
+                        <span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span>
+                        <span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span>
+                        <span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
                     </div>
                 </div>
+            </div>
+        </div><!-- / preview -->
+    </div><!-- / uikit-code uikit-has-preview -->
 
-            </div><!-- / preview -->
-        </div><!-- / uikit-code uikit-has-preview -->
+</section>
+
+
+<section class="uikit-section">
+    <h2>Layout switcher</h2>
+
+    <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+<nav class="question-list-layout">
+    <ul>
+        <li><a class="collapsed selected" href="#">collapsed</a></li>
+        <li><a class="expanded" href="#">expanded</a></li>
+    </ul>
+</nav>
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            
+            <style>
+                /* i had to add this to fix displaying in uikit. we should consider fixing it on prod */
+                .question-list-layout {
+                    position: static;
+                    margin: 0;
+                }
+            </style>
+
+            <nav class="question-list-layout">
+                <ul>
+                    <li><a class="collapsed selected" href="#">collapsed</a></li>
+                    <li><a class="expanded" href="#">expanded</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="uikit-section">
+    <h2>Voting</h2>
+
+    <section class="uikit-section">
+        <h3>Question</h3>
+
+        <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+<div class="votecell"> <!-- this used to be <TD> element -->
+    <div class="vote">
+        <input type="hidden" name="_id_" value="620993">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post " title="View upvote and downvote totals" style="cursor: pointer;">25</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+        <a class="star-off" href="#" title="Click to mark as favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>7</b></div>
+    </div>
+</div>
+{% endhighlight %}
+
+            <div class="uikit-preview">
+                <div class="votecell"> <!-- this used to be <TD> element -->
+                    <div class="vote">
+                        <input type="hidden" name="_id_" value="620993">
+                        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+                        <span itemprop="upvoteCount" class="vote-count-post " title="View upvote and downvote totals" style="cursor: pointer;">25</span>
+                        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+                        <a class="star-off" href="#" title="Click to mark as favorite question (click again to undo)">favorite</a>
+                        <div class="favoritecount"><b>7</b></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+
+    <section class="uikit-section">
+        <h3>Answer</h3>
+
+        <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+<div class="votecell"> <!-- this used to be <TD> element -->
+    <div class="vote">
+        <input type="hidden" name="_id_" value="621003">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post " title="View upvote and downvote totals" style="cursor: pointer;">12</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+    </div>
+</div>
+{% endhighlight %}
+
+            <div class="uikit-preview">
+                <div class="votecell"> <!-- this used to be <TD> element -->
+                    <div class="vote">
+                        <input type="hidden" name="_id_" value="621003">
+                        <a class="vote-up-off" title="This answer is useful">up vote</a>
+                        <span itemprop="upvoteCount" class="vote-count-post " title="View upvote and downvote totals" style="cursor: pointer;">12</span>
+                        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+                        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </section>

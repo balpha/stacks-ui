@@ -11,8 +11,8 @@
 - title: Components
   url: components/
   sublinks:
-    #- title: Avatars
-     # url: components/avatars/
+    - title: Announcements
+      url: components/announcements/
     - title: Badges
       url: components/badges/
     - title: Banners
@@ -23,12 +23,16 @@
       url: components/dropdowns/
     - title: Forms
       url: components/forms/
+    - title: Gallery
+      url: components/gallery/
     - title: Grid
       url: components/grid/
     - title: Header Groups
       url: components/header-groups/
     - title: Hero Boxes
       url: components/hero-boxes/
+    - title: Lists
+      url: components/lists/
     - title: Modals
       url: components/modals/
     - title: Navigation
@@ -37,10 +41,14 @@
       url: components/notifications/
     - title: Pagination
       url: components/pagination/
+    - title: Popouts
+      url: components/popouts/
     - title: Popovers
       url: components/popovers/
     - title: Progress Bars
       url: components/progress-bars/
+    - title: Prompts
+      url: components/prompts/
     - title: Tabs
       url: components/tabs/
     - title: Tables

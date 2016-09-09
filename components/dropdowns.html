@@ -26,6 +26,109 @@ description: Buttons are interactive elements that allow users to accomplish tas
     </div>
 </section>
 
+<section class="uikit-section" data-core>
+    <h2>New Nav Dropdowns</h2>
+    <p>Almost the same as regular action lists but yet kinda different :c</p>
+
+    <section class="uikit-section">
+        <h3>Filtering</h3>
+
+        <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+<div class="tab-parameters">
+    <nav class="tab-show">
+        <ul class="dropdown dno" style="display: block;">
+            <li>
+                <ul>
+                    <li class="selected"><a href="#">all</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>answer questions</span>
+                <ul>
+                    <li><a href="#">need answers</a></li>
+                    ...
+                </ul>
+            </li>
+            ...
+        </ul>
+    </nav>
+</div>
+{% endhighlight %}
+
+            <div class="uikit-preview" data-minheight="350">
+                <div class="tab-parameters">
+                    <nav class="tab-show">
+                        <ul class="dropdown dno" style="display: block;">
+                            <li>
+                                <ul>
+                                    <li class="selected"><a href="#">all</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>answer questions</span>
+                                <ul>
+                                    <li><a href="#">need answers</a></li>
+                                    <li><a href="#">no answer</a></li>
+                                    <li><a href="#">bounties</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>popular</span>
+                                <ul>
+                                    <li><a href="#">today</a></li>
+                                    <li><a href="#">week</a></li>
+                                    <li><a href="#">month</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section><!-- / uikit-section -->
+
+
+    <section class="uikit-section">
+        <h3>Sorting</h3>
+
+        <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+<div class="tab-parameters">
+    <nav class="tab-sort">
+        <a class="filter-switcher"></a>
+        <ul class="dropdown dno" style="display: block;">
+            <li><a href="/#">active</a></li>
+            <li class="selected"><a href="#">newest</a></li>
+            ...
+            <li class="disabled"><a>ending</a></li>
+            <li class="disabled"><a>bounty size</a></li>
+        </ul>
+    </nav>
+</div>
+{% endhighlight %}
+
+            <div class="uikit-preview"  data-minheight="300">
+                <div class="tab-parameters">
+                    <nav class="tab-sort">
+                        <ul class="dropdown dno" style="display: block;">
+                            <li><a href="/#">active</a></li>
+                            <li class="selected"><a href="#">newest</a></li>
+                            <li><a href="#">hot</a></li>
+                            <li><a href="#">votes</a></li>
+                            <li><a href="#">most linked</a></li>
+                            <li class="disabled"><a>ending</a></li>
+                            <li class="disabled"><a>bounty size</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div><!-- / uikit-preview -->
+        </div><!-- / uikit-code -->
+    </section><!-- / uikit-section -->
+</section>
+
 <section class="uikit-section" data-careers>
     <h2 id="toc-simple-dropdown-for-careers">Action List</h2>
     <p>Used only within cards on the Employer dashboard.</p>

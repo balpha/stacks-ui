@@ -128,3 +128,55 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
         <p><strong>Paweł:</strong> We have bunch of other aside navigations but I'm going to unify all across SE network, so I'm not documenting them because it doesn't make sense.</p>
     </section>
 </section>
+
+
+<section class="uikit-section">
+    <h2>Messages</h2>
+    <link href="//cdn.sstatic.net/careers/less/views/messaging.min.css?v=7021b5b64738" rel="stylesheet" type="text/css">
+    <div class="uikit-code uikit-has-preview">
+        
+{% highlight html linenos %}
+<nav class="nav-left-col ng-scope digit1">
+    <div class="ng-scope">
+        <a href="#" class="ng-binding is-active">
+            Inbox
+        </a>
+        <nav class="nav-nested ng-scope">
+            <a href="#" class="ng-binding ng-scope">Applications</a>
+            ...
+        </nav>
+    </div>
+    <div class="ng-scope">
+        <a href="#" class="ng-binding">Sent</a>
+    </div>
+    ...
+</nav>
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            <div style="width: 265px"><!-- / limiting area -->
+                <nav class="nav-left-col ng-scope digit1">
+                    <div class="ng-scope">
+                        <a href="#" class="ng-binding is-active">
+                            Inbox
+                        </a>
+                        <nav class="nav-nested ng-scope">
+                            <a href="#" class="ng-binding ng-scope">Applications</a>
+                            <a href="#" class="ng-binding ng-scope">Messages</a>
+                            <a href="#" class="ng-binding ng-scope">Questions</a>
+                        </nav>
+                    </div>
+                    <div class="ng-scope">
+                        <a href="#" class="ng-binding">Sent</a>
+                    </div>
+                    <div class="ng-scope">
+                        <a href="#" class="ng-binding">Archived</a>
+                    </div>
+                    <div class="ng-scope">
+                        <a href="#" class="ng-binding">Blocked employers</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>

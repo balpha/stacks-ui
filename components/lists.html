@@ -1,19 +1,21 @@
 ---
 layout: default
 title: Lists
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reiciendis dolore reprehenderit fugiat natus, magni quos dicta? Eaque amet nostrum assumenda architecto fugiat dicta ut in voluptate, voluptatem corrupti ducimus!
+description: Lists is a component that repeats the same unit multiple times.
 ---
+{% include lists/default-lists.html %}
 
 <section class="uikit-section">
-    <h2>Simple</h2>
+    <h2>Title Only</h2>
+    <p>Lists which list only the content's title.</p>
 
-    <section class="uikit-section">
-        <h3>Number + title</h3>
-
+    <section class="uikit-section" data-core>
+        <h3>Object + Title</h3>
+        <p>Used primarily within the sidebar. Examples would be related, linked, and Hot Network Questions.</p>
         <div class="uikit-code uikit-has-preview">
 
 {% highlight html linenos %}
-<div id="sidebar" class="show-votes" style="float:none;"> <!-- i had to add this container -->
+<div id="sidebar" class="show-votes">
     <div class="module sidebar-related">
         <h4 id="h-related">Related</h4>
         <div class="related js-gps-related-questions">
@@ -25,9 +27,9 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
             </div>
             <div class="spacer js-gps-track">
                 <a href="#" title="Vote score (upvotes - downvotes)">
-                <div class="answer-votes default">
-                    1
-                </div></a><a class="question-hyperlink" href="#">.NET Xml Serialization AnonymousType</a>
+                    <div class="answer-votes default">1</div>
+                </a>
+                <a class="question-hyperlink" href="#">.NET Xml Serialization AnonymousType</a>
             </div>
             ...
         </div>
@@ -93,73 +95,11 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
                 </div>
             </div>
         </div>
-    </section><!-- / uikit-section -->
-
-    <section class="uikit-section">
-        <h3>Icon + title</h3>
-
-        <div class="uikit-code uikit-has-preview">
-
-{% highlight html linenos %}
-<div id="sidebar" class="show-votes" style="float:none;"> <!-- i had to add this container -->
-    <div class="module" id="hot-network-questions">
-        <h4><a class="js-gps-track" href="#">Hot Network Questions</a></h4>
-        <ul>
-            <li>
-                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a class="js-gps-track" href="#">How to generate bold face numbers in LaTeX as they appear in Microsoft Word or PowerPoint?</a>
-            </li>
-            <li>
-                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a class="js-gps-track" href="#">How to show a difference between the usage of '*' , '+' and '?' in grep?</a>
-            </li>
-            ...
-        </ul>
-    </div>
-</div>
-{% endhighlight %}
-
-            <div class="uikit-preview">
-                <div id="sidebar" class="show-votes" style="float:none;"> <!-- i had to add this container -->
-                    <div class="module" id="hot-network-questions">
-                        <h4><a class="js-gps-track" href="#">Hot Network Questions</a></h4>
-                        <ul>
-                            <li>
-                                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a class="js-gps-track" href="#">How to generate bold face numbers in LaTeX as they appear in Microsoft Word or PowerPoint?</a>
-                            </li>
-                            <li>
-                                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a class="js-gps-track" href="#">How to show a difference between the usage of '*' , '+' and '?' in grep?</a>
-                            </li>
-                            <li>
-                                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a class="js-gps-track" href="#">Is there a word for telling someone all your thoughts?</a>
-                            </li>
-                            <li>
-                                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a class="js-gps-track" href="#">What does a number in brackets after another number mean? I.e. 21(1)cm-1</a>
-                            </li>
-                            <li>
-                                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a class="js-gps-track" href="#">How to overcome a mistake you make in your proof and regain motivation?</a>
-                            </li>
-                            <li>
-                                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a class="js-gps-track" href="#">Liar and the Truth teller with 6 inhabitants</a>
-                            </li>
-                            <li>
-                                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a class="js-gps-track" href="#">Is there a "positive" definition for irrational numbers?</a>
-                            </li>
-                            <li>
-                                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a class="js-gps-track" href="#">Assigned to a job I know nothing about it - is there an idiom for that idea?</a>
-                            </li>
-                            <li>
-                                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a class="js-gps-track" href="#">Learning new topic: read literature from oldest to newest or the other way around?</a>
-                            </li>
-                            <li>
-                                <div class="favicon favicon-writers" title="Writers Stack Exchange"></div><a class="js-gps-track" href="#">How to describe an angry voice in dialogue?</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="uikit-section" data-careers>
+        <h3>Bulleted</h3>
+        <p>Used primarily within Jobs.</p>
         <div class="uikit-code uikit-has-preview">
             
 {% highlight html linenos %}
@@ -184,5 +124,124 @@ description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel reici
                 <img src="http://i.imgur.com/oesCQd5.png" alt="">
             </div>
         </div>
-    </section><!-- / uikit-section -->
-</section><!-- / uikit-section -->
+    </section>
+</section>
+
+<section class="uikit-section" data-careers>
+    <h2>Account Management List</h2>
+    <p>Used only within Talent.</p>
+    <div class="uikit-code uikit-has-preview">
+            
+{% highlight html linenos %}
+<ul class="list _border">
+    <li class="-item -row">
+        <div class="-col8">
+            <h3 class="-title">
+                Tom Harvey
+                <span class="badge -owner _inline">Owner</span>
+                <span class="badge -admin _inline">Admin</span>
+            </h3>
+            <p class="-meta">tharvey@stackoverflow.com</p>
+        </div>
+        <div class="-col4 _textRight">
+            <a class="dialog btn-clear _small" href="/jobs/642871/assign/123060">Change Owner</a>
+        </div>
+    </li>
+    <li class="-item -row">...</li>
+    ...
+</ul>
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/lists-accounts.png" />
+        </div>
+    </div>
+</section>
+
+{% include lists/question-list.html %}
+
+<section class="uikit-section" data-careers>
+    <h2>Job Listings & Company Pages</h2>
+    <p>Used only within Jobs and somewhat on Company Pages.</p>
+    <div class="uikit-code uikit-has-preview">
+            
+{% highlight html linenos %}
+<div class="listResults">
+    <div class="-item -job">
+        <span class="fav-toggle"></span>
+        <div class="-title">
+            <h1><a class="job-link" href="" title="DevOps Engineer">DevOps Engineer</a></h1>
+            <span class="salary">$90,000 - 110,000 / Provides Equity</span>
+        </div>
+        <ul class="metadata primary">
+            <li class="employer">Company 123</li>
+            <li class="location">Philadelphia, PA</li>
+            <li class="jobSummary remote">Remote</li>
+        </ul>
+        <p class="text _muted _small description">Company 123 is a rapidly growing technology startup that provides a platform to…</p>
+        <div class="tags">
+            <p><a class="post-tag job-link no-tag-menu" href="/jobs/tag/devops">devops</a></p>
+        </div>
+        <p class="text _small posted bottom">2 weeks ago</p>
+    </div>
+    <div class="-item -job">
+        ...
+    </div>
+    ...
+</div>
+<div class="list companies">
+    <div>
+        <div class="images">
+            <a href="/jobs/companies/monarch-airlines?c=wW0P6BZVeAU6b6so" class="top"><img alt="" src="//i.stack.imgur.com/pNffFm.jpg"></a>
+            <div class="logo">
+                <a href="/jobs/companies/monarch-airlines?c=wW0P6BZVeAU6b6so"><img alt="" src="//i.stack.imgur.com/fVgXB.jpg"></a>
+            </div>
+        </div>
+        <div class="text">
+            <p><a class="title" href="">Monarch Airlines</a></p>
+            <p class="location">Luton</p>
+            <p class="industries">Aviation, Travel &amp; Tourism</p>
+            <p class="tagline" title="Above and Beyond ....">Above and Beyond ....</p>
+            <p class="tags"><span class="jobs"><a href="/jobs/companies/monarch-airlines?c=wW0P6BZVeAU6b6so#jobs">1 job</a></span></p>
+        </div>
+    </div>
+    <div>...</div>
+</div>
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/lists-job-listings.png" />
+            <img src="../../assets/stickers/lists-company-pages.png" />
+        </div>
+    </div>
+</section>
+
+<section class="uikit-section" data-careers>
+    <h2>Candidate Lists</h2>
+    <p>Used only within Candidate Search.</p>
+    <div class="uikit-code uikit-has-preview">
+            
+{% highlight html linenos %}
+To be added
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/lists-candidates.png" />
+        </div>
+    </div>
+</section>
+
+<section class="uikit-section" data-core>
+    <h2>Topic List</h2>
+    <p>Used only within Documentation.</p>
+    <div class="uikit-code uikit-has-preview">
+            
+{% highlight html linenos %}
+To be added
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/lists-documentation.png" />
+        </div>
+    </div>
+</section>

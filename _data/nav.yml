@@ -11,8 +11,8 @@
 - title: Components
   url: components/
   sublinks:
-    #- title: Avatars
-     # url: components/avatars/
+    - title: Announcements
+      url: components/announcements/
     - title: Badges
       url: components/badges/
     - title: Buttons
@@ -35,10 +35,14 @@
       url: components/notifications/
     - title: Pagination
       url: components/pagination/
+    - title: Popouts
+      url: components/popouts/
     - title: Popovers
       url: components/popovers/
     - title: Progress bars
       url: components/progress-bars/
+    - title: Prompts
+      url: components/prompts/
     - title: Tables
       url: components/tables/
     - title: Tabs

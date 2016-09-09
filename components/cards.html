@@ -3,10 +3,152 @@ layout: default
 title: Cards
 description: Visual containers for related content.
 ---
-{% include lists/default-lists.html %}
+
+<section class="uikit-section" data-core>
+    <h2>Users</h2>
+    <p>Different cards used for users.</p>
+
+    <section class="uikit-section">
+        <h3>Profile Card</h3>
+        <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+<div id="avatar-card" class="avatar-card">
+    <div class="avatar">
+        <a href="http://stackoverflow.com/users/13249/nick-craver">
+            <div class="gravatar-wrapper-164"><img src="https://i.stack.imgur.com/nGCYr.jpg?s=328&amp;g=1" alt="" width="164" height="164" class="avatar-user"></div>
+        </a>
+    </div>
+    <div class="reputation" title="reputation">426,788 <span class="label-uppercase">reputation</span>
+    </div>
+    <div class="badges">
+        <span class="badge1-alternate" title="82 gold badges"><span class="badge1"></span><span class="badgecount">82</span></span> <span class="badge2-alternate" title="1051 silver badges"><span class="badge2"></span><span class="badgecount">1051</span></span> <span class="badge3-alternate" title="1002 bronze badges"><span class="badge3"></span><span class="badgecount">1002</span></span>
+    </div>
+</div>
+{% endhighlight %}
+            <div class="uikit-preview">
+                <div id="avatar-card" class="avatar-card" style="width:184px;">
+                    <div class="avatar">
+                        <a href="http://stackoverflow.com/users/13249/nick-craver">
+                            <div class="gravatar-wrapper-164"><img src="https://i.stack.imgur.com/nGCYr.jpg?s=328&amp;g=1" alt="" width="164" height="164" class="avatar-user"></div>
+                        </a>
+                    </div>
+                    <div class="reputation" title="reputation">426,788 <span class="label-uppercase">reputation</span>
+                    </div>
+                    <div class="badges">
+                        <span class="badge1-alternate" title="82 gold badges"><span class="badge1"></span><span class="badgecount">82</span></span> <span class="badge2-alternate" title="1051 silver badges"><span class="badge2"></span><span class="badgecount">1051</span></span> <span class="badge3-alternate" title="1002 bronze badges"><span class="badge3"></span><span class="badgecount">1002</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="uikit-section">
+        <h3>Post Signature</h3>
+        <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+<td class="post-signature owner">
+    <div class="user-info ">
+        <div class="user-action-time">
+            asked <span title="2013-11-14 16:13:17Z" class="relativetime">Nov 14 '13 at 16:13</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="/users/2101894/ziyu-zhou"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/mvSo3.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="/users/2101894/ziyu-zhou">Ziyu Zhou</a>
+            <div class="-flair">
+                <span class="reputation-score" title="reputation score " dir="ltr">426</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+            </div>
+        </div>
+    </div>
+</td>
+...
+<td class="post-signature">
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+            answered <span title="2013-11-21 14:38:00Z" class="relativetime">Nov 21 '13 at 14:38</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="/users/2640230/hynes"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/yUW66.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="/users/2640230/hynes">Hynes</a><span class="mod-flair" title="moderator">♦</span>
+            <div class="-flair">
+                <span class="reputation-score" title="reputation score " dir="ltr">1,760</span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="22 bronze badges"><span class="badge3"></span><span class="badgecount">22</span></span>
+            </div>
+        </div>
+    </div>
+</td>
+{% endhighlight %}
+            <div class="uikit-preview">
+                <div class="post-signature owner" style="float:left; margin-right:20px;">
+                    <div class="user-info ">
+                        <div class="user-action-time">
+                            asked <span title="2013-11-14 16:13:17Z" class="relativetime">Nov 14 '13 at 16:13</span>
+                        </div>
+                        <div class="user-gravatar32">
+                            <a href="/users/2101894/ziyu-zhou"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/mvSo3.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+                        </div>
+                        <div class="user-details">
+                            <a href="/users/2101894/ziyu-zhou">Ziyu Zhou</a>
+                            <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">426</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-signature" style="float:left;">
+                    <div class="user-info user-hover">
+                        <div class="user-action-time">
+                            answered <span title="2013-11-21 14:38:00Z" class="relativetime">Nov 21 '13 at 14:38</span>
+                        </div>
+                        <div class="user-gravatar32">
+                            <a href="/users/2640230/hynes"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/yUW66.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+                        </div>
+                        <div class="user-details">
+                            <a href="/users/2640230/hynes">Hynes</a><span class="mod-flair" title="moderator">♦</span>
+                            <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">1,760</span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="22 bronze badges"><span class="badge3"></span><span class="badgecount">22</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<section class="uikit-section" data-core>
+    <h2>Tags</h2>
+    <p>Used for tags.</p>
+    <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+To be added
+{% endhighlight %}
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/tags-core.png" />
+        </div>
+    </div>
+</section>
+
+<section class="uikit-section" data-core>
+    <h2>Documentation</h2>
+    <p>Used for the documentation topic list.</p>
+    <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+To be added
+{% endhighlight %}
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/card-documentation.png" />
+        </div>
+    </div>
+</section>
 
 <section class="uikit-section" data-careers>
-    <h2>Company Pages Cards</h2>
+    <h2>Company Pages</h2>
     <p>These are all separate cards to represent the same company page in different views.</p>
     <div class="uikit-code uikit-has-preview">
 
@@ -14,9 +156,37 @@ description: Visual containers for related content.
 To be added
 {% endhighlight %}
         <div class="uikit-preview">
-            <img src="../../assets/stickers/card-cp-dashboard.png" />
-            <img src="../../assets/stickers/card-cp-overview.png" />
+            <img src="../../assets/stickers/card-cp-overview.png" /><br/>
+            <img src="../../assets/stickers/card-cp-dashboard.png" /><br/>
             <img src="../../assets/stickers/card-cp-spotlight.png" />
+        </div>
+    </div>
+</section>
+
+<section class="uikit-section" data-careers>
+    <h2>Job Listings</h2>
+    <p>Used for job listings within Talent. The various card states are shown below.</p>
+    <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+To be added
+{% endhighlight %}
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/card-job-listings.png" />
+        </div>
+    </div>
+</section>
+
+<section class="uikit-section" data-careers>
+    <h2>Recommended Candidates</h2>
+    <p>Used for Recommended Candidates within Talent. Examples shown below are normal, the candidate being flagged as "Active", and a hover effect.</p>
+    <div class="uikit-code uikit-has-preview">
+
+{% highlight html linenos %}
+To be added
+{% endhighlight %}
+        <div class="uikit-preview">
+            <img src="../../assets/stickers/card-recommended-candidates.png" />
         </div>
     </div>
 </section>

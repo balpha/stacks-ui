@@ -434,7 +434,10 @@ textarea.f-input {
     //  Input Group Clusters
     &._clusters {
         .g-row + .g-row { margin-top: @su-8; }
-        .input-group .f-label { font-weight: 400; }
+        .input-group {
+            margin-bottom: 0;
+            .f-label { font-weight: 400; }
+        }
     }
 
     //  Input prepends, appends, and connectors use the same grayed out box

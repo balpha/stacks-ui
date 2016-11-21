@@ -4,75 +4,73 @@ title: Forms
 description: These are the basic form input styles currently. The styles below are applied by default and you can modify their appearance with the classes outlined below.
 ---
 <!-- section -->
-<section class="uikit-section" data-core-careers>
+<section id="form-labels" class="uikit-section" data-core-careers>
     <h2 class="toc-basic-styles">Form Labels</h2>
     <p>Labels should be written in sentence case. For usability reasons, if a label is connected with an input, the <code>for</code> attribute should be filled in. The <code>for</code> attribute references the input's <code>id</code> value. Additionally if you would like to add required or optional labels, whenever possible use the full word label instead of asterisks as this allows it to be more flexible for translations.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
-    <label for="example-item">Question title</label>
-    <label for="example-item">Question title <span class="required">(Required)</span></label>
-    <label for="example-item">How was your breakfast? <span class="optional">(Optional)</span></label>
+    <label for="example-item" class="f-label">Question title</label>
+    <label for="example-item" class="f-label">Question title <span class="is-required">(Required)</span></label>
+    <label for="example-item" class="f-label">How was your breakfast? <span class="is-optional">(Optional)</span></label>
 </form>
 {% endhighlight %}
         <div class="uikit-preview">
             <form>
-                <div class="input-group"><label for="example-item">Question title</label></div>
-                <div class="input-group"><label for="example-item">Question title <span class="required">(Required)</span></label></div>
-                <div class="input-group"><label for="example-item">How was your breakfast? <span class="optional">(Optional)</span></label></div>
+                <div class="input-group"><label for="example-item" class="f-label">Question title</label></div>
+                <div class="input-group"><label for="example-item" class="f-label">Question title <span class="is-required">(Required)</span></label></div>
+                <div class="input-group"><label for="example-item" class="f-label">How was your breakfast? <span class="is-optional">(Optional)</span></label></div>
             </form>
         </div>
     </div>
 
     <h3>Sizes & Styles</h3>
-    <p>Labels are available in four sizes: Small (13px), Normal (14px), Medium (18px), and Large (22px). Labels use the <code>@black-700</code> color by default. For a muted color, use the <code>._muted</code> class.</p>
+    <p>Labels are available in four sizes: Small (12px), Normal (14px), Medium (18px), and Large (22px).</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
-    <label for="example-item" class="_small">Question title</label>
-    <label for="example-item">Question title</label>
-    <label for="example-item" class="_muted">Question title</label>
-    <label for="example-item" class="_medium">Question title</label>
-    <label for="example-item" class="_large">Question title</label>
+    <label for="example-item" class="f-label _small">Question title</label>
+    <label for="example-item" class="f-label">Question title</label>
+    <label for="example-item" class="f-label _medium">Question title</label>
+    <label for="example-item" class="f-label _large">Question title</label>
 </form>
 {% endhighlight %}
         <div class="uikit-preview">
             <form>
-                <div class="input-group"><label for="example-item" class="_small">Question title</label></div>
-                <div class="input-group"><label for="example-item">Question title</label></div>
-                <div class="input-group"><label for="example-item" class="_muted">Question title</label></div>
-                <div class="input-group"><label for="example-item" class="_medium">Question title</label></div>
-                <div class="input-group"><label for="example-item" class="_large">Question title</label></div>
+                <div class="input-group"><label for="example-item" class="f-label _small">Question title</label></div>
+                <div class="input-group"><label for="example-item" class="f-label">Question title</label></div>
+                <div class="input-group"><label for="example-item" class="f-label _medium">Question title</label></div>
+                <div class="input-group"><label for="example-item" class="f-label _large">Question title</label></div>
             </form>
         </div>
     </div>
 </section>
 
-<section class="uikit-section" data-core-careers>
+<section id="inputs" class="uikit-section" data-core-careers>
     <h2 class="toc-basic-styles">Text Inputs</h2>
-    <p>Text inputs are (almost) always paired with a label to assist users. Placeholder text should be used <em>as a content prompt only, <strong>not as a label.</strong></em></p>
+    <p>Text inputs should always be paired with a label. Placeholder text should be used <em>as a content prompt only, <strong>not as a label.</strong></em></p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
     <div class="input-group">
-        <label for="example-item">Question title</label>
-        <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+        <label for="example-item" class="f-label">Question title</label>
+        <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" class="f-input" />
     </div>
     <div class="input-group">
-        <label for="example-item">Tags</label>
-        <input type="text" id="example-item" placeholder="e.g. css, c#, less" disabled="" />
+        <label for="example-item" class="f-label">Tags</label>
+        <input type="text" id="example-item" placeholder="e.g. css, c#, less"  class="f-input is-disabled" disabled />
     </div>
 </form>
 {% endhighlight %}
         <div class="uikit-preview">
             <form>
                 <div class="input-group">
-                    <label for="example-item">Question title</label>
-                    <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+                    <label for="example-item" class="f-label">Question title</label>
+                    <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" class="f-input" />
                 </div>
                 <div class="input-group">
-                    <label for="example-item">Tags</label>
-                    <input type="text" id="example-item" placeholder="e.g. css, c#, less" disabled="" />
+                    <label for="example-item" class="f-label">Tags</label>
+                    <input type="text" id="example-item" placeholder="e.g. css, c#, less"  class="f-input is-disabled" disabled />
                 </div>
             </form>
         </div>
@@ -84,77 +82,77 @@ description: These are the basic form input styles currently. The styles below a
 {% highlight html linenos %}
 <form>
     <div class="input-group">
-        <label for="example-item">Question body</label>
-        <textarea id="example-item" placeholder="e.g. The Stack Overflow glyph used to have 6 bars, but now…"></textarea>
+        <label for="example-item" class="f-label">Question body</label>
+        <textarea id="example-item" class="f-textarea" placeholder="e.g. The Stack Overflow glyph used to have 6 bars, but now…"></textarea>
     </div>
 </form>
 {% endhighlight %}
         <div class="uikit-preview">
             <form>
                 <div class="input-group">
-                    <label for="example-item">Question body</label>
-                    <textarea id="example-item" placeholder="e.g. The Stack Overflow glyph used to have 6 bars, but now…"></textarea>
+                    <label for="example-item" class="f-label">Question body</label>
+                    <textarea id="example-item" class="f-input" placeholder="e.g. The Stack Overflow glyph used to have 6 bars, but now…"></textarea>
                 </div>
             </form>
         </div>
     </div>
 
-    <h3>Input States</h3>
+    <h3 id="input-states">Input States</h3>
     <p>In cases when you would like validation states attached to an input, you will need to wrap the input with <code>.-row</code> div so the icon can be placed correctly.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
-    <div class="input-group _warning">
-        <label for="example-warning">Username</label>
-        <div class="-row">
-            <input type="text" name="" id="example-warning" />
+    <div class="input-group has-warning">
+        <label for="example-warning" class="f-label">Username</label>
+        <div class="g-row">
+            <input type="text" name="" id="example-warning" class="f-input" />
             <span class="-icon"></span>
         </div>
-        <p class="-message">Caps lock is on!</p>
+        <p class="message">Caps lock is on!</p>
     </div>
-    <div class="input-group _error">
-        <label for="example-error">Username</label>
-        <div class="-row">
-            <input type="text" name="" id="example-error" />
+    <div class="input-group has-error">
+        <label for="example-error" class="f-label">Username</label>
+        <div class="g-row">
+            <input type="text" name="" id="example-error" class="f-input" />
             <span class="-icon"></span>
         </div>
-        <p class="-message">That username is already taken.</p>
+        <p class="message">That username is already taken.</p>
     </div>
-    <div class="input-group _success">
-        <label for="example-success">Username</label>
-        <div class="-row">
-            <input type="text" name="" id="example-success" />
+    <div class="input-group is-success">
+        <label for="example-success" class="f-label">Username</label>
+        <div class="g-row">
+            <input type="text" name="" id="example-success" class="f-input" />
             <span class="-icon"></span>
         </div>
-        <p class="-message">Congrats! That name is available.</p>
+        <p class="message">Congrats! That name is available.</p>
     </div>
 </form>
 {% endhighlight %}
         <div class="uikit-preview">
             <form>
-                <div class="input-group _warning">
-                    <label for="example-warning">Username</label>
-                    <div class="-row">
-                        <input type="text" name="" id="example-warning" />
+                <div class="input-group has-warning">
+                    <label for="example-warning" class="f-label">Username</label>
+                    <div class="g-row">
+                        <input type="text" name="" id="example-warning" class="f-input" />
                         <span class="-icon"></span>
                     </div>
-                    <p class="-message">Caps lock is on!</p>
+                    <p class="message">Caps lock is on!</p>
                 </div>
-                <div class="input-group _error">
-                    <label for="example-error">Username</label>
-                    <div class="-row">
-                        <input type="text" name="" id="example-error" />
+                <div class="input-group has-error">
+                    <label for="example-error" class="f-label">Username</label>
+                    <div class="g-row">
+                        <input type="text" name="" id="example-error" class="f-input" />
                         <span class="-icon"></span>
                     </div>
-                    <p class="-message">That username is already taken.</p>
+                    <p class="message">That username is already taken.</p>
                 </div>
-                <div class="input-group _success">
-                    <label for="example-success">Username</label>
-                    <div class="-row">
-                        <input type="text" name="" id="example-success" />
+                <div class="input-group is-success">
+                    <label for="example-success" class="f-label">Username</label>
+                    <div class="g-row">
+                        <input type="text" name="" id="example-success" class="f-input" />
                         <span class="-icon"></span>
                     </div>
-                    <p class="-message">Congrats! That name is available.</p>
+                    <p class="message">Congrats! That name is available.</p>
                 </div>
             </form>
         </div>
@@ -162,49 +160,49 @@ description: These are the basic form input styles currently. The styles below a
 </section>
 
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-basic-styles">Helper Text</h2>
+    <h2 id="helper-text" class="toc-basic-styles">Helper Text</h2>
     <p>When a label or input needs further copy to explain itself sufficiently, use helper text. This text should be placed next to the item it is providing further detail about.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
     <div class="input-group">
-        <label for="example-item">Question title</label>
-        <p class="-help"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
-        <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
-        <p class="-help">Questions which can have definitive answers are much more likely to answered.</p>
+        <label for="example-item" class="f-label">Question title</label>
+        <p class="t-help"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
+        <input type="text" id="example-item" class="f-input" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+        <p class="t-help">Questions which can have definitive answers are much more likely to answered.</p>
     </div>
 </form>
 {% endhighlight %}
         <div class="uikit-preview">
             <form>
                 <div class="input-group">
-                    <label for="example-item">Question title</label>
-                    <p class="-help"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
-                    <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
-                    <p class="-help">Questions which can have definitive answers are much more likely to answered.</p>
+                    <label for="example-item" class="f-label">Question title</label>
+                    <p class="t-help"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
+                    <input type="text" id="example-item" class="f-input" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+                    <p class="t-help">Questions which can have definitive answers are much more likely to answered.</p>
                 </div>
             </form>
         </div>
     </div>
 
-    <h3>Helper Text Sizes</h3>
+    <h3 id="helper-text-sizes">Helper Text Sizes</h3>
     <p>To make helper text the same size as labels, use the <code>._medium</code> class.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
     <div class="input-group">
-        <label for="example-item">Question title</label>
-        <p class="-help _medium"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
-        <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+        <label for="example-item" class="f-label">Question title</label>
+        <p class="t-help _medium"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
+        <input type="text" id="example-item" class="f-input" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
     </div>
 </form>
 {% endhighlight %}
         <div class="uikit-preview">
             <form>
                 <div class="input-group">
-                    <label for="example-item">Question title</label>
-                    <p class="-help _medium"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
-                    <input type="text" id="example-item" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
+                    <label for="example-item" class="f-label">Question title</label>
+                    <p class="t-help _medium"><strong>NOTE:</strong> Opinion-related questions will must likely be closed.</p>
+                    <input type="text" id="example-item" class="f-input" placeholder="e.g. Why are there 5 bars in the Stack Overflow glyph?" />
                 </div>
             </form>
         </div>
@@ -212,46 +210,14 @@ description: These are the basic form input styles currently. The styles below a
 </section>
 
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-specific-styles">Selects</h2>
-    <p>By default we style all attributes available to us via CSS without reseting the appearance, which is basically nothing except providing correct margins and focused states.</p>
-
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<form>
-    <div class="input-group">
-        <label for="select-menu">What fruit would you like for lunch?</label>
-        <select id="select-menu">
-            <option name="" id="" selected="selected">Please select one…</option>
-            <option name="" id="">Apples</option>
-            <option name="" id="">Oranges</option>
-            <option name="" id="">Bananas</option>
-        </select>
-    </div>
-</form>
-{% endhighlight %}
-        <div class="uikit-preview">
-            <form>
-                <div class="input-group">
-                    <label for="select-menu">What fruit would you like for lunch?</label>
-                    <select id="select-menu">
-                        <option name="" id="" selected="selected">Please select one…</option>
-                        <option name="" id="">Apples</option>
-                        <option name="" id="">Oranges</option>
-                        <option name="" id="">Bananas</option>
-                    </select>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <h3>Select (Styled, <strong>Preferred</strong>)</h3>
+    <h2 id="selects" class="toc-specific-styles">Selects</h2>
     <p>The preferred select styling is applied with the <code>.select</code> class on a wrapping <code>.-row</code> div.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
     <div class="input-group">
-        <label for="select-menu-2">How are you traveling to New York, New York?</label>
-        <div class="-row select">
+        <label for="select-menu-2" class="f-label">How are you traveling to New York, New York?</label>
+        <div class="g-row f-select">
             <select id="select-menu-2">
                 <option name="" id="" selected="selected">Please select one…</option>
                 <option name="" id="">Walking</option>
@@ -264,7 +230,7 @@ description: These are the basic form input styles currently. The styles below a
     </div>
     <div class="input-group">
         <label for="select-menu-3">Where are you staying?</label>
-        <div class="-row select">
+        <div class="g-row f-select is-disabled">
             <select id="select-menu-3" disabled>
                 <option name="" id="" selected="selected">Please select one…</option>
                 <option name="" id="">Manhattan</option>
@@ -280,8 +246,8 @@ description: These are the basic form input styles currently. The styles below a
         <div class="uikit-preview">
             <form>
                 <div class="input-group">
-                    <label for="select-menu-2">How are you traveling to New York, New York?</label>
-                    <div class="-row select">
+                    <label for="select-menu-2" class="f-label">How are you traveling to New York, New York?</label>
+                    <div class="g-row f-select">
                         <select id="select-menu-2">
                             <option name="" id="" selected="selected">Please select one…</option>
                             <option name="" id="">Walking</option>
@@ -293,8 +259,8 @@ description: These are the basic form input styles currently. The styles below a
                     </div>
                 </div>
                 <div class="input-group">
-                    <label for="select-menu-3">Where are you staying?</label>
-                    <div class="-row select _disabled">
+                    <label for="select-menu-3" class="f-label">Where are you staying?</label>
+                    <div class="g-row f-select is-disabled">
                         <select id="select-menu-3" disabled>
                             <option name="" id="" selected="selected">Please select one…</option>
                             <option name="" id="">Manhattan</option>
@@ -309,15 +275,15 @@ description: These are the basic form input styles currently. The styles below a
         </div>
     </div>
 
-    <h3>Select Menu Groups</h3>
-    <p>You can also connect select menus together by wrapping them within the wrapping <code>.-row</code> div.</p>
+    <h3 id="select-groups">Select Menu Groups</h3>
+    <p>You can also connect select menus together by wrapping them within the wrapping <code>.g-row</code> div.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
     <div class="input-group">
-        <label for="from-menu">How long is your stay?</label>
-        <div class="-row">
-            <div class="-item select">
+        <label for="from-menu" class="f-label">How long is your stay?</label>
+        <div class="g-row">
+            <div class="g-col f-select">
                 <select id="from-menu">
                     <option name="" id="" selected="selected">Please select one…</option>
                     <option name="" id="">Today</option>
@@ -325,8 +291,8 @@ description: These are the basic form input styles currently. The styles below a
                     <option name="" id="">Tomorrow</option>
                 </select>
             </div>
-            <div class="-fill _clean">to</div>
-            <div class="-item select">
+            <div class="g-col -fill _clean">to</div>
+            <div class="g-col f-select">
                 <select id="to-menu">
                     <option name="" id="" selected="selected">Please select one…</option>
                     <option name="" id="">Next Week</option>
@@ -341,9 +307,9 @@ description: These are the basic form input styles currently. The styles below a
         <div class="uikit-preview">
             <form>
                 <div class="input-group">
-                    <label for="select-menu">How long is your stay?</label>
-                    <div class="-row">
-                        <div class="-item select">
+                    <label for="from-menu" class="f-label">How long is your stay?</label>
+                    <div class="g-row">
+                        <div class="g-col f-select">
                             <select id="from-menu">
                                 <option name="" id="" selected="selected">Please select one…</option>
                                 <option name="" id="">Today</option>
@@ -351,8 +317,8 @@ description: These are the basic form input styles currently. The styles below a
                                 <option name="" id="">Tomorrow</option>
                             </select>
                         </div>
-                        <div class="-fill _clean">to</div>
-                        <div class="-item select">
+                        <div class="g-col -fill _clean">to</div>
+                        <div class="g-col f-select">
                             <select id="to-menu">
                                 <option name="" id="" selected="selected">Please select one…</option>
                                 <option name="" id="">Next Week</option>
@@ -362,96 +328,11 @@ description: These are the basic form input styles currently. The styles below a
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-    </div>
-
-    <h3>Grouped Select Menus</h3>
-    <p>To visually group select menus together, wrap them in a <code>.-group</code> div.</p>
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<form>
-    <div class="input-group">
-        <label for="from-job-month">How long have you worked at your job?</label>
-        <div class="-row">
-            <div class="-group">
-                <div class="-item select">
-                    <select id="from-job-month">
-                        <option name="" id="" selected="selected">Please select…</option>
-                        <option name="" id="">January</option>
-                        <option name="" id="">February</option>
-                        <option name="" id="">March</option>
-                        <option name="" id="">April</option>
-                        <option name="" id="">May</option>
-                        <option name="" id="">June</option>
-                        <option name="" id="">July</option>
-                        <option name="" id="">August</option>
-                        <option name="" id="">September</option>
-                        <option name="" id="">October</option>
-                        <option name="" id="">November</option>
-                        <option name="" id="">December</option>
-                    </select>
-                </div>
-                <div class="-item select">
-                    <select id="from-job-year">
-                        <option name="" id="">1920</option>
-                        <option name="" id="">1921</option>
-                        <option name="" id="">1922</option>
-                        <option name="" id="">1923</option>
-                        <option name="" id="">1924</option>
-                        <option name="" id="">1925</option>
-                        <option name="" id="">1926</option>
-                        <option name="" id="">1927</option>
-                        <option name="" id="">1928</option>
-                        <option name="" id="" selected="selected">1929</option>
-                    </select>
-                </div>
-            </div>
-            <div class="-fill _clean">to</div>
-            <div class="-group">
-                <div class="-item select">
-                    <select id="to-job-month">
-                        <option name="" id="" selected="selected">Please select…</option>
-                        <option name="" id="">January</option>
-                        <option name="" id="">February</option>
-                        <option name="" id="">March</option>
-                        <option name="" id="">April</option>
-                        <option name="" id="">May</option>
-                        <option name="" id="">June</option>
-                        <option name="" id="">July</option>
-                        <option name="" id="">August</option>
-                        <option name="" id="">September</option>
-                        <option name="" id="">October</option>
-                        <option name="" id="">November</option>
-                        <option name="" id="">December</option>
-                    </select>
-                </div>
-                <div class="-item select">
-                    <select id="to-job-year">
-                        <option name="" id="">1920</option>
-                        <option name="" id="">1921</option>
-                        <option name="" id="">1922</option>
-                        <option name="" id="">1923</option>
-                        <option name="" id="">1924</option>
-                        <option name="" id="">1925</option>
-                        <option name="" id="">1926</option>
-                        <option name="" id="">1927</option>
-                        <option name="" id="">1928</option>
-                        <option name="" id="" selected="selected">1929</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
-{% endhighlight %}  
-        <div class="uikit-preview">
-            <form>
                 <div class="input-group">
-                    <label for="from-job-month">How long have you worked at your job?</label>
-                    <div class="-row">
-                        <div class="-group">
-                            <div class="-item select">
+                    <label for="from-job-month" class="f-label">How long have you worked at your job?</label>
+                    <div class="g-row">
+                        <div class="g-col g-row _gutters">
+                            <div class="g-col f-select">
                                 <select id="from-job-month">
                                     <option name="" id="" selected="selected">Please select…</option>
                                     <option name="" id="">January</option>
@@ -468,7 +349,7 @@ description: These are the basic form input styles currently. The styles below a
                                     <option name="" id="">December</option>
                                 </select>
                             </div>
-                            <div class="-item select">
+                            <div class="g-col f-select">
                                 <select id="from-job-year">
                                     <option name="" id="">1920</option>
                                     <option name="" id="">1921</option>
@@ -483,9 +364,9 @@ description: These are the basic form input styles currently. The styles below a
                                 </select>
                             </div>
                         </div>
-                        <div class="-fill _clean">to</div>
-                        <div class="-group">
-                            <div class="-item select">
+                        <div class="g-col -fill _clean">to</div>
+                        <div class="g-col g-row _gutters">
+                            <div class="g-col f-select">
                                 <select id="to-job-month">
                                     <option name="" id="" selected="selected">Please select…</option>
                                     <option name="" id="">January</option>
@@ -502,7 +383,7 @@ description: These are the basic form input styles currently. The styles below a
                                     <option name="" id="">December</option>
                                 </select>
                             </div>
-                            <div class="-item select">
+                            <div class="g-col f-select">
                                 <select id="to-job-year">
                                     <option name="" id="">1920</option>
                                     <option name="" id="">1921</option>
@@ -525,51 +406,51 @@ description: These are the basic form input styles currently. The styles below a
 </section>
 
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-specific-styles">Checkbox & Radios Lists</h2>
+    <h2 id="checkbox-radio" class="toc-specific-styles">Checkbox & Radios Lists</h2>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="input-group">
-    <label for="">Vertical List (Default)</label>
-    <div class="-row checkbox">
-        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
-        <div class="-item">
-            <label for="choice-checkbox-1">Choice 1</label>
-            <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+    <label for="" class="f-label">Vertical List (Default)</label>
+    <div class="g-row f-checkbox">
+        <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+        <div class="g-col">
+            <label for="choice-checkbox-1" class="f-label">Choice 1</label>
+            <span class="t-help">This is some help text to help further explain the choice you will be making.</span>
         </div>
     </div>
-    <div class="-row checkbox">
-        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
-        <label for="choice-checkbox-2">Choice 2</label>
+    <div class="g-row f-checkbox">
+        <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+        <div class="g-col"><label for="choice-checkbox-2" class="f-label">Choice 2</label></div>
     </div>
-    <div class="-row checkbox">
-        <div class="-item"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
-        <label for="choice-checkbox-3">Choice 3</label>
+    <div class="g-row f-checkbox">
+        <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+        <div class="g-col"><label for="choice-checkbox-3" class="f-label">Choice 3</label></div>
     </div>
 </div>
 ...
-<div class="input-group _cluster">
+<div class="input-group">
     <label for="">Horizontal List</label>
-    <div class="-row">
-        <div class="col">
-            <div class="-row checkbox">
-                <div class="-item _top"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
-                <div class="-item">
-                    <label for="choice-checkbox-1">Choice 1</label>
-                    <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+    <div class="g-row _gutters">
+        <div class="g-col4 g-row">
+            <div class="g-row f-checkbox">
+                <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+                <div class="g-col">
+                    <label for="choice-checkbox-1" class="f-label">Choice 1</label>
+                    <p class="t-help">This is some help text to help further explain the choice you will be making.</p>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="-row checkbox">
-                <div class="-item _top"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
-                <div class="-item"><label for="choice-checkbox-2">Choice 2</label></div>
+        <div class="g-col g-row">
+            <div class="g-row f-checkbox">
+                <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+                <div class="g-col"><label for="choice-checkbox-2" class="f-label">Choice 2</label></div>
             </div>
         </div>
-        <div class="col">
-            <div class="-row checkbox col">
-                <div class="-item _top"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
-                <div class="-item"><label for="choice-checkbox-3">Choice 3</label></div>
+        <div class="g-col g-row">
+            <div class="g-row f-checkbox">
+                <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+                <div class="g-col"><label for="choice-checkbox-3" class="f-label">Choice 3</label></div>
             </div>
         </div>
     </div>
@@ -577,82 +458,82 @@ description: These are the basic form input styles currently. The styles below a
 {% endhighlight %}
         <div class="uikit-preview">
             <div class="input-group">
-                <label for="">Vertical List (Default)</label>
-                <div class="-row checkbox">
-                    <div class="-item _top"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
-                    <div class="-item">
-                        <label for="choice-checkbox-1">Choice 1</label>
-                        <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+                <label for="" class="f-label">Vertical List (Default)</label>
+                <div class="g-row f-checkbox">
+                    <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+                    <div class="g-col">
+                        <label for="choice-checkbox-1" class="f-label">Choice 1</label>
+                        <span class="t-help">This is some help text to help further explain the choice you will be making.</span>
                     </div>
                 </div>
-                <div class="-row checkbox">
-                    <div class="-item _top"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
-                    <div class="-item"><label for="choice-checkbox-2">Choice 2</label></div>
+                <div class="g-row f-checkbox">
+                    <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+                    <div class="g-col"><label for="choice-checkbox-2" class="f-label">Choice 2</label></div>
                 </div>
-                <div class="-row checkbox">
-                    <div class="-item _top"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
-                    <div class="-item"><label for="choice-checkbox-3">Choice 3</label></div>
+                <div class="g-row f-checkbox">
+                    <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+                    <div class="g-col"><label for="choice-checkbox-3" class="f-label">Choice 3</label></div>
                 </div>
             </div>
             <div class="input-group">
-                <div class="-row radio">
-                    <div class="-item _top"><input type="radio" name="" id="choice-radio-1" checked /></div>
-                    <div class="-item"><label for="choice-radio-1">Choice 1</label></div>
+                <div class="g-row f-radio">
+                    <div class="g-col -input"><input type="radio" name="" id="choice-radio-1" checked /></div>
+                    <div class="g-col"><label for="choice-radio-1" class="f-label">Choice 1</label></div>
                 </div>
-                <div class="-row radio">
-                    <div class="-item _top"><input type="radio" name="" id="choice-radio-2" /></div>
-                    <div class="-item"><label for="choice-radio-2">Choice 2</label></div>
+                <div class="g-row f-radio">
+                    <div class="g-col -input"><input type="radio" name="" id="choice-radio-2" /></div>
+                    <div class="g-col"><label for="choice-radio-2" class="f-label">Choice 2</label></div>
                 </div>
-                <div class="-row radio">
-                    <div class="-item _top"><input type="radio" name="" id="choice-radio-3" /></div>
-                    <div class="-item"><label for="choice-radio-3">Choice 3</label></div>
+                <div class="g-row f-radio">
+                    <div class="g-col -input"><input type="radio" name="" id="choice-radio-3" /></div>
+                    <div class="g-col"><label for="choice-radio-3" class="f-label">Choice 3</label></div>
                 </div>
             </div>
             <hr/>
-            <div class="input-group _cluster">
+            <div class="input-group">
                 <label for="">Horizontal List</label>
-                <div class="-row">
-                    <div class="col">
-                        <div class="-row checkbox">
-                            <div class="-item _top"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
-                            <div class="-item">
-                                <label for="choice-checkbox-1">Choice 1</label>
-                                <p class="-help">This is some help text to help further explain the choice you will be making.</p>
+                <div class="g-row _gutters">
+                    <div class="g-col4 g-row">
+                        <div class="g-row f-checkbox">
+                            <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-1" checked /></div>
+                            <div class="g-col">
+                                <label for="choice-checkbox-1" class="f-label">Choice 1</label>
+                                <p class="t-help">This is some help text to help further explain the choice you will be making.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="-row checkbox">
-                            <div class="-item _top"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
-                            <div class="-item"><label for="choice-checkbox-2">Choice 2</label></div>
+                    <div class="g-col g-row">
+                        <div class="g-row f-checkbox">
+                            <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-2" /></div>
+                            <div class="g-col"><label for="choice-checkbox-2" class="f-label">Choice 2</label></div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="-row checkbox col">
-                            <div class="-item _top"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
-                            <div class="-item"><label for="choice-checkbox-3">Choice 3</label></div>
+                    <div class="g-col g-row">
+                        <div class="g-row f-checkbox">
+                            <div class="g-col -input"><input type="checkbox" name="" id="choice-checkbox-3" /></div>
+                            <div class="g-col"><label for="choice-checkbox-3" class="f-label">Choice 3</label></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="input-group _cluster">
-                <div class="-row">
-                    <div class="col">
-                        <div class="-row radio col">
-                            <div class="-item _top"><input type="radio" name="" id="choice-radio-1" checked /></div>
-                            <div class="-item"><label for="choice-radio-1">Choice 1</label></div>
+            <div class="input-group">
+                <div class="g-row _gutters">
+                    <div class="g-col g-row">
+                        <div class="g-row f-radio">
+                            <div class="g-col -input"><input type="radio" name="" id="choice-radio-1" checked /></div>
+                            <div class="g-col"><label for="choice-radio-1">Choice 1</label></div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="-row radio col">
-                            <div class="-item _top"><input type="radio" name="" id="choice-radio-2" /></div>
-                            <div class="-item"><label for="choice-radio-2">Choice 2</label></div>
+                    <div class="g-col g-row">
+                        <div class="g-row f-radio">
+                            <div class="g-col -input"><input type="radio" name="" id="choice-radio-2" /></div>
+                            <div class="g-col"><label for="choice-radio-2">Choice 2</label></div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="-row radio col">
-                            <div class="-item _top"><input type="radio" name="" id="choice-radio-3" /></div>
-                            <div class="-item"><label for="choice-radio-3">Choice 3</label></div>
+                    <div class="g-col g-row">
+                        <div class="-g-row f-radio">
+                            <div class="g-col -input"><input type="radio" name="" id="choice-radio-3" /></div>
+                            <div class="g-col"><label for="choice-radio-3">Choice 3</label></div>
                         </div>
                     </div>
                 </div>
@@ -664,7 +545,7 @@ description: These are the basic form input styles currently. The styles below a
 
 <!-- section -->
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-specific-styles">Input Groups</h2>
+    <h2 id="input-groups" class="toc-specific-styles">Input Groups</h2>
     <p>Input groups are a key layout element for our forms styles. Many of the styles that you've seen above are only possible because of input groups. So <em>what are input groups?</em> They are self-contained groups of related input elements which are visually collected together. They are a versatile, powerful control to arrange content based on your UI needs without needing to create new custom names. At a minimum, an input group is typically comprised of at least two elements: a label and an input.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
@@ -684,169 +565,33 @@ description: These are the basic form input styles currently. The styles below a
             </form>
         </div>
     </div>
-
-    <p>The power of input groups lie in their use of <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a>. All forms, by default, are stacked elements (i.e. not inline, in a row) along the left edge.</p>
-
-    <h3>Fluid Grids</h3>
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<form>
-    <div class="input-group">
-        <div class="-row"><div class="col12">...</div></div>
-        <div class="-row"><div class="col1">...</div><div class="col11">...</div></div>
-        ...
-    </div>
-</form>    
-{% endhighlight %}
-        <div class="uikit-preview grid-preview">
-            <form>
-                <div class="input-group">
-                    <div class="-row"><div class="col12"><div>.col12</div></div></div>
-                    <div class="-row"><div class="col1"><div>.col1</div></div><div class="col11"><div>.col11</div></div></div>
-                    <div class="-row"><div class="col2"><div>.col2</div></div><div class="col10"><div>.col10</div></div></div>
-                    <div class="-row"><div class="col3"><div>.col3</div></div><div class="col9"><div>.col9</div></div></div>
-                    <div class="-row"><div class="col4"><div>.col4</div></div><div class="col8"><div>.col8</div></div></div>
-                    <div class="-row"><div class="col5"><div>.col5</div></div><div class="col7"><div>.col7</div></div></div>
-                    <div class="-row"><div class="col6"><div>.col6</div></div><div class="col6"><div>.col6</div></div></div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <p>The column sizes can be used either within an <code>.input-group</code> or <code>.-row</code> class. The only difference between the two classes are elements within <code>.input-group</code> has a <code>flex-direction: column;</code> property and <code>.-row</code> has a <code>flex-direction: row;</code> property. We do this because most forms are to be aligned along the left-edge versus in a row.</p>
-
-    <h3>Auto-Width Grids</h3>
-    <p>If you don't want to declare a column width, you can let flexbox automatically determine the column widths. To do this use a <code>.col</code> class name selector instead of a specifc numbered one (e.g. <code>.col12</code>).</p>
-
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<form>
-    <div class="input-group">
-        <div class="-row">
-            <div class="col">...</div>
-            <div class="col">...</div>
-        </div>
-        <div class="-row">
-            <div class="col">...</div>
-            <div class="col">...</div>
-            <div class="col">...</div>
-        </div>
-    </div>
-</form>
-{% endhighlight %}
-        <div class="uikit-preview grid-preview">
-            <form>
-                <div class="input-group">
-                    <div class="-row">
-                        <div class="col"><div>.col</div></div>
-                        <div class="col"><div>.col</div></div>
-                    </div>
-                    <div class="-row">
-                        <div class="col"><div>.col</div></div>
-                        <div class="col"><div>.col</div></div>
-                        <div class="col"><div>.col</div></div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <h3>Auto-Width + Specified Width Grids</h3>
-    <p>You can also mix auto-width <code>.col</code> divs with specified width divs.</p>
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<form>
-    <div class="input-group">
-        <div class="-row">
-            <div class="col2"><div>.col2</div></div>
-            <div class="col"><div>.col</div></div>
-        </div>
-        <div class="-row">
-            <div class="col5"><div>.col5</div></div>
-            <div class="col"><div>.col</div></div>
-            <div class="col"><div>.col</div></div>
-        </div>
-    </div>
-</form>
-{% endhighlight %}
-        <div class="uikit-preview grid-preview">
-            <form>
-                <div class="input-group">
-                    <div class="-row">
-                        <div class="col2"><div>.col2</div></div>
-                        <div class="col"><div>.col</div></div>
-                    </div>
-                    <div class="-row">
-                        <div class="col5"><div>.col5</div></div>
-                        <div class="col"><div>.col</div></div>
-                        <div class="col"><div>.col</div></div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <h3>Nested Grids</h3>
-    <p>Grids can be nested within each other as well, allowing you to create unique, custom layouts without needing to reset, override or extend universal styles.</p>
-
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<div class="input-group">
-    <div class="-row">
-        <div class="col">...</div>
-        <div class="col">...</div>
-    </div>
-    <div class="-row">
-        <div class="col">...</div>
-        <div class="col">...</div>
-        <div class="col">...</div>
-    </div>
-</div>    
-{% endhighlight %}
-        <div class="uikit-preview grid-preview">
-            <div class="input-group">
-                <div class="-row">
-                    <div class="col8">
-                        <div class="-row">
-                            <div class="col4"><div>.col4</div></div>
-                            <div class="col"><div>.col</div></div>
-                        </div>
-                    </div>
-                    <div class="col4">
-                        <div class="-row">
-                            <div class="col"><div>.col</div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 <!-- section -->
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-specific-styles">Input Components</h2>
-    <p>With the above grid system we can mix and rearrange elements into specific input group components.</p>
+    <h2 id="input-components" class="toc-specific-styles">Input Components</h2>
+    <p>Using the flexbox grid system, we can mix and rearrange elements into specific input group components.</p>
 
-    <h3>Option Toggle</h3>
+    <h3 id="radio-toggle">Option Toggle</h3>
     <p>CSS-only multi-selector which uses labels to select hidden input radio buttons.</p>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <form>
     <div class="input-group">
-        <div class="-row option-toggle">
-            <div class="col">
+        <label for="sample-group" class="f-label">What's your job status?</label>
+        <div class="g-row f-radio-toggle">
+            <div class="g-col">
                 <input type="radio" name="sample-group" id="optionA" checked="checked" />
-                <label for="optionA">Option A</label>
+                <label for="optionA" class="f-label">Not Looking</label>
             </div>
-            <div class="col">
+            <div class="g-col">
                 <input type="radio" name="sample-group" id="optionB" />
-                <label for="optionB">Option B</label>
+                <label for="optionB" class="f-label">Kind of looking</label>
             </div>
-            <div class="col">
+            <div class="g-col">
                 <input type="radio" name="sample-group" id="optionC" />
-                <label for="optionC">Option C</label>
+                <label for="optionC" class="f-label">Actively looking</label>
             </div>
         </div>
     </div>
@@ -855,125 +600,169 @@ description: These are the basic form input styles currently. The styles below a
 
         <div class="uikit-preview">
             <div class="input-group">
-                <div class="-row option-toggle">
-                    <div class="col">
+                <label for="sample-group" class="f-label">What's your job status?</label>
+                <div class="g-row f-radio-toggle">
+                    <div class="g-col">
                         <input type="radio" name="sample-group" id="optionA" checked="checked" />
-                        <label for="optionA">Option A</label>
+                        <label for="optionA" class="f-label">Not Looking</label>
                     </div>
-                    <div class="col">
+                    <div class="g-col">
                         <input type="radio" name="sample-group" id="optionB" />
-                        <label for="optionB">Option B</label>
+                        <label for="optionB" class="f-label">Kind of looking</label>
                     </div>
-                    <div class="col">
+                    <div class="g-col">
                         <input type="radio" name="sample-group" id="optionC" />
-                        <label for="optionC">Option C</label>
+                        <label for="optionC" class="f-label">Actively looking</label>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <h3>Prepended, Connected &amp; Appended Inputs</h3>
-
+    <h3 id="prepend-append-inputs">Prepended, Connected &amp; Appended Inputs</h3>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="input-group">
-    <label for="github-url">Prepended Input with Icon</label>
-    <div class="-row fill-first">
-        <span class="-fill"><i class="icon-github"></i></span>
-        <div class="-item"><input type="text" name="input-examples" id="github-url" placeholder="stackexchange" /></div>
-    </div>
-</div>
-<div class="input-group">
-    <label for="github-url">Prepended Input with Text Value</label>
-    <div class="-row fill-first">
-        <span class="-fill">http://</span>
-        <div class="-item"><input type="text" name="input-examples" id="website-url" placeholder="stackoverflow.com" /></div>
-    </div>
-</div>
-<div class="input-group">
-    <label for="github-url">Appended Input with Text Value</label>
-    <div class="-row fill-last">
-        <span class="-fill">$/month</span>
-        <div class="-item"><input type="number" name="input-examples" id="salary" placeholder="100,000" /></div>
-    </div>
-</div>
-<div class="input-group">
-    <label for="github-url">Prepended and Appended Input with Select Menu</label>
-    <div class="-row fill-multiple">
-        <span class="-fill">+</span>
-        <span class="-fill">
-            <select name="CompensationMinUnit">
-                <option value="AUD">Australian Dollars ($)</option>
-                <option value="GBP">British Pounds (£)</option>
-                <option value="CAD">Canadian Dollars ($)</option>
-                <option value="DKK">Danish Kroner (kr)</option>
-                <option value="EUR">Euros (€)</option>
-                <option value="INR">Indian Rupees (INR)</option>
-                <option value="PLN">Polish Zlotys (zł)</option>
-                <option value="SEK">Swedish Kronor (kr)</option>
-                <option value="CHF">Swiss Francs (CHF)</option>
-                <option value="USD" selected="selected">US Dollars ($)</option>
-            </select>
-        </span>
-        <div class="-item"><input type="number" name="input-examples" id="salary" placeholder="100,000" /></div>
-    </div>
-    <div class="-row checkbox _right">
-        <div class="-item"><input name="CompensationProvidesEquity" id="CompensationProvidesEquity" type="checkbox" value="true" /></div>
-        <div class="-item"><label for="CompensationProvidesEquity">Provides equity</label></div>
-    </div>
-</div>
-<div class="input-group">
-    <label for="github-url">Appended Input with Checkbox and Button</label>
-    <div class="-row fill-last">
-        <span class="-fill">
-            <div class="-row checkbox">
-                <div class="-item"><input name="NeedsVisaSponsorship" id="NeedsVisaSponsorship" type="checkbox" /></div>
-                <div class="-item"><label for="NeedsVisaSponsorship">Need Visa Sponsorship</label></div>
+    <label for="github-url" class="f-label">Prepended and Appended Input with Select Menu</label>
+    <div class="input-group">
+        <div class="g-row">
+            <div class="g-col -fill is-first">+</div>
+            <div class="g-col -fill is-last">
+                <select name="CompensationMinUnit">
+                    <option value="AUD">Australian Dollars ($)</option>
+                    <option value="GBP">British Pounds (£)</option>
+                    <option value="CAD">Canadian Dollars ($)</option>
+                    <option value="DKK">Danish Kroner (kr)</option>
+                    <option value="EUR">Euros (€)</option>
+                    <option value="INR">Indian Rupees (INR)</option>
+                    <option value="PLN">Polish Zlotys (zł)</option>
+                    <option value="SEK">Swedish Kronor (kr)</option>
+                    <option value="CHF">Swiss Francs (CHF)</option>
+                    <option value="USD" selected="selected">US Dollars ($)</option>
+                </select>
             </div>
-        </span>
-        <div class="-item"><input type="number" name="input-examples" id="locationWork" placeholder="City, State, or Country" /></div>
-        <button class="btn _last">Add</button>
+            <div class="g-col"><input type="number" name="input-examples" id="salary" placeholder="100,000" class="f-input" /></div>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="g-row _end f-checkbox">
+            <div class="g-col -input"><input name="CompensationProvidesEquity" id="CompensationProvidesEquity" type="checkbox" value="true" /></div>
+            <div class="g-col"><label for="CompensationProvidesEquity" class="f-label">Provides equity</label></div>
+        </div>
     </div>
 </div>
 <div class="input-group">
-    <label for="github-url">Connected Inputs</label>
-    <div class="-row">
-        <div class="-item"><input type="text" name="input-examples" id="workTitle" placeholder="Senior Web Developer" /></div>
-        <span class="-fill">at</span>
-        <div class="-item"><input type="text" name="input-examples" id="workCompany" placeholder="Stack Overflow" /></div>
+    <label for="github-url" class="f-label">Appended Input with Checkbox and Button</label>
+    <div class="g-row">
+        <div class="g-col -fill is-last">
+            <div class="g-row f-checkbox">
+                <div class="g-col -input"><input name="NeedsVisaSponsorship" id="NeedsVisaSponsorship" type="checkbox" /></div>
+                <div class="g-col"><label for="NeedsVisaSponsorship" class="f-label">Need Visa Sponsorship</label></div>
+            </div>
+        </div>
+        <div class="g-col"><input type="number" name="input-examples" id="locationWork" placeholder="City, State, or Country" class="f-input" /></div>
+        <button class="btn is-last">Add</button>
+    </div>
+</div>
+<div class="input-group">
+    <label for="github-url" class="f-label">Connected Inputs</label>
+    <div class="g-row">
+        <div class="g-col"><input type="text" name="input-examples" id="workTitle" placeholder="Senior Web Developer" class="f-input" /></div>
+        <div class="g-col -fill">at</div>
+        <div class="g-col"><input type="text" name="input-examples" id="workCompany" placeholder="Stack Overflow" class="f-input" /></div>
     </div>
 </div>
 {% endhighlight %}
 
         <div class="uikit-preview">
             <div class="input-group">
-                <label for="github-url">Prepended Input with Icon</label>
-                <div class="-row fill-first">
-                    <span class="-fill"><i class="icon-github"></i></span>
-                    <div class="-item"><input type="text" name="input-examples" id="github-url" placeholder="stackexchange" /></div>
+                <label for="github-url" class="f-label">Prepended Input with Icon</label>
+                <div class="g-row">
+                    <div class="g-col -fill is-first"><i class="icon-github"></i></div>
+                    <div class="g-col"><input type="text" name="input-examples" id="github-url" placeholder="stackexchange" class="f-input" /></div>
                 </div>
             </div>
             <div class="input-group">
-                <label for="github-url">Prepended Input with Text Value</label>
-                <div class="-row fill-first">
-                    <span class="-fill">http://</span>
-                    <div class="-item"><input type="text" name="input-examples" id="website-url" placeholder="stackoverflow.com" /></div>
+                <label for="github-url" class="f-label">Prepended Input with Text Value</label>
+                <div class="g-row">
+                    <div class="g-col -fill is-first">http://</div>
+                    <div class="g-col"><input type="text" name="input-examples" id="website-url" placeholder="stackoverflow.com" class="f-input" /></div>
                 </div>
             </div>
             <div class="input-group">
-                <label for="github-url">Appended Input with Text Value</label>
-                <div class="-row fill-last">
-                    <span class="-fill">$/month</span>
-                    <div class="-item"><input type="number" name="input-examples" id="salary" placeholder="100,000" /></div>
+                <label for="github-url" class="f-label">Appended Input with Text Value</label>
+                <div class="g-row">
+                    <div class="g-col -fill is-last">$/month</div>
+                    <div class="g-col"><input type="number" name="input-examples" id="salary" placeholder="100,000" class="f-input" /></div>
                 </div>
             </div>
             <div class="input-group">
-                <label for="github-url">Prepended and Appended Input with Select Menu</label>
-                <div class="-row fill-multiple">
-                    <span class="-fill">+</span>
-                    <span class="-fill">
-                        <select name="CompensationMinUnit">
+                <label for="github-url" class="f-label">Prepended and Appended Input with Select Menu</label>
+                <div class="input-group">
+                    <div class="g-row">
+                        <div class="g-col -fill is-first">+</div>
+                        <div class="g-col -fill is-last">
+                            <select name="CompensationMinUnit">
+                                <option value="AUD">Australian Dollars ($)</option>
+                                <option value="GBP">British Pounds (£)</option>
+                                <option value="CAD">Canadian Dollars ($)</option>
+                                <option value="DKK">Danish Kroner (kr)</option>
+                                <option value="EUR">Euros (€)</option>
+                                <option value="INR">Indian Rupees (INR)</option>
+                                <option value="PLN">Polish Zlotys (zł)</option>
+                                <option value="SEK">Swedish Kronor (kr)</option>
+                                <option value="CHF">Swiss Francs (CHF)</option>
+                                <option value="USD" selected="selected">US Dollars ($)</option>
+                            </select>
+                        </div>
+                        <div class="g-col"><input type="number" name="input-examples" id="salary" placeholder="100,000" class="f-input" /></div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="g-row _end f-checkbox">
+                        <div class="g-col -input"><input name="CompensationProvidesEquity" id="CompensationProvidesEquity" type="checkbox" value="true" /></div>
+                        <div class="g-col"><label for="CompensationProvidesEquity" class="f-label">Provides equity</label></div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="github-url" class="f-label">Appended Input with Checkbox and Button</label>
+                <div class="g-row">
+                    <div class="g-col -fill is-last">
+                        <div class="g-row f-checkbox">
+                            <div class="g-col -input"><input name="NeedsVisaSponsorship" id="NeedsVisaSponsorship" type="checkbox" /></div>
+                            <div class="g-col"><label for="NeedsVisaSponsorship" class="f-label">Need Visa Sponsorship</label></div>
+                        </div>
+                    </div>
+                    <div class="g-col"><input type="number" name="input-examples" id="locationWork" placeholder="City, State, or Country" class="f-input" /></div>
+                    <button class="btn is-last">Add</button>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="github-url" class="f-label">Connected Inputs</label>
+                <div class="g-row">
+                    <div class="g-col"><input type="text" name="input-examples" id="workTitle" placeholder="Senior Web Developer" class="f-input" /></div>
+                    <div class="g-col -fill">at</div>
+                    <div class="g-col"><input type="text" name="input-examples" id="workCompany" placeholder="Stack Overflow" class="f-input" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="group-clusters">Input Group Clusters</h3>
+    <p>Mainly used on Careers currently. These input groups which are laid out in a row, but must retain their normal column behavior because the inputs or selects have their own labels.</p>
+
+    <div class="uikit-code uikit-has-preview">
+{% highlight html linenos %}
+<form>
+    <div class="input-group _clusters">
+        <label class="f-label">Annual Salary</label>
+        <div class="g-row _gutters">
+            <div class="g-col6 g-column">
+                <div class="input-group">
+                    <label for="currencyType" class="f-label">Currency</label>
+                    <div class="g-row f-select">
+                        <select name="currencyType" id="currencyType">
                             <option value="AUD">Australian Dollars ($)</option>
                             <option value="GBP">British Pounds (£)</option>
                             <option value="CAD">Canadian Dollars ($)</option>
@@ -985,294 +774,179 @@ description: These are the basic form input styles currently. The styles below a
                             <option value="CHF">Swiss Francs (CHF)</option>
                             <option value="USD" selected="selected">US Dollars ($)</option>
                         </select>
-                    </span>
-                    <div class="-item"><input type="number" name="input-examples" id="salary" placeholder="100,000" /></div>
-                </div>
-                <div class="-row checkbox _right">
-                    <div class="-item"><input name="CompensationProvidesEquity" id="CompensationProvidesEquity" type="checkbox" value="true" /></div>
-                    <div class="-item"><label for="CompensationProvidesEquity">Provides equity</label></div>
-                </div>
-            </div>
-            <div class="input-group">
-                <label for="github-url">Appended Input with Checkbox and Button</label>
-                <div class="-row fill-last">
-                    <span class="-fill">
-                        <div class="-row checkbox">
-                            <div class="-item"><input name="NeedsVisaSponsorship" id="NeedsVisaSponsorship" type="checkbox" /></div>
-                            <div class="-item"><label for="NeedsVisaSponsorship">Need Visa Sponsorship</label></div>
-                        </div>
-                    </span>
-                    <div class="-item"><input type="number" name="input-examples" id="locationWork" placeholder="City, State, or Country" /></div>
-                    <button class="btn _last">Add</button>
-                </div>
-            </div>
-            <div class="input-group">
-                <label for="github-url">Connected Inputs</label>
-                <div class="-row">
-                    <div class="-item"><input type="text" name="input-examples" id="workTitle" placeholder="Senior Web Developer" /></div>
-                    <span class="-fill">at</span>
-                    <div class="-item"><input type="text" name="input-examples" id="workCompany" placeholder="Stack Overflow" /></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <h3>Input Group Rows</h3>
-    <p>Mainly used on Careers currently. These input groups which are laid out in a row, but must retain their normal column behavior because the inputs or selects have their own labels.</p>
-
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<form>
-    <div class="input-group _cluster">
-        <label>Annual Salary</label>
-        <div class="-row">
-            <div class="input-group col6">
-                <label for="currencyType">Currency</label>
-                <div class="-row select">
-                    <select name="currencyType" id="currencyType">
-                        <option value="AUD">Australian Dollars ($)</option>
-                        <option value="GBP">British Pounds (£)</option>
-                        <option value="CAD">Canadian Dollars ($)</option>
-                        <option value="DKK">Danish Kroner (kr)</option>
-                        <option value="EUR">Euros (€)</option>
-                        <option value="INR">Indian Rupees (INR)</option>
-                        <option value="PLN">Polish Zlotys (zł)</option>
-                        <option value="SEK">Swedish Kronor (kr)</option>
-                        <option value="CHF">Swiss Francs (CHF)</option>
-                        <option value="USD" selected="selected">US Dollars ($)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="input-group col">
-                <label for="salary-range-min">Salary Range</label>
-                <div class="-row">
-                    <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="50,000" /></div>
-                    <div class="-fill"> - </div>
-                    <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="100,000" /></div>
-                </div>
-            </div>
-        </div>
-        <div class="-row checkbox">
-            <div class="-item _top"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
-            <div class="-item">
-                <label for="input-group-multi-checkbox"><strong>Provides equity</strong></label>
-                <p class="-help">Equity is provided as part of the compensation package.</p>
-            </div>
-        </div>
-    </div>
-</form>
-{% endhighlight %}
-
-        <div class="uikit-preview">
-            <form>
-                <div class="input-group _cluster">
-                    <label>Annual Salary</label>
-                    <div class="-row">
-                        <div class="input-group col6">
-                            <label for="currencyType">Currency</label>
-                            <div class="-row select">
-                                <select name="currencyType" id="currencyType">
-                                    <option value="AUD">Australian Dollars ($)</option>
-                                    <option value="GBP">British Pounds (£)</option>
-                                    <option value="CAD">Canadian Dollars ($)</option>
-                                    <option value="DKK">Danish Kroner (kr)</option>
-                                    <option value="EUR">Euros (€)</option>
-                                    <option value="INR">Indian Rupees (INR)</option>
-                                    <option value="PLN">Polish Zlotys (zł)</option>
-                                    <option value="SEK">Swedish Kronor (kr)</option>
-                                    <option value="CHF">Swiss Francs (CHF)</option>
-                                    <option value="USD" selected="selected">US Dollars ($)</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="input-group col">
-                            <label for="salary-range-min">Salary Range</label>
-                            <div class="-row">
-                                <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="50,000" /></div>
-                                <div class="-fill"> - </div>
-                                <div class="-item"><input type="number" id="salary-range-min" name="salary-range" placeholder="100,000" /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="-row checkbox">
-                        <div class="-item _top"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
-                        <div class="-item">
-                            <label for="input-group-multi-checkbox"><strong>Provides equity</strong></label>
-                            <p class="-help">Equity is provided as part of the compensation package.</p>
-                        </div>
                     </div>
                 </div>
-            </form>
-        </div>
-    </div>
-
-    <h3>Input Filters</h3>
-    <p>Used on Jobs currently, this allows a select menu to be nested within an input. Usually this is used when you want to allow the user further filtering options. <strong>Note:</strong> To properly do this we have to disable focus states. If you want to enable them, you must use Javascript.</p>
-
-    <div class="uikit-code uikit-has-preview">
-{% highlight html linenos %}
-<form>
-    <div class="input-group">
-        <label for="location-search">Location</label>
-        <div class="-row -filters js-filters">
-            <input type="text" name="" id="location-search" placeholder="City, State, or Country" class="col" />
-            <div class="-item select col4">
-                <select name="currencyType" id="location-distance">
-                    <option value="">5 miles</option>
-                    <option value="">15 miles</option>
-                    <option value="" selected="selected">25 miles</option>
-                    <option value="">50 miles</option>
-                    <option value="">100 miles</option>
-                </select>
             </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        $("#location-search, #location-distance").on("focus", function(){
-            $(".js-filters").addClass("_active");
-        });
-        $("#location-search, #location-distance").on("focusout", function(){
-            $(".js-filters").removeClass("_active");
-        });
-    </script>
-</form>
-{% endhighlight %}
-
-        <div class="uikit-preview">
-            <form>
+            <div class="g-col g-column">
                 <div class="input-group">
-                    <label for="location-search">Location</label>
-                    <div class="-row -filters js-filters">
-                        <input type="text" name="" id="location-search" placeholder="City, State, or Country" class="col" />
-                        <div class="-item select col4">
-                            <select name="currencyType" id="location-distance">
-                                <option value="">5 miles</option>
-                                <option value="">15 miles</option>
-                                <option value="" selected="selected">25 miles</option>
-                                <option value="">50 miles</option>
-                                <option value="">100 miles</option>
-                            </select>
+                    <label for="salary-range-min" class="f-label">Salary Range</label>
+                    <div class="g-row">
+                        <div class="g-col"><input type="number" id="salary-range-min" name="salary-range" placeholder="50,000" class="f-input" /></div>
+                        <div class="-fill"> - </div>
+                        <div class="g-col"><input type="number" id="salary-range-min" name="salary-range" placeholder="100,000" class="f-input" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="g-row f-checkbox">
+            <div class="g-col -input"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
+            <div class="g-col">
+                <label for="input-group-multi-checkbox" class="f-label"><strong>Provides equity</strong></label>
+                <p class="t-help">Equity is provided as part of the compensation package.</p>
+            </div>
+        </div>
+    </div>
+</form>
+{% endhighlight %}
+
+        <div class="uikit-preview">
+            <form>
+                <div class="input-group _clusters">
+                    <label class="f-label">Annual Salary</label>
+                    <div class="g-row _gutters">
+                        <div class="g-col6 g-column">
+                            <div class="input-group">
+                                <label for="currencyType" class="f-label">Currency</label>
+                                <div class="g-row f-select">
+                                    <select name="currencyType" id="currencyType">
+                                        <option value="AUD">Australian Dollars ($)</option>
+                                        <option value="GBP">British Pounds (£)</option>
+                                        <option value="CAD">Canadian Dollars ($)</option>
+                                        <option value="DKK">Danish Kroner (kr)</option>
+                                        <option value="EUR">Euros (€)</option>
+                                        <option value="INR">Indian Rupees (INR)</option>
+                                        <option value="PLN">Polish Zlotys (zł)</option>
+                                        <option value="SEK">Swedish Kronor (kr)</option>
+                                        <option value="CHF">Swiss Francs (CHF)</option>
+                                        <option value="USD" selected="selected">US Dollars ($)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-col g-column">
+                            <div class="input-group">
+                                <label for="salary-range-min" class="f-label">Salary Range</label>
+                                <div class="g-row">
+                                    <div class="g-col"><input type="number" id="salary-range-min" name="salary-range" placeholder="50,000" class="f-input" /></div>
+                                    <div class="-fill"> - </div>
+                                    <div class="g-col"><input type="number" id="salary-range-min" name="salary-range" placeholder="100,000" class="f-input" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-row f-checkbox">
+                        <div class="g-col -input"><input type="checkbox" id="input-group-multi-checkbox" checked="checked" /></div>
+                        <div class="g-col">
+                            <label for="input-group-multi-checkbox" class="f-label"><strong>Provides equity</strong></label>
+                            <p class="t-help">Equity is provided as part of the compensation package.</p>
                         </div>
                     </div>
                 </div>
-                <script type="text/javascript">
-                    $("#location-search, #location-distance").on("focus", function(){
-                        $(".js-filters").addClass("_active");
-                    });
-                    $("#location-search, #location-distance").on("focusout", function(){
-                        $(".js-filters").removeClass("_active");
-                    });
-                </script>
             </form>
         </div>
     </div>
 </section>
 
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-tag-editor">Button Placement</h2>
-    <h3>Default</h3>
+    <h2 id="button-placement" class="toc-tag-editor">Button Placement</h2>
     <p>The default button placement within a form is <em>left-aligned</em>, with the primary call-to-action (CTA) being listed first, followed by the secondary CTA, and so on. The <code>.button-group</code> only addresses spacing around the buttons. It does not add any visual decoration.</p>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <!-- Default -->
-<div class="button-group">
-    <input class="btn" type="submit" value="Save" class="btn">
-    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+<div class="button-group g-row">
+    <input class="btn _medium" type="submit" value="Save">
+    <a href="#" title="Cancel" class="btn-clear _medium">Cancel</a>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
-            <div class="button-group">
-                <input class="btn" type="submit" value="Save" class="btn">
-                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+            <div class="button-group g-row">
+                <input class="btn _medium" type="submit" value="Save">
+                <a href="#" title="Cancel" class="btn-clear _medium">Cancel</a>
             </div>
         </div>
     </div> <!-- /preview -->
 
-    <h3>Borders</h3>
+    <h3 class="buttons-borders">Borders</h3>
     <p>If you would like to insert a border between the button area and the inputs above, you must add the modifying class of <code>._border</code> to the <code>.button-group</code> div.</p>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="button-group _border">
-    <input class="btn" type="submit" value="Save" class="btn">
-    <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+<div class="g-row button-group has-border">
+    <input class="btn _medium" type="submit" value="Save">
+    <a href="#" title="Cancel" class="btn-clear _medium">Cancel</a>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
-            <div class="button-group _border">
-                <input class="btn" type="submit" value="Save" class="btn">
-                <a href="#" title="Cancel" class="btn-clear">Cancel</a>
+            <div class="g-row button-group has-border">
+                <input class="btn _medium" type="submit" value="Save">
+                <a href="#" title="Cancel" class="btn-clear _medium">Cancel</a>
             </div>
         </div>
     </div>
 
     <p>There are situations in which the button placement can be adjusted, though these should be used only when needed.</p>
-    <h3>Stacked Layout</h3>
+    <h3 id="buttons-stacked">Stacked Layout</h3>
     <p>Sometimes we want to stack buttons or other content within a button group. In those cases, we need to reset the flow direction from a row (horizontal) to a column (vertical).</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="button-group _stacked">
-    <div class="-row">
-        <a href="#" title="Primary action" class="btn">Primary Action</a>
-        <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
-    </div>
-    <p class="-help">By clicking the Primary Action button, you accept all the rules.</p>
+<div class="button-group g-column">
+    <a href="#" title="Primary action" class="btn _medium">Primary Action</a>
+    <a href="#" title="Secondary action" class="btn-secondary _medium">Secondary Action</a>
+    <p class="t-help g-center">By clicking the Primary Action button, you accept all the rules.</p>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
-            <div class="button-group _stacked">
-                <div class="-row">
-                    <a href="#" title="Primary action" class="btn">Primary Action</a>
-                    <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
-                </div>
-                <p class="-help">By clicking the Primary Action button, you accept all the rules.</p>
+            <div class="button-group g-column">
+                <a href="#" title="Primary action" class="btn _medium">Primary Action</a>
+                <a href="#" title="Secondary action" class="btn-secondary _medium">Secondary Action</a>
+                <p class="t-help g-center">By clicking the Primary Action button, you accept all the rules.</p>
             </div>
         </div>
     </div>
             
-    <h3>Justified</h3>
+    <h3 class="button-justified">Justified</h3>
     <p>In situations where a user is progressing through a series of steps (e.g. like within an onboarding wizard), we place the primary action to the right.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
 <div class="button-group">
-    <div class="-row _justify">
-        <a href="#" title="Previous Step" class="btn-secondary">Previous Step</a>
-        <a href="#" title="Next Step" class="btn">Next Step</a>
+    <div class="g-row">
+        <a href="#" title="Previous Step" class="btn-secondary _medium">Previous Step</a>
+        <a href="#" title="Next Step" class="btn _medium">Next Step</a>
     </div>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
             <div class="button-group">
-                <div class="-row _justify">
-                    <a href="#" title="Previous Step" class="btn-secondary">Previous Step</a>
-                    <a href="#" title="Next Step" class="btn">Next Step</a>
+                <div class="g-row _just-space-between">
+                    <a href="#" title="Previous Step" class="btn-secondary _medium">Previous Step</a>
+                    <a href="#" title="Next Step" class="btn _medium">Next Step</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <h3>Action Row</h3>
+    <h3 class="button-action-row">Action Row</h3>
     <p>Sometimes UI controls are placed in heading areas along with titles. In these scenarios, the buttons should always be pulled to the right and the primary action is to placed on right.</p>
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<div class="header-title">
-    <h2 class="-title">Page Title</h2>
-    <div class="button-group">
-        <div class="-row _end">
-            <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
-            <a href="#" title="Primary action" class="btn">Primary Action</a>
+<div class="header-title g-row g-center">
+    <h2 class="g-col -title">Page Title</h2>
+    <div class="g-col button-group">
+        <div class="g-row _just-end">
+            <a href="#" title="Secondary action" class="btn-secondary _medium">Secondary Action</a>
+            <a href="#" title="Primary action" class="btn _medium">Primary Action</a>
         </div>
     </div>
 </div>
 {% endhighlight %}
         <div class="uikit-preview">
-            <div class="header-title">
-                <h2 class="-title">Page Title</h2>
-                <div class="button-group">
-                    <div class="-row _end">
-                        <a href="#" title="Secondary action" class="btn-secondary">Secondary Action</a>
-                        <a href="#" title="Primary action" class="btn">Primary Action</a>
+            <div class="header-title g-row g-center">
+                <h2 class="g-col -title">Page Title</h2>
+                <div class="g-col button-group">
+                    <div class="g-row _just-end">
+                        <a href="#" title="Secondary action" class="btn-secondary _medium">Secondary Action</a>
+                        <a href="#" title="Primary action" class="btn _medium">Primary Action</a>
                     </div>
                 </div>
             </div>
@@ -1283,63 +957,77 @@ description: These are the basic form input styles currently. The styles below a
 <!-- / section -->
 
 <section class="uikit-section" data-core-careers>
-    <h2 class="toc-tag-editor">Inline Forms</h2>
+    <h2 id="forms-inline" class="toc-tag-editor">Inline Forms</h2>
     <p>If you wish all input groups to act like inline, you can add the <code>._inline</code> class to the form instead of on each individual input group.</p>
 
     <div class="uikit-code uikit-has-preview">
 {% highlight html linenos %}
-<form class="_inline">
-    <div class="input-group">
-        <label for="example-item01" class="col3">Label Example</label>
-        <div class="-row col">
-            <input type="text" name="example-item01" id="example-item01" />
+<form>
+    <div class="input-group g-row">
+        <div class="g-col3 _align-center">
+            <label for="example-item01" class="f-label">Label Example</label>
+        </div>
+        <div class="g-col">
+            <input type="text" name="example-item01" id="example-item01" class="f-input" />
         </div>
     </div>
-    <div class="input-group">
-        <label for="example-item02" class="col3">Label Example That Is Very Long</label>
-        <div class="-row col">
-            <input type="text" name="example-item02" id="example-item02"/>
+    <div class="input-group g-row">
+        <div class="g-col3 _align-center">
+            <label for="example-item02" class="f-label">Label Example That Is Very Long</label>
+        </div>
+        <div class="g-col">
+            <input type="text" name="example-item02" id="example-item02" class="f-input"/>
         </div>
     </div>
-    <div class="input-group">
-        <label for="example-item03" class="col3">Label Example</label>
-        <div class="-row col">
-            <input type="text" name="example-item03" id="example-item03" />
-            <input type="button" id="example-button01" value="Action Item" class="btn-secondary _last" />
+    <div class="input-group g-row">
+        <div class="g-col3 _align-center">
+            <label for="example-item03" class="f-label">Label Example</label>
+        </div>
+        <div class="g-col g-row">
+            <input type="text" name="example-item03" id="example-item03" class="f-input" />
+            <input type="button" id="example-button01" value="Action Item" class="btn-secondary is-last" />
         </div>
     </div>
-    <div class="input-group">
-        <label for="example-button02" class="col3">Label Example</label>
-        <div class="-row col">
-            <input type="button" id="example-button02" value="Save Item" class="btn col" />
+    <div class="input-group g-row">
+        <div class="g-col3 _align-center">
+            <label for="example-button02" class="f-label">Label Example</label>
         </div>
+        <input type="button" id="example-button02" value="Save Item" class="btn g-col" />
     </div>
 </form>
 {% endhighlight %}
         <div class="uikit-preview">
-            <form class="_inline">
-                <div class="input-group">
-                    <label for="example-item01" class="col3">Label Example</label>
-                    <div class="-row col">
-                        <input type="text" name="example-item01" id="example-item01" />
+            <form>
+                <div class="input-group g-row">
+                    <div class="g-col3 _align-center">
+                        <label for="example-item01" class="f-label">Label Example</label>
+                    </div>
+                    <div class="g-col">
+                        <input type="text" name="example-item01" id="example-item01" class="f-input" />
                     </div>
                 </div>
-                <div class="input-group">
-                    <label for="example-item02" class="col3">Label Example That Is Very Long</label>
-                    <div class="-row col">
-                        <input type="text" name="example-item02" id="example-item02"/>
+                <div class="input-group g-row">
+                    <div class="g-col3 _align-center">
+                        <label for="example-item02" class="f-label">Label Example That Is Very Long</label>
+                    </div>
+                    <div class="g-col">
+                        <input type="text" name="example-item02" id="example-item02" class="f-input"/>
                     </div>
                 </div>
-                <div class="input-group">
-                    <label for="example-item03" class="col3">Label Example</label>
-                    <div class="-row col">
-                        <input type="text" name="example-item03" id="example-item03" />
-                        <input type="button" id="example-button01" value="Action Item" class="btn-secondary _last" />
+                <div class="input-group g-row">
+                    <div class="g-col3 _align-center">
+                        <label for="example-item03" class="f-label">Label Example</label>
+                    </div>
+                    <div class="g-col g-row">
+                        <input type="text" name="example-item03" id="example-item03" class="f-input" />
+                        <input type="button" id="example-button01" value="Action Item" class="btn-secondary is-last" />
                     </div>
                 </div>
-                <div class="input-group">
-                    <label for="example-button02" class="col3">Label Example</label>
-                    <input type="button" id="example-button02" value="Save Item" class="btn col" />
+                <div class="input-group g-row">
+                    <div class="g-col3 _align-center">
+                        <label for="example-button02" class="f-label">Label Example</label>
+                    </div>
+                    <input type="button" id="example-button02" value="Save Item" class="btn g-col" />
                 </div>
             </form>
         </div>

@@ -18,6 +18,7 @@
 // TEMPORARY UNTIL FORMS ARE INTEGRATED
 @import "forms.less";
 @import "careers-grid";
+@import 'grid-flexbox';
 
 *,
 *:before,
@@ -982,17 +983,5 @@ body.composer-on {
 	> form > .input-group,
 	> .button-group,
 	> .option-toggle,
-	> .header-title { width: 60%; }
-
-	.header-title {
-		.flexbox();
-		margin-bottom: @margin-base;
-		padding-bottom: @padding-base;
-
-		.-title,
-		.button-group,
-		.-row { margin: 0; }
-
-		.-title { line-height: 2; }
-	}
+	> .header-title { width: 75%; }
 } 

@@ -25,36 +25,28 @@ button, .button,
 //  ============================================================================
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
-@input-padding:                 (@padding-half + 1) @padding-base;
-@input-fontSize:                @body-font-size + 1;
-@input-lineHeight:              1.461538462;
-@input-color:                   @black-700;
-@input-border:                  @black-150;
-@input-sprite-width:            137px;
-@input-placeholder-color:       @black-150;
+@fm-padding:                @su-8 @su-16;
+@fm-font-size:              @fs-14;
+@fm-line-height:            @lh-6;
+@fm-color:                  @black-700;
+@fm-border:                 @black-150;
+@fm-sprite-width:           137px;
+@fm-placeholder-color:      @black-150;
 
-@input_disabled-background:     @black-050;
-@input_disabled-border:         @black-075;
-@input_disabled-color:          @black-400;
-@input_disabled-shadowInner:    fade(@black-350,10%);
-
-@input_focused-border:          @blue-500;
-@input_focused-color:           @blue-400;
-@input_focused-shadowInner:     @black-050;
-@input_focused-shadowDrop:      fade(@input_focused-border,50%);
-
-@input-warning-border:          @yellow-500;
-@input-warning-color:           desaturate(@yellow-700,60%);
+@fm-border_focused:         @blue-500;
+@fm-shadowInner_focused:    @black-050;
+@fm-shadowDrop_focused:     fade(@fm-border_focused,50%);
 
 
 //  ============================================================================
 //  $ TYPE STYLES
 //  ----------------------------------------------------------------------------
 //  -- Labels
-label, .label {
+.f-label {
     font-size: 14px;
     font-weight: 700;
     color: @black-700;
+    cursor: pointer;
 
     //  --  Layout
     &._block    { display: block; }
@@ -63,63 +55,98 @@ label, .label {
     &._muted    { color: @copy_muted-color; }
 
     //  --  Sizes
-    &._small    { font-size: @input-fontSize - 1; }
-    &._medium   { font-size: @input-fontSize + 4; }
-    &._large    { font-size: @input-fontSize + 8; }
+    &._small    { font-size: @fm-font-size - 2; }   //  @fs-12
+    &._medium   { font-size: @fm-font-size + 4; }   //  @fs-18
+    &._large    { font-size: @fm-font-size + 8; }   //  @fs-22
 
     &._medium,
     &._large { font-weight: 400; }
 }
 
 //  --  Required / Optional
-span.required,
-span.optional {
+.is-required,
+.is-optional {
     display: inline-block;
     margin-left: @margin-half;
-    font-size: 11px;
+    font-size: @fm-font-size - 2;   //  @fs-12
     font-style: italic;
     font-weight: 400;
 }
-span.required { color: @red-500; }
-span.optional { color: @black-400; }
+.is-required { color: @red-500; }
+.is-optional { color: @black-400; }
 
 //  --  Help Text
-.-help {
+.t-help {
     margin-top: @margin-half;
     margin-bottom: @margin-base;
     color: @black-400;
-    font-size: @input-fontSize - 1;
+    font-size: @fm-font-size - 1;
     line-height: 1.230769231;   // 16px / 13px 
 
-    &._medium { font-size: @input-fontSize; }
+    &._medium { font-size: @fm-font-size; }
 }
 
 
 //  ============================================================================
 //  $ INPUT STYLES 
 //  ----------------------------------------------------------------------------
-//  Set the baseline styles for everything up front. Keeping this fairly generic.
-select,
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="datetime"],
-.input,
-.tag-editor,
-.container .chosen-container > .chosen-choices {
+.f-input,
+//  Because we style DOM elements in all.less, we need specify the DOM element.
+//  TO-DO: Remove the old input styles.
+input.f-input,
+textarea.f-input {
     box-sizing: border-box;
+    .flex(1 auto);
     margin: 0;
+    padding: @fm-padding;
+    min-height: auto;    
     vertical-align: middle;
 
-    //  --  Placeholder
+    border: 1px solid @fm-border;
+    box-shadow: inset 0 0 1px fade(@black-350,20%), 0 0 0 fade(@white,0%);
+
+    font-size: @fm-font-size;
+    line-height: @fm-line-height;
+    color: @fm-color;
+
+    background-color: @white;
+    transition: all 600ms @te-smooth;
+
+    //  --  PLACEHOLDER
     &::-webkit-input-placeholder,
     &::-moz-placeholder,            // Firefox 19+
-    &:-ms-input-placeholder { color: @input-placeholder-color; }
+    &:-ms-input-placeholder { color: @fm-placeholder-color; }
+    
+    //  --  HOVER STATE
+    &:hover {
+        border-color: fade(@fm-border_focused,50%);
+        box-shadow: inset 0 0 2px darken(@fm-shadowInner_focused,10%), 0 0 2px fade(@fm-shadowDrop_focused,20%);
+    }
+    
+    //  --  FOCUSED STATE
+    &:focus {
+        border-color: @fm-border_focused;
+        box-shadow: inset 0 0 4px @fm-shadowInner_focused, 0 0 5px @fm-shadowDrop_focused;
+        outline: 0;
+    }
+
+    //  --  DISABLED / READONLY STATE
+    &[disabled],
+    &.is-disabled,
+    &[read-only],
+    &.is-readonly {
+        border-color: @black-075;
+        box-shadow: inset 0 0 3px fade(@black-350,10%);
+        background-color: @black-050;
+        color: @black-400;
+    }
+    &[disabled],
+    &.is-disabled {
+        background-image: url("../images/forms.svg"), none;
+        background-repeat: no-repeat;
+        background-position: ~'calc(100% + @{fm-sprite-width} - 124px)' -126px;
+        cursor: not-allowed;
+    }
 
     //  --  Layout
     &._block   {
@@ -128,70 +155,35 @@ input[type="datetime"],
     }
 
     //  --  Sizes
-    &._large { padding: @padding-base (@padding-base - 1) (@padding-base - 1); }
-    &._small { padding: @padding-half (@padding-base - 2) (@padding-half - 1); }
+    &._large {
+        padding-top: @su-16;
+        padding-bottom: @su-16;
+        font-size: @fm-font-size + 11;  // @fs-25
+    }
+    &._medium {
+        font-size: @fm-font-size + 4;   // @fs-18
+    }
+    &._small {
+        padding-left: @su-12;
+        padding-right: @su-12;
+        font-size: @fm-font-size - 2;   // @fs-12
+    }
 }
 
 //  $ TEXTAREA 
 //  ----------------------------------------------------------------------------
-textarea {
+textarea.f-input {
+    padding: @su-12;
     height: auto;
     resize: vertical;
-    font-size: @input-fontSize - 1;
-    line-height: @input-lineHeight - 0.3;
+    font-size: @fm-font-size - 1;
+    line-height: @fm-line-height - 0.3;
 }
 
 //  $ SELECTS 
 //  ----------------------------------------------------------------------------
-//  We leave the base, default styles intact
-select {
-    padding: 2px;
-    font-size: @input-fontSize - 1;
-    border-color: @input-color;
-
-    &:focus {
-        outline: 0;
-        border-color: @input_focused-border;
-    }
-
-    &[disabled] {
-        background-color: @input_disabled-background;
-        border-color: @input_disabled-border;
-        color: @input_disabled-color;
-        cursor: not-allowed;
-    }
-}
-
-//  But we prefer to use these beautiful custom styles
-.select {
+.f-select {
     position: relative;
-    align-items: stretch;
-
-    select {
-        .appearance(none);
-        padding: @input-padding;
-        padding-right: 33px;
-        width: 100%;
-
-        font-size: @input-fontSize;
-        line-height: @input-lineHeight;
-        color: @input-color;
-        background-color: @white;
-        border: 1px solid @input-border;
-        border-radius: @borderRadius-small;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
-
-        &:hover {
-            border-color: fade(@input_focused-border,50%);
-            box-shadow: inset 0 0 2px darken(@input_focused-shadowInner,10%), 0 0 2px fade(@input_focused-shadowDrop,20%);
-        }
-        
-        &:focus {
-            border-color: @input_focused-border;
-            box-shadow: inset 0 0 4px @input_focused-shadowInner, 0 0 5px @input_focused-shadowDrop;
-            outline: 0;
-        }
-    }
 
     // Create custom arrows since appearance removes them.
     &:before,
@@ -203,7 +195,7 @@ select {
 
         border-width: 3px;
         border-style: solid;
-        border-color: @input-color transparent;
+        border-color: @fm-color transparent;
     }
     &:before {
         top: calc(~"50% - 6px");
@@ -216,19 +208,45 @@ select {
         border-bottom-width: 0;
     }
 
+    > select {
+        .appearance(none);
+        .flex(1 auto);
+        padding: @fm-padding;
+        padding-right: 33px;
+
+        font-size: @fm-font-size;
+        line-height: @fm-line-height;
+        color: @fm-color;
+        background-color: @white;
+        border: 1px solid @fm-border;
+        border-radius: @br-2;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+        &:hover {
+            border-color: fade(@fm-border_focused,50%);
+            box-shadow: inset 0 0 2px darken(@fm-shadowInner_focused,10%), 0 0 2px fade(@fm-shadowDrop_focused,20%);
+        }
+        
+        &:focus {
+            border-color: @fm-border_focused;
+            box-shadow: inset 0 0 4px @fm-shadowInner_focused, 0 0 5px @fm-shadowDrop_focused;
+            outline: 0;
+        }
+    }
+
     //  Disabled State
     //  You have to apply this to the wrapping div so the arrows look disabled too.
-    &._disabled {
+    &.is-disabled {
         &:before,
         &:after { opacity: 0.3; }
 
         select {
-            color: lighten(@input-color,45%);
+            color: lighten(@fm-color,45%);
             background-color: @black-050;
-            border-color: lighten(@input-border,10%);
+            border-color: lighten(@fm-border,10%);
 
             &:hover {
-                border-color: lighten(@input-border,10%);
+                border-color: lighten(@fm-border,10%);
                 box-shadow: none;
             }
         }
@@ -237,141 +255,51 @@ select {
 
 //  $ FILE UPLOAD INPUT 
 //  ----------------------------------------------------------------------------
-input[type="file"] {
+.f-input-file {
     display: block;
     margin: 0;
-    padding: @padding-half 0;
-    font-size: 11px;
+    padding: @su-8 0;
+    font-size: @fs-11;
 }
 
-
-//  --  Okay now we can style input fields
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="datetime"],
-.input,
-.tag-editor,
-.container .chosen-container > .chosen-choices {
-    padding: @input-padding;
-    min-height: auto;
-    width: 100%;
-
-    font-size: @input-fontSize;
-    line-height: @input-lineHeight;
-    color: @input-color;
-
-    background-color: @white;
-    border: 1px solid @input-border;
-    box-shadow: inset 0 0 1px fade(@black-350,20%), 0 0 0 fade(@white,0%);
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
-    
-    &:hover {
-        border-color: fade(@input_focused-border,50%);
-        box-shadow: inset 0 0 2px darken(@input_focused-shadowInner,10%), 0 0 2px fade(@input_focused-shadowDrop,20%);
-    }
-    
-    &:focus {
-        border-color: @input_focused-border;
-        box-shadow: inset 0 0 4px @input_focused-shadowInner, 0 0 5px @input_focused-shadowDrop;
-        outline: 0;
-    }
-
-    &[disabled], &._disabled,
-    &[readonly], &._readonly {
-        background-color: @input_disabled-background;
-        border-color: @input_disabled-border;
-        box-shadow: inset 0 0 3px @input_disabled-shadowInner;
-        color: @input_disabled-color;
-    }
-    &[disabled], &._disabled {
-        cursor: not-allowed;
-
-        // icon
-        background-image: url("../images/forms.svg"), none;
-        background-repeat: no-repeat;
-        background-position: ~'calc(100% + @{input-sprite-width} - 124px)' -126px;
-    }
-}
-
-
-//  ============================================================================
-//  $ INPUT LAYOUT OPTIONS
-//  ----------------------------------------------------------------------------
-select,
-textarea,
-input,
-.input,
-.input._uneditable {
-    &._large  { font-size: 24px; }
-    &._medium { font-size: 18px; }
-    &._small  { font-size: 12px; }
-}
 
 
 //  ============================================================================
 //  $ CHECKBOXES & RADIO SELECTS
 //  ----------------------------------------------------------------------------
-.checkbox,
-.radio {
-    .flexbox();
+.f-checkbox,
+.f-radio {
+    .g-col { .flex-flow(column nowrap); }
 
-    .-item {
-        flex-grow: 1;
-        .flex-justify(center);
-        .flex-flow(column nowrap);
-        padding-left: 0.5em;
+    //  Column with the checkbox or radio input
+    > .-input {
+        .flex(none);
+        padding-right: @su-8;
 
-        &:first-of-type {
-            flex-grow: 0;
-            padding-left: 0;
-        }
+        > input {
+            margin: 0;  // Reset browser
+            &[type="checkbox"] { margin-top: @su-2; }
 
-        &._top {
-            .flex-justify(flex-start);
-            padding-top: 2px;
-            > input { min-height: auto; }
+            &:focus { outline: 0; }
         }
     }
 
-    input {
-        margin: 0;
-        margin-right: @margin-half;
-        &:focus { outline: 0; }
-    }
-    label {
-        font-weight: 400;
-        cursor: pointer;
-    }
-    .-help {
-        margin-top: 3px;
-        margin-bottom: 3px;
+    //  Remove bold weight on labels
+    .f-label { font-weight: 400; }
+
+    //  Correct margins & paddings
+    .t-help {
+        margin: @su-2 0;
         padding-right: 1em;
     }
 
     //  --  LAYOUTS
     //  When you have multiple checkbox or radios next to each other, space them out
-    & + &,
-    input + & { margin-top: @margin-half; }
+    & + & { margin-top: @margin-half; }
 
-    //  Position Alignment
-    //  Have to use margin-left to push items to the right: http://stackoverflow.com/a/22429853/2640230
-    &._right { margin-left: auto; }
-}
-
-.radio input[type="radio"],
-.checkbox input[type="checkbox"] {
-    margin: 0; // Reset browser
-
-    label > & {
-        margin: 0;
-        margin-right: @margin-half;
-    }
+    //  When you want to pull a checkbox to the right, use the "._end" modifying class
+    //  on the wrapping ".g-row".
+    &._end .g-col { .flex(0 auto); }
 }
 
 
@@ -380,7 +308,7 @@ input,
 //  ----------------------------------------------------------------------------
 .input-group {
     //  Message (Generic)
-    .-message {
+    .message {
         display: block;
         margin-bottom: 0;
         padding-top: @padding-half;
@@ -389,20 +317,21 @@ input,
 
     .-icon {
         position: absolute;
-        top: calc(~"50% - 12px");
-        right: 10px;
+        top: 50%;
+        right: @su-12;
+        margin-top: -8px; // Half of height
         width: 16px;
         height: 16px;
 
-        background-position: 0 0;
+        background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     //  --  WARNING
-    &._warning {
-        input {
-            border-color: mix(@yellow-500,@orange-600);
+    &.has-warning {
+        .f-input {
+            border-color: mix(@yellow-400,@orange-600);
 
             &:hover {
                 border-color: lighten(mix(@yellow-500,@orange-600),10%);
@@ -414,14 +343,13 @@ input,
             }
         }
 
-        .-message { color: mix(@yellow-500,@orange-600); }
-
+        .message { color: mix(@yellow-500,@orange-600); }
         .-icon { background-image: url("../images/icon-warning.svg"), none; }
     }
 
     //  --  ERROR
-    &._error {
-        input {
+    &.has-error {
+        .f-input {
             border-color: @red-400;
 
             &:hover {
@@ -434,16 +362,13 @@ input,
             }
         }
 
-        .-message { color: @red-500; }
-
+        .message { color: @red-500; }
         .-icon { background-image: url("../images/icon-error.svg"), none; }
     }
 
     //  --  SUCCESS
-    &._success {
-        input[required]:valid,
-        input:valid,
-        input {
+    &.is-success {
+        .f-input {
             border-color: @green-400;
             
             &:hover {
@@ -456,9 +381,14 @@ input,
             }
         }
 
-        .-message { color: darken(@green-500,5%); }
-
+        .message { color: darken(@green-500,5%); }
         .-icon { background-image: url("../images/icon-success.svg"), none; }
+    }
+
+    //  --  DISABLED
+    &.is-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
 }
 
@@ -475,280 +405,48 @@ input,
     *:after { box-sizing: border-box; }
 
     position: relative;
-    
     .flexbox();
-    .flex(1 1 auto);
-    .flex-flow(column nowrap);
-    .flex-justify(flex-start);
-
-    .-item {
-        position: relative;
-        display: inline-flex;
-        .flex(1 auto);
-
-        > input { min-height: 100%; }
-    }
-
-    //  --  ROWS
-    //  --------------------------------------------------------------------------
-    //      Instead of applying a top margin by default, we say if a .-row is
-    //      preceeded by ANYTHING else (except a label), then give it a top margin.
-    //      Otherwise don't give it a top margin.
-    *:not(label) + .-row { margin-top: @margin-half; }
-
-    //  --  Rows reset the flow direction and act as a wrapping container for elements
-    .-row {
-        //  HACK -- TEMPORARY
-        //  Because Careers' grid.less applies .clearfix() to the .-row class, we need to
-        //  remove the before and after elements because flexbox picks them up. This can
-        //  be removed when we update the grid.less to flexbox.
-        &:before,
-        &:after { position: absolute; }
-
-        .flexbox();
-        .flex(1 auto);
-
-        //  Flow adjustments
-        &._start            { .flex-justify(flex-start); }
-        &._end              { .flex-justify(flex-end); }
-        &._justify          { .flex-justify(space-between); }
-        &._reverse          { .flex-flow(row-reverse nowrap); }
-        &._wrap             { .flex-flow(row wrap); }
-        &._align-center     { align-items: center; }
-
-        //  Buttons
-        .btn._last,
-        [class*="btn-"]._last {
-            .flex-order(99);    // Because we always want it last.
-            margin-left: -1px;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            white-space: nowrap;
-        }
-
-        //  A way to visually collect and space groups
-        .-group {
-            .flexbox();
-
-            // Apply spacing to groups and items within groups
-            &, > .-item {
-                position: relative;
-                padding-left: 2px;
-                padding-right: 2px;
-
-                &:first-of-type { padding-left: 0; }
-                &:last-of-type { padding-right: 0; }
-            }
-        }
-
-        > label + input { margin-top: 0; }
-    }
-
-    [class*="col"] { .flex(0 0 auto); }
-
-    //  --  Column Sizes
-    .col {
-        .flex(1 1 0);
-        max-width: 100%;
-    }
-    .col1 {
-        flex-basis: @grid-col-width * 1;
-        max-width: @grid-col-width * 1;
-    }
-    .col2 {
-        flex-basis: @grid-col-width * 2;
-        max-width: @grid-col-width * 2;
-    }
-    .col3 {
-        flex-basis: @grid-col-width * 3;
-        max-width: @grid-col-width * 3;
-    }
-    .col4 {
-        flex-basis: @grid-col-width * 4;
-        max-width: @grid-col-width * 4;
-    }
-    .col5 {
-        flex-basis: @grid-col-width * 5;
-        max-width: @grid-col-width * 5;
-    }
-    .col6 {
-        flex-basis: @grid-col-width * 6;
-        max-width: @grid-col-width * 6;
-    }
-    .col7 {
-        flex-basis: @grid-col-width * 7;
-        max-width: @grid-col-width * 7;
-    }
-    .col8 {
-        flex-basis: @grid-col-width * 8;
-        max-width: @grid-col-width * 8;
-    }
-    .col9 {
-        flex-basis: @grid-col-width * 9;
-        max-width: @grid-col-width * 9;
-    }
-    .col10 {
-        flex-basis: @grid-col-width * 10;
-        max-width: @grid-col-width * 10;
-    }
-    .col11 {
-        flex-basis: @grid-col-width * 11;
-        max-width: @grid-col-width * 11;
-    }
-    .col12 {
-        flex-basis: @grid-col-width * 12;
-        max-width: @grid-col-width * 12;
-    }
-
-    .col {
-        //  When you need to push a column over
-        &-push1  { margin-left: @grid-col-width * 1; }
-        &-push2  { margin-left: @grid-col-width * 2; }
-        &-push3  { margin-left: @grid-col-width * 3; }
-        &-push4  { margin-left: @grid-col-width * 4; }
-        &-push5  { margin-left: @grid-col-width * 5; }
-        &-push6  { margin-left: @grid-col-width * 6; }
-        &-push7  { margin-left: @grid-col-width * 7; }
-        &-push8  { margin-left: @grid-col-width * 8; }
-        &-push9  { margin-left: @grid-col-width * 9; }
-        &-push10 { margin-left: @grid-col-width * 10; }
-        &-push11 { margin-left: @grid-col-width * 11; }
-        &-push12 { margin-left: @grid-col-width * 12; }
-
-        //  When you need to pull a column over
-        &-pull1  { margin-left: -(@grid-col-width * 1); }
-        &-pull2  { margin-left: -(@grid-col-width * 2); }
-        &-pull3  { margin-left: -(@grid-col-width * 3); }
-        &-pull4  { margin-left: -(@grid-col-width * 4); }
-        &-pull5  { margin-left: -(@grid-col-width * 5); }
-        &-pull6  { margin-left: -(@grid-col-width * 6); }
-        &-pull7  { margin-left: -(@grid-col-width * 7); }
-        &-pull8  { margin-left: -(@grid-col-width * 8); }
-        &-pull9  { margin-left: -(@grid-col-width * 9); }
-        &-pull10 { margin-left: -(@grid-col-width * 10); }
-        &-pull11 { margin-left: -(@grid-col-width * 11); }
-        &-pull12 { margin-left: -(@grid-col-width * 12); }
-    }
-
-    //  --  SPACING
-    &._section { margin-top: @margin-double; }
 }
 
 //  --  INPUT GROUPS
 //      Wrapping <div> that provides ammple white space around a unit of
 //      form elements
 .input-group {
-    margin-bottom: @margin-double;
+    .flex-flow(column nowrap);
+    margin-bottom: @su-28;
+
+    //  If an input-group nested within another, remove the bottom margin.
+    & > & { margin-bottom: 0; }
 
     //  If an input-group is the only one or nested within another, remove
     //  the bottom margin on the last one.
-    &:only-child,
-    &:last-of-type { margin-bottom: 0; }
+    // &:only-child,
+    // &:last-of-type { margin-bottom: 0; }
 
     //  If there's a label, we generally want a top margin on the item below.
     //  But ONLY on labels that are direct children.
-    > label + * { margin-top: @margin-half; }
+    & + &,
+    > label + * { margin-top: @su-8; }
 
     //  If an input-group follows a label though, we want that top margin to be greater.
-    > label + & { margin-top: @margin-base; }
+    > label + & { margin-top: @su-16; }
 
-    //  --  Input Clusters
-    //      Some layouts require us to group similar input groups, but they have their own
-    //      labels and input group elements.
-    &._cluster {
-        .input-group {
-            //  We don't need bottom margins here. Let's let rows take care of that.
-            margin-bottom: 0;
-
-            //  If an input-group is nested though, we want bottom margin, but not the normal amount.
-            .input-group { margin-bottom: @margin-base; }
-
-            //  Nested input-group labels shouldn't be bold as they're secondary labels
-            label { font-weight: 400; }
-        }
-
-        .button-group._end {
-            margin-top: 0;
-            align-items: flex-end;
-            .flex-justify(flex-end);
-
-            .btn,
-            [class^="btn-"] { margin: 0; }
-        }
-
-        //  The first direct row we want to wrap
-        > .-row { flex-wrap: wrap; }
-
-        //  We want visuall spacing between input-groups
-        .-row {
-            position: relative;
-
-            //  Within checkbox and radio rows, the first item needs to stay small
-            &.checkbox,
-            &.radio {
-                // Reset any previously set margins
-                &:first-of-type:not(:only-of-type) { margin-top: @margin-half; }
-            }
-
-            [class*="col"] {
-                padding-left: 0.25em;
-                padding-right: 0.25em;
-
-                &:first-of-type { padding-left: 0; }
-                &:last-of-type { padding-right: 0; }
-            }
-        }
-    }
-
-    //  --  Input Filters
-    //      This allows you to visually nest a select menu (usually for filtering) within
-    //      an input. This applied within an input-group on a .-row element.
-    .-filters {
-        //  First we need to reset the input and select appearances and apply it to the .-row
-        border: 1px solid @input-border;
-        padding: @input-padding;
-
-        input,
-        .select select {
-            padding: 0;
-            border-color: transparent;
-            box-shadow: none;
-            background-color: transparent;
-
-            &:focus,
-            &:hover,
-            &:active {
-                outline: 0;
-                box-shadow: none;
-                background-color: transparent;
-                border-color: transparent;
-            }
-        }
-
-        .select {
-            padding-left: @padding-base;
-            border-left: 1px solid @input-border;
-        }
-
-        //  To apply this to -filters you will need to use Javascript. :(
-        &._active {
-            border-color: @input_focused-border;
-            box-shadow: inset 0 0 4px @input_focused-shadowInner, 0 0 5px @input_focused-shadowDrop;
-        }
+    //  Input Group Clusters
+    &._clusters {
+        .g-row + .g-row { margin-top: @su-8; }
+        .input-group .f-label { font-weight: 400; }
     }
 
     //  Input prepends, appends, and connectors use the same grayed out box
     //  style. This is the univesal style for it.
     .-fill {
-        flex-shrink: 0;
-        padding: @input-padding;
-        
-        font-size: @input-fontSize - 1;
-        line-height: 1.538461538;
+        .flex(none);
+        align-items: center;
+        padding: @fm-padding;
         color: @black-600;
 
         background-color: @black-050;
-        border: 1px solid @input-border;
+        border: 1px solid @fm-border;
         border-left-width: 0;
         border-right-width: 0;
         
@@ -765,75 +463,47 @@ input,
             border-color: transparent;
             background-color: transparent;
         }
-    }
-    
-    //  If the input-group is disabled, make fills look disabled too
-    &._disabled .-fill {
-        background-color: @black-075;
-        border-color: @input_disabled-border;
-        box-shadow: inset 0 0 3px @input_disabled-shadowInner;
-    }
 
-    .fill-first .-fill {
-        .flex-order(-1);
-        border-left-width: 1px;
-    }
-
-    .fill-last {
-        .-fill {
-            .flex-order(2);
-            border-right-width: 1px;
-        }
-        
-        .btn._last,
-        [class*="btn-"]._last {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-    }
-
-    //  Sometimes we actually want BOTH append and prepend
-    .fill-multiple {
-        .-fill:first-of-type {
+        //  Ordering
+        &.is-first {
             .flex-order(-1);
             border-left-width: 1px;
         }
-        .-fill:last-of-type {
-            .flex-order(99);
+        &.is-last {
+            .flex-order(2);
             border-right-width: 1px;
         }
     }
 
-    //  If an entire input-group is unavailable, make it look like that.
-    &._disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
+    [class^="btn"].is-last {
+        .flex-order(99);
+        margin-left: -1px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }
 
 //  --  BUTTON GROUPS
 //      Wrapping <div> for buttons / actions
 .button-group {
-    margin-top: @margin-double;
-    .flex-flow(row wrap);
+    [class^="btn"] + [class^="btn"] { margin-left: @su-2; }
 
-    [class^="btn"]:not(:first-of-type) { margin-left: @margin-half; }
-
-    &._stacked {
-        .flex-flow(column wrap);
-
-        > [class^="btn"]:not(:first-of-type) {
-            margin-top: @margin-half; 
+    &.g-column {
+        [class^="btn"] + [class^="btn"] {
+            margin-top: @su-8; 
             margin-left: 0;
         }
     }
 
-    ._end { margin-left: auto; }
+    .t-help {
+        margin-top: @su-12;
+        margin-bottom: 0;
+    }
 
     //  Applies top border to the button container
-    &._border {
+    &.has-border {
         padding-top: @padding-base + @padding-half;
-        border-top: 1px solid lighten(@input-border,5%);
+        border-top: 1px solid lighten(@fm-border,5%);
     }
 }
 
@@ -867,52 +537,49 @@ form._inline .input-group {
 //  ============================================================================
 //  $ OPTION TOGGLE
 //  ----------------------------------------------------------------------------
-.option-toggle {
-    label + & { margin-top: @margin-half; }
+.f-radio-toggle {
+    .f-label {
+        .flex(1 auto);
+        padding: @fm-padding;
+        margin-left: -1px;
+        border: 1px solid @fm-border;
+        background-color: @white;
 
-    > .col {
-        input[type="radio"] {
-            position: absolute;
-            left: -9999em;
-            opacity: 0;
+        font-weight: 400;
+        line-height: @fm-line-height;
+        color: @fm-color;
+        text-align: center;
 
-            &:checked + label {
-                color: @white;
-                background-color: @blue-500;
-                border-color: @blue-500;
-                pointer-events: none;
-            }
+        transition: all 600ms @te-smooth;
+        cursor: pointer;
+
+        &:hover {
+            color: darken(@fm-color,10%);
+            background-color: @blue-050;
+            border-color: @blue-200;
+            z-index: 1;
         }
+    }
 
-        label {
-            display: inherit;
-            flex-grow: 1;
-            padding: @input-padding;
-            margin-left: -1px;
+    input[type="radio"] {
+        position: absolute;
+        left: -9999em;
+        opacity: 0;
 
-            font-weight: 400;
-            line-height: @input-lineHeight;
-            text-align: center;
-            color: @input-color;
-            background-color: @white;
-            border: 1px solid @input-border;
-
-            cursor: pointer;
-            transition: all 0.15s ease-in-out;
-
-            &:hover {
-                color: darken(@input-color,10%);
-                background-color: @blue-050;
-                border-color: @blue-200;
-                z-index: 1;
-            }
+        &:checked + .f-label {
+            color: @white;
+            background-color: @blue-500;
+            border-color: @blue-500;
+            pointer-events: none;
         }
+    }
 
-        &:first-of-type label { 
+    .g-col {
+        &:first-of-type .f-label { 
             margin-left: 0;
-            border-radius: @borderRadius-small 0 0 @borderRadius-small; 
+            border-radius: @br-2 0 0 @br-2; 
         }
-        &:last-of-type label  { border-radius: 0 @borderRadius-small @borderRadius-small 0; }
+        &:last-of-type .f-label { border-radius: 0 @br-2 @br-2 0; }
     }
 }
 
@@ -950,9 +617,9 @@ form._inline .input-group {
 
     .text-wrapper {
         margin: 10px 0;
-        font-size: @input-fontSize;
+        font-size: @fm-font-size;
         font-weight: 700;
-        line-height: @input-lineHeight;
+        line-height: @fm-line-height;
         text-align: center;
         transition: all 0.15s ease-in-out;
 
@@ -962,7 +629,7 @@ form._inline .input-group {
             display: block;
             margin-top: 1px;
             font-weight: 400;
-            font-size: @input-fontSize - 2;
+            font-size: @fm-font-size - 2;
             color: @black-350;
             transition: all 0.15s ease-in-out;
         }
@@ -1039,10 +706,10 @@ form._inline .input-group {
     margin-top: @margin-half;
 
     &.chosen-container-active {
-        border: 1px solid @input_focused-color;
+        border: 1px solid @fm-border_focused;
 
         li.search-field input[type="text"] {
-            color: @input-color;
+            color: @fm-color;
         }
     }
 
@@ -1051,7 +718,7 @@ form._inline .input-group {
         padding: 0 !important;
         margin: 0 !important;
 
-        li.search-field input[type="text"] { padding: @input-padding; }
+        li.search-field input[type="text"] { padding: @fm-padding; }
     }
 
     .team-join {
@@ -1081,7 +748,7 @@ form._inline .input-group {
         width: auto;
         vertical-align: middle;
         padding: 3px 6px;
-        border-radius: @borderRadius-small @borderRadius-small 0 0;
+        border-radius: @br-2 @br-2 0 0;
 
         position: absolute;
         top: 4px;
@@ -1112,7 +779,7 @@ form._inline .input-group {
             width: 24px;
             background: @blue-600;
             z-index: 0;
-            border-top-left-radius: @borderRadius-small
+            border-top-left-radius: @br-2
         }
 
         //  If this preceeds an input-group, remove the margin

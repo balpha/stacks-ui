@@ -43,13 +43,14 @@ button, .button,
 //  ----------------------------------------------------------------------------
 //  -- Labels
 .f-label {
-    font-size: 14px;
+    display: inline-flex;
+    margin: 0;
+
+    font-size: @fm-font-size;
+    line-height: @fm-line-height;
     font-weight: 700;
     color: @black-700;
     cursor: pointer;
-
-    //  --  Layout
-    &._block    { display: block; }
 
     //  --  Styles
     &._muted    { color: @copy_muted-color; }
@@ -64,26 +65,28 @@ button, .button,
 }
 
 //  --  Required / Optional
-.is-required,
-.is-optional {
+span.is-required,
+span.is-optional {
     display: inline-block;
-    margin-left: @margin-half;
+    margin-left: @su-8;
     font-size: @fm-font-size - 2;   //  @fs-12
     font-style: italic;
     font-weight: 400;
 }
-.is-required { color: @red-500; }
-.is-optional { color: @black-400; }
+span.is-required { color: @red-500; }
+span.is-optional { color: @black-400; }
 
 //  --  Help Text
 .t-help {
-    margin-top: @margin-half;
-    margin-bottom: @margin-base;
+    margin-top: @su-8 - 2;
+    margin-bottom: @su-12;
     color: @black-400;
-    font-size: @fm-font-size - 1;
-    line-height: 1.230769231;   // 16px / 13px 
+    font-size: @fm-font-size - 2;
+    line-height: @lh-4;   // 16px / 13px 
 
     &._medium { font-size: @fm-font-size; }
+
+    .f-label + & { margin-top: @su-2; }
 }
 
 
@@ -131,27 +134,18 @@ textarea.f-input {
     }
 
     //  --  DISABLED / READONLY STATE
-    &[disabled],
-    &.is-disabled,
-    &[read-only],
-    &.is-readonly {
+    &[disabled], &.is-disabled,
+    &[read-only], &.is-readonly {
         border-color: @black-075;
         box-shadow: inset 0 0 3px fade(@black-350,10%);
         background-color: @black-050;
         color: @black-400;
     }
-    &[disabled],
-    &.is-disabled {
-        background-image: url("../images/forms.svg"), none;
+    &[disabled], &.is-disabled {
+        background-image: url("../.images/icon-disabled.svg"), none;
         background-repeat: no-repeat;
-        background-position: ~'calc(100% + @{fm-sprite-width} - 124px)' -126px;
+        background-position: calc(~"100% - @{su-12}") 50%;
         cursor: not-allowed;
-    }
-
-    //  --  Layout
-    &._block   {
-        display: block;
-        margin-left: 0;
     }
 
     //  --  Sizes
@@ -176,8 +170,6 @@ textarea.f-input {
     padding: @su-12;
     height: auto;
     resize: vertical;
-    font-size: @fm-font-size - 1;
-    line-height: @fm-line-height - 0.3;
 }
 
 //  $ SELECTS 
@@ -315,23 +307,24 @@ textarea.f-input {
         padding-bottom: @padding-half;
     }
 
-    .-icon {
-        position: absolute;
-        top: 50%;
-        right: @su-12;
-        margin-top: -8px; // Half of height
-        width: 16px;
-        height: 16px;
-
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    //  --  STATE BACKGROUNDS
+    &.has-warning,
+    &.has-error,
+    &.is-success {
+        .f-input,
+        .f-select select {
+            background-position: calc(~"100% - @{su-12}") 50%;
+            background-repeat: no-repeat;
+        }
+        .f-select select { background-position: calc(~"100% - @{su-28}") 50%; }
     }
 
     //  --  WARNING
     &.has-warning {
-        .f-input {
-            border-color: mix(@yellow-400,@orange-600);
+        .f-input,
+        .f-select select {
+            border-color: mix(@yellow-500,@orange-600);
+            background-image: url("../images/icon-warning.svg"), none;
 
             &:hover {
                 border-color: lighten(mix(@yellow-500,@orange-600),10%);
@@ -342,15 +335,16 @@ textarea.f-input {
                 box-shadow: inset 0 0 4px @black-050, 0 0 4px @yellow-200;
             }
         }
-
         .message { color: mix(@yellow-500,@orange-600); }
-        .-icon { background-image: url("../images/icon-warning.svg"), none; }
     }
 
     //  --  ERROR
+    //  --  ERROR
     &.has-error {
-        .f-input {
+        .f-input,
+        .f-select select {
             border-color: @red-400;
+            background-image: url("../images/icon-error.svg"), none;
 
             &:hover {
                 border-color: @red-300;
@@ -361,15 +355,15 @@ textarea.f-input {
                 box-shadow: inset 0 0 4px @black-050, 0 0 4px @red-200;
             }
         }
-
         .message { color: @red-500; }
-        .-icon { background-image: url("../images/icon-error.svg"), none; }
     }
 
     //  --  SUCCESS
     &.is-success {
-        .f-input {
+        .f-input,
+        .f-select select {
             border-color: @green-400;
+            background-image: url("../images/icon-success.svg"), none;
             
             &:hover {
                 border-color: @green-300;
@@ -380,9 +374,7 @@ textarea.f-input {
                 box-shadow: inset 0 0 4px @black-050, 0 0 4px @green-200;
             }
         }
-
         .message { color: darken(@green-500,5%); }
-        .-icon { background-image: url("../images/icon-success.svg"), none; }
     }
 
     //  --  DISABLED
@@ -395,9 +387,6 @@ textarea.f-input {
 //  ============================================================================
 //  $ INPUT & BUTTON GROUPS 
 //  ----------------------------------------------------------------------------
-//  --  Grid Systems
-@grid-col-width: 100% / 12;
-
 .input-group,
 .button-group {
     *,
@@ -418,14 +407,8 @@ textarea.f-input {
     //  If an input-group nested within another, remove the bottom margin.
     & > & { margin-bottom: 0; }
 
-    //  If an input-group is the only one or nested within another, remove
-    //  the bottom margin on the last one.
-    // &:only-child,
-    // &:last-of-type { margin-bottom: 0; }
-
     //  If there's a label, we generally want a top margin on the item below.
     //  But ONLY on labels that are direct children.
-    & + &,
     > label + * { margin-top: @su-8; }
 
     //  If an input-group follows a label though, we want that top margin to be greater.
@@ -457,9 +440,6 @@ textarea.f-input {
             font-size: inherit;
             line-height: inherit;
         }
-
-        //  For icons
-        > i { align-self: center; }
 
         //  When we don't want borders or backgrounds
         &._clean {
@@ -512,33 +492,7 @@ textarea.f-input {
 
 
 //  ============================================================================
-//  $ INLINE FORMS
-//  --  As much as possible we want the inline input-group component to control
-//      way items lay out. Sometimes though we want to override these inline
-//      components at the form level so everything is affected.
-//  ----------------------------------------------------------------------------
-form._inline .input-group {
-    flex-direction: row;
-    align-items: center;
-
-    > input { margin: 0; }
-
-    > label { padding-right: @padding-double; }
-
-    .-row { margin-top: 0; }
-
-    // For nested input-groups, we want to reset the flow direction
-    > .-row > .input-group {
-        .flex-flow(column wrap);
-        align-items: flex-start;
-
-        .-row:not(:first-of-type) { margin-top: @margin-half;}
-    }
-}
-
-
-//  ============================================================================
-//  $ OPTION TOGGLE
+//  $ RADIO TOGGLE
 //  ----------------------------------------------------------------------------
 .f-radio-toggle {
     .f-label {
@@ -706,89 +660,64 @@ form._inline .input-group {
 //  $ Chosen plugin (JS plugin)
 //  ----------------------------------------------------------------------------
 .container .chosen-container {
-    margin-top: @margin-half;
+    margin-top: 0;
 
     &.chosen-container-active {
-        border: 1px solid @fm-border_focused;
-
-        li.search-field input[type="text"] {
-            color: @fm-color;
+        border-width: 0;
+        .chosen-choices {
+            border-color: @fm-border_focused;
+            box-shadow: inset 0 0 4px @fm-shadowInner_focused, 0 0 5px @fm-shadowDrop_focused;
         }
     }
 
     .chosen-choices {
-        box-shadow: none;
-        padding: 0 !important;
-        margin: 0 !important;
+        .flexbox();
+        padding: 0 1px;
+        min-height: 38px;
+        background-image: none;
+        border-radius: @br-2;
+        border-color: @fm-border;
 
-        li.search-field input[type="text"] { padding: @fm-padding; }
-    }
-
-    .team-join {
-        .addtoprofile {
-            margin-top: 6px;
-            font-weight: 400;
-        }
-        .join-date {
-            margin-top: 6px;
+        &:hover {
+            border-color: fade(@fm-border_focused,50%);
+            box-shadow: inset 0 0 2px darken(@fm-shadowInner_focused,10%), 0 0 2px fade(@fm-shadowDrop_focused,20%);
         }
     }
-}
 
-
-//  ============================================================================
-//  $ Input option (privacy)
-//    Used in the developer story: header > edit > "display name"
-//  ----------------------------------------------------------------------------
-.privacy-wrapper {
-    position: relative;
-
-    //
-    // Display off when hidden, inline when toggled
-    // "Synchronized with your profile" on the DS
-    .privacy-checkbox {
-        display: none;
-        width: auto;
-        vertical-align: middle;
-        padding: 3px 6px;
-        border-radius: @br-2 @br-2 0 0;
-
-        position: absolute;
-        top: 4px;
-        right: 0;
-
-        font-size: 11px;
-        font-weight: 400;
-        color: white;
-        background: @blue-500;
-
-        input[type="checkbox"] {
-            position: relative;
-            z-index: 1;
-            margin: 0;
-            margin-right: 8px;
-            vertical-align: text-top;
+    //  Restyle tags
+    .chosen-choices {
+        li.search-choice,
+        li.search-field {
+            display: inline-flex;
+            align-items: center;
+            margin: @su-4 1px;
+            padding: @su-2 (@su-4 + 2);
         }
+        li.search-choice {
+            float: none;
+            box-shadow: none;
+            background-image: none;
 
-        &:focus { outline: 0; }
+            font-family: @ff-sans;
+            font-size: @fs-12;
+            color: @powder-600;
+            background-color: @powder-100;
+            border-color: transparent;
+            border-radius: @br-2;
 
-        &:before {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 24px;
-            background: @blue-600;
-            z-index: 0;
-            border-top-left-radius: @br-2
+            &:first-child { margin-left: 3px; }
+
+            .search-choice-close {
+                position: relative;
+                top: 0;
+                right: -1px;
+                margin-left: @su-4;
+                transition: none;
+            }
         }
-
-        //  If this preceeds an input-group, remove the margin
-        + .input-group {
-            margin-top: 0;
-            margin-bottom: @margin-base;
-        }
+    }
+     li.search-field > input[type="text"] {
+        padding: 0;
+        margin: 0;
     }
 }

@@ -619,6 +619,7 @@
 	.-row,
     .row {
         margin-bottom: 1em;
+
         .-row,
         .row {
             border: 1px solid transparent;
@@ -667,25 +668,41 @@
         .-row > [class*="-col"]:last-of-type > p { border-right-color: @grid-careers-border; }
     }
 
-	&.uikit-preview .input-group {
+	.g-row,
+	.g-column {
+		padding: 1em;
 		width: 100%;
+		background-color: @orange-050;
 
-		.-row {
-			.flex-justify(center);
-			align-items: center;
+		[class^="g-col"] {
+			font-family: @code-font-family;
+			color: @black-800;
+			width: auto;
+			margin: 0.5em;
+			background-color: @orange-300;
 
-			[class*="col"] { padding: 1em; }
-
-			[class*="col"] > div:not(.-row),
-			[class*="col"] div:not([class*="col"]) {
+			> div {
 				padding: 1em;
-				font-family: @code-font-family;
-				color: @black-800;
-				background-color: @orange-300;
+				width: 100%;
+				border: 1px solid @orange-050; 
 			}
 
-			.-row div:not(.-row):not([class*="col"]) { border: 1px solid @white; }
+			> .g-row {
+				background-color: @orange-300;
+				[class^="g-col"] {
+					background-color: @orange-500;
+					> div { border-color: @orange-300; }
+				}
+			}
 		}
+	}
+	.g-row + .g-column { margin-top: 2em; }
+
+	.g-row.jc-sp-between .g-col4 {
+		flex-basis: calc(~"33.3333% - 2em");
+		max-width: calc(~"33.3333% - 2em");
+		padding: 1em;
+		> div { height: 42px; }
 	}
 }
 

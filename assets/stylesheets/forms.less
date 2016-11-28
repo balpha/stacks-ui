@@ -62,19 +62,26 @@ button, .button,
 
     &._medium,
     &._large { font-weight: 400; }
+    
+    //  Required / Optional within a label
+    .is-required,
+    .is-optional {
+        display: inline-flex;
+        align-self: flex-end;
+        margin-bottom: @su-2;
+        margin-left: @su-8;
+        font-size: 86%;   //  @fs-12
+        font-style: italic;
+        font-weight: 400;
+    }
 }
 
 //  --  Required / Optional
-span.is-required,
-span.is-optional {
-    display: inline-block;
-    margin-left: @su-8;
-    font-size: @fm-font-size - 2;   //  @fs-12
-    font-style: italic;
-    font-weight: 400;
+p,
+span {
+    &.is-required { color: @red-400; }
+    &.is-optional { color: @black-500; }
 }
-span.is-required { color: @red-500; }
-span.is-optional { color: @black-400; }
 
 //  --  Help Text
 .t-help {

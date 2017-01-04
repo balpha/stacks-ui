@@ -1,64 +1,64 @@
 # URLs below should be exactly the same as real paths. Just follow examples...
 - title: Guidelines
-  url: guidelines/
+  url: guidelines
   sublinks:
     - title: Files structure
-      url: guidelines/files-structure/
+      url: guidelines/files-structure
     - title: Writing LESS
-      url: guidelines/writing-less/
+      url: guidelines/writing-less
     - title: Colors
-      url: guidelines/colors/
+      url: guidelines/colors
 - title: Components
-  url: components/
+  url: components
   sublinks:
     - title: Badges
-      url: components/badges/
+      url: components/badges
     - title: Banners
-      url: components/banners/
+      url: components/banners
     - title: Buttons
-      url: components/buttons/
+      url: components/buttons
     - title: Cards
-      url: components/cards/
+      url: components/cards
     - title: Dropdowns
-      url: components/dropdowns/
+      url: components/dropdowns
     - title: Forms
-      url: components/forms/
+      url: components/forms
     - title: Gallery
-      url: components/gallery/
+      url: components/gallery
     - title: Grid
-      url: components/grid/
+      url: components/grid
     - title: Header Groups
-      url: components/header-groups/
+      url: components/header-groups
     - title: Hero Boxes
-      url: components/hero-boxes/
+      url: components/hero-boxes
     - title: Lists
-      url: components/lists/
+      url: components/lists
     - title: Modals
-      url: components/modals/
+      url: components/modals
     - title: Navigation
-      url: components/navigation/
+      url: components/navigation
     - title: Notifications
-      url: components/notifications/
+      url: components/notifications
     - title: Pagination
-      url: components/pagination/
+      url: components/pagination
     - title: Popouts
-      url: components/popouts/
+      url: components/popouts
     - title: Reporting
-      url: components/reporting/
+      url: components/reporting
     - title: Tabs
-      url: components/tabs/
+      url: components/tabs
     - title: Tables
-      url: components/tables/
+      url: components/tables
     - title: Tags
-      url: components/tags/
+      url: components/tags
     - title: Tooltips
-      url: components/tooltips/
+      url: components/tooltips
     - title: Typography
-      url: components/typography/
+      url: components/typography
     - title: Miscellaneous
-      url: components/miscellaneous/
+      url: components/miscellaneous
 - title: Resources
-  url: resources/
+  url: resources
   sublinks:
     - title: Logos
-      url: resources/logos/
+      url: resources/logos

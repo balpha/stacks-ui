@@ -3,6 +3,14 @@ var UIkit = {
 		this.setMinHeightForPreviews(); 		// this functions lets you set min-height for .stack-preview by setting 'data-minheight' attribute. useful for elements that are positioned absolutely.
 		this.visibleCodebase();					// it lets you select which patterns you gonna see by using <select> in sidebar.
 		this.filesStructure();					// simple function for styling that checks if element has children
+
+		$('#uikit-toc ul').tokko();
+		setTimeout(function() {
+			if (location.hash) {
+				var h = $(location.hash).offset().top;
+			    window.scrollTo(0, h);
+			}
+		}, 500); // lol this is bad
 	},
 
 
@@ -125,7 +133,39 @@ var Colors = {
 	}
 }
 
+var DeepLinking = {
+	init: function() {
+		this.parseContent();
+	},
+
+	iterate: function(elements, array) {
+		elements.each(function() {
+			var $t = $(this),
+				title = $t.find('> :header').text(),
+				id = $t.find('> :header').attr('id'),
+				hasChildren = $t.find('> .uikit-section').length;
+
+			array.push({
+				sectionTitle: title,
+				sectionId: id,
+				sectionHasSubsections: hasChildren
+			});
+		});
+	},
+
+	parseContent: function() {
+		var $sections = $('#uikit-content').find('> .uikit-section'),
+			structure = [];
+
+		DeepLinking.iterate($sections, structure)
+
+		
+		console.log(structure);
+	}
+}
+
 $(function() {
 	UIkit.init();
+	// DeepLinking.init();
 	//Colors.init(); // moved it to colors.html page because it's not needed anywhere else.
 });

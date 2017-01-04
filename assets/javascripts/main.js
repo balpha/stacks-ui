@@ -134,39 +134,7 @@ var Colors = {
 	}
 }
 
-var DeepLinking = {
-	init: function() {
-		this.parseContent();
-	},
-
-	iterate: function(elements, array) {
-		elements.each(function() {
-			var $t = $(this),
-				title = $t.find('> :header').text(),
-				id = $t.find('> :header').attr('id'),
-				hasChildren = $t.find('> .uikit-section').length;
-
-			array.push({
-				sectionTitle: title,
-				sectionId: id,
-				sectionHasSubsections: hasChildren
-			});
-		});
-	},
-
-	parseContent: function() {
-		var $sections = $('#uikit-content').find('> .uikit-section'),
-			structure = [];
-
-		DeepLinking.iterate($sections, structure)
-
-		
-		console.log(structure);
-	}
-}
-
 $(function() {
 	UIkit.init();
-	// DeepLinking.init();
 	//Colors.init(); // moved it to colors.html page because it's not needed anywhere else.
 });

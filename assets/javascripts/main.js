@@ -4,7 +4,8 @@ var UIkit = {
 		this.visibleCodebase();					// it lets you select which patterns you gonna see by using <select> in sidebar.
 		this.filesStructure();					// simple function for styling that checks if element has children
 
-		$('#uikit-toc ul').tokko();
+		$('#uikit-toc').tokko();
+		
 		setTimeout(function() {
 			if (location.hash) {
 				var h = $(location.hash).offset().top;

@@ -68,9 +68,9 @@
 	}
 }
 
-#uikit-sidebar-right {
+#uikit-toc {
 	position: fixed;
-	right: 0; top: 0; bottom: 0;
+	left: 240px; top: 0; bottom: 0;
 	// background: @black-075;
 	background: @black-050;
 	width: 240px;
@@ -142,29 +142,46 @@
 }
 
 #uikit-toc {
+	list-style-type: none;
+	margin: 0; padding: 0;
+
 	ul {
 		list-style-type: none;
 		margin: 0; padding: 0;
+	}
 
-		li {
-			a {
-				display: block;
-				color: @black-500;
-				padding: 10px 20px;
-				border-bottom: 1px solid rgba(0,0,0,0.05);
+	li {
+		list-style-type: none;
+		margin: 0; padding: 0;
+		a {
+			display: block;
+			color: @black-500;
+			padding: 10px 20px;
+			border-bottom: 1px solid rgba(0,0,0,0.05);
 
-				&:hover {
-					background: rgba(0,0,0,0.05);
-					border-bottom-color: transparent;
-					color: @black;
-				}
+			&:hover {
+				background: rgba(0,0,0,0.05);
+				border-bottom-color: transparent;
+				color: @black;
 			}
 		}
+	}
 
-		li li a { padding-left: 40px; }
-		li li li a { padding-left: 60px; }
-		li li li li a { padding-left: 80px; }
-		li li li li li a { padding-left: 100px; }
+	li li a { padding-left: 40px; }
+	li li li a { padding-left: 60px; }
+	li li li li a { padding-left: 80px; }
+	li li li li li a { padding-left: 100px; }
+	
+	+ #uikit-content {
+		padding-left: 240px + 240px + 40px;
+	}
+
+	&:empty {
+		display: none;
+
+		+ #uikit-content {
+			padding-left: 240px + 40px;
+		}
 	}
 }
 
@@ -216,13 +233,6 @@
 
 	> h2 {
 		padding-top: 10px;
-	}
-}
-
-//	Overwrite padding IF there's Table of Content
-#uikit-sidebar-right {
-	+ #uikit-content {
-		padding-right: 240px + 40px;
 	}
 }
 

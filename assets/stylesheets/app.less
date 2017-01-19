@@ -430,12 +430,18 @@
 	.highlight {
 		margin-bottom: 0;
 		border-radius: 2px 2px 0 0;
+		max-height: 600px;
+		overflow: scroll;
 	}
 
 	.uikit-preview {
 		border-radius: 0 0 2px 2px;
 		box-shadow: none;
 		border-top: 0;
+	}
+	
+	pre {
+		max-height: none; /* pre has a max-height in core's all.css */
 	}
 }
 

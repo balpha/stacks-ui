@@ -8,7 +8,7 @@
 # Site settings
 title: Stacks | Stack Overflow
 description: The UI pattern library for the Stack Overflow, Stack Overflow Carers, and the Stack Exchange Network.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: /stacks-ui # the subpath of your site, e.g. /blog
 url: http://stackexchange.github.io/stacks-ui/ # the base hostname & protocol for your site
 
 # Build settings
@@ -18,6 +18,7 @@ lib: assets
 img: assets/images
 css: assets/stylesheets
 js: assets/javascripts
+stickers: assets/stickers
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, docs-*.html, .asset-cache]

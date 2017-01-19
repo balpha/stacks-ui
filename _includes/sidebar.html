@@ -1,12 +1,7 @@
-{% if jekyll.environment == 'production' %}
-    {% assign site_url = site.url %}
-{% else %}
-    {% assign site_url = '/' %}
-{% endif %}
 
 <section id="uikit-sidebar">
     <div class="uikit-logo">
-        <a href="{{ site_url }}">UIkit</a>
+        <a href="{{ site.baseurl }}">UIkit</a>
     </div><!-- / logo -->
 
     <nav id="uikit-nav" role="navigation" class="uikit-nav">
@@ -19,12 +14,12 @@
                         <ul>
                             {% for sublink in sublinks %}
                                 {% capture current_url %}/{{ sublink.url }}{% endcapture %}
-                                <li {% if page.url == current_url %}class="current"{% endif %}><a href="{{ site_url }}{{ sublink.url }}">{{ sublink.title }}</a></li>
+                                <li {% if page.url == current_url %}class="current"{% endif %}><a href="{{ site.baseurl }}/{{ sublink.url }}">{{ sublink.title }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
                 {% else %}
-                    <li}><a href="{{ site_url }}{{ entry.url }}">{{ entry.title }}</a></li>
+                    <li}><a href="{{ site.baseurl }}/{{ entry.url }}">{{ entry.title }}</a></li>
                 {% endif %}
             {% endfor %}
 

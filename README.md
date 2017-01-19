@@ -76,7 +76,7 @@ To run Stacks locally, you will need to:
  - Once downloaded, navigate to the repo folder within Terminal. Usually this is something like: `cd /Users/[yourUserName]/Sites/stacks-ui`
  - Once you are within your folder, start Jekyll by running the following command: `jekyll serve`
 
-That's it. Now point you local browser to ` http://localhost:4000/ ` and you will be able to view the website locally.
+That's it. Now point you local browser to [`http://localhost:4000/stacks-ui/`](http://localhost:4000/stacks-ui/) and you will be able to view the website locally.
 
 
 ## Contributing to Stacks

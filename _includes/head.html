@@ -1,8 +1,3 @@
-{% if jekyll.environment == 'production' %}
-    {% assign site_url = site.url %}
-{% else %}
-    {% assign site_url = '/' %}
-{% endif %}
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,13 +6,13 @@
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
 	<!-- JS Libs -->
-	<script type="text/javascript" src="{{ site_url }}{{site.js}}/vendor/jquery.js"></script>
-	<script type="text/javascript" src="{{ site_url }}{{site.js}}/jquery.tokko.js"></script>
-	<script type="text/javascript" src="{{ site_url }}{{site.js}}/main.js"></script>
+	<script type="text/javascript" src="{{ site.baseurl }}/{{site.js}}/vendor/jquery.js"></script>
+	<script type="text/javascript" src="{{ site.baseurl }}/{{site.js}}/jquery.tokko.js"></script>
+	<script type="text/javascript" src="{{ site.baseurl }}/{{site.js}}/main.js"></script>
 
 	<!-- LESS -->
-	<link rel="stylesheet/less" type="text/css" href="{{ site_url }}{{site.css}}/app.less">
-    <script type="text/javascript" src="{{ site_url }}{{site.js}}/vendor/less.js"></script>
+	<link rel="stylesheet/less" type="text/css" href="{{ site.baseurl }}/{{site.css}}/app.less">
+    <script type="text/javascript" src="{{ site.baseurl }}/{{site.js}}/vendor/less.js"></script>
     <script>less.watch();</script>
 
 	<!-- Page Specific JS -->

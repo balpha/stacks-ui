@@ -13,7 +13,7 @@
                         <span class="root">{{ entry.title }}</span>
                         <ul>
                             {% for sublink in sublinks %}
-                                {% capture current_url %}/{{ sublink.url }}{% endcapture %}
+                                {% capture current_url %}/{{ sublink.url }}.html{% endcapture %}
                                 <li {% if page.url == current_url %}class="current"{% endif %}><a href="{{ site.baseurl }}/{{ sublink.url }}">{{ sublink.title }}</a></li>
                             {% endfor %}
                         </ul>

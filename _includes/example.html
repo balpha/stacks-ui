@@ -1,7 +1,9 @@
 {% comment %}
 
-    This include takes a piece of HTML as its .html paramater and outputs it both as a prettified codeblock
-    and as the preview, unless a separate .preview parameter is passed.
+    This include takes a piece of HTML as its .html parameter and outputs it both as a prettified codeblock
+    and as the preview, unless a separate .preview parameter is passed. If you pass a preview parameter, it can
+    either be a string (in which case that's the HTML that will be output) or it can be false, in which case
+    there is no preview at all.
 
     Usage:
     
@@ -43,12 +45,14 @@
 {% endfor %}
 
 
-    <div class="uikit-code uikit-has-preview">
+    <div class="uikit-code{% unless include.preview == false %} uikit-has-preview{% endunless %}">
 {% highlight html linenos %}
 {% for line in lines %}
 {% assign line = line | strip_newlines %}{% assign linelength = line | size | minus: minindent %}{{ line | slice: minindent, linelength }}{% endfor %}
 {% endhighlight %}
-        <div class="uikit-preview">
-            {{ include.preview | default: include.html }}
-        </div>
+        {% unless include.preview == false %}
+            <div class="uikit-preview">
+                {{ include.preview | default: include.html }}
+            </div>
+        {% endunless %}        
     </div>

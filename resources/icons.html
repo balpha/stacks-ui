@@ -6,7 +6,7 @@ description: Instruction about adding new icons. Also, list of available SVG ico
 
 <section class="uikit-section">
     <h2 id="toc-icons-approach">Icons approach</h2>
-    <p>Our recommended way for including icons is called <em>inline SVG</em>. Which basically means we just paste SVG code in view files. Remember this is rule only for simple, one-color icons – I'm not talking about crazy illustrations or more complex icons.</p>
+    <p>Our recommended way for including icons is called <em>inline SVG</em>. Which basically means we just paste SVG code in view files. And yes, we prefer that way than using CSS background-image (unless there's not other option).</p>
     <p>It's not super easy but the good news is we have it automated. There's helper you can use in order to include one of existing icons in code. Here's how it works:</p>
 
     {% capture html %}
@@ -14,13 +14,22 @@ description: Instruction about adding new icons. Also, list of available SVG ico
 		@Svg.Search
 		@Svg.Social.Facebook <!-- 'Social' is subfolder -->
 	</div>
-    {% endcapture %}{% include example.html html=html %}
+    {% endcapture %}{% include example.html html=html preview=false %}
+	
+	<br>
+    <p>Here's pro CSS tip. If you want your icon to have a color of parent element (so basically behave like text) set this styling:</p>
+
+	{% capture css %}
+	[role="icon"] {
+		fill: currentColor;
+	}
+    {% endcapture %}{% include example.html html=css preview=false %}    
 </section>
 
 <section class="uikit-section">
 	<h2 id="toc-icons-list">List of existing icons</h2>
 	<p>We already have bunch of icons ready to use. It is highly recommended to use them instead of creating new ones unless you really have to...</p>
-	<p>...ok, to be honest our current library is pretty small so there's chance you will have to add your own. There's instruction how.</p>
+	<p>...ok, to be honest our current library is pretty small so you will probably have to add your own. <a href="#adding_own_icons">There's instruction how</a>.</p>
 	
 	<section class="uikit-section">
 		<h3>Core Glyphs</h3>
@@ -198,10 +207,56 @@ description: Instruction about adding new icons. Also, list of available SVG ico
 	</section>
 </section>
 
+<section class="uikit-section">
+	<h2>Adding own icons</h2>
+	<p>If there's icon that doesn't exist in library above, you probably will need to add it by yourself. Few things to remember:</p>
+	<ul>
+		<li>It has to be SVG.</li>
+		<li>It has to be smaller than 4kb.</li>
+		<li>SVG code has to be <a href="#toc-optimize-your-svg">optimized</a>. Here's instruction how to do it.</li>
+		<li><code>SVG</code> element should have at least those attributes: <code>role="icon"</code> (we also use it as selector in LESS), <code>width=""</code>, <code>height=""</code>, <code>viewBox=""</code>. Rest can be skipped.</li>
+	</ul>
+
+	<p>Ok, now you can add your icon. Here's how:</p>
+
+	<ol>
+		<li>Move your optimized SVG file to following folder: <code>*/Content/Img/svg-icons/</code>.</li>
+		<li>You can create subfolders to categorize icons. If you create file <em>bar.svg</em> in folder <em>foo</em> your helper will look like this <code>@Svg.Foo.Bar</code>.</li>
+		<li>Edit <code>*/Helpers/Svg.cs</code>, copy this template: <code>public static IHtmlString SvgName { get; } = GetImage(nameof(SvgName));</code> and paste it (updated of course) in appropriate place in that file (or simply follow the guidelines in that file).</li>
+	</ol>
+</section>
 
 
 
-<section class="uikit-section" data-core data-careers>
+
+<section class="uikit-section">
     <h2 id="toc-optimize-your-svg">Optimize your SVG</h2>
-    <p>If you export your SVG icon from Sketch or Illustrator (or whatever) it will probably contain lots of crap code.</p>
+    <p>When you export your SVG file it will probably contain a lot of crap code.</p>
+    <ul>
+    	<li>There's online tool to optimize SVGs called <a href="https://jakearchibald.github.io/svgomg/" target="_blank">SVGOMG</a> - you can upload file or paste code. In settings panel I usually have all checkboxes checked except:
+			<ul>
+				<li><em>Show original</em> - well...</li>
+				<li><em>Prefer viewBox to width/height</em> - we actually prefer both.</li>
+				<li><em>Remove viewBox</em>.</li>
+				<li>Also, I usually set <em>Precision</em> to 3 or 4.</li>
+			</ul>
+    	</li>
+    	<li>Illustrator is pretty good with optimizing SVGs but I still recommend to run them through SVGOMG.</li>
+    	<li>Sketch does bad job with optimizing SVGs however there's really great plugin (based on the same library used by SVGOMG) to make it better. It's called <a href="https://github.com/BohemianCoding/svgo-compressor" target="_blank">SVGO Compressor</a> - I highly recommend installing it (you may still want to run exported files through SVGOMG).</li>
+    </ul>
+
+    <p>Even after optimizing SVG you still should open it in your code editor and make sure that:</p>
+	
+	<ul>
+		<li>It (<code>SVG</code> element) does have <code>role="icon"</code> attribute. We use it in multiple places as a selector in LESS.</li>
+		<li>It does have <code>viewBox</code>, <code>width</code> and <code>height</code> attributes.</li>
+		<li>It doesn't have any whitespaces (you can remove all line breaks etc.)</li>
+		<li>It doesn't have <code>xmlns</code> attribute in <code>SVG</code> element.</li>
+		<li>It doesn't have any comments.</li>
+		<li>It doesn't have any unnecessary groups (<code>G</code> elements).</li>
+		<li>It doesn't have any unnecessary styling, transformations or masks.</li>
+		<li>It doesn't have <code>fill</code> attributes.</li>
+	</ul>
+
+
 </section>

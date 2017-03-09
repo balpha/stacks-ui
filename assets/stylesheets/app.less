@@ -256,8 +256,10 @@
 		}
 
 		//	Custom header and paragraph styling
-		> p {
-			width: 60%;
+		> p,
+		> ul li,
+		> ol li {
+			width: 100%; max-width: 660px;
 			color: @black-750;
 			font-size: 16px;
 			line-height: 1.375;
@@ -270,6 +272,12 @@
 		> h3 {
 			margin-top: 2em;
 			font-size: 18px;
+			line-height: 1.166666667;
+		}
+
+		> h4 {
+			margin-top: 2em;
+			font-size: 16px;
 			line-height: 1.166666667;
 		}
 
@@ -1016,3 +1024,40 @@ body.composer-on {
 	> .option-toggle,
 	> .header-title { width: 75%; }
 } 
+
+
+// ---------------------------------------------------------------
+//	PAGE: Icons
+// ---------------------------------------------------------------
+.uikit-icons {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: center;
+	align-content: stretch;
+
+	.-item {
+		border-radius: 2px;
+		display: flex;
+		flex-direction: column;
+		width: 200px;
+		border: 1px solid @black-200;
+		box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+		margin: 5px;
+		flex-grow: 1;
+		background: @white;
+		box-sizing: border-box;
+
+		i {
+			height: 80px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		code {
+			font-size: 11px;
+			text-align: center;
+			padding: 10px;
+		}
+	}
+}

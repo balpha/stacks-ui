@@ -60,5 +60,7 @@
 - title: Resources
   url: resources
   sublinks:
+    - title: Icons
+      url: resources/icons
     - title: Logos
       url: resources/logos

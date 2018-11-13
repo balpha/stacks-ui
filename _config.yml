@@ -8,7 +8,7 @@
 # Site settings
 title: Stacks | Stack Overflow
 description: The UI pattern library for the Stack Overflow, Stack Overflow Carers, and the Stack Exchange Network.
-baseurl: /pages/Design/stacks-ui # the subpath of your site, e.g. /blog
+baseurl: /stacks-ui # the subpath of your site, e.g. /blog
 url: https://balpha.github.io/stacks-ui/ # the base hostname & protocol for your site
 
 # Build settings
